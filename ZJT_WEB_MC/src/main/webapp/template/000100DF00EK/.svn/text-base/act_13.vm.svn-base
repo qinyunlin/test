@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国建设行业大数据盛典暨---2014行业先锋跨年酒会</title>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/reset.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/global.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/site_nav.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/footer.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/storePage/storePage.css"/>
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/reset.css" />
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/zt_yjtg.css" />
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/js/plungins/zoompic/css/zoompic.css" />
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/2014jiuhui/reset.css" />
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/2014jiuhui/zt_jiuhui_common.css" />
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/jyeeda.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/basic.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/ConCom.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/common.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/dataStore.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/msg_zhcn.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/storePage.js"></script>
+</head>
+
+<body>
+<div class="header-box">
+    <div class="djs-box" id="time_countDown" style="display:none;"><span id="time_num_1">1</span><span class="m-l-5" id="time_num_2">8</span><span class="times m-l-5" id="countDown_type">天</span></div>
+    <div class="djs-box01" style="display:none;" id="time_out">跨年酒会正在狂欢进行中...</div>
+    <div class="djs-box01" style="display:none;" id="time_over">中国建设行业大数据盛典圆满成功</div>
+    <ul class="zxxw-list">
+        <li><a href="http://gd.qq.com/a/20140114/012381.htm" target="_blank">腾讯大粤网：中国建设行业大数据盛典成功举办</a></li>
+        <li><a href="http://news.dayoo.com/finance/201401/14/54401_34528555.htm" target="_blank">大洋网：“梦想·激情·启航”：揭开2014建设行业大数据序幕</a></li>
+        <li><a href="http://news.sohu.com/20140115/n393561182.shtml?qq-pf-to=pcqq.c2c" target="_blank">搜狐：“梦想激情启航”—揭开2014建设行业大数据序幕</a></li>
+        <li><a href="http://gd.sina.com.cn/news/b/2014-01-03/163569174.html" target="_blank">新浪网：中国建设行业大数据盛典将于12日在广州举办</a></li>
+        <li><a href="http://gd.qq.com/a/20140103/013628.htm" target="_blank">腾讯大粤网：中国建设行业大数据盛典将于12日举行</a></li>
+        <li><a href="http://house.ycwb.com/2014-01/03/content_5801945.htm" target="_blank">金羊网：中国建设行业大数据盛典将于12日在广州香格里拉大酒店举办</a></li>
+        <li><a href="http://tx.southcn.com/roll/content/2014-01/03/content_89052052.htm" target="_blank">南方网：建设行业大数据盛典即将登场</a></li>
+        <li><a href="http://news.dayoo.com/finance/201401/03/54401_34335535.htm" target="_blank">大洋网：建设行业大数据盛典即将登场</a></li>
+        <li><a href="http://www.gd.chinanews.com/2014/2014-01-06/2/294426.shtml?qq-pf-to=pcqq.c2c" target="_blank">广东新闻网：建设行业大数据盛典即将登场</a></li>
+    </ul>
+    <div class="menu-box"><a href="act_10.html" class="t-btn-01" title="首页"></a><a href="act_11.html" class="t-btn-02" title="直播间"></a><a href="act_12.html" class="t-btn-03" title="活动日程"></a><a href="act_13.html" class="t-btn-04-hover" title="高峰对话"></a><a href="act_14.html" class="t-btn-05" title="参会嘉宾"></a><a href="act_15.html" class="t-btn-06" title="精彩分享"></a><a href="act_16.html" class="t-btn-07" title="往届回顾"></a></div>
+</div>
+<div class="container clearfix">
+	<h1 class="title-box title-spft" title="视频访谈"></h1>
+    <div class="jcsj-box clearfix" style="margin-top:0px;">
+        <ul class="yjjb-list clearfix">
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11120750/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">红蝴蝶慈善行动</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11120739/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">大合唱-原唱</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11050579/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">大数据云造价产品信息发布会</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11052908/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">招商投资峰会</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11053383/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">大数据解决方案成果分享会</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11053478/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">大数据解决方案</span>
+            </li>
+            <li>
+                <span class="img-box">
+                    <embed width="100%" height="100%" flashvars="reservelt=50248242&scene=taobao_shop&autoplay=false"pluginspage="http://www.macromedia.com/go/getflashplayer"" type="application/x-shockwave-flash" allowscriptaccess="never" loop="0" quality="high" src="http://cloud.video.taobao.com/video/play/sid/11053576/uid/u/v/2001/f/video.swf" allowfullscreen="true" class="show_video" wmode="transparent">
+                </span>
+                <span class="img-txt">建设行业大数据解决方案成果分享会</span>
+            </li>
+            <a href="javascript:void(0);" onclick="mediaplayer('-1');" class="arrow-left" style="top:43px;"></a>
+            <a href="javascript:void(0);" onclick="mediaplayer('+1');" class="arrow-right" style="top:43px;"></a>
+        </ul>
+    </div>
+    
+    <div class="wzft-box">
+    	<h1 class="title-box title-wzft" title="高峰对话"></h1>
+        <div class="wzft-list">
+        	<dl class="clearfix">
+            	<dt>
+                	<img src="http://c2.zjtcn.com/images/act/2014jiuhui/wzft_01.jpg" />
+                    <div class="zzc-box"></div>
+                    <div class="wzxx-txt">
+                        <p title="'第十届成都建博会'盛大开幕">“第十届成都建博会”盛大开幕</p>
+                    </div>
+                </dt>
+                <dd>
+                	<h3>“第十届成都建博会”盛大开幕</h3>
+                    <p>6月7—9日，第十届成都建博会在世纪城新国际会展中心隆重召开。此次建博会汇集了国内外近800家企业参展，展览面积达3万余平米。通过建博会，可以了解到当前建材领域的最新节能、环保技术，行业动态；还可以看到丰富多彩的建筑装饰材料和产品。<a class="zk_bottom_01" href="javascript:void(0);" onclick="display(this, '1', 'zk_bottom_01', 'zk_top_01');" title="更多"></a></p>
+                    <p style=" display:none;" id="display_1">据了解，成都建博会，经过十余年的发展已成为中西部地区最具影响与权威的专业盛会，在业内享有极高的声誉。依托各自的优势，由成都建博会和网材网强强联合、共同打造的“阳光采购交易会”仍将在夏季建博会期间举办。作为本届展会的一个重要活动，交易会提供了一个让材料商与开发商、工程商直接交流的平台，传递最新的供求信息，降低采购成本，提高采购质量和效率。</p>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+            	<dt>
+                	<img src="http://c2.zjtcn.com/images/act/2014jiuhui/wzft_02.jpg" />
+                    <div class="zzc-box"></div>
+                    <div class="wzxx-txt">
+                        <p title="延续造价通权威专业 谱写建设诗章">延续造价通权威专业 谱写建设诗章</p>
+                    </div>
+                </dt>
+                <dd>
+                	<h3>延续造价通权威专业 谱写建设诗章</h3>
+                    <p>造价通为建设行业瞻前顾后，工程的前期预算，工程的后期结算，少不了造价通的支持与奉献。 <a class="zk_bottom_01" href="javascript:void(0);" onclick="display(this, '2', 'zk_bottom_01', 'zk_top_01');" title="更多"></a></p>
+                    <div style=" display:none;" id="display_2">
+                    <p>造价通（www.zjtcn.com）是广东中建普联科技有限公司独家开发运营的国内首家面向全国建设行业工、料、机市场的造价信息发布和建材价格数据服务平台，服务对象主要包括造价咨询、业主投资、房地产开发、设计施工等领域的建设行业客户。</p>
+                    <p>造价通服务： </p>
+                    <p>一站式价格数据查询</p>
+                    <p>上千种建设材料分类</p>
+                    <p>庞大的价格数据库</p>
+                    <p>专业数据分析团队</p>
+                    <p>快速准确的搜索引擎</p>
+                    <p>造价通提供材料价格数据在线查询，非标材料价格“一对一”人工询价，市场价格走势动态分析，材料信息区域化细分，专业的数据管理服务。</p>
+                    <p>因为专业，所以权威，造价通给您不一样的服务，造价通，为建设行业谱写辉煌篇章。</p>
+					</div>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+            	<dt>
+                	<img src="http://c2.zjtcn.com/images/act/2014jiuhui/wzft_03.jpg" />
+                    <div class="zzc-box"></div>
+                    <div class="wzxx-txt">
+                        <p title="'工程造价'行业内的云革命">“工程造价”行业内的云革命</p>
+                    </div>
+                </dt>
+                <dd>
+                	<h3>“工程造价”行业内的云革命</h3>
+                    <p>云技术通过庞大的服务器网络，通过程序分拆、协同处理、分散存储等技术，能在数秒内完成数以千万甚至亿计的数据和信息处理，实现超级计算机般的庞大数据处理能力。<a class="zk_bottom_01" href="javascript:void(0);" onclick="display(this, '3', 'zk_bottom_01', 'zk_top_01');" title="更多"></a></p>
+                    <div style="display:none;" id="display_3">
+                    	<p>云技术通过庞大的服务器网络，通过程序分拆、协同处理、分散存储等技术，能在数秒内完成数以千万甚至亿计的数据和信息处理，实现超级计算机般的庞大数据处理能力。</p>
+                        <p>近两年，云技术已在部分大型工程造价预算数据处理中心，商业银行，电子商务等领域试点应用，获得了良好的成效。然而，在更多的商业领域，都存在庞大的数据处理需求，例如建设行业。建设行业工程造价预算有着相当大的信息和数据处理需求，但是，在业内，除了极小部分企业采用专业的ERP管理系统进行数据处理外，大部分的企业还仍然使用原始的数据处理方式来应付庞大的数据信息。</p>
+                        <p>今天，业内著名的工程造价信息数据平台——造价通正式发布了一个基于云技术的工程造价信息查询产品，云造价。利用云造价平台，企业可以获取项目所需的材料在全国范围内的价格及供应商等信息，还可以通过项目管理、供应商管理等对项目及材料供应商进行分类管理，历史查询的材料价格以及收藏的供应商信息将存储在专业的云服务器中，造价通为此提供了强有力的安全保障。企业还可以通过多账户的管理模式，设定每个账户的权限，防止数据信息修改，误删等问题。</p>
+                        <p>过去传统的数据处理方式，通过表格进行数据分类，修改，查询都相当麻烦，储存在本地磁盘中的数据，还可能因为不同造价员的操作导致修改、丢失甚至泄露，这对企业来说都将可能导致重大的损失。如今有了云造价这样的高技术平台，企业在数据安全性，一致性，便捷性方面都能得到更好的保障，更能提升造价员的工作效率和工作质量。</p>
+                        <p>技术的革命为产业带来全新的发展机遇，我们必须紧跟时代的步伐，与时俱进，才能在市场经济竞争的大潮中立于不败之地。</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/act/2014jiuhui/countdown.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/act/2014jiuhui/gfdh.js"></script>
+</html>

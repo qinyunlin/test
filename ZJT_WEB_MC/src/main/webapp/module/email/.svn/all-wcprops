@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email
+END
+email_template_detail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_template_detail.jsp
+END
+email_label.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_label.jsp
+END
+email_log.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_log.jsp
+END
+email_template_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_template_add.jsp
+END
+email_template_lock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_template_lock.jsp
+END
+email_account_lock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_account_lock.jsp
+END
+email_template.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_template.jsp
+END
+email_account.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_account.jsp
+END
+email_log_info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/email/email_log_info.jsp
+END

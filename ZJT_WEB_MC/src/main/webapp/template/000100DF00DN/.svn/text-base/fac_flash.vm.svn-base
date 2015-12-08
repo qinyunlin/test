@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+
+<body bgcolor="#F5F4F1">
+<center>
+<script type="text/javascript">
+<!--
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="930" height="758" ID="Captivate1">'+
+  '<param name="movie" value="$common_site/images/zjt/help/fac_flash/gycbj_demo_skin.swf">'+
+  '<param name="quality" value="high">'+
+  '<param name="loop" value="0">'+
+  '<embed src="$common_site/images/zjt/help/fac_flash/gycbj_demo_skin.swf" width="930" height="758" loop="0" quality="high" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" menu="false"></embed>'+
+  '</object>');
+//-->
+</script>
+
+<script type="text/javascript">
+document.getElementById('Captivate1').focus();
+document.Captivate1.focus();
+</script>
+
+<noscript>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="930" height="758" ID="Captivate1">
+		<param name="movie" value="$common_site/images/zjt/help/fac_flash/gycbj_demo_skin.swf">
+		<param name="quality" value="high">
+		<param name="loop" value="0">
+		<embed src="$common_site/images/zjt/help/fac_flash/gycbj_demo_skin.swf" width="930" height="758" loop="0" quality="high" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" menu="false"></embed>
+	</object>
+</noscript>
+</center>
+</body>
+</html>

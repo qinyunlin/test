@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>关于造价通_造价通($dataInfo.province)</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+	</head>
+	<body>
+		<div id="header_box">
+    <div id="header">
+       	<div class="inside-com-logo" ><a href="/" class="logo01" ></a></div>
+        <div class="f_l top_nav">
+            <a href="/help/about_zjt.html" class="ab_m cur_01">关于造价通</a>
+            <a href="/help/contact_us.html">联系我们</a>
+            <a href="/help/zsdl.html">招商代理</a>
+        </div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div class="co_01 border_1">
+
+	<h1 class="til_name"><span>关于造价通</span></h1>
+    
+    <div class="about_txt_box">
+    	
+        <p class="txt_in">造价通隶属于<span style="font-size: 11px;">广东中建普联科技有限公司</span>（www.zjtcn.com）是国内领先的基于权威价格数据开发与支持的建设行业互动门户平台。其专注于造价数据信息的查询，供应与应用。包含全国各市建筑材料造价通参考价，信息价，供应商报价，建议价，主材价格行情，询价圈，政策法规，资讯等几大模块。其信息量大，覆盖面广，能全方位满足全国用户的需求。目前已面向全国主要城市提供全方位的造价信息服务支持。</p>
+        
+        <p>
+        	<h3>造价通价格支持体系</h3>
+            1. 主要材料造价通参考价<br/>
+            2. 供应商报价,建议价<br/>
+            3. 信息价
+        </p>
+        
+        <p>
+        	<h3>造价通询价体系</h3>
+            1. 询价圈：提供在线询价互动平台，实现造价行业资源共享，交流。对业内材料市场的各种价格进行分析对比。造价通会员皆可提供资源给其他用户，并通过回复其他用户的询价获取相应的积分奖励。<br/><br/>
+            2. 一对一询价：造价通专业团队提供一对一线下询价服务。24小时内回复结果，专门解决非标，新型，偏门，机械设备等类型的材料设备询价问题。提高工作效率。
+        </p>
+        
+        
+        <p>
+        	<h3>造价通数据管理体系</h3>
+            材价库<br/>
+            会员进行项目材料信息收藏与管理的企业空间，收藏的材料自动分类，可添加，修改材料价，导出材价数据。<br/><br/>
+            供应商库<br/>
+            供应商信息收集与管理的智能中心。用户可以添加供应商资料，记录供应商参与项目使用信息，奖励服务质量评价体系。<br/><br/>
+            项目库<br/>
+            用户可对项目信息进行多项有效管理，可发布最新求购信息，可从海量的供应商群中筛选出对位需求的供应单位。
+        </p>
+        
+    </div>
+	
+</div>
+<div class="mask_layer" style="display:none;" id="mask_layer"></div>
+		#parse($footer_dir)
+
+	</body>
+</html><script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-18131443-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>

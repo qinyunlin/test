@@ -1,0 +1,167 @@
+## $.
+##set($doll="$")
+##set($ftp_dir="http://ftp.ccwcw.com")
+##set($ftp_pic="http://ftp.zjtcn.com")
+##set($ccwcw_dir="http://www.ccwcw.com")
+##set($c1wcw_dir="http://c1.ccwcw.com")
+#set($default_eplogo="$!{ftp_dir}/ep/default/default_logo_ep.jpg")
+<script type="text/javascript" src="$!{c1wcw_dir}/js/common/stuff_cid_db.js"></script>
+<script type="text/javascript" src="$!{c1wcw_dir}/js/common/stuff_cid_decode.js"></script>
+<script type="text/javascript" src="$!{c1wcw_dir}/js/common/common.js"></script>
+<script type="text/javascript" src="$!{c1wcw_dir}/js/common/jquery.cookie.js"></script>	
+<script type="text/javascript" src="$!{c1wcw_dir}/js/shop/shop_html.js"></script> 
+
+
+
+<!--	topbar_bg star	-->
+<div class="topbar_bg">
+<div class="topbar_co" >
+   <span style="float:left;" id="ccwcw_login_info">
+        欢迎来到网材网！请 [<a href="#" onclick="login()" class="link_red">登录</a>] [<a href="/common/register.html" class="link_bule">免费注册</a>]
+   </span>
+
+     <div class="f_r top_link_bar">
+        <a href="$!{ccwcw_dir}">网材网首页</a>|
+        <a href="$!{ccwcw_dir}/hypd">行业频道</a>|
+         <a href="$!{ccwcw_dir}/gcxm">工程项目</a>|
+        <a href="$!{ccwcw_dir}/ygcg">阳光采购</a>|
+        <a href="#"  onclick="collectEmp()">收藏本站</a>
+        </div>
+    </div>   
+</div>
+
+<!--	topbar_bg end	-->
+
+
+<!--	header star	-->
+<div class="shop02_header">
+	<span class="icon_qiye"></span>
+    <a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}" class="logo"><img width="60" height="60" src="$!{ftp_pic}$!{epShop.getLogo()}" /></a>
+    <span class="company_name">$!{epShop.getName()}</span>
+</div>
+<!--	header end	-->
+
+<!--	banner star	-->
+<div class="banner_box">
+	<div class="banner"></div>
+</div>
+<!--	banner end	-->
+
+
+<!--	menu_bg star	-->
+<div class="menu_bg">
+	<div class="menu">
+    	<span class="qy_tel">联系方式：$!parameterUtil.empty($!{epShop.getMobile()},$!{epShop.getPhone()})</span>
+    	<a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}" class=#if($!dataInfo.module=="index")"cur"#else""#end>首页</a>
+        <a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/introduction" class=#if($!dataInfo.module=="introduction")"cur"#else""#end >企业介绍</a>
+        <a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/product" class=#if($!dataInfo.module=="product"||$!dataInfo.module=="product-detail"||$!dataInfo.module=="product-new"||$!dataInfo.module=="product-this"||$!dataInfo.module=="product-popular"||$!dataInfo.module=="product-special")"cur"#else""#end>建材产品</a>
+        <a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/shopcase" class=#if($!dataInfo.module=="shopcase"||$!dataInfo.module=="shopcase-detail")"cur"#else""#end>案例展示</a>
+        <a href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/certificate" class=#if($!dataInfo.module=="certificate")"cur"#else""#end>荣誉资质</a>
+    </div>
+</div>
+
+
+<script>
+function initMenu(){
+	$(".menu div").each(function(index){
+		$(this).click(function(){
+			switch(index){
+				case 0 : 
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}";
+					break;
+				case 1 : 
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/introduction";
+					break;
+				case 2 : 
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/product";
+					break;
+				case 3 : 
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/productnamic";
+					break;
+				case 4 : 
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/shopcase";
+					break;
+				case 5 :
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/certificate";
+					break;
+				case 6 :
+					window.location.href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/shopimage";
+					break;
+				default : 
+					break;
+			}
+		});
+	});
+};
+//initMenu();
+
+
+//收藏本站
+var id = "$!{dataInfo.eid}";
+var cook = new Cookie();
+//从cookie读取用户信息
+function loadUserFromCookie() {
+	var user = {};
+	user.uid = cook.getCookie("uid");
+	user.uname = cook.getCookie("uname");
+	var degree = cook.getCookie("degree");
+	if (degree)
+		user.degree = parseInt(degree);
+	var searchTimes = cook.getCookie("searchTimes");
+	if (searchTimes)
+		user.searchTimes = parseInt(searchTimes);
+	var validDays = cook.getCookie("validDays");
+	if (validDays)
+		user.validDays = parseInt(validDays);
+	user.EID = cook.getCookie("EID");
+	user.corpName = cook.getCookie("corpName");
+	var isAdmin = cook.getCookie("isAdmin");
+	user.isAdmin = (isAdmin == "true" ? true : false);
+	user.memberType = cook.getCookie("memberType");
+	user.webProvince = cook.getCookie("webProvince");
+	return user;
+};
+var currUser =  loadUserFromCookie();
+if(currUser.EID && currUser.EID == id){
+	$('#system_manage').css('visibility', 'visible');
+}
+
+//收藏公司
+function collectEmp(){
+	if (!currUser.uid) {
+		alert("您未登录，无法进行该操作");
+		return ;
+	}
+	uid = currUser.uid;
+	if(currUser.degree == 11||currUser.degree == 12){
+		alert("对不起,您未通过审核,暂不能进行此操作!");
+		return;
+	}
+	var notes="";
+	if((currUser.degree!=8)&&(currUser.degree!=9))
+	{
+		notes = prompt("请为该客户添加备注,备注可以为空",'');	
+	}
+	if(notes||notes==''){
+		if(currUser.degree==9){
+			alert("对不起，您不能进行此操作。");
+			return;
+		}
+		var data={'uid':uid,'notes':notes, cid : id};
+		$!{doll}.ajax({
+			type : 'post',
+			url : '/account/Customer.do?method=add',
+			data : data,
+			complete:function(json){
+				var data = eval("("+json.responseText+")");
+				if (data.state=='failed')
+					alert(data.result);
+				else if(data.state=='success'){
+					alert("添加成功!");
+				}
+			}
+		});
+	}
+};
+
+</script>

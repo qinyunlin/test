@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>造价通_帮助中心</title>
+
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/member/reset.css">
+				<link type="text/css" rel="stylesheet"
+			href="$common_site/css/member/global.css">
+				<link type="text/css" rel="stylesheet" 
+			href="$common_site/css/zjt/help/help_common.css">
+			<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+		<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/dataStore.js"></script>
+		<script type="text/javascript" src="$common_site/js/common/msg.js"></script>
+		<script type="text/javascript" src="$common_site/js/common/common.js"></script>
+			
+		<script type="text/javascript"
+			src="$common_site/js/plungins/flash.js"></script>
+		<style>
+		    .gray_table_box{ margin:15px 0;}
+			.gray_table_box table{ width:100%; border-collapse:collapse;}
+			.gray_table_box table tr th,.gray_table_box table tr td{ text-align:center; color:#ccc; border:1px #D4D4D4 solid;}
+			.gray_table_box table tr th{ font-weight:bold; color:#333; line-height:32px; background-color:#F2F2F2;}
+			.gray_table_box table tr td{  padding:7px 10px;color:#666;}
+			.gray_table_box table tr td.t_align_l{ text-align:left;}
+			.p_m_t10{ margin-top:10px;}
+			.p_m_t15{ margin-top:15px;}
+            .info_box dd p img{ border:1px #a6c7d7 solid;}
+		</style>
+	</head>
+	<body style="text-align:left;">
+<div id="header_box" >
+	<div class="header">
+    	<a class="logo" href="http://www.zjtcn.com"></a>
+    </div>
+</div>
+
+<div id="contanier_help">
+  <div class="novice_box">
+    	<span class="novice_01"></span><a id="ask_id" class="novice_02"></a><a id="gov" class="novice_03"></a><a class="novice_04" id="fac_id"></a>
+  </div>
+    <div class="co_box">
+    	<div class="left_01">
+        	<!--	question_box	-->
+       	  <div class="question_box">
+       	    <h1 class="title_01">帮助问题</h1>
+                <ul>
+                	<li><a onclick="moduleSwitch(1)"><span>新手常见问题指引</span><b class="bg" id="bg_1" style="display:block;"></b></a></li>
+                    <li><a onclick="moduleSwitch(2)"><span>会员套餐问题</span><b class="bg" id="bg_2"></b></a></li>
+                    <li><a onclick="moduleSwitch(3)"><span>注册/认证问题</span><b class="bg" id="bg_3"></b></a></li>
+                    <li><a onclick="moduleSwitch(4)"><span>会员信息问题</span><b class="bg" id="bg_4"></b></a></li>
+                    <li><a onclick="moduleSwitch(5)"><span>询价相关问题</span><b class="bg" id="bg_5"></b></a></li>
+                </ul>
+            </div>
+            <!--	question_box	-->
+            
+            <!--	kf_moudel_box	-->
+            <div class="kf_moudel_box">
+            	<div class="top"><span class="icon_phone"></span>帮助客服</div>
+                <div class="center">
+                	<ul class="help_kf">
+                    	<li>email：<span class="col_gray_7">concom@concom.cn</span></li>
+                        <li class="line_height">电话：<span class="col_gray_7">400-888-9639</span></li>
+                        <li class="line_height">传真：<span class="col_gray_7">020-85603159</span></li>
+                        <li class="line_height"><div style="float:left;">站内咨询：</div><div style="float:left;margin-top:12px;"><img style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC="http://c2.zjtcn.com/images/zjt/common/wp_3.gif"/></div></li>
+                    </ul>
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <!--	kf_moudel_box	-->
+            
+            <!--	jy_moudel_box	-->
+            <div class="kf_moudel_box">
+            	<div class="top"><span class="icon_jianyi"></span>建议/意见</div>
+                <div class="center">
+                	<p class="text_jy">
+                    	感谢您对本网站的关注，如果您在使用过程中遇有任何疑问或是宝贵的意见和建议，欢迎随时与我们联系！
+                    </p>
+                    <p align="center"><a href="/help/feedback.html" class="btn_jy"></a></p>
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <!--	jy_moudel_box	-->
+            
+        </div>
+        <div class="right_01" id="troubleShooting_1">
+       	  <h1 class="title_02">新手常见问题指引</h1>
+            <div class="info_box">
+           	  <h2 class="qustion_title"><span>Q:会员注册时应该注意哪些问题？</span><span id="question_1" ><a class="answer_up" onclick="closediv('novice_','question_',1)">解答</a></span></h2> 
+                
+                <dl id="novice_1">
+                	<dt>A:</dt>
+                    <dd>
+                       1.需严格按相关提示或注解填写内容；<br/>
+                       2.由于登录名在本站具有唯一性，故不可修改；考虑到日后经常使用，建议选择易记又方便输入的字符作为登录名；<br/>
+                       3.注册后请进行邮箱验证，否则将给您带来不必要的麻烦和损失（验证码将在24小时后会失效，请及时激活验证邮件。<br/>
+                       4.验证邮箱非常重要，当你忘记密码时，是找回密码的重要途径。<br/>
+                       5.注册时请仔细阅读《注册条款》，详细了解造价通网站的相关规则，以便您更准确的了解您所拥有的权利。<br/>
+                        <a href="/common/register.html" style="color: #206AA6;text-decoration: none;">我要注册新会员</a>
+                    </dd>
+                </dl>
+                
+                <h2  class="qustion_title"><span>Q:注册成功后，基本注册信息能修改吗？</span><span id="question_2" ><a class="answer_down" onclick="opendiv('novice_','question_',2)">解答</a></span></h2>
+                
+                <dl id="novice_2" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	1.帐号注册成功后，您只可以修改个人头像，昵称，我的专业以个人密码。<br/>
+                        2.帐号名称，真实姓名，单位名称请如实填写。填写后不可在线修改。如需修改内容，请联系客服。<br/>
+                        3.客服中心电话：400-888-9639
+
+                    </dd>
+                </dl>
+                <h2  class="qustion_title"><span>Q:什么是邮箱认证？邮箱认证有什么好处？</span><span id="question_3" ><a class="answer_down" onclick="opendiv('novice_','question_',3)">解答</a></span></h2>
+                <dl id="novice_3" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                               注册造价通会员时，注册提交后，我们将会根据您所填写的电子邮箱帐号发送一封验证邮件，您需要通过该邮件验证后才可以享受造价通服务（请确保注册邮箱填写正确）。<br/>
+                      1、邮箱验证通过，您才可正式成为造价通会员，可享受造价通基本服务。<br/>
+                      2、邮箱验证成功后，系统赠送100积分。您可以用积分用来兑换正式会员服务天数（<a href="/module/account/my_jifen_duihuan.jsp" style="color: #206AA6;text-decoration: none;">兑换服务</a>）、发布询价、兑换礼品等。<br/>
+                      3、当您忘记密码时，您可以通过该邮箱来找回密码。 <br/>
+
+                    </dd>
+                </dl>
+               <!-- <h2 class="qustion_title"><span>Q:什么是会员套餐？如何购买？</span><span id="question_4" ><a class="answer_down" onclick="opendiv('novice_','question_',4)">解答</a></span></h2>
+                <dl id="novice_4" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                       造价通目前会员套餐包括普通会员，付费会员套餐和VIP会员套餐。付费会员套餐包括：A类会员，B类会员,C类会员，D类会员。如您需要购买造价通会员套餐，请进入造价通会员中心，点击“我的套餐”进入套餐中心。根据您需要的套餐选择购买。如需购买VIP会员套餐，请联系客服。电话：400-888-9639
+                    </dd>
+                </dl> -->
+                
+                
+                
+                  <h2 class="qustion_title"><span>Q:造价通有哪些会员服务？</span><span id="question_4" ><a class="answer_down" onclick="opendiv('novice_','question_',4)">解答</a></span></h2> 
+                
+                <dl id="novice_4" style="display:none;">
+                    <dd>
+                    	<p>目前，造价通会员服务包括基础会员服务与高端会员服务，其中基础会员服务包括A类会员服务、B类会员服务、C类会员服务及D类会员服务；高端会员服务是造价通结合当下工程信息数据管理的高端性需求提出的数据解决方案，即云工程数据解决方案，包括云造价及云采购两大应用体系。</p>
+                    	<p class="p_m_t15"><b>一、基础会员服务</b></p>
+						<p>通过功能栏目或搜索框查询“历史信息价”、“造价通参考价”与“供应商报价”三大价格信息，掌握权威、准确、及时、全面的价格信息；</p>
+						<p>第一时间查看与了解主材价格信息行情、政策法规、新闻资讯等，实时关注市场信息变化；</p>
+						<p>及时收藏供应商信息、供应商报价、造价通参考价，随时导出所需信息；</p>
+						<p>可通过“在线询价”或“定制询价”功能发布材料询价，快速实现询价疑难；</p>
+						<p>享受会员积分赠送，积分累积换取，惊喜连绵；</p>
+						<p>享受造价通平台每年不定期举办的各项特惠回馈活动。</p>
+						
+						<p class="p_m_t15"><b>二、高端会员服务</b></p>
+						<p>云工程数据解决方案是在云存储技术基础上，通过对企业数据应用、管理、存储、成本控制等多项发展需求进行整合与分析后开发出的一套综合性的建设行业云技术解决方案，其核心包括云造价及云采购两大应用体系，也是云储存技术在中国建设行业的延伸与应用体现。</p>
+
+						<p class="p_m_t15"><b>1.云造价</b></p>
+						云造价是云工程数据解决方案在建设工程造价行业领域的核心应用，云造价以平台即服务（造价通）形式，向用户端提供包括企业数据应用、管理、存储、定制等服务内容，用户只需通过 Internet 的使用，就可以在用户端轻松的、低成本的享受到云造价服务。</p>
+						<p>云造价通过企业用户的云空间向企业用户提供建材价格数据服务</p>
+						<p>企业用户通过 Internet 的使用获取信息和服务</p>
+						<p>云造价即服务平台（造价通）与所有企业的云空间联动，创新价值，为企业提供安全、稳定、高效服务</p>
+
+						
+						<p class="p_m_t15"><b>2.云采购</b></p>
+						<p>云采购是云工程数据解决方案在建材采购领域的核心应用，以最新的互联网技术，融入专业服务，通过优化采购信息管理，为企业导入优质建材资源，帮助企业实现建材资源与成本的高度整合与控制，提高企业运作。</p>
+						<p>（1）云采购是针对企业采购前期及采购后期需求情况提出的解决方案；</p>
+						<p>（2）云采购以云存储技术应用来实现供应商与项目信息的管理，体现出安全性</p>
+						<p>（3）云采购为企业提供广阔的供应商资源；</p>
+						<p>（4）项目材料询价、选型、定品牌一站解决；</p>
+						<p>（5）云采购拥有专业的服务团队及规范的供应商推荐标准；</p>
+
+
+                    </dd>
+                   
+                </dl>
+                
+                
+                
+                
+                
+                <h2 class="qustion_title"><span>Q:什么是网上支付？</span><span id="question_5" ><a class="answer_down" onclick="opendiv('novice_','question_',5)">解答</a></span></h2>
+                <dl id="novice_5" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                     网上支付是电子支付的一种形式，它是通过第三方提供的与银行之间的支付接口进行的即时支付方式，这种方式的好处在于可以直接把资金从用户的银行卡中转账到网站账户中，汇款马上到账，不需要人工确认。客户和商家之间可采用信用卡、电子钱包、电子支票和电子现金等多种电子支付方式进行网上支付，采用在网上电子支付的方式节省了交易的开销。
+                    </dd>
+                </dl>
+                <h2 class="qustion_title"><span>Q:网上支付安全吗？</span><span id="question_6" ><a class="answer_down" onclick="opendiv('novice_','question_',6)">解答</a></span></h2>
+                <dl id="novice_6" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                     用户在选择网上支付后，银行卡信息的填写是在各大银行的支付网关上进行的，支付的安全性由银行方面保障。本站不收集用户的任何银行卡资料，所以不会出现您所担心的安全问题。<br/>
+                                                                                     目前国内各大银行的支付网关都采用国际流行的SSL或SET方式加密的。<br/>
+                                                                                     在支付过程中您可以注意到浏览器右下角会出现“小锁”的标记，这个标志代表您目前的所有操作都是在加密保护模式下完成的，也就是说您的任何私人信息在传送过程中都是安全的，不会被任何第三方窃取。 
+
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        
+        
+         <div id="troubleShooting_2" class="right_01" style="display:none;">
+       	  <h1 class="title_02">会员套餐问题</h1>
+            <div class="info_box">
+           	
+                
+                <h2  class="qustion_title"><span>Q:如何在线购买套餐？</span><span id="member_2" ><a class="answer_down" onclick="opendiv('memberq_','member_',2)">解答</a></span></h2>
+                
+                <dl id="memberq_2" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	登陆会员进入会员中心，点击快捷按钮“购买会员套餐”或点击“我的套餐”进入查看会员套餐列表。选择会员套餐类型，并正确填写订单信息，确定无误后提交订单。通过网页在线或账户余额进行在线付款。 付款成功后，即刻获得相关会员服务权限。 
+<a href="/module/account/choice_list.jsp" style="color: #206AA6;text-decoration: none;">我要购买套餐</a>  您还没有注册会员？<a href="/common/register.html" style="color: #206AA6;text-decoration: none;">注册新会员</a>
+
+                    </dd>
+                </dl>
+                
+                
+                 <h2  class="qustion_title"><span>Q:网银因付款额度限制无法全额购买套餐怎么办？</span><span id="member_6" ><a class="answer_down" onclick="opendiv('memberq_','member_',6)">解答</a></span></h2>
+                
+                <dl id="memberq_6" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	如果您的网银因为付款额度受到限制而无法进行在线付款操作。您可以有如下几种方法：
+
+                        <p>（1）您可以通过充值到造价通个人账户，通过网银小额数多次充值到造价通个人账户，再通过造价通个人账户进行套餐购买。</p>
+                        <p><a href="/module/payment/recharge_payment_page.jsp" style="color: #206AA6;text-decoration: none;">我要充值</a></p>
+						<p>（2）您可以线下到银行营业厅申请自己的网银在线交易限制开通。</p>
+						<p>（3）您也可以通过线下转账方式进行购买套餐。造价通银行账号以下：</p>
+						<p>户名：广东中建普联科技有限公司</p>
+						<p>开户行：平安银行广州科韵支行</p>
+						<p>帐号：4420 1568 8000 5250 5238</p>
+
+                    </dd>
+                </dl>
+                
+                
+                <h2  class="qustion_title"><span>Q:下单完成后，可以修改订单吗？</span><span id="member_3" ><a class="answer_down" onclick="opendiv('memberq_','member_',3)">解答</a></span></h2>
+                <dl id="memberq_3" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                 您在下单后，在未付款的状态下都可以在会员中心进行修改我的订单。，通过“我的套餐>套餐购买记录 ”的套餐列表中找到该订单。进入订单详情页面进行修改订单。如果您想要更换别的套餐，您可以重新选择您要的套餐类型，修改订单后点击“确认修改”便可完成订单修改。 
+                                                                                  注：如果您下单后没有在7天内完成订单支付，您的订单将自动取消。
+
+                    </dd>
+                </dl>
+                <h2 class="qustion_title"><span>Q:如何升级会员？</span><span id="member_4" ><a class="answer_down" onclick="opendiv('memberq_','member_',4)">解答</a></span></h2>
+                <dl id="memberq_4" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                      1、如果您是普通会员，如需购买造价通正式会员。您可以登录造价通，在会员中心“我的套餐”中选择需要购买的套餐类型。付款成功后，您即可享受造价通会员服务。<br/>
+                      2、若需要升级为VIP会员。请拨打VIP服务电话400-888-9639咨询。 
+                    </dd>
+                </dl>
+                
+                 <h2 class="qustion_title"><span>Q:关于服务套餐的使用问题</span><span id="member_5" ><a class="answer_down" onclick="opendiv('memberq_','member_',5)">解答</a></span></h2>
+                <dl id="memberq_5" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>                                                                      
+							当会员同时购买了多个不同级别套餐时，并不会覆盖或取消掉之前购买的套餐，而是遵循套餐服务享受的统一规则：<br/>
+							1、享受服务的先后顺序：由高级别到低级别，同级别的按购买时间先后。<br/>
+							2、当低级别的套餐已享受服务一段时间才购买了高级别套餐，参照第一条规则，优先享受高级别套餐，到期后，再继续享受低级别套餐的剩余服务时长。
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        
+        
+        
+         <div id="troubleShooting_3" class="right_01" style="display:none;">
+       	  <h1 class="title_02">注册/认证问题</h1>
+            <div class="info_box">
+           	  <h2 class="qustion_title"><span>Q:如何注册为造价通会员？</span><span id="regiter_1" ><a class="answer_up" onclick="closediv('regiterq_','regiter_',1)">解答</a></span></h2>   
+                <dl id="regiterq_1">
+                	<dt>A:</dt>
+                    <dd>
+						 注册步骤如下<br/>
+							第一步：打开造价通网站，选择注册按钮进入注册页面。<br/>
+							<img src="$common_site/images/vip/help/zc_01.png"></img> <br/>
+							第二步：填写注册会没信息注册页面中进行会员资料填写。请务必正确填写你的会员信息和邮箱地址。 <br/>
+							<img src="$common_site/images/vip/help/zc_02.png"></img> <br/>
+							第三步：注册成功，并进行邮箱验证 <br/>
+							<img src="$common_site/images/vip/help/zc_03.png"></img> <br/>
+							第四步：验证成功。恭喜您正式成为造价通会员。<br/>
+							<img src="$common_site/images/vip/help/zc_04.png"></img> <br/>
+     
+                       
+                    </dd>
+                </dl>
+                
+                <h2  class="qustion_title"><span>Q:为什么注册时填写电子邮箱被提示不正确？ </span><span id="regiter_2" ><a class="answer_down" onclick="opendiv('regiterq_','regiter_',2)">解答</a></span></h2>
+                
+                <dl id="regiterq_2" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+               为什么注册时填写电子邮箱被提示不正确？有以下几个原因：<br/>
+	1.电子邮箱帐号书写不正确。如12334.com 正确的写法应该是：邮箱用户名@域名.<br/>例如concom@concom.cn或concom@concom.com等形式。<br/>
+	2.请注意检查您的输入法是否是纯英文状态，不可中文输入。 <br/>
+	3.如果您还没有电子邮箱的话，建议你可以到126,163,qq,sina,sohu,yahoo等网站申请一个免费电子邮箱。<br/>
+	提示:电子邮箱必须正确填写，用来进行会员开通邮箱验证。已经作为找回用户密码的重要凭证。另外，有效电子邮箱方便我们为你提供更多相关产品与商业信息。 
+
+
+                    </dd>
+                </dl>
+                <h2  class="qustion_title"><span>Q:注册成功后，若没有进行邮箱认证，可以用正常使用会员吗？</span><span id="regiter_3" ><a class="answer_down" onclick="opendiv('regiterq_','regiter_',3)">解答</a></span></h2>
+                <dl id="regiterq_3" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+  用户注册成功后，若没有进行邮箱认证，用户正常使用造价通基本功能。但无法使用个人会员管理中心和查看材料价格。</br>
+ 用户若注册时忘记邮箱验证，可点击会员中心，根据验证步骤进行邮箱验证，验证成功后，正式成为造价通会员，可用用积分兑换相关服务。享受造价通相关会员服务。
+
+
+
+                    </dd>
+                </dl>
+               <!-- <h2 class="qustion_title"><span>Q:注册会员后有什么好处？</span><span id="regiter_4" ><a class="answer_down" onclick="opendiv('regiterq_','regiter_',4)">解答</a></span></h2>
+                <dl id="regiterq_4" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                    普通会员可享受网站的大部分基本功能，新用户免费注册成为造价通会员后，只要完成邮箱验证即可获得100积分。您可以用积分换取会员使用权限，可通过积分发布询价。了解更多积分可查看帮助中心-会员信息问题中的相关积分问题。如需要更加优质服务，可选择购买造价通服务套餐。
+                    </dd>
+                </dl> -->
+                
+                 <h2 class="qustion_title"><span>Q:注册造价通会员账号时，没有收到验证邮件怎么办？</span><span id="regiter_5" ><a class="answer_down" onclick="opendiv('regiterq_','regiter_',5)">解答</a></span></h2>
+                <dl id="regiterq_5" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                      注册成功后，若邮箱没有收到验证邮件，在注册成功提示页面，点击”重新发送验证邮件“。系统将重新发送一封邮件到您邮箱。<br/>
+如果您关闭了注册验证窗口，您可以登录会员，点击“会员中心“。<br/>如果您未验证，提醒你进行验证，
+您也可以用你的注册邮箱给造价通服务邮箱concom@concom.cn发送一封邮件，邮件内容写明原因。<br/>
+
+                    </dd>
+                </dl>
+                
+                
+                <h2 class="qustion_title"><span>Q:填写注册帐号是填错了邮箱怎么办？</span><span id="regiter_6" ><a class="answer_down" onclick="opendiv('regiterq_','regiter_',6)">解答</a></span></h2>
+                <dl id="regiterq_6" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                   如果注册会员时，填写错了自己的邮箱。您可以在验证邮箱的页面中进行修改邮箱。修改后刷新页面后，点击“重新发送验证码”进行邮箱验证操作。
+                    </dd>
+                </dl>
+                
+                
+                
+                
+                
+            </div>
+        </div>
+        
+        
+        
+         <div id="troubleShooting_4" class="right_01" style="display:none;">
+       	  <h1 class="title_02">会员信息问题</h1>
+            <div class="info_box">
+           	 <!-- <h2 class="qustion_title"><span>Q:什么是金币？</span><span id="memberinfo_1" ><a class="answer_up" onclick="closediv('memberinfoq_','memberinfo_',1)">解答</a></span></h2> 
+                
+                <dl id="memberinfoq_1">
+                	<dt>A:</dt>
+                    <dd>
+                                                                                 金币是造价通会员在造价通平台上通过各种关键操作累积获取并可兑换礼品或服务的一种币种。
+                    </dd>
+                </dl>
+                
+
+                
+                <h2  class="qustion_title"><span>Q:如何获得金币？</span><span id="memberinfo_2" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',2)">解答</a></span></h2>
+                
+                <dl id="memberinfoq_2" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	1 成为造价通会员；<br/>
+                    	2 套餐会员升级或推荐他人成为造价通会员可获得金币；<br/>
+                    	3 线上使用询价服务达到一定的量可获得金币。
+
+                    </dd>
+                </dl>
+                <h2  class="qustion_title"><span>Q:如何兑换金币？</span><span id="memberinfo_3" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',3)">解答</a></span></h2>
+                <dl id="memberinfoq_3" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                      1 选取对应的兑换物品→提交申请兑换表→联系销售、客服人员提交申请表→根据约定时间兑换礼品；<br/>
+                      2 金币达到一定的量时，可兑换相对应的服务，例如询价服务，选取服务之后联系相关销售、客服人员，根据约定时间给您开通服务；<br/>
+                      3 参加金币线下兑换活动，可当场兑换相对应的礼物。
+
+                    </dd>
+                </dl>
+                <h2 class="qustion_title"><span>Q:金币兑换服务的一些说明</span><span id="memberinfo_4" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',4)">解答</a></span></h2>
+                <dl id="memberinfoq_4" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                         1 礼包的材质、尺寸、图片和性能具体信息请以实物为准；<br/>
+                         2 更多活动详情请拨打造价通客服热线：020-85548945-812；<br/>
+                         3 兑换后会扣除相应金币，兑换的礼品及兑换金币不能退回；<br/>
+                         4 在法律允许的范围内，中建普联科技有限公司保留对金币活动的解释权。
+                    </dd>
+                </dl>
+                
+                    -->        
+                
+                 <h2 class="qustion_title">Q:积分有什么作用？如何获取积分？ <span id="memberinfo_6" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',6)">解答</a></span></h2>
+                
+                <dl id="memberinfoq_6"  style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                   	  <p><b>积分是造价通平台用户用来获得服务的重要方式之一，其使用方法如下：</b></p>
+                        <p>1、发布询价：发布询价需要消耗积分，发布普通材料询价消耗不少于5积分，最低悬赏积分不少于5积分；非标材料根据不同类别消耗不同的最低悬赏分值。(参考发布询价消耗积分)</p>
+                        <div class="gray_table_box">
+                        	<table>
+                            	<tr>
+                                	<th colspan="2"  width="50%">分类</th>
+                                    <th width="25%">发布消耗积分</th>
+                                    <th width="25%">最低悬赏积分</th>
+                                </tr>
+                                <tr>
+                                	<td colspan="2">普通材料</td>
+                                    <td>5积分</td>
+                                    <td>5积分</td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" rowspan="3">非标材料</td>
+                                    <td width="25%">苗木</td>
+                                    <td>10积分</td>
+                                    <td>10积分</td>
+                                </tr>
+                                <tr>
+                                    <td width="25%">配电柜</td>
+                                    <td>25积分</td>
+                                    <td>25积分</td>
+                                </tr>
+                                <tr>
+                                    <td width="25%">……</td>
+                                    <td>……</td>
+                                    <td>……</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>2、兑换付费会员服务天数，一个省10积分/天 <a href="/module/account/my_jifen_duihuan.jsp" style="color: #206AA6;text-decoration: none;">兑换服务</a></p>
+                       
+                        <p>3、兑换奖品：根据奖品设置的兑换积分进行兑换。</p>
+                    	<p><b>积分获取方式</b></p>
+                        <p>1、成为付费会员：购买不同级别服务，获赠不同量积分</p>
+                        <div class="gray_table_box">
+                        	<table>
+                            	<tr>
+                                	<th width="33%">套餐类型</th>
+                                    <th width="34%">套餐服务</th>
+                                    <th width="33%">获取积分</th>
+                                </tr>
+                                <tr>
+                                    <td>A级服务（3000元/年）</td>
+                                    <td>查看价格区域：一个省</td>
+                                    <td>3000积分</td>
+                                </tr>
+                                <tr>
+                                    <td>B级服务（5000元/年）</td>
+                                    <td>查看价格区域：全国</td>
+                                    <td>5000积分</td>
+                                </tr>
+                                <tr>
+                                    <td>C级服务（8000元/年）</td>
+                                    <td>查看价格区域：全国</td>
+                                    <td>8000积分</td>
+                                </tr>
+                                <tr>
+                                    <td>D级服务（15000元/年）</td>
+                                    <td>查看价格区域：全国</td>
+                                    <td>15000积分</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>2、新用户注册并邮箱验证后获得100积分。<a href="/common/register.html" style="color: #206AA6;text-decoration: none;">注册新会员</a></p>
+                        <p>3、登录后，每天在询价学堂中签到，签到第1-3天可获得1个积分，从第4天开始，连续签到每天可以获得3个积分。</p>
+                        <p>4、回复询价。供应报价回复询价，审核通过后，获得5个积分；材料报价回复询价，审核通过后，获得2个积分。回复的询价被选为"最佳答案"可获得该询价的悬赏积分。悬赏积分的数量由发布询价的用户自定义提供。</p>
+                        <p>5、每月积分赚取排名首位，获得100积分</p>
+                  </dd>
+                </dl>
+                
+                <h2 class="qustion_title">Q: 什么是经验值？如何获取经验值？  <span id="memberinfo_7" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',7)">解答</a></span></h2>
+              	<dl id="memberinfoq_7" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	<p>经验值是造价通新推出的询价学堂等级积分体系。反应造价通用户在造价通平台询价学堂的活跃程度。与用户的<span class="c_red">等级头衔</span>相挂钩。发布询价、回复询价、选择最佳答案等都可增加经验值。<br/>如何获取经验值？见下表：</p>
+                        <div class="gray_table_box">
+                        	<table>
+                            	<tr>
+                                	<th width="26%" colspan="2">操作</th>
+                                    <th width="22%">询价经验值</th>
+                                    <th width="22%">积分</th>
+                                    <th width="30%">说明</th>
+                                </tr>
+                                <tr>
+                                    <td  rowspan="2" width="12%">回复询价</td>
+                                    <td width="14%">供应商报价</td>
+                                    <td>+ 10</td>
+                                    <td>+ 5</td>
+                                    <td class="t_align_l">同一条询价只能回复一次每日积分上限为20积分</td>
+                                </tr>
+                                <tr>
+                                	<td>经验报价</td>
+                                    <td>+ 5</td>
+                                    <td>+ 2</td>
+                                    <td class="t_align_l">同一条询价只能回复一次每日积分上限为20积分</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">回复被选为"最佳回复"</td>
+                                    <td>+ 悬赏积分数</td>
+                                    <td>+ 悬赏积分</td>
+                                    <td class="t_align_l">悬赏积分是由发布询价用户自行设置的</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">每月积分赚取排名首位</td>
+                                    <td>+ 100</td>
+                                    <td>+ 100</td>
+                                    <td class="t_align_l">每月统计一次的积分累计赚取排名</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">发布询价</td>
+                                    <td>+ 悬赏积分数</td>
+                                    <td>- 悬赏积分</td>
+                                    <td class="t_align_l">悬赏积分是由发布询价用户自行设置的，普通材料询价不得低于5积分，非标材料不同类型对应不同的悬赏基本积分数。悬赏积分将不会返还</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">选择"最佳回复"</td>
+                                    <td>+ 10</td>
+                                    <td>无</td>
+                                    <td class="t_align_l"></td>
+                                </tr>            
+                                <tr>
+                                    <td colspan="2">补充说明</td>
+                                    <td>无</td>
+                                    <td>- 2</td>
+                                    <td class="t_align_l">追加1次后再追加，每次需要2积分</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">追加悬赏积分</td>
+                                    <td>+ 追加悬赏积分数</td>
+                                    <td>- 追加悬赏积分数</td>
+                                    <td class="t_align_l">询价有效期内可自行追加悬赏积分，不得低于5积分</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">延长期限</td>
+                                    <td>无</td>
+                                    <td>- 5</td>
+                                    <td class="t_align_l">询价有效期内付出5点积分可延期3天</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </dd>
+                </dl>
+                
+                <h2 class="qustion_title">Q: 等级、经验值、头衔的对应关系？   <span id="memberinfo_8" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',8)">解答</a></span></h2>
+                <dl id="memberinfoq_8" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	<p>询价学堂会员等级、询价经验值、头衔相对应的关系如下表所示。</p>
+                        <div class="gray_table_box">
+                        	<table>
+                            	<tr>
+                                	<th width="33%">等级</th>
+                                    <th width="34%">询价经验值</th>
+                                    <th width="33%">头衔</th>
+                                </tr>
+                                <tr>
+                                    <td>1级</td>
+                                    <td>0-50</td>
+                                    <td>书童</td>
+                                </tr>
+                                <tr>
+                                    <td>2级</td>
+                                    <td>51-250</td>
+                                    <td>书生</td>
+                                </tr>
+                                <tr>
+                                    <td>3级</td>
+                                    <td>251-500</td>
+                                    <td>秀才</td>
+                                </tr>
+                                <tr>
+                                    <td>4级</td>
+                                    <td>501-1000</td>
+                                    <td>举人</td>
+                                </tr>
+                                <tr>
+                                    <td>5级</td>
+                                    <td>1001-2000</td>
+                                    <td>进士</td>
+                                </tr>
+                                <tr>
+                                    <td>6级</td>
+                                    <td>2001-3000</td>
+                                    <td>探花</td>
+                                </tr>
+                                <tr>
+                                    <td>7级</td>
+                                    <td>3001-5000</td>
+                                    <td>榜眼</td>
+                                </tr>
+                                <tr>
+                                    <td>8级</td>
+                                    <td>5001-10000</td>
+                                    <td>状元</td>
+                                </tr>
+                                <tr>
+                                    <td>9级</td>
+                                    <td>10001-20000</td>
+                                    <td>翰林学士</td>
+                                </tr>
+                                <tr>
+                                    <td>10级</td>
+                                    <td>20000以上</td>
+                                    <td>大学士</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </dd>
+                </dl>
+                
+                
+                <h2 class="qustion_title">Q: 关于专业徽章？ <span id="memberinfo_9" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',9)">解答</a></span></h2>
+                <dl id="memberinfoq_9" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	<p>目前造价通提供五种专业徽章，分别是土建，装饰，安装，市政，园林。每个专业四级不同徽章，分别是：通，专家，大师，权威。用户在询价学堂中，相对应专业回复条数达到不同数额可获得对应称号。如在土建类询价中：</p>
+						<p>回复询价达到50以上，系统自动授予“土建通”称号，并获得相应徽章；</p>
+						<p>回复询价达到100以上，获得“土建专家”称号；并获得相应徽章；</p>
+						<p>回复询价达到1000以上，获得“土建大师”称号；并获得相应徽章；</p>
+						<p>回复询价达到10000以上，获得“土建权威”称号；并获得相应徽章；</p>
+                    
+                        <p><b>专业荣誉徽章获取条件：</b></p>
+                        <div class="gray_table_box">
+                        	<table>
+                            	<tr>
+                                	<th width="25%">专业</th>
+                                    <th width="25%">回复询价条数</th>
+                                    <th width="25%">荣誉称号</th>
+                                    <th width="25%">专业徽章</th>
+                                </tr>
+                                <tr>
+                                	<td rowspan="4">土建</td>
+                                    <td>50 +</td>
+                                    <td>土建 通</td>
+                                    <td align="center"><span class="i_huizhang huizhang_tj_t"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 +</td>
+                                    <td>土建 专家</td>
+                                    <td align="center"><span class="i_huizhang huizhang_tj_zj"></span></td>
+                                </tr>
+                                <tr>
+       
+                                    <td>1000 +</td>
+                                    <td>土建 大师</td>
+                                    <td align="center"><span class="i_huizhang huizhang_tj_ds"></span></td>
+                                </tr>
+                                <tr>
+                         
+                                    <td>10000 +</td>
+                                    <td>土建 权威</td>
+                                    <td align="center"><span class="i_huizhang huizhang_tj_qw"></span></td>
+                                </tr>
+                                <tr>
+                                	<td rowspan="4">安装</td>
+                                    <td>50 +</td>
+                                    <td>安装 通</td>
+                                    <td align="center"><span class="i_huizhang huizhang_az_t"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 +</td>
+                                    <td>安装 专家</td>
+                                    <td align="center"><span class="i_huizhang huizhang_az_zj"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000 +</td>
+                                    <td>安装 大师</td>
+                                    <td align="center"><span class="i_huizhang huizhang_az_ds"></span></td>
+                                </tr>
+                                <tr>
+
+                                    <td>10000 +</td>
+                                    <td>安装 权威</td>
+                                    <td align="center"><span class="i_huizhang huizhang_az_qw"></span></td>
+                                </tr>
+                                          <tr>
+                                	<td rowspan="4">装饰</td>
+                                    <td>50 +</td>
+                                    <td>装饰 通</td>
+                                    <td align="center"><span class="i_huizhang huizhang_zs_t"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 +</td>
+                                    <td>装饰 专家</td>
+                                    <td align="center"><span class="i_huizhang huizhang_zs_zj"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000 +</td>
+                                    <td>装饰 大师</td>
+                                    <td align="center"><span class="i_huizhang huizhang_zs_ds"></span></td>
+                                </tr>
+                                <tr>
+
+                                    <td>10000 +</td>
+                                    <td>装饰 权威</td>
+                                    <td align="center"><span class="i_huizhang huizhang_zs_qw"></span></td>
+                                </tr>
+                                          
+                                          <tr>
+                                	<td rowspan="4">园林</td>
+                                    <td>50 +</td>
+                                    <td>园林 通</td>
+                                    <td align="center"><span class="i_huizhang huizhang_yl_t"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 +</td>
+                                    <td>园林 专家</td>
+                                    <td align="center"><span class="i_huizhang huizhang_yl_zj"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000 +</td>
+                                    <td>园林 大师</td>
+                                    <td align="center"><span class="i_huizhang huizhang_yl_ds"></span></td>
+                                </tr>
+                                <tr>
+
+                                    <td>10000 +</td>
+                                    <td>园林 权威</td>
+                                    <td align="center"><span class="i_huizhang huizhang_yl_qw"></span></td>
+                                </tr>
+                                                                          <tr>
+                                	<td rowspan="4">市政</td>
+                                    <td>50 +</td>
+                                    <td>市政 通</td>
+                                    <td align="center"><span class="i_huizhang huizhang_sz_t"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 +</td>
+                                    <td>市政 专家</td>
+                                    <td align="center"><span class="i_huizhang huizhang_sz_zj"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000 +</td>
+                                    <td>市政 大师</td>
+                                    <td align="center"><span class="i_huizhang huizhang_sz_ds"></span></td>
+                                </tr>
+                                <tr>
+
+                                    <td>10000 +</td>
+                                    <td>市政  权威</td>
+                                    <td align="center"><span class="i_huizhang huizhang_sz_qw"></span></td>
+                                </tr>
+                                          
+                               
+                            </table>
+                        </div>
+                    </dd>
+                </dl>
+                
+                
+                
+               <!-- <h2 class="qustion_title"><span>Q:没开通网上银行怎么办？</span><span id="memberinfo_5" ><a class="answer_down" onclick="opendiv('memberinfoq_','memberinfo_',5)">解答</a></span></h2>
+                <dl id="memberinfoq_5" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                        根据您持有的银行卡，每个银行都有不同的网上银行使用规定。有的银行需要您本人持有效身份证件到该银行的营业网点办理网上银行申请手续，有的银行提供在银行网站在线申请网上银行服务的方式，有的银行则提供柜台、网站、电话等多种申请和开通渠道。
+                    </dd>
+                </dl> -->
+                
+                
+                
+                
+            </div>
+        </div>
+        
+        
+        
+          <div class="right_01" id="troubleShooting_5" style="display:none;">
+       	  <h1 class="title_02">询价相关问题</h1>
+            <div class="info_box">
+           	  <h2 class="qustion_title">Q: 如何发布询价？ <span id="askPrice_1" ><a class="answer_up" onclick="closediv('askPriceq_','askPrice_',1)">解答</a></span></h2>
+                
+                <dl id="askPriceq_1" >
+                	<dt>A:</dt>
+                    <dd>
+                        <p>登录造价通，点击导航"<a href="/ask/ask_index.html" style="color: #206AA6;text-decoration: none;">询价学堂</a>"进入询价页面；点击"<a style="color: #206AA6;text-decoration: none;" href="/ask/ask_choosecid.html">我要发布询价</a>"按钮，页面跳转至发布询价页面进行填写询价信息；</p>
+               	    	<p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img01.png" width="560" height="173" /></p>
+                        <p class="p_m_t10">也可登录会员中心后，在"我的询价"管理模块下发布询价。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img02.png" width="560" height="170" /></p>
+                        <p class="p_m_t10"><b>发布流程：</b></p>
+                        <p>如果您的帐号还没有设置昵称，将弹出填写昵称窗口进行昵称填写。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img16.png" width="560" height="230" /></p>
+                        <p class="p_m_t10">第一步：选择材料分类,选择需要询价的材料分类后，点击"下一步"按钮。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img03.png" width="560" height="539" /></p>
+                        <p class="p_m_t10">第二步：填写内容和悬赏积分，点击"发布"按钮。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img04.png" width="560" height="740" /></p>
+                        <p class="p_m_t10">页面会提示询价提交成功，该条询价需等待审核！此时您可选择继续询价，或者查看该条询价的详细内容。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img05.png" width="560" height="176" /></p>
+                    </dd>
+                </dl>
+                
+                <h2 class="qustion_title">Q: 如何维护发布的询价？ <span id="askPrice_2" ><a class="answer_down" onclick="opendiv('askPriceq_','askPrice_',2)">解答</a></span></h2>
+              	<dl id="askPriceq_2" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                        <p><b>修改/删除询价：</b></p>
+                        <p>
+                        	修改询价和删除询价只能在询价审核期间操作。<br/>
+                            登录会员中心，进入"我的询价-我发布的询价"查看所发布的所有询价；<br/>
+                            找到需要修改的"审核中"询价，点击"修改"新窗口打开填写询价信息页面；<br/>
+                            点击"删除"可删除该条询价（<span class="c_red">注：审核通过的询价不允许修改和删除</span>）
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img06.png" width="560" height="175" /></p>
+                        <p class="p_m_t10"><b>选择最佳回复：</b></p>
+                        <p>
+                        	对已审核通过询价，可查看询价回复，并选择任何一条作为最佳回复。<br/>
+                            登录会员中心，进入"我的询价-我发布的询价"查看所发布的所有询价，找到需要处理的询价，点击"处理"按钮。
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img07.png" width="560" height="176" /></p>
+                        <p class="p_m_t10">
+                        	新窗口打开询价详情页查看所有的询价回复，找到满意的询价回复，点击"选为最佳回复"即可。 
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img08.png" width="560" height="319" /></p>
+                        <p class="p_m_t10"><b>补充说明：</b></p>
+                        <p>在询价有效期内，您可以对发布的询价进行补充说明。补充说明第二次补充说明起每次需支付2积分。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img16.png" width="560" height="240" /></p>
+                        <p class="p_m_t10"><b>追加悬赏：</b></p>
+                        <p>如您需要对询价进行追加悬赏，您可以进入您的询价详细页面，点击"追加悬赏"按钮，设置追加的悬赏金额进行追加悬赏操作。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img17.png" width="560" height="230" /></p>
+                        <p class="p_m_t10"><b>延长期限：</b></p>
+                        <p>如您的询价在有效期即将过期的情况下仍然没有询价回复或是没有需要的最佳回复答案，您可以通过延长期限，等待更多的询价回复（<span class="c_red">注：过期的询价，其他用户无法对您的询价进行回复，延长期限需要在有效期内操作</span>）</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img18.png" width="560" height="223" /></p>
+                    </dd>
+                </dl>
+                
+                <h2 class="qustion_title">Q: 如何回复询价？ <span id="askPrice_3" ><a class="answer_down" onclick="opendiv('askPriceq_','askPrice_',3)">解答</a></span></h2>
+              	<dl id="askPriceq_3" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                    	<p><b>回复询价</b></p>
+                        <p>
+                        	登录造价通，进入 "询价学堂"页面，可通过点击页面的"待解决询价"或通过搜索查找待解决回复的询价，进入询价详情页面。 
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img09.png" width="560" height="356" /></p>
+                        <p class="p_m_t10">
+                        	回复询价包括厂商报价回复和经验报价回复。回复询价只能在"厂商报价"和"经验报价"之中选择其中一个进行回复，不可以都选择填写来进行回复。
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img19.png" width="560" height="281" /></p>
+                        <p class="p_m_t10" align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img20.png" width="560" height="250" /></p>
+                        <p class="p_m_t10">填写回复信息，点击"提交"按钮后等待系统审核。此时您可选择继续回复其他询价，或者查看该条询价的详细内容。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img21.png" width="560" height="175" /></p>
+                        <p class="p_m_t10"><b>完善我的回复</b></p>
+                        <p>可对自己回复的询价进行补充完善。</p>
+                        <p>登录会员中心，，进入"我的询价-我回复的询价"，点击目标询价，新窗口打开询价详情页面。</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img22.png" width="560" height="323" /></p>
+                        <p class="p_m_t10">点击"完善我的回复"</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img13.png" width="560" height="162" /></p>
+                        <p class="p_m_t10">展开完善回复框</p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img14.png" width="560" height="352" /></p>
+                    </dd>
+                </dl>
+                
+                <h2 class="qustion_title">Q: 发布的询价过期了怎么办？ <span id="askPrice_4" ><a class="answer_down" onclick="opendiv('askPriceq_','askPrice_',4)">解答</a></span></h2>
+              	<dl id="askPriceq_4" style="display:none;">
+                	<dt>A:</dt>
+                    <dd>
+                        <p>
+                        	发布询价都有期限限制，如在询价有限时间内没有答案回复，或是在有效期限内没有选择最佳回复。该询价将过期。过期的询价用户无法进行询价回复。对于过期的询价，你可以通过向堂主求助获得询价回复。 
+                        </p>
+                        <p align="center"><img src="$common_site/images/zjt/help/img/xunjia_help_img23.png" width="560" height="326" /></p>
+                    </dd>
+                </dl>
+                
+                
+            </div>
+        </div>
+        
+        
+        
+        
+  </div>
+    <div class="mask_layer" style="display:none;" id="mask_layer"></div>
+	#parse($footer_dir)
+		<script type="text/javascript">
+        	$(document).ready(function(){
+        		init();
+        	});
+        </script>
+        <script type="text/javascript" src="$common_site/js/common/jquery.floatbox.js"></script>
+		<script type="text/javascript" src="$common_site/js/zjt/help/help_flash.js"></script>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-18131443-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>

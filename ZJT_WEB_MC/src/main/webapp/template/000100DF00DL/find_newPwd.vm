@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找回密码造价通($dataInfo.province)</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/member_center/my_profile/my_profile.css" />
+<link rel="stylesheet" type="text/css" href="http://c1.ccwcw.com/js/plugins/formValidator3.3/style/validator.css" />
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+<script type="text/javascript" src="http://c1.ccwcw.com/js/plugins/formValidator3.3/formValidator_min.js"></script>
+<script type="text/javascript" src="http://c1.ccwcw.com/js/plugins/formValidator3.3/formValidatorRegex.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/findPwd/find_newPwd.js"></script>
+</head>
+
+<body>
+<!--	header star	-->
+<div id="header_box">
+    <div id="header" style="margin:10px auto 0;">
+        <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">找回密码</span></div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div class="co_01 border_1">
+
+	<div class="find_psword_box">
+    	<ul class="find_steps clearfix">
+        	<li><span>1</span>填写您验证的邮箱</li>
+            <li class="gray_jt"></li>
+            <li><span>2</span>接收密码找回邮件</li>
+            <li class="gray_jt"></li>
+            <li class="cur"><span>3</span>重置密码</li>
+        </ul>
+        
+        <div class="find_conform">
+        	
+            <div class="find_psword_li">
+            	<div class="l">重置密码：</div>
+                <div class="c">
+                	<input id="pwd" type="password" class="txt">
+                </div>
+                <div>
+                   <span id="pwdTip" style="line-height: 29px;"></span>
+                </div>
+            </div>
+            
+             <div class="find_psword_li">
+             	<div>
+                    <label>&nbsp;</label>
+                                                            安全强度：<span id="pw_word"></span>
+                    <span class="pw_line pw_none" id="pw_none"></span>
+                    <span class="pw_line pw_luo" id="pw_luo"></span>
+                    <span class="pw_line pw_zhong" id="pw_zhong"></span>
+                    <span class="pw_line pw_strong" id="pw_strong"></span>
+                </div>
+             </div>
+            
+            <div class="find_psword_li">
+            	<div class="l">确认密码：</div>
+                <div class="c">
+                	<input id="reguseryzm" type="password" class="txt" onblur="valConfirmPwd();">
+                </div>
+                <div>
+                   <span id="reguseryzmTip" style="line-height: 29px;"></span>
+                </div>
+            </div>
+            
+            <div class="find_psword_li">
+            	<div class="l">&nbsp;</div>
+                <div class="c">
+                	<a href="javascript:void(0);" onclick="submitInfo();return false;" class="btn_login">提交</a>
+                </div>
+                <div class="r"></div>
+            </div>
+        	
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

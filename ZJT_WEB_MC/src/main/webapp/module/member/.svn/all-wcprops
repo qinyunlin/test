@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member
+END
+fac_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/fac_list.jsp
+END
+member_scoreDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_scoreDetail.jsp
+END
+member_app_withdrawal_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_withdrawal_list.jsp
+END
+scoreDetail_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/scoreDetail_list.jsp
+END
+scoreDetail_list_enterprise.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/scoreDetail_list_enterprise.jsp
+END
+member_del.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_del.jsp
+END
+purchase_member_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/purchase_member_list.jsp
+END
+member_auditLog.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_auditLog.jsp
+END
+member_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_list.jsp
+END
+member_app_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_list.jsp
+END
+fac_info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/fac_info.jsp
+END
+purchase_member_lock_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/purchase_member_lock_list.jsp
+END
+member_reNewLog.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_reNewLog.jsp
+END
+member_count_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_count_list.jsp
+END
+member_app_lock_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_lock_list.jsp
+END
+member_app_statistics_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_statistics_list.jsp
+END
+purchase_member_info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/purchase_member_info.jsp
+END
+member_app_tbDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_tbDetail.jsp
+END
+scoreCount_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/scoreCount_list.jsp
+END
+member_vas.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_vas.jsp
+END
+member_info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_info.jsp
+END
+member_app_info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_app_info.jsp
+END
+member_vas_his.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/member_vas_his.jsp
+END
+tbDetail_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/module/member/tbDetail_list.jsp
+END

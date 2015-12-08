@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>询价学堂_发布询价_造价通($dataInfo.province)</title>
+		<meta name="description"
+        	content="全国首创一对一人工询价服务模式，高效优质地提供非标建材价格等信息的人工服务，有效地弥补了政府信息价覆盖面有限的局面，完美地解决了困扰造价行业多年的顽疾。"/>
+        <meta name="keywords"	
+        	content="询价信息、造价咨询。"/>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" type="text/css"
+
+
+ 
+
+    </head>
+<body>
+#parse($header_dir)
+   <div class="crumb">
+       <ul id="crumb_link">
+			<li class="crumb_hp"><a href="/">首页</a></li>
+		    <li><a href="/ask/ask_index.html">询价学堂</a></li>
+		    <li>发布询价</li>
+       </ul>
+   </div>
+<div id="xunjia_content" style="text-align:left;">
+	<div class="border_1_gray">
+    	<h1 class="title_name">发布询价</h1>
+        <div class="fabu_xj_steps_02"></div>
+        <div class="xz_fb_tips"><span>温馨提示：</span>请详细填写材料信息，询价工作人员将更准确的为您询价。</div>
+        <div class="form_box">
+        	 
+            <div class="xunjia_info_box clearfix">
+           
+            	<div class="l">材料分类：</div>
+                <div class="c" id="subCidName"></div>
+                <div class="r"></div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l"><em>*</em>材料名称：</div>
+                <div class="c"><input id="name" name="name" type="text" class="txt input_box_border input_w_300" /></div>
+                <div class="r">
+                	<u class="c_red_01" id="nameTip"></u>
+                </div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l"><em>*</em>规格型号：</div>
+                <div class="c"><input id="spec" name="spec" type="text" class="txt input_box_border input_w_300" /></div>
+                <div class="r">
+                	<u class="c_red_01" id="specTip"></u>
+                </div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l"><em>*</em>数　　量：</div>
+                <div class="c">
+                	<input id="amount"  name="" type="text" class="txt input_box_border" style="width:146px;" />
+                    <select id="unit" style="width:134px;">
+            
+                    </select>
+                </div>
+                <div class="r">
+                	<u class="c_red_01" id="amountTip"></u>
+                	<u class="c_red_01" id="unitTip"></u>
+                </div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l"><em>*</em>档　　次：</div>
+                <div class="c">
+                	<div>
+                         <select id="grad" name="grad" class="input_origin" style="width:148px;height:25px">
+                                
+                              
+                            </select>
+                    </div>
+                </div>
+                <div class="r">
+                	<u class="c_red_01" id="gradTip"></u>
+                </div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">报价地区：</div>
+                <div class="c">
+                	<div>
+                       <select id="ProvinceSelect" name="addr" class="input_origin" style="width:148px;height:25px">
+                            <option value="全国">
+                                                                                                                全国
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="r"></div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">用　　途：</div>
+                <div class="c">
+                	<div>
+                        <select id="purpose" name="purpose" class="input_origin" style="width:148px;height:25px">
+                            <option value="概算">
+                                                                                                               概算
+                            </option>
+                            <option value="预算">
+                                                                                                               预算
+                            </option>
+                            <option value="招标控制">
+                                                                                                               招标控制
+                            </option>
+                            <option value="投标">
+                                                                                                               投标
+                            </option>
+                            <option value="结算">
+                                                                                                               结算
+                            </option>
+                            <option value="采购">
+                                                                                                                采购
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="r"></div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">费用说明：</div>
+                <div class="c">
+                	<span><input id="carriage"name="carriage" type="checkbox" />运费</span>
+                    <span><input id="tax" name="tax"  type="checkbox"  />税费</span>
+                    <span><input id="keepFee" name="keepFee" type="checkbox"/>采保</span>
+                </div>
+                <div class="r"></div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">有&nbsp;效&nbsp;期：</div>
+                <div class="c"><input id="validDate" type="text" class="txt input_box_border input_w_70"  value="7"/> 天<u class="c_gray_999">（有效期范围限制在3-15天内，默认为7天）</u></div>
+                <div class="r"></div>
+            </div>
+            <div class="xunjia_info_box clearfix" style="padding-left:25px;">
+            	<a href="javascript:void(0);" onclick="show('beizhu');show('qx_beizhu');hide('tj_beizhu');return false;" id="tj_beizhu">添加备注</a>
+                <a href="javascript:void(0);" onclick="hide('beizhu');show('tj_beizhu');hide('qx_beizhu');return false;" id="qx_beizhu" style="display:none;">取消备注</a>
+                
+                <a href="javascript:void(0);" onclick="show('fujian');show('qx_fujian');hide('tj_fujian');return false;" id="tj_fujian" class="m_left_20">添加图片</a>
+                <a href="javascript:void(0);" onclick="multiCanclePic();return false;" id="qx_fujian" style="display:none;" class="m_left_20">取消图片</a>
+            </div>
+            <div class="xunjia_info_box01 clearfix" id="beizhu" style="display:none;">
+            	<div class="l">备注要求：</div>
+                <div class="c"><textarea id="notes" name="notes" cols="" rows="" class="txt input_box_border" style="width:300px;
+                height:80px;"></textarea></div>
+                <div class="r"></div>
+            </div>
+            
+            <div id="fujian" style="display:none;">
+                <div class="xunjia_info_box clearfix" style=" margin:10px 0 5px;">
+                    <div class="l">上传图片：</div>
+                    <div  class="c">
+                    	<a href="javascript:void(0);" name="logoFile"  onclick="showUpload();return false;">上传</a>
+                        <u class="c_gray_999">单个附件容量最大不超过1M,格式限制为JPG,PNG</u>
+                    </div>
+                </div>
+                <ul class="file_list_box" id="image1">
+                   
+                </ul>
+            </div>
+            
+            <div class="dashed_line"></div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">悬赏积分：</div>
+                <div class="c" style="width:390px;">
+                	<input id="score" type="text"  class="txt input_box_border input_w_70" value="5"/>
+                    <label class="input_icon_jinbi"></label>
+                	<u class="c_gray_999">（发布询价，悬赏不可少于<u id="subcidScore">5</u>积分 且不可多于50积分）</u>
+                </div>
+                <div class="r"><u class="c_red_01" id="scoreTip"></u></div>
+            </div>
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">您的积分余额：</div>
+                <div class="c"><u class="c_red_01" id="currScore"></u><label class="input_icon_jinbi"></label><a target="_blank"  href="/service/cjwt.jsp?type=member_6" class="m_left_20">如何获得积分？</a></div>
+                <div class="r"></div>
+            </div>
+            
+            <div class="xunjia_info_box clearfix" id="toHisInquiry" style="display:none;">
+            	<div class="l">向TA询价：</div>
+                <div class="c" >
+                	<ul class="ask_expert_name">
+                    	<li><a onclick="cancelToHisInquery();" class="closed_ask_expert_name f_right"></a><u class="text_overflow" title=""  id="nickName"></u></li>
+                    </ul>
+                </div>
+                <div class="r"></div>
+            </div>
+            
+            <div class="xunjia_info_box clearfix">
+            	<div class="l">验 证 码：</div>
+                <div class="c">
+                	<input id="codeValue" name="codeValue" type="text" class="txt input_box_border input_w_70 f_left" />
+                    <div class="yzm_box f_left"><img id="imgCode" src="/authImg"/></div>
+                    <u class="c_gray_999 f_left " onclick="refreshCode()" style=" cursor:pointer;">看不清，换一个</u>
+                </div>
+                <div class="r"></div>
+            </div>
+        </div>
+        <div class="form_box" style="padding:0 0 40px 268px;" id="savaAsk">
+        	<input type="button" class="btn_step_org" value="发  布" onclick="saveAsk()" />
+            <a href="javascript:void(0);" onclick="goHistory();history.go(-1);return false;" class="m_left_20">返回上一步>></a>
+        </div>
+        
+        
+    </div>
+   
+    <script type="text/javascript" src="http://c1.ccwcw.com/js/plugins/formValidator3.3/formValidator_min.js"></script>
+    <script type="text/javascript" src="http://c1.ccwcw.com/js/plugins/formValidator3.3/formValidatorRegex.js"></script>       
+    <script type="text/javascript"  src="$common_site/js/zjt/commonJS/zhcn_db.js"></script>
+    <script type="text/javascript"  src="$common_site/js/common/zhcn_select.js"></script>
+    <script type="text/javascript" src="$common_site/js/zjt/commonJS/score_db.js"></script>
+    <script type="text/javascript" src="$common_site/js/common/score_util.js"></script>
+    <script language="javascript"  src="$common_site/js/common/msg_zhcn.js"></script>
+    <script language="javascript" src="$common_site/js/common/grade_db.js"></script>
+        <script language="javascript" src="$common_site/js/plungins/My97DatePicker4.2/WdatePicker.js"></script>
+  <script type="text/javascript" src="$common_site/js/plungins/file_upload/upload_file.js"></script>
+  <script language="javascript"  src="$common_site/js/zjt/ask/ask_release.js"></script>
+</div>
+
+#parse($footer_dir)
+		<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_common.css" />
+        <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/fabu_xj_step.css" />
+        <link rel="stylesheet" type="text/css" href="http://c1.ccwcw.com/js/plugins/formValidator3.3/style/validator.css" />
+</body>
+ <div class="Module_pop" id="update_ration_price_div" style="width:250px;z-index: 19750; height:70px; position:absolute;margin-left:-125px; margin-top:-35px; display:none;">
+	<div class="tm_c"></div>
+    <div class="content" style=" width:200px; height:40px;">
+    	<div class="tips_box"><span class="i_gx"></span>正在上传图片中...</div>
+    </div>
+</div>
+ <div class="Module_pop" style="width:250px;z-index: 1001; height:70px; position:absolute;margin-left:-125px; margin-top:300px; display:none;" id="tip_fbing">
+	<div class="tm_c"></div>
+    <div class="content" style=" width:200px; height:40px;">
+    	<a title="关闭" onclick="hide('tip_fbing');hide('mask_layer');" href="javascript:void(0)" class="close_pop"></a>
+    	<div class="tips_box"><span class="i_loading"></span>正在发布中...<br/></div>
+    </div>
+</div>
+ <div class="mask_layer" id="mask_layer" style="display:none; z-index: 999;"></div>
+</html>

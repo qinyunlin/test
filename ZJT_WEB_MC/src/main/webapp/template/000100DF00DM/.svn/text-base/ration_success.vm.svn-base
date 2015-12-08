@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		 <title>造价通参考价_($dataInfo.province)最准确的建材参考价格_($dataInfo.province)造价通</title>
+		<meta name="description"
+			content="造价通参考价，每月发布最新的建材价格信息，材料价格走势，覆盖土建、装饰、安装、市政、园林五大类别，涵盖600多个材料分类，为($dataInfo.province)各地提供客观、精准的材料价格预算参考依据。"/>
+		<meta name="keywords"	
+			content="参考价，主材价格，材料价格参考，预算价格，价格走势"/>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/common/common.css">
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/common/zjtcn.css">
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/zjt/ration/ration_success.css">
+
+		<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/dataStore.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/msg_zhcn.js"></script>
+		<script type="text/javascript" src="$common_site/js/common/common.js"></script>
+	</head>
+	<body>
+		#parse($header_dir)
+		<div id="main">
+			<div id="error_content">
+				<div class="top">
+					<div class="correct_btn"></div>
+				</div>
+
+				<div id="correct_success" style="margin: 0 auto;">
+					<div class="content">
+						<div class="banner_center">
+							<div class="banner_left">
+								<div class="banner_right"></div>
+							</div>
+						</div>
+
+						<div class="content_left">
+							<div class="content_right">
+								<div style="width: 98%; margin: 0 auto;">
+									<div class="content_left_l">
+										<ul>
+											<li class="content_house"></li>
+											<li class="content_title strong">
+												信息内容纠错操作成功！
+											</li>
+										</ul>
+										<ul style="height: 65px;">
+											<li class="content_font">
+												工作人员审核后会及时更新信息
+											</li>
+											<li class="content_font">
+												感谢您一直以来对造价通的支持
+											</li>
+											<div class="clearing"></div>
+										</ul>
+										<ul style="width: 50%; margin-left: 35px; _margin-left: 18px;">
+											<li class="return_gov" onclick="gogov_index()"></li>
+											<li class="return_index" onclick="goindex()"></li>
+										</ul>
+									</div>
+									<div class="content_left_r">
+										<img
+											src="$common/images/zjt/ration/butterfly.gif" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bottom_center">
+							<div class="bottom_left">
+								<div class="bottom_right"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript"
+			src="$common_site//js/zjt/ration/correct_success.js"></script>
+		#parse($footer_dir)
+	</body>
+</html>

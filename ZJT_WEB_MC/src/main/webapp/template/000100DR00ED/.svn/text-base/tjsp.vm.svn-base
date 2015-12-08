@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  </head>
+  <body>
+  <div class="bottom_tjsp">
+	<div class="title_banner" style="width: 950px;">
+		<div class="title_banner_left"></div>
+		<div class="title_banner_center" style="width: 944px;">
+			<div class="title_icon"></div>
+			<div class="title_text">
+				推荐商铺：
+			</div>
+		</div>
+		<div class="title_banner_right"></div>
+	</div>
+	<div class="bottom_tjsp_container">
+		<div class="bottom_tjsp_div" id="bottom_tjsp">
+		
+		</div>
+		<div id="bottom_tjsp_template" style="display:none">
+			<div class="bottom_tjsp_content">
+				<div class="img_container">
+					<div class="img_div">
+						<a  target="_blank" href="/shop/@{eid}" >
+							<img width="133px" height="88px" src="@{logo|changeLogo,80}"/>
+						</a>
+					</div>
+				</div>
+				<div class="tjsp_name">
+					<a  target="_blank" class="black_a" href="/shop/@{eid}" style="font-weight: bold">@{fname|trim_zhcn,34}</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+<script>
+//配置初始化方法
+$(document).ready(function() {
+	getSptj();
+});	
+//推荐商铺的数据获取
+function getSptj() {
+	var name = ConCom.getCurArgs("name");
+	//如果查询条件没有输入的话，不发起请求
+	if(name==undefined)
+		return ;
+	store_sp = new DataStore({
+				url : '/ep/EpShopServlet',
+				baseParam : {
+					type : 1,
+					page : 1,
+					pageSize : 5,
+					content : 'name~' + name
+				},
+				bindType : 'template',
+				template : 'bottom_tjsp_template',
+				templateObj : 'bottom_tjsp',
+				isShowImg : false,
+				callback:"changeshop"
+			});
+	store_sp.load();
+};
+//如果没有查到符合条件的数据，则重新查一遍
+function changeshop(){
+	if(store_sp.data["result"].length<1){
+		store_sp.baseParam["content"]="";
+		store_sp.load();
+	}
+		
+};
+</script>
+
+
+  </body>
+</html>

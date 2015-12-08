@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>申请云采购</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/reset.css" />
+		<link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/registration_common.css" />
+		<link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/cgsjs_common.css"/>
+		<link rel="stylesheet" type="text/css" href="http://c1.ccwcw.com/js/plugins/formValidator3.3/style/validator.css" />
+
+	</head>
+
+	<body>
+    #parse($wcw_header)
+<div id="top_box">
+	<div class="top_banner">
+    	<div class="top_info">
+    	    <div class="steps_sqz" title="服务申请开通中..." id="sqz_text" style="display:none;right:175px;">欢迎您：服务申请开通中...</div>
+    	    <div class="steps_sqz" title="服务已到期，请联系客服进行续费..." id="cggq_text" style="display:none;">服务已到期，请联系客服进行续费...</div>
+        	<a id="zcsq_bt" href="/common/zcsqb.html"  class="btn_zcsq" title="注册申请云采购">注册申请云采购</a>
+            <a href="#" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="btn_zxzx" title="在线咨询">在线咨询</a>
+        </div>
+    </div>
+</div>
+
+<div id="contanier01" style="text-align:left">
+	<span class="shubiao_bg"></span>
+
+    <div id="sqz_div" class="tips_sqz" style="display:none;">您的<span class="font_cggj">云采购</span>服务正在申请开通中，网材网客服将在第一时间联系您！您也可以通过页面上方联系方式直接联系客服！</div>
+        <div id="gq_div" class="tips_sqz" style="display:none;">您的<span class="font_cggj">云采购</span>服务已到期，网材网客服将在第一时间联系您进行续费操作！您也可以通过页面上方联系方式直接联系客服！</div>
+    <h1 class="title_bg title_01"></h1>
+    <div class="bg_01">
+    	<div class="fw_js_box"></div>
+    </div>
+    <div class="bg_01">
+    	<div class="fw_info">
+        	<h1 class="info_title info_t_01" title="云存储技术应用数据库"></h1>
+            <div class="fw_info_box">
+            	<p>建立供应商、项目、求购、招募信息库，企业通过数据托管，实现采购信息的安全性、动态性管理；</p>
+                <p>为企业提供广阔的供应商资源，并拥有专业的服务团队及规范的供应商推荐标准；</p>
+                <p>为企业导入优质建材资源，帮助企业实现建材资源与成本的高度整合与控制。</p>
+            </div>
+        </div>
+        <div class="fw_info">
+        	<h1 class="info_title info_t_02" title="高端服务特色"></h1>
+            <div class="fw_info_box">
+            	<p>向企业推荐一定数量符合资质、档次、价格区间要求的供应商品牌；</p>
+                <p>解决一些特定性材料（例如槽钢、工字钢）的采购，对于这种需求量少但又不可缺的材料，快速的开展采购尤为重要。</p>
+            </div>
+        </div>
+        <div class="fw_info" style="padding-bottom:50px;">
+        	<h1 class="info_title info_t_03" title="与企业内部信息管理系统对接"></h1>
+            <div class="fw_info_box">
+            	<p>云采购是建立在企业信息数据管理系统上的采购解决方案，能够动态的跟企业内部信息数据管理系统保持实时性的衔接与同步；</p>
+                <p>同时能在确保信息安全的情况下，实现企业内部供应商信息资源的共享。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/purchasing_register.js"></script>
+#parse($wcw_footer)
+
+				
+	</body>
+</html>

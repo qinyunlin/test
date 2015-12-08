@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>网材网_涂料首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css"/>
+	
+  </head>
+  
+  <body>
+  
+  <div id="aljs">
+                                   
+					<div class="title_banner" style="width: 277px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width: 271px;">
+							<div class="title_icon"></div>
+							<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020203/')">
+								<div class="title_text">案例介绍</div>
+							</a>
+							<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020203/')"  target="_blank">更多＞＞</a>
+						</div>
+						
+						<div class="title_banner_right"></div>
+					</div>
+					<div class="aljs_content">
+					
+						<div class="aljs_content_top">
+						
+							 $!map.clear()
+				                    	$!map.put("tpath", "/20/2002/200202/20020203/")
+				                    	$!map.put("isTop", "1")
+				                    	#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))  
+				                    	#foreach($obj in $list)
+				                	
+							<div class="aljs_content_img">
+						
+								<a  target="_blank" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())">
+								<img width="100px" height="78px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" />
+								</a>
+							
+							</div>
+							<div class="aljs_content_info">
+								<div class="aljs_content_title">
+								#if($!obj.getIssueType()=="1")
+									<a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"  style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),18,"")</a>
+							    #else
+							       <a  target="_blank" class="black_a" href="$!obj.getUrl()"  style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),18,"")</a>
+							    #end
+								</div>
+								<div class="aljs_content_text">
+									$!obj.getSummary()
+								</div>
+							</div>
+							#end
+						</div>
+						<div class="aljs_content_bottom">
+						
+							$!map.clear()
+							$!map.put("isTop", "0")
+				                    	 $!map.put("tpath", "/20/2002/200202/20020203/")
+				                    	#set($list = $infoService.searchInfoContentSummarys(5, 1,$!map, true))  
+				                    	#foreach($obj in $list)
+							<ul>
+								<li class="xmsqs_orange_p2"></li>
+								<li class="aljs_text">
+								#if($!obj.getIssueType()=="1")
+									<a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"  style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),38 ,"")</a>
+								#else
+								<a  target="_blank" class="black_a" href="$!obj.getUrl()"  style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),38 ,"")</a>
+								#end
+								</li>
+							</ul>
+						#end
+							
+						</div>
+					</div>
+				 
+			
+	    </div>
+  </body>
+  </html>

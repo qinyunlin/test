@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ #set($content = $dataInfo.project)
+ #set($registrationSuppliersList=$dataInfo.registrationSuppliersList)
+ #set($shortlistedSuppliersList=$dataInfo.shortlistedSuppliersList)
+ #set($results=$dataInfo.results)
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$!content.name - 项目采购内容</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+
+                <link rel="stylesheet" type="text/css" href="$wcw_common_site/css/project/projectStock.css">
+		<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+		<script language="javascript"
+				src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+		<script language="javascript"
+				src="$wcw_common_site/js/common/basic.js"></script>
+		<script language="javascript"
+				src="$wcw_common_site/js/common/ConCom.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/jq.Slide.js"></script>
+		<script language="javascript" src="$wcw_common_site/js/common/common.js"></script>
+		<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>	
+		<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>	 
+                <script language="javascript" src="$wcw_common_site/js/project/proStock_details.js"></script>		
+	       
+
+<body>
+   #parse($wcw_header)
+   <input id="p_id" type="hidden" value="$!content.id"/>
+     <div class="main">
+		    <div class="center1">
+		       <div class="center1_content">
+		         <div class="center1_left"></div>
+		         <div class="center1_right" align="center" onclick="projectRegistration($!content.id,'$!content.eid')">
+		             项目报名
+		         </div>
+		       </div>
+		    </div>
+		    
+		    
+		     <div id="crumb">
+						<ul>
+					    	<li class="crumb_hp"><a href="http://www.ccwcw.com">网材网</a></li>
+					        <li><a href="http://www.ccwcw.com/gcxm">工程项目</a></li>
+					        <li><a href="http://www.ccwcw.com/gcxm/gcxmlist/gcxm_1.html">项目采购</a></li>
+					        <li>项目专题</li>
+					    </ul>
+			</div>
+		    
+		  
+			<div class="center2">
+			  <div class="center2_center" >
+			         <div id="info_body">
+					      <div class="center2_top">
+					        <div class="center2_title">
+					          <div class="title_left" ></div>
+					          <div class="title_center"  align="center" >
+					              <div id="name" class="title_name" style="">
+                                                            $!content.name
+                                                       </div>
+					          </div>
+					          <div class="title_right"></div>
+					        </div>
+				            <div class="center2_img">
+					           
+				                 <div>
+				         
+				                   <img alt="$!content.name" class="image_coordinates" src="$!fileUtil.getWcwFileUrl($!content.flagPic)" id="flagPic"/>
+				                   
+				                   <div class="center_matter" >
+					               <div style="width:24px;float:left;">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					               <div id="description" >$!content.description</div>
+					               <div class="clearing"></div>
+					             </div>
+							    </div>
+				            </div>
+					        <div class="linkman_content">
+						         <div class="linkName" >
+								      项目联系人：
+								 </div >
+								<div class="memberSee" onclick="loginSee()">(会员查看)</div>
+							    <div id="linkname_phone" style="display:none;">
+								   <div id="linkman" style="float:left;"></div>
+								   <div style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+								   <div id="phone" style="float:left;"></div>
+								</div>
+					         </div>
+					     </div>
+				         <div class="center2_mean" align="center">
+				            <div class="center2_mean_title"></div>
+				            <div class="center2_mean_content" id="mainMaterial">
+				                $!content.mainMaterial
+				            </div>
+				         </div>
+			         </div>
+			         <div class="center2_bottom" align="center">
+			             <div class="center2_bottom_title">
+			             </div>
+			             <div class="center2_bottom_content">
+			                <div class="bmgys" align="left">
+			                   <div class="bmgys_title">报名供应商:</div>
+			                   <div class="bmgys_name">
+			                      <ul id="list_body">
+			                               #foreach($obj in $registrationSuppliersList)
+                                                          <li>
+                                       <a  target="_blank" class="black_a" href="$!templateUtil.getShopUrl($!obj.eid)">$!obj.ename</a>
+                                                          </li>
+                                                       #end
+			                      </ul>
+			                   </div>
+		
+			                </div>
+			               
+			                <div class="bmgys" style="float:right; margin-left:0px;margin-right:30px;" align="left">
+			                   <div class="bmgys_title">入围供应商:</div>
+			                   <div class="bmgys_name">
+			                      <ul id="short_listbody">
+                                                   #foreach($obj in $shortlistedSuppliersList)
+                                                              <ul >
+                                                                  <li class="punctuation" style="width:3px;height:3px;"></li>
+                                                                  <li><a  target="_blank" class="black_a" style="cursor:pointer;" href="$!templateUtil.getShopUrl($!obj.eid)">$!obj.ename</a></li></ul> 
+                                                   #end
+			                      </ul>
+			                   </div>
+			                   
+			                </div>
+			               
+			             </div>
+			         </div>
+			   </div>
+			</div>	 
+		    <div class="center3">
+		       <div class="center3_content">
+		          <div class="center3_left">
+		            <div class="center3_title">最新项目</div>		          
+		          </div>
+		          <div class="center3_Projectname" id="equalProject">
+		              #foreach($obj in $results)
+                                 <ul><li class="punctuation" style="width:3px;height:3px;"></li><li><a  target="_blank" class="black_a" style="cursor:pointer;" href="$templateUtil.getProjectUrl($!obj.id)">$!obj.name</a></li></ul>
+                              #end
+		          </div>
+		       </div>
+		    </div>
+		</div>
+		
+</body>
+ 
+</html>

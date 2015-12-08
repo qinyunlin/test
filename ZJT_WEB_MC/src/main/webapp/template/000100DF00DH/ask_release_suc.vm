@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/reset.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_common.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_tips_info.css" />
+
+ 
+<title>发布询价提交成功</title>
+</head>
+
+<body>
+#parse($header_dir)
+   <div class="crumb">
+       <ul id="crumb_link">
+			<li class="crumb_hp"><a href="/">首页</a></li>
+		    <li><a href="/ask/ask_index.html">询价学堂</a></li>
+		    <li>发布询价提交成功</li>
+       </ul>
+   </div>
+</ul>
+<div id="xunjia_content">
+	<div class="border_1_gray">
+        <div class="fabu_xunja_tips_info">
+        	<p class="icon_fbxj_tips_suc">您的询价已提交成功！请耐心等待几分钟通过审核!<br/>
+            	<span id="memberId"></span></p>
+            <p>
+            	<input name="" type="button"  class="common_button" value="继续询价" onclick="window.location.href='/ask/ask_choosecid.html';" />
+                <input name="" type="button"  class="common_button m_left_20" value="查看该条询价" onclick="toAskAuditPrice()" />
+            </p>
+        </div>
+    </div>
+</div>
+<script language="javascript"  src="$common_site/js/zjt/ask/ask_release_suc.js"></script>
+
+ #parse($footer_dir)
+</body>
+</html>

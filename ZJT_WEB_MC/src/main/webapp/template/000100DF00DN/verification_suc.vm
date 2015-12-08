@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>造价通_帮助中心</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+</head>
+<body style="text-align:left;">
+	
+	<!--	header star	-->
+	<div id="header_box">
+	   <div id="header" style="margin:10px auto 0;">
+          <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">用户注册</span></div>
+        </div>
+	</div>
+	<!--	header end	-->
+	
+	 <div class="reg_box">
+        <dl class="reg_suc_div clearfix">
+            <dt><span class="icon_suc"></span></dt>
+            <dd>
+                <h1>恭喜，邮箱验证成功 !</h1>
+            </dd>
+        </dl>
+        <ul class="reg_ul_list">
+        	<li class="col_5">恭喜您成为造价通会员，欢迎您使用造价通，您获得了<span class="c_org_f5">50</span>积分,积分可用来 <a href="http://member.zjtcn.com/member/my_zh/my_jifen_sy.jsp" class="bule_04">兑换服务</a>和 <a href="http://xunjia.zjtcn.com/release.html" class="bule_04">发布询价</a>哦！</li>
+            <li class="col_5">
+            	想要享受造价通更优质的服务，请购买造价通会员套餐！
+                <a href="http://member.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="bule_04 m_l_10">购买会员套餐</a>
+            </li>
+            <li class="col_5" style="margin-top:25px;"><span class="c_org_f5">造价通手机绑定功能全新上线，现在绑定即送 300 积分</span><a href="http://member.zjtcn.com/member/sjrz/index.jsp" class="bule_04 m_l_10">马上绑定</a></li>
+            <li class="col_5">
+            	绑定手机可以加强对您造价通账号的保护，第一时间收到服务反馈，并可<br/>及时获取造价通最新服务及各种优惠活动信息！
+            </li>
+            
+            <li class="col_5 m_t_10"><span class="icon_ms_jr">马上进入<a href="http://member.zjtcn.com/index.html" class="bule_04">我的造价通</a></a></li>
+        </ul>
+	</div>
+   <div class="mask_layer" style="display:none;" id="mask_layer"></div>
+    
+        #parse($footer_dir)
+
+</body>
+</html>

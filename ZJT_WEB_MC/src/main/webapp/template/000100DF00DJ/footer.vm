@@ -1,0 +1,44 @@
+<!--	footer	-->
+<div  class="footer">
+	<div>
+    	<a id="aboutZjt" target="_blank"  rel="nofollow" href="/help/about_zjt.html">关于造价通</a>|
+    	<a rel="nofollow" href="javascript:void(0);" onclick="show('kfpt_div');show('mask_layer');">开放平台</a>|
+        <a id="getBussinese" target="_blank"  rel="nofollow" href="/help/zsdl.html">招商代理</a>|
+        <a target="_blank"  rel="nofollow" href="http://member.zjtcn.com/service/index.jsp">客服中心</a>|
+        <a target="_blank"  rel="nofollow" href="http://member.zjtcn.com/service/yjfk.jsp">意见反馈</a>|
+        <a id="contactUs" target="_blank"  rel="nofollow" href="/help/contact_us.html">联系我们</a>|
+        <a target="_blank"  href="/sitemap.html">网站地图</a>|
+        <a target="_blank"  rel="external nofollow" href="http://e.weibo.com/zjtcn2010/profile">官方微博</a>
+    </div>
+    <p>中华人民共和国国家标准《建设工程人工材料设备机械数据标准》参编单位和唯一数据提供方</p>
+    <p>© 2006-2015 WWW.ZJTCN.COM  <a rel="nofollow" href="http://www.miibeian.gov.cn">粤ICP备08028283号</a> 增值电信业务经营许可证B2-200903050</p>
+</div>
+<div class="tips-kfpt" id="kfpt_div" style="display:none;z-index:999;top:366px"><img src="http://c2.zjtcn.com/images/zjt/main_site/tis_383x206.png" usemap="#Map" border="0" />
+  <map name="Map" id="Map" >
+    <area shape="circle" coords="311,20,16" href="javascript:void(0);" onclick="hide('kfpt_div');hide('mask_layer');" />
+    <area shape="rect" coords="107,129,177,155" href="javascript:void(0);" onclick="hide('kfpt_div');hide('mask_layer');" />
+  </map>
+</div>
+
+<script type="text/javascript" src="$common_site/js/common/msg_zhcn.js"></script>
+<script language="javascript" src="$common_site/js/common/jquery.cookie.js"></script>
+<script language="javascript" src="$common_site/js/common/select.js"></script>
+<script language="javascript" src="$common_site/js/common/dataStore.js" ></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/zhcn_db.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/cid_db.js"></script>
+<script type="text/javascript" src="$common_site/js/common/cid_util.js"></script>
+<script type="text/javascript" src="$common_site/js/common/storePage.js"></script>
+<script type="text/ecmascript" src="$common_site/js/zjt/commonJS/city_site.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/zjt/include/suspension.js"></script>
+<script type="text/javascript">
+  function show(id){
+    $("#"+id).show();
+  }
+  function hide(id){
+    $("#"+id).hide();
+  }
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa01b74f783ea1eda2c633ceefd483123' type='text/javascript'%3E%3C/script%3E"));
+</script>

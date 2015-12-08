@@ -1,0 +1,363 @@
+    <script language="javascript" src="$common_site/js/zjt/commonJS/cid_badge.js"></script>
+    <script language="javascript" src="$common_site/js/common/cid_badge_util.js"></script>
+	<script type="text/javascript" src="$common_site/js/common/badgeTools.js"></script> 
+    <script language="javascript" src="$common_site/js/zjt/ask/ask_index_right.js"></script>
+<style>
+
+span .nicheng_tangzhu{ 
+	display:inline-block;
+	height:16px;
+	width:20px;
+	  padding-left: 0;
+}
+</style>
+   <div class="w_w_210 f_left m_left_10">
+    
+    	<div class="xunjia_fabu_box">
+        	<input name="" type="button" class="btn_fabu_xunjia" onclick="releaseAsk()"  />
+        </div>
+        
+        <div class="qiandao_box clearfix" style="position:relative; z-index:555;">
+        	<div class="date_time f_left">
+            	<span class="f_zise_14" id="xq"></span>
+                <span id="rq"></span>
+            </div>
+            <div class="qiandao_btn_box f_left" href="#;" onclick="memberSignIn()" id="qiandao_btn_box"  onmouseover="show('tips_arrow');" onmouseout="hide('tips_arrow');">
+            	签到即获得1积分
+            </div>
+            <div class="qiandao_btn_box_gray f_left" style="display:none;" href="javascript:void(0);" onclick="hide('qiandao_btn_box');return false;" id="qiandao_btn_box_gray" onmouseover="show('tips_arrow_01');" onmouseout="hide('tips_arrow_01');">
+            	累计1天 连续1天
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新来过。</div>
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow_01">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>
+                    <p class="c_black_01 m_bottom_5">本次签到获得<b class="c_org_02" id="hdScore"></b>积分</p>
+                    每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新计算。</div>
+            </div>
+        </div>
+        
+        
+        #set($member = $askService.getAskScoreTopOneThisMonth())
+        #set($memberRank = $memberRankUtil.getRankByExp($member.getExp()))
+        #set($diyConditions = "memberid='$member.getMemberID()' and (way=0 or way=1)")
+        #set($list = $askService.searchGetScoreForTop(1,1,$diyConditions))
+        #set($obj = $list.get(0))
+    	<div class="border_1_gray m_top_10" id="mothod" style="position:relative;z-index:444; *height:186px;">
+        	<h1 class="title_name">上月询价之星</h1>
+            <div class="mon_star">
+            	<dl class="star_jieshao clearfix">
+            		#if($stringUtil.isEmpty($member.getLogo()))
+                	<dt id="month_mingpian" onmouseover="card('month_','star_','mingpian','mhz_$!member.getMemberID()','')"><img src="$!manLogo" /></dt>
+                	#else
+                	<dt id="month_mingpian" onmouseover="card('month_','star_','mingpian','mhz_$!member.getMemberID()','')"><img src="$!ftp_pic$!member.getLogo()" /></dt>
+                	#end
+                    <dd class="text_overflow">
+                       #if($parameterUtil.isNull($!member.getNickName()))
+                    	   <b title="$!member.getTrueName()" id="monthTop_mingpian" onmouseover="card('monthTop_','star_','mingpian','mhz_$!member.getMemberID()','-235px')" >$!member.getTrueName() &nbsp;</b>
+                       #else
+                    	   <b title="$!member.getNickName()" id="monthTop_mingpian" onmouseover="card('monthTop_','star_','mingpian','mhz_$!member.getMemberID()','-235px')" > $!member.getNickName() &nbsp;</b> 
+                       #end
+                       <p><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></p>
+                        <p>赚取积分：$!obj.getGetScore()</p>
+                        <p>最佳回复：$!member.getReplyBest()</p>
+                    </dd>
+                </dl>
+                <p>专业：
+                  #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+                </p>
+                <p class="clearfix"><a href="javascript:void(0);" class="ask_to_expert " onclick="toHisInquiry('$!member.getMemberID()');return false;" style="margin-top:8px;"></a> </p>
+                <div class="star_mingpian" id="star_mingpian" style="display:none;z-index:999;">
+                	<dl class="clearfix">
+                        #if($parameterUtil.isNull($!member.getLogo()))
+	            		<dt><img src="$!manLogo" /></dt>
+	            		#else
+	            		<dt><img src="$!ftp_pic$!member.getLogo()" /></dt>
+	            		#end
+                        <dd>
+                            <p>
+                            <u class="f_right c_bule_01"><a target="_blank" class="mp_link"  href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u> 
+                        	#if($parameterUtil.isNull($!member.getNickName()))
+                        		$!member.getTrueName()
+                        	#else
+                        		$!member.getNickName()
+                        	#end
+                            </p>
+                            <p>$!member.getProvince() $!member.getCity()</p>
+                            <p><span class="c_black_01">经验：<u class="c_org_02">$!member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+                            <p>
+                            	<div class="star_escore_line">
+                                    <p class="backend"></p>
+                                    #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+                                    <p style="width:${length}px;" class="frontend"></p>
+                                </div>
+                            </p>
+                        </dd>
+                    </dl>
+                    <ul class="star_fenshu clearfix">
+                    	<li>消费积分：$!obj.getUseScore()</li>
+                        <li>赚取积分：$!obj.getGetScore()</li>
+                        <li>最佳回复：$!member.getReplyBest()</li>
+                    </ul>
+                    
+                    <p class="text_overflow" >我的专业：
+                     #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+                    </p>
+                    <div class="huizhang_list_box"  style="position:relative;height:29px;" >
+	               	<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+                    	<ul id="mhz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+                        </ul>
+                    </div>
+                    <div class="f_l" id="badge_page_mhz_$member.getMemberID()" style="display:none;">
+                        <a class="i_arrow i_first " style="display:none;"></a>
+                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                	</div>
+                	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border_1_gray m_top_10" style="position:relative;z-index:333;">
+        	<h1 class="title_name">本月积分排行</h1>
+        	#set($list=$askService.searchGetScoreForTop(5,1))
+        	<ul class="paihang_box" style="height:176px;*height:186px;">
+        	 #set($top = 127)
+             #foreach($obj in $list)
+             	 #set($getScore = $obj.getGetScore())
+             	 #if($getScore != "0")
+             	 #set($diyCondition = "(way=0 or way=1) and memberid='$obj.getMemberid()'")
+             	 #set($obj = $askService.searchGetScoreForTop(1,1,$diyCondition).get(0))
+               	 #set($member=$askService.getMemberAskLog($!obj.getMemberid()))
+                 #set($memberRank=$memberRankUtil.getRankByExp($!member.getExp()))
+                 #if($stringUtil.isEmpty($member.getLogo()))
+        		 #set($logo = $manLogo)
+        		 #else
+        		 #set($logo = $ftp_pic + "/" + $member.getLogo())
+        		 #end
+            	<li class="no$velocityCount clearfix">
+	                <!-- 名片 -->
+	                #if($velocityCount != 1)
+	                #set($index = $velocityCount - 2)
+	                #set($top = 133 + $index * 20)
+	                #end 
+	                <div class="star_mingpian" id="jifen_$velocityCount" style="display:none;z-index:999;#if($velocityCount != 1)top:${top}px#end">
+		            	<dl class="clearfix">
+			            	 #if($parameterUtil.isNull($!member.getLogo()))
+		            		 <dt><img src="$!manLogo" /></dt>
+		            		 #else
+		            		 <dt><img src="$!ftp_pic$!member.getLogo()" /></dt>
+		            		 #end
+		                    <dd>
+		                        <p>
+		                        <u class="f_right c_bule_01"><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u>
+	                        	#if($parameterUtil.isNull($!member.getNickName()))
+	                        		$!member.getTrueName()
+	                        	#else
+	                        		$!member.getNickName()
+	                        	#end
+		                        </p>
+		                        <p>$!member.getProvince() $!member.getCity()</p>
+		                        <p><span class="c_black_01">经验：<u class="c_org_02">$member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+		                        <p>
+		                        	<div class="star_escore_line">
+		                                <p class="backend"></p>
+		                                #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+		                                <p style="width:${length}px;" class="frontend"></p>
+		                            </div>
+		                        </p>
+		                       
+		                    </dd>
+		                </dl>
+		                <ul class="star_fenshu clearfix">
+		                	<li>消费积分：$!obj.getUseScore()</li>
+		                    <li>赚取积分：$!obj.getGetScore()</li>
+		                    <li>最佳回复：$!member.getReplyBest()</li>
+		                </ul>
+		                <p class="text_overflow" style="margin-left:0px;">我的专业：
+		                #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+		                </p>
+		                <div class="huizhang_list_box"  style="position:relative;height:29px;" >
+		               	<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+	                    	<ul id="jhz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+	                        </ul>
+                        </div>
+                        <div class="f_l" id="badge_page_jhz_$member.getMemberID()" style="display:none;">
+	                        <a class="i_arrow i_first " style="display:none;"></a>
+	                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+	                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+	                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                    	</div>
+                    	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                      </div>
+		            </div>
+		            <!-- 名片 -->
+                 #if($velocityCount==1)
+                    #if($parameterUtil.isNull($!member.getLogo()))
+        		    <img src="$!manLogo"  class="img_pic" id="hqImg_$velocityCount" onmouseover="card('hqImg_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','')"/>
+        		    #else
+        		    <img src="$!ftp_pic$!member.getLogo()"  class="img_pic" id="hqImg_$velocityCount" onmouseover="card('hqImg_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','')"/>
+        		    #end
+                    <div class="f_left">
+                         #if($parameterUtil.isNull($!member.getNickName()))
+                    	     <p title="$!member.getTrueName()" class="f_blod" id="scoreGet_$velocityCount" onmouseover="card('scoreGet_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','-235px')">$!member.getTrueName()</p>
+                    	#else
+                    	   <p title="$!member.getNickName()" class="f_blod" id="scoreGet_$velocityCount" onmouseover="card('scoreGet_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','-235px')">$!member.getNickName()</p>
+                    	#end
+                        <p><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></p>
+                        <p>赚取积分：$getScore</p>
+                        <p><a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert"></a></p>
+                    </div>
+                 </li>
+	             #else
+                	 <span class="jifen">$getScore</span>
+                	  #if($parameterUtil.isNull($!member.getNickName()))
+                          <span class="name text_overflow" id="huoqu_$velocityCount" title="$!member.getTrueName()" onmouseover="card('huoqu_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','')">$!member.getTrueName()</span>  
+                     #else
+                          <span class="name text_overflow" id="huoqu_$velocityCount" title="$!member.getNickName()" onmouseover="card('huoqu_','jifen_',$velocityCount,'jhz_$!member.getMemberID()','')">$!member.getNickName()</span> 
+                     #end
+                 </li>
+	             #end
+	             #end
+             #end
+            </ul>
+        </div>
+        
+        <div class="border_1_gray m_top_10" style="position:relative;z-index:222;">
+        	<h1 class="title_name">本月消费排行</h1>
+        	#set($top = 127)
+            #set($list=$askService.searchUseScoreForTop(5,1))
+            <ul class="paihang_box" style="height:176px;*height:186px;">
+               #foreach($obj in $list)
+               	   #set($useScore = $obj.getUseScore())
+               	   #if($useScore != "0")
+               	   
+               	   
+               	   #set($diyCondition = "(way=8 or way=3) and memberid='$obj.getMemberid()'")
+               	   #set($obj=$askService.searchUseScoreForTop(1,1,$diyCondition).get(0))
+	               #set($member=$askService.getMemberAskLog($!obj.getMemberid()))
+	               #set($memberRank=$memberRankUtil.getRankByExp($!member.getExp()))
+	               #if($stringUtil.isEmpty($member.getLogo()))
+            		#set($logo = $manLogo)
+            		#else
+            		#set($logo = $ftp_pic + "/" + $member.getLogo())
+            		#end
+                <li class="no$velocityCount clearfix">
+	                <!-- 名片 -->
+	                #if($velocityCount != 1)
+	                #set($index = $velocityCount - 2)
+	                #set($top = 133 + $index * 20)
+	                #end 
+	                <div class="star_mingpian" id="jifen_use_$velocityCount"  style="display:none;z-index:999;#if($velocityCount != 1)top:${top}px#end">
+		            	<dl class="clearfix">
+		                     #if($parameterUtil.isNull($!member.getLogo()))
+		            		 <dt><img src="$!manLogo" /></dt>
+		            		 #else
+		            		 <dt><img src="$!ftp_pic$!member.getLogo()" /></dt>
+		            		 #end
+		                    <dd>
+		                        <p><u class="f_right c_bule_01"><a target="_blank" class="mp_link"  href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u> 
+	                        	#if($parameterUtil.isNull($!member.getNickName()))
+	                        		$!member.getTrueName()
+	                        	#else
+	                        		$!member.getNickName()
+	                        	#end
+		                        </p>
+		                        <p>$!member.getProvince() $!member.getCity()</p>
+		                        <p><span class="c_black_01">经验：<u class="c_org_02">$member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+		                        <p>
+		                        	<div class="star_escore_line">
+		                                <p class="backend"></p>
+		                                #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+		                                <p style="width:${length}px;" class="frontend"></p>
+		                            </div>
+		                        </p>
+		                        
+		                    </dd>
+		                </dl>
+		                <ul class="star_fenshu clearfix">
+		                	<li>消费积分：$!obj.getUseScore()</li>
+		                    <li>赚取积分：$!obj.getGetScore()</li>
+		                    <li>最佳回复：#if($stringUtil.isEmpty($!member.getReplyBest())) 0 #else $!member.getReplyBest() #end</li>
+		                </ul>
+		                <p class="text_overflow" style="margin-left:0px;">我的专业：
+		                #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+		                </p>
+		                <div class="huizhang_list_box"  style="position:relative;height:29px;" >
+		               	<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+	                    	<ul id="shz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+	                        </ul>
+                        </div>
+                        <div class="f_l" id="badge_page_shz_$member.getMemberID()" style="display:none;">
+	                        <a class="i_arrow i_first " style="display:none;"></a>
+	                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+	                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+	                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                    	</div>
+                    	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                      </div>
+		            </div>
+		            <!-- 名片 -->
+                 #if($velocityCount==1)
+                    #if($parameterUtil.isNull($!member.getLogo()))
+        		    <img src="$!manLogo"  class="img_pic"  id="useImg_$velocityCount" onmouseover="card('useImg_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','')"/>
+        		    #else
+        		    <img src="$!ftp_pic$!member.getLogo()"  class="img_pic"  id="useImg_$velocityCount" onmouseover="card('useImg_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','')"/>
+        		    #end
+                    <div class="f_left">
+                       #if($parameterUtil.isNull($!member.getNickName()))
+                    	     <p title="$!member.getTrueName()" id="scoreUse_$velocityCount" onmouseover="card('scoreUse_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','-235px')" class="f_blod">$!member.getTrueName()</p>
+                    	#else
+                    	   <p title="$!member.getNickName()" id="scoreUse_$velocityCount" onmouseover="card('scoreUse_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','-235px')" class="f_blod">$!member.getNickName()</p>
+                    	#end
+                        <p><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></p>
+                        <p>消费积分：$!useScore</p>
+                        <p><a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert"></a></p>
+                    </div>
+                 </li>
+	             #else
+                	 <span class="jifen">$useScore</span>
+                	 #if($parameterUtil.isNull($!member.getNickName()))
+                         <span class="name text_overflow" id="useScore_$velocityCount" title="$!member.getTrueName()" onmouseover="card('useScore_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','')">$!member.getTrueName()</span>
+                     #else
+                         <span class="name text_overflow" id="useScore_$velocityCount" title="$!member.getNickName()" onmouseover="card('useScore_','jifen_use_',$velocityCount,'shz_$!member.getMemberID()','')">$!member.getNickName()</span>
+                     #end
+                 </li>
+	             #end
+	             #end
+              #end
+            </ul>
+        </div>
+                 
+    </div>
+</div>
+

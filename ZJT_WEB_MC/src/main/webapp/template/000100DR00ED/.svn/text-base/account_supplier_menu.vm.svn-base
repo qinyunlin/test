@@ -1,0 +1,145 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+
+<%@page
+	import="org.yeeda.costexpress.service.enterprise.EpShopService,org.yeeda.costexpress.service.factory.enterprise.*"%>
+<%@page
+	import="org.yeeda.costexpress.dto.enterprise.EpShop,org.yeeda.costexpress.dto.member.*"%>
+<%@page import="org.yeeda.costexpress.util.AuthCodeUtil"%>
+<div id="main_menu" style="width: 216px;">
+	<%
+		User user = (User) request.getSession().getAttribute("user");
+		if (user != null) {
+	%>
+	<ul style="_margin-top: 1px;">
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='supplier_index.jsp'" id="person_info">
+			个人信息
+		</li>
+		<%
+			if (user.getEID() != null) {
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='supplier_empinfo.jsp'" id="gsxx">
+			公司信息
+		</li>
+		<%
+			}
+		%>
+		<%
+			if (user.getAuth().contains(AuthCodeUtil.SUPPLY_MANAGE)) {
+					if (user.getEID() != null) {
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='supplier_supplymanage.jsp'" id="glgy">
+			供应管理
+		</li>
+		<%
+			}
+				}
+		%>
+		<%
+			if (user.getAuth().contains(AuthCodeUtil.DEMAND_COL_VIEW)) {
+					if (user.getEID() != null) {
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='supplier_demandmanage.jsp'" id="glqg">
+			求购管理
+		</li>
+		<%
+			}
+				}
+		%>
+		<%
+		if (user.getAuth().contains(
+								AuthCodeUtil.CORP_SHOP_MANAGE)) {			
+				if (user.getEID() != null) {
+					EpShopService service = EpShopServiceFactory.getInstance();
+					EpShop shop = service.getShop(user.getEID());
+					if (shop != null && "1".equals(shop.getIsAudit())) {
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='/module/account/supplier_shop_goodsmanage.jsp'"
+			id="spgl">
+			商铺管理
+		</li>
+		<li class="main_menu_item_div hidden" id="shop_menu">
+			<ul>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_shop_goodspublish.jsp'"
+					id="fbcp">
+					发布产品
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_shop_goodsmanage.jsp'"
+					id="cpgl">
+					产品管理
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_shop_imagesmanage.jsp'"
+					id="tpgl">
+					图片管理
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_shop_groupmanage.jsp'"
+					id="fzgl">
+					分组管理
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_shop_primemanage.jsp'"
+					id="jpgl">
+					信息管理
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_empimg.jsp'" id="qytp">
+					企业图片
+				</li>
+				<li class="main_menu_sonitem font_size_14"
+					onclick="window.location.href='supplier_laureate.jsp'" id="zgry">
+					资格荣誉
+				</li>
+			</ul>
+		</li>
+		<%
+		} else {						
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='/module/account/supplier_shop_auditing.jsp'"
+			id="spgl">
+			商铺管理
+		</li>
+		<%
+			}
+		}else{
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='/module/account/supplier_shop_lead.jsp'"
+			id="spgl">
+			商铺管理
+		</li>
+		<%
+		}
+		}
+		%>
+		<%
+			if (user.getEID() != null) {
+		%>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='supplier_messagemanage.jsp'" id="lygl">
+			留言管理
+		</li>
+		<li class="main_menu_item font_size_14"
+			onclick="window.location.href='/module/account/supplier_mychances_project.jsp?type=all'" id="mychances">
+			我的商机
+		</li>
+		
+		<%
+			}
+		%>
+	</ul>
+	<%
+		}
+	%>
+</div>
+<script>
+checkShop();
+</script>

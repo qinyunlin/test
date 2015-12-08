@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>行业资讯</title>
+<link rel="stylesheet" type="text/css" href="$common_site/css/common/common.css" />
+      <link type="text/css" rel="stylesheet" href="$common_site/css/common/zjtcn.css"/>
+      <link type="text/css" rel="stylesheet" href="$common_site/css/zjt/include/news_search.css"/>
+	<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+	<script language="javascript"
+			src="$common_site/js/common/msg_zhcn.js"></script>
+	<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+	<script language="javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+	<script language="javascript" src="$common_site/js/common/dataStore.js" ></script>
+	<script type="text/javascript"
+			src="$common_site/js/common/pageTool.js"></script>
+<script language="javascript" src="$common_site/js/common/jquery.cookie.js"></script>
+	<script type="text/javascript"
+			src="$common_site/js/zjt/include/news_search.js"></script>
+</head>
+
+<body>
+#parse($header_dir)
+ <div id="main">
+        	<div id="address" >
+            	<div class="banner_left"></div>	
+                <div class="banner_center">
+                	<span class="font_size_12 strong"  style="float:left;color:#277395;">新闻资讯</span>
+                    <span class="font_size_12 strong banner_title sonn" style="display:none;float:left;margin:0px 3px;display:inline">></span>
+                    <span class="font_size_12 strong banner_title son sonn" style="float:left"></span>
+                    <div class="font_size_12" style="float:right;width:200px;text-align:right;color:black;font-size:12px">搜索结果<span id = "search_num" style="padding:0 5px;"></span>条</div></div>
+                <div class="banner_right"></div>
+            </div>
+            <div id="main_content">
+            	<div class="main_left">
+                	<div class="left_content">
+                    	<div class="left_content_de de_black strong font_size_12">网页结果</div>
+                        <div id="templateleft" style="display:none">
+                        	<div class="left_content_de font_size_12 leftde_title hidden" onclick="leftcheck('@{name}',this,'@{path}')">@{name}</div>
+                        </div>
+                       	 <div id="listbodyleft"></div>
+                    </div>
+                    <div class="hide_pic_left" onclick="hideleft()"></div>
+                </div>
+                <div class="main_right">
+                	<div id="hide_pic_right">
+                    	<div class="hide_pic_right" onclick="showleft()"></div>
+                    </div>
+                	<div class="right_content">
+                		 <div class="search_down">
+                        	<div class="search_input"><input id="search_bottom" type="text" style="float:left;border-size:1px;margin:0px;width:316px;padding-top:3px;padding-bottom:3px;font-size:14px"/></div>						                            
+                        	<div class="search_button" onclick="search_bottom()"></div>
+                        </div>
+                    	<div class="right_content_de">
+                        	<div id="template" style="display:none">
+                                <div class="right_de">
+                                    <span class="de_title pointer" onclick="window.open('/module/news/news_detail.html?tid=1401&tname=@{typename}&id=@{id}')">@{title|fontred14}</span>
+                                </div>
+                                <div class="right_de">
+                                    <span>
+                                        @{summary|fontred}
+                                    </span>
+                                </div>
+                                <div class="right_de" style="margin-bottom:20px;">
+                                    <span class="de_date">分类：</span><span class="de_date">@{typename}</span>
+                                    <span class="de_date" class="margin_right">@{addTime|trim_date}</span>                            
+                                </div>
+                            </div>
+                            <div id="listbody"></div>
+                            <div id="page"></div>    
+                        </div>
+                       
+                    </div>
+                </div>
+            	<div class="clrering"></div>
+            </div>
+       </div>
+#parse($footer_dir)
+</body>
+</html>

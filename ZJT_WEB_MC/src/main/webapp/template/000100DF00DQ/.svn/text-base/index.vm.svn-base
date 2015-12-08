@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>信息价_($dataInfo.province)各地最新最全信息价_($dataInfo.province)造价通</title>
+		<meta name="description"
+			content="最近十年的政府指导价、信息价，造价通为您实时更新，为您提供最完整、最全面、最及时的造价管理部门发布的政府指导价格信息。"/>
+		<meta name="keywords"	
+			content="信息价，指导价，政府指导价格，造价站价格"/>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+#parse($header_dir)
+<!--	container	-->
+<div class="container">
+	<!--	面包屑	-->
+	<div class="breadCrumb">
+    	<a href="/">首页</a><i>&gt;</i><span>信息价</span>
+    </div>
+    <!--	面包屑	-->
+    <div class="layout-box m-t-5 clearfix">
+    	<!--	左侧树	-->
+    	<div class="f-l w-240">
+        	<div class="bor-shadow-box">
+            	<h2 class="tit-name-01">材料分类<span class="f-r" onclick="allTree(this);" style="font-size:12px;font-family:宋体;color:#666;cursor:pointer;">全部收起</span></h2>
+                <div class="tree-controls" id="left_type_count"></div>
+            </div>
+           <!-- <div class="adBox-240 m-t-10">广告位</div> -->
+        </div>
+        <!--	左侧树	-->
+        <!--	右侧筛选与数据列表	-->
+        <div class="f-r w-850">
+        	<!--	筛选	-->
+        	<div class="bor-shadow-box">
+                <!--	地区	-->
+            	<dl class="nav-category clearfix">
+                	<dt>地区：</dt>
+                    <dd>
+                    	<ul id="gov_city" class="nav-category-li clearfix">
+                        </ul>
+                        <div class="category-li-list" id="country_ul">
+                        </div>
+                    </dd>
+                </dl>
+                <!--	地区	-->
+                <!--	时间	-->
+            	<dl class="nav-category bor-no clearfix">
+                	<dt>时间：</dt>
+                    <dd>
+                    	<ul id="gov_time" class="nav-category-li clearfix">	
+                        </ul>
+                        <div class="category-li-list" id="gov_title_month">
+                        </div>
+                    </dd>
+                </dl>
+                <!--	时间	-->
+            </div>
+            <!--	筛选	-->
+            <!--	数据列表	-->
+            <div class="bor-shadow-box m-t-10 clearfix">
+            	<!--	标题	-->
+            	<h2 class="tit-name-02"><b id="r_tit_name"></b><a href="javascript:void(0);"  onclick="downloadGovPrice();return false;" class="font-bule-1-u m-l-10">下载</a></h2>
+                <!--	标题	-->
+                <!--	编制说明	-->
+                <div class="manual-box" id="bzsm_div" >
+                	<b>编制说明:</b>
+                    <div id="bzsm_notes"></div>
+                </div>
+                <!--	编制说明	-->
+                <!--	操作栏	-->
+                <div class="date-t-option m-t-10  clearfix"> 
+                	<a  onclick="attent('','1');return false;" href="javascript:void(0);" name="attent"  class="btn-collection f-l" style="display:none;margin-right:10px;">关注</a>
+                	<a onclick="collect('','1');return false;" href="javascript:void(0);" class="btn-collection f-l">收藏</a>
+                    <div class="search-box f-l m-l-10">
+                    	<input id="input_name" type="text"  placeholder="请输入关键字"/>
+                        <a href="javascript:void(0);" onclick="selectName();" class="btn-ser"></a>
+                    </div>
+                    <div class="moudle-page f-r" style="padding:0;">
+                    	<div class="page-mune f-r">
+                            <span id="page1">
+                            </span>
+                        </div>
+                    </div>
+                    <span class="f-r results-total">找到相关材料共 <b id="mat_count"></b> 条</span>
+                </div>
+                <!--	操作栏	-->
+                <!--	数据显示	-->
+                <div class="moudle-date-box">
+                	<table>
+                        <tr>
+                        	<th width="20px">	<span class="th_input"><input id="mycaijia_id" type="checkbox" value="全选" onclick="checkAll();" class="all_selector" /></span></th>
+                           
+                            <th width="20%">名称</th>
+                            <th width="21%">规格/型号</th>
+                            <th width="10%" class="txt-c">单位</th>
+                            <th width="14%">信息价/元</th>
+                            <th width="20%">备注</th>
+                        </tr>
+					 </table>
+					 <div id="listbody_ration">
+		             </div>
+		            <div id="page" class="digg"> 
+		            </div>
+                </div>
+                <!--	数据显示	-->
+               <a href="javascript:void(0);" name="attent" onclick="attent('','1');return false;" style="display:none;margin-left:10px;" class="btn-collection f-l">关注</a>
+               <a href="javascript:void(0);" onclick="collect('','1');return false;" style="margin-left:10px;margin-bottom:10px;" class="btn-collection f-l">收藏</a>
+            </div>
+            <!--	数据列表	-->
+        </div>
+        <!--	右侧筛选与数据列表	-->
+    </div>
+</div>
+<!--	container	-->
+ <form id="exportform" name="exportform" target="exporttarget"
+      method="post">
+    <iframe width="0" height="0" frameborder="0" id="exporttarget"
+            name="exporttarget"></iframe>
+</form>
+<div id="template_ration" style="display:none;">
+   <table>
+      <tr id="row_@{rownum}">
+        <td width="20px"><input name='checkselected' type="checkbox" value="@{id}" class="all_selector" />	</td>
+        <td width="20%"><a class="font-bule-1" href="/gov/gov_search.html?k=@{name1} @{spec}">@{name}</a></td>
+        <td width="21%">@{spec}</td>
+        <td width="10%" class="txt-c">@{unit}</td>
+        <td width="14%"  name="column_value"> 
+             @{imageURL,priceShow|isPriceUnitl}
+         </td>
+        <td width="20%" title="@{notes}"><div>@{notes|notesUtil}</div></td>
+    </tr>
+   </table>
+</div>
+#parse($zjt_tip)
+#parse($footer_dir)
+<div id="J_Feedback" class="feedback" style="display: block;">
+	<a class="btn" style="text-decoration:none;" href="/service/yjfk.jsp">
+	<img src="http://c2.zjtcn.com/images/zjt/img_yjfk_38x38.png"/>
+	<span>我要反馈</span>
+	</a>
+</div>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/zhcn_db_gov.js"></script>
+<script type="text/javascript" src="$common_site/js/common/zhcn_select.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/materialType_comm.js"></script>
+<script type="text/javascript" src="$common_site/js/common/LvTree.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/gov/gov_index.js"></script>
+<script type="text/javascript">kfguin="4008889639";eid="218808P8z8p8y8y8z8z8y";ws="www.zjtcn.com"; type="0";wpadomain="b";</script> 
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/imqqkf.js?t=110922"></script>
+</body>
+</html>

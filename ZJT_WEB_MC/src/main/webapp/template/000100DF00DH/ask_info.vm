@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ #set($askPrice = $dataInfo.askPrice)
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$!askPrice.name _ #if($!askPrice.status=="3")已解决#end#if($!askPrice.status=="2")待解决#end _询价学堂</title>
+<meta name="description"
+	content="$!{askPrice.name} $!{dataInfo.cidname} $!{dataInfo.subcidname} $!stringUtil.nullString($!askPrice.spec) ($dataInfo.province) 询价
+	$!stringUtil.nullString($!askPrice.amount) $!stringUtil.nullString($!askPrice.unit) $!askPrice.addr $!stringUtil.nullString($!parameterUtil.changeGrade($!askPrice.grade)) 
+	$!stringUtil.nullString($!askPrice.purpose) $!stringUtil.nullString($!parameterUtil.expensesThat($!askPrice.carriage,$!askPrice.keepFee,$!askPrice.tax)) "/>
+<meta name="keywords"	
+	content="$!{askPrice.name} $!{dataInfo.cidname} $!{dataInfo.subcidname} 造价咨询 询价 "/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+</head>
+
+<body>
+
+#parse($header_dir)
+
+<div id="xunjia_content" style="text-align:left;" class="clearfix">
+	<div class="f_left w_w_730" style="position:relative;">
+	
+	    #parse($ask_index_search)
+	    <div class="crumb">
+	      <ul id="dqwz">
+	  
+	      
+	      </ul>
+	    </div>
+
+        <div class="question_box" style="position:relative;">
+        	<div class="header clearfix" style="width:688px;">
+        	   #set($member=$askService.getMemberAskLog($!askPrice.memberID))
+                 #set($memberRank=$memberRankUtil.getRankByExp($!member.getExp()))
+                 #set($diyConditions = "memberid='$member.getMemberID()' and (way=3 or way=1 or way=0)")
+		         #set($list = $askService.searchGetScoreForTop(1,1,$diyConditions))
+		         #if($list.size() != 0)
+		         #set($obj = $list.get(0))
+		         #end
+        	    <div id="askPriceId" style="display:none">$!askPrice.id</div>
+            	<h1 class="question_title" >        
+	        	    <span class="f_right i_times c_gray_aaa" id="askPriceStatus"></span>
+                	<span class="icon_common i_being"></span>
+                    <span class="question_title_name text_overflow" title="$!askPrice.name" >$!askPrice.name &nbsp;</span>
+                </h1>
+                <div class="details">
+                	<span class="f_right c_gray_aaa" id="truename" tip="$!askPrice.memberID">$stringUtil.substr($!askPrice.createOn,0,16) &nbsp;</span>
+                  <span id="name_$!askPrice.memberID" onmouseover="card('name_','star_mingpian_','$!askPrice.memberID','fhz_$!askPrice.memberID',null);">  提问者：#if($!member.getRole()=="1")<u class="nicheng_tangzhu" style="width:0px;" title="堂主"> #if($parameterUtil.isNull($!member.getNickName()))$!askPrice.trueName#else$!member.getNickName() #end</u>#else #if($parameterUtil.isNull($!member.getNickName()))$!askPrice.trueName#else$!member.getNickName() #end#end</span>
+                    <span class="v_split">|</span>
+                    <span class="i_reward">悬赏积分: <u class="c_org_02" id="xsScore">$!askPrice.score</u></span> 
+                    <span class="v_split">|</span>
+                    <span id="hitSum"></span>
+                </div>
+
+                
+            </div>
+            
+            <div class="star_mingpian" id="star_mingpian_$!askPrice.memberID" style="display:none;left:20px; top:-156px;z-index:999;">
+                	<dl class="clearfix">
+                        #if($parameterUtil.isNull($!member.getLogo()))
+	            		<dt><img src="$!manLogo" /></dt>
+	            		#else
+	            		<dt><img src="$!ftp_pic$!member.getLogo()" /></dt>
+	            		#end
+                        <dd>
+                            <p class="mp_star"><u class="f_right"><a target="_blank" class="mp_link"  href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u>#if($!member.getRole()=="1")<u class="nicheng_tangzhu" title="堂主">#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end</u>#else #if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end#end</p>
+                            <p class="mp_star">$!member.getProvince() $!member.getCity()</p>
+                            <p><span class="c_black_01">经验：<u class="c_org_02">$!member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+                            <p>
+                            	<div class="star_escore_line">
+                                    <p class="backend"></p>
+                                    #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+                                    <p style="width:${length}px;" class="frontend"></p>
+                                </div>
+                            </p>
+                        </dd>
+                    </dl>
+                    <ul class="star_fenshu clearfix">
+                    	<li class="mp_star">使用积分：$!obj.getUseScore()</li>
+                        <li class="mp_star">赚取积分：$!obj.getGetScore()</li>
+                        <li class="mp_star">最佳回复：$!member.getReplyBest()</li>
+                    </ul>
+                    <p class="text_overflow mp_star" >我的专业：
+                       #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+		                </p>
+		                
+		              	<div class="huizhang_list_box"  style="position:relative;height:29px;" >
+	               		<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+                    	<ul id="fhz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+                        </ul>
+                    	</div>
+                    	<div class="f_l" id="badge_page_fhz_$member.getMemberID()" style="display:none;">
+                        <a class="i_arrow i_first " style="display:none;"></a>
+                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                	</div>
+                    	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                      </div>
+                </div>
+                
+            
+	            <div class="qb_body clearfix">
+	            	<ul class="qestion_info_list clearfix">
+	                	<li class="t_title">规格型号：</li>
+	                    <li class="t_content text_overflow" title="$!stringUtil.nullString($!askPrice.spec)">$!stringUtil.nullString($!askPrice.spec) &nbsp;</li>
+	                    <li class="t_title">材料分类：</li>
+	                    <li class="t_content text_overflow" title="" id="subcid"> &nbsp;</li>
+	                    <li class="t_title">数　　量：</li>
+	                    <li class="t_content">$!stringUtil.nullString($!askPrice.amount) $!stringUtil.nullString($!askPrice.unit) &nbsp;</li>
+	                    <li class="t_title">报价地区：</li>
+	                    <li class="t_content">$!askPrice.addr &nbsp;</li>
+	                </ul>
+	                <ul class="qestion_info_list m_left_20 clearfix">
+	                	<li class="t_title">档　　次：</li>
+	                    <li class="t_content">$!stringUtil.nullString($!parameterUtil.changeGrade($!askPrice.grade)) &nbsp;</li>
+	                    <li class="t_title">用　　途：</li>
+	                    <li class="t_content">$!stringUtil.nullString($!askPrice.purpose) &nbsp;</li>
+	                    <li class="t_title">费用说明：</li>
+	                    <li class="t_content"> $!stringUtil.nullString($!parameterUtil.expensesThat($!askPrice.carriage,$!askPrice.keepFee,$!askPrice.tax))</li>
+	                    <li class="t_title">到期时间：</li>
+	                    <li class="t_content">$!stringUtil.nullString($!stringUtil.substr($!askPrice.ValidDate,0,16)) &nbsp;</li>
+	                </ul>
+	                <ul class="qestion_info_list_01 clearfix">
+	                    <li class="t_title">备　　注：</li>
+	                    <li class="t_content word_w_b">$!stringUtil.nullString($!askPrice.notes) &nbsp;</li>
+	                </ul>
+	                #set($uploadList=$askService.uploadFileList($!askPrice.id))
+	                #if($uploadList.size() !=0)
+	                 <ul class="qestion_info_list_01 clearfix">
+	                    <li class="t_title">图       片：</li>
+	                    <li class="t_content">
+	                       #foreach($obj in $uploadList)
+	                    	<span class="i_flie" ><a target="_blank" style=" color: #206AA6;" href='$ftp_pic${obj.getFilePath()}'>${obj.getFilename()}.jpg</a></span>
+	                        #end
+	                    </li>
+	                </ul>
+	                #end
+	        
+	                #set($appList=$askService.getAskPriceAppContentList(null,"askid='$!askPrice.id'",null,false))
+	                #if($appList.size() != 0)
+	                <div class="buchongshuoming_box clearfix">
+	                	<h1>补充说明：</h1>
+	                	 #foreach($obj1 in $appList)
+	                     <p><span class="times">[$!stringUtil.substr($!obj1.getCreateOn(),0,19)]</span>$!obj1.getNotes()</p>
+	                  
+	                     #end
+	                </div>
+	               #end
+	            </div>
+	            
+	            
+	        
+	        <div id="hasExpired" style="display:none;">
+	         
+		        <div class="box_editor">
+	            	<span class=" f_zise_14 f_blod">处理询价</span>
+	                <span class="c_gray_888 m_left_20">过期后仍可采纳最佳回复，还可以向堂主求助：</span>
+	            </div>
+	            
+	            <div class="action_box_editor blue_border_box clearfix">
+	            	<span class="yh_new_btn i_tangzhu" onclick="lordInquiryToDon();">向堂主求助</span>
+	            </div>
+	            <p class="padding_20"></p>
+	        </div>
+	            
+	            <div id="processingInquiry" style="display:none;">
+	             <div class="box_editor">
+	            	<span class=" f_zise_14 f_blod">处理询价</span>
+	                <span class="c_gray_888 m_left_20">请及时采纳最佳回复，可获得悬赏等值的经验值奖励。还可以尝试其他操作吸引更多回复者：</span>
+	             </div>
+	            
+	            
+	            
+	            <div class="action_box_editor blue_border_box clearfix">
+	                <span class="yh_new_btn i_edit " id="addedThatThe">补充说明</span>
+	                <em class="yh_btn_line_c yh_btn_line_long_click" id="addedThatThe_one"></em>
+	            	
+	       
+	                <span class="yh_new_btn i_xuanshang" id="additionalReward">追加悬赏</span>
+	                <em class="yh_btn_line_a" id="additionalReward_one"></em>
+	               
+	                <span class="yh_new_btn i_ycxq" id="extension">延长期限</span>
+	              
+	            </div>
+	            <div id="bcsm_box" style="display:none;" class="action_box_content">
+	                <h2>
+	                    <span class="c_org_01 f_right">（第二次补充说明起需支付2积分/次）</span>
+	                    <span class="f_blod">补充说明</span><span class="c_gray_999 m_left_10">补充细节有助于得到更准确的询价</span>
+	                </h2>
+	                <p class="m_top_10">
+	                    <textarea id="bcsm" cols="" rows="" onkeyup="checkLength(this,'bcsm_size');" class="txt input_box_border" style="width:645px;padding-left:5px;
+	                height:100px;"></textarea>
+	                </p>
+	                <p>
+	                    <span class="f_right c_gray_888" id="bcsm_size">还可输入300个字</span>
+	                    <input name="" type="button"  value="确认" class="common_button" onclick="addedThatThe(this);"/>
+	                    <input name="" type="button"  value="取消" class="common_button" onclick="hide('bcsm_box')"/>
+	                </p>
+	            </div>
+	            <div id="zjxs_box" style="display:none;" class="action_box_content">
+	                <h2>
+	                    <span class="f_blod">追加悬赏</span><span class="c_gray_999 m_left_10">提高悬赏有助于得提高询价关注度</span>
+	                </h2>
+	                <p class="m_top_10">询价有效期内，可以追加悬赏。每次增加不可少于5积分。</p>
+	                <p>
+	                    追加悬赏额：
+	                    <input id="addScore" type="text" class="txt input_box_border input_w_70" value="5" />
+	                    <label class="input_icon_jinbi"></label>
+	                </p>
+	                <p>
+	                    您的积分余额：
+	                    <span id="currScore"></span><label class="input_icon_jinbi"></label><a href="javascript:void(0);" class="m_left_10 ">如何获得积分？</a>
+	                </p>
+	                <p>
+	                    <input name="" type="button"  value="确认" class="common_button"  onclick="additionalReward(this);"//>
+	                    <input name="" type="button"  value="取消" class="common_button" onclick="hide('zjxs_box')"/>
+	                </p>
+	            </div>
+	            <div id="ycxq_box" style="display:none;"  class="action_box_content">
+	                <h2>
+	                    <span class="f_blod">延长期限</span><span class="c_gray_999 m_left_10">想再看看更多回复可选择延期</span>
+	                </h2>
+	                <p class="m_top_10">询价有效期内可进行"延期"。延期以三天为单位，延期一次需支付5积分。</p>
+	                <p>
+	                    您的积分余额：
+	                    <span id="score_last">20</span><label class="input_icon_jinbi"></label><a href="javascript:void(0);" class="m_left_10 ">如何获得积分？</a>
+	                </p>
+	                <p>是否确认延期？</p>
+	                <p>
+	                    <input name="" type="button"  value="确认" class="common_button" onclick="extension(this);"/>
+	                    <input name="" type="button"  value="取消" class="common_button" onclick="hide('ycxq_box')"/>
+	                </p>
+	            </div>
+	            
+	            <p class="padding_20"></p>
+	            
+	        </div>
+            
+            
+            
+            
+            
+            
+            <div class="box_editor" id="my_reply">
+            	<span class="open_answer_box" onclick="iComeBack();" id="open_answer_box" style="display:none;">我来回复</span><span class="close_answer_box" style="display:inline;" id="close_answer_box" onclick="show('answer_box');hide('close_answer_box');show('open_answer_box');" >我来回复</span>
+                <span class="c_gray_888 m_left_20">厂商报价可获得5积分，经验报价可获得2积分，被选为最佳回复可额外获得悬赏积分</span>
+            </div>
+             
+             
+              <div style="margin:0 20px 20px; display:none;" id="answer_box">
+            	<ul class="answer_box_tab">
+                	<span class="f_right c_gray_666" id="csbj_1">提醒：请提供真实报价、供应商、联系人及联系方式！</span>
+                    <span class="f_right c_gray_666" style="display:none;" id="jybj_1">提醒：请提供真实报价！</span>	
+                    
+                	<li class="cur xgbj" tip="csbj" ><a href="javascript:void(0);">厂商报价</a></li>
+                    <li class="xgbj" tip="jybj" ><a href="javascript:void(0);">经验报价</a></li>
+                </ul>
+                
+                <!--	厂商报价层开始		-->
+                <div class="answer_box" id="csbj">
+                    <div class="answer_box_entry_panel clearfix" >
+                        <p>
+                        	<span class="label_01"><em>*</em>厂商报价：</span>
+                        	<input id="facPrice"  type="text" class="txt input_box_border" style="width:90px;" />
+                           <span class="label_01"><em>*</em>单　　位：</span>
+                        	<input id="unit" type="text" class="txt input_box_border" value="$!stringUtil.nullString($!askPrice.unit)" style="width:90px;" />
+                        </p>
+                        <p>
+                        	<span class="label_01" style="vertical-align:top;"><em>*</em>供应商信息</span>
+                            <u><textarea id="notes" Tip="如能提供联系人及联系方式更易被选为最佳回复..." cols="" rows="" onkeyup="checkLength(this,'sy');" cols="" rows="" class="txt input_box_border" style="width:536px;padding-left:5px;
+                    height:80px;"> 
+                            </textarea></u>
+                        </p>
+                        <p>
+                        	<span class="f_right c_gray_888" id="sy">还可以输入300字</span>
+                        	<span class="label_01">验 证 码：</span>
+                            <input id="codeValue" type="text" class="txt input_box_border input_w_70 " />
+                            <img id="imgCode" src="/authImg" />
+                            <u class="c_gray_999 " onclick="refreshCode('imgCode');" style="cursor:pointer;">看不清，换一个</u>
+                        </p>
+                  	</div>
+                    <p style="margin-left:86px;">
+                        <input name="" type="button"  value="提交" class="common_button" href="#;"  onclick="askReply(this,'csbj');" />
+                    </p>
+                </div>
+                <!--	厂商报价层结束		-->
+                
+                <!--	经验报价层开始		-->
+                <div class="answer_box" id="jybj" style="display:none;">
+                    <div class="answer_box_entry_panel clearfix">
+                        <p>
+                        	<span class="label_01"><em>*</em>经验报价：</span>
+                        	<input id="ePrice" type="text" class="txt input_box_border" style="width:90px;" />
+                        	<span class="label_01"><em>*</em>单　　位：</span>
+                        	<input id="eUnit" type="text" class="txt input_box_border" value="$!stringUtil.nullString($!askPrice.unit)" style="width:90px;" />
+                        </p>
+                        <p>
+                        	<span class="label_01" style="vertical-align:top;">备　　注：</span>
+                            <u><textarea id="eNotes" cols="" Tip="如能提供联系人及联系方式更易被选为最佳回复..." rows="" onkeyup="checkLength(this,'sy');" class="txt input_box_border" style="width:535px;padding-left:5px;
+                    height:80px;"> 
+                            </textarea></u>
+                        </p>
+                        <p>
+                        	<span class="f_right c_gray_888" id="esy">还可输入300个字</span>
+                        	<span class="label_01">验 证 码：</span>
+                            <input id="codeValue_jy" type="text" class="txt input_box_border input_w_70 " />
+                            <img id="eImgCode" src="/authImg"  />
+                            <u class="c_gray_999 " onclick="refreshCode('imgCode');" style=" cursor:pointer;">看不清，换一个</u>
+                        </p>
+                  	</div>
+                    <p style="margin-left:86px;">
+                    	<input name="" type="button"  value="提交" class="common_button" href="#;"  onclick="askReply(this,'jybj');" />
+                    </p>
+                </div>
+                <!--	经验报价层结束		-->
+            </div>
+
+            
+        </div>
+      
+      
+        <div class="reply_panel" id="notReply" style="display:none">
+        	<div class="header clearfix">
+                <h1 class="question_title">
+                    <span class="icon_common i_otheranswer"></span>
+                    <span class="question_title_name">询价回复<u class="huifu_total">共0个</u></span>
+                </h1>
+            </div>
+            <p style="padding:15px 0 15px 24px;">暂无回复！</p>
+       	</div>
+       	
+       	#if($!askPrice.status=="3")
+        <div class="reply_panel yijiejue_box" style="display:none;">
+        	<span class="icon_best"></span>
+        	<div class="header clearfix">
+                <h1 class="question_title">
+                    <span class="question_title_name">最佳回复</span>
+                </h1>
+            </div>
+            <div class="entry last" style="position:relative;">
+              #set($askRelpyList=$askService.getAskReplyByPId("pid='$!askPrice.id' and state = 2 "))
+              #foreach($obj in $askRelpyList)
+               #set($member=$askService.getMemberAskLog($!obj.getMemberID()))
+                 #set($memberRank=$memberRankUtil.getRankByExp($!member.getExp()))
+                 #set($diyConditions = "memberid='$member.getMemberID()' and (way=3 or way=1 or way=0)")
+		         #set($list = $askService.searchGetScoreForTop(1,1,$diyConditions))
+		         #if($list.size() != 0)
+		         #set($score = $list.get(0))
+		         #end
+            	<div class="details" style="padding:0;">
+                	<span class="f_right c_gray_aaa">$stringUtil.substr($!obj.getgetCreateOn(),0,16) &nbsp;</span>
+                	#if($!member.getRole()=="1")
+                	<span class="nicheng_tangzhu" title="堂主" id="name_$!obj.getMemberID()"onmouseover="card('name_','star_mingpian_','$!obj.getMemberID()','zjhz_$!obj.getMemberID()',null);">#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName() #end</span>
+                	#else
+                    <span id="name_$!obj.getMemberID()"onmouseover="card('name_','star_mingpian_','$!obj.getMemberID()','zjhz_$!obj.getMemberID()',null);">#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName() #end</span>
+                    #end
+                    <span class="v_split">|</span>
+                    <span><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></span>
+                </div>
+                
+                
+                 <div class="star_mingpian" id="star_mingpian_$!obj.getMemberID()" style="display:none;left:0px; top:-188px; ">
+                	<dl class="clearfix">
+                        <dt><img src="$logo" /></dt>
+                        <dd>
+                            <p class="mp_star"><u class="f_right"><a target="_blank" class="mp_link"   href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u>#if($!member.getRole()=="1")<u class="nicheng_tangzhu" title="堂主">#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end</u>#else #if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end#end</p>
+                            <p class="mp_star">$!member.getProvince() $!member.getCity()</p>
+                            <p><span class="c_black_01">经验：<u class="c_org_02">$!member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+                            <p>
+                            	<div class="star_escore_line">
+                                    <p class="backend"></p>
+                                    #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+                                    <p style="width:${length}px;" class="frontend"></p>
+                                </div>
+                            </p>
+                        </dd>
+                    </dl>
+                    <ul class="star_fenshu clearfix mp_star">
+                    	<li >使用积分：$!score.getUseScore()</li>
+                        <li>赚取积分：$!score.getGetScore()</li>
+                        <li>最佳回复：$!member.getReplyBest()</li>
+                    </ul>
+                    <p class="text_overflow mp_star">我的专业：
+                       #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+		                </p>
+		             
+		             
+		              	<div class="huizhang_list_box"  style="position:relative;height:29px;" >
+	               		<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+                    	<ul id="zjhz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+                        </ul>
+                    	</div>
+                    	<div class="f_l" id="badge_page_zjhz_$member.getMemberID()" style="display:none;">
+                        <a class="i_arrow i_first " style="display:none;"></a>
+                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                	</div>
+                    	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                      </div>
+                </div>
+                
+                
+                
+                
+                
+                         
+                #if($!obj.getIsExpPrice()=="1")
+                
+                <div id="bestReply_isLogin" class="entry_panel clearfix">
+                	<p>
+                        <span class="label">经验报价：</span>
+                        <span class="price">$!obj.getPriceFac()</span>
+                    	<span class="label">单　　位：</span>
+                        <span class="pinpai" title="$!obj.getUnit()">$!obj.getUnit() &nbsp;</span>
+                    </p>
+                    <p>
+                        <span class="label"  style="vertical-align:top;">备　　注：</span>
+                        <span class="beizhu">
+                          $!stringUtil.nullString($!obj.getNotes()) &nbsp;
+                        </span>
+                    </p> 
+                </div>
+                #else 
+                
+                
+                <div id="bestReply_isLogin" class="entry_panel clearfix">
+                	<p>
+                        <span class="label">厂商报价：</span>
+                        <span class="price">$!obj.getPriceFac()</span>
+                        <span class="label">单　　位：</span>
+                        <span class="pinpai" title="$!obj.getUnit()">$!obj.getUnit() &nbsp;</span>
+                    </p>
+                    
+                    <p>
+                        <span class="label"  style="vertical-align:top;width:75px;">供应商信息：</span><span class="beizhu" style="vertical-align:top;width:593px;">
+                           $!stringUtil.nullString($!obj.getNotes()) &nbsp;
+                        </span>
+                    </p> 
+                </div>
+                
+                #end
+                 <!--<div class="c_org_01" style="margin:8px;" id="isLogin_tip_bestReply" style="display:none">
+                                                                           询价回复请<a  class="mp_link" style="margin-left:5px;margin-right:5px;" href="#;" onclick="LoginToSee()">登录</a>查看
+                </div>-->
+                
+               #end
+            </div>
+        </div>
+       #end
+       
+        <div class="reply_panel" id="yReply">
+        	<div class="header clearfix">
+                <h1 class="question_title">
+                    <span class="icon_common i_otheranswer"></span>
+                    <span class="question_title_name" ><u id="qithf">询价回复</u><u class="huifu_total" id="ytotla"></u></span>
+                </h1>
+            </div>
+
+           #if($!askPrice.revNum !="0")
+            
+             #set($askRelpyList=$askService.getAskReplyByPId("pid='$!askPrice.id' and state=1 "))
+             <div id="askReplySum" style="display:none">$askRelpyList.size()</div>
+             #foreach($obj in $askRelpyList)
+                 #set($member=$askService.getMemberAskLog($!obj.getMemberID()))
+                 #set($memberRank=$memberRankUtil.getRankByExp($!member.getExp()))
+                 #set($diyConditions = "memberid='$member.getMemberID()' and (way=3 or way=1 or way=0)")
+		         #set($list = $askService.searchGetScoreForTop(1,1,$diyConditions))
+		         #if($list.size() != 0)
+		         #set($scoreObject = $list.get(0))
+		         #end
+                <div class="entry entry_$velocityCount" id="$obj.getMemberID()" style="position:relative;">
+                <div id="velocityCount" style="display:none">$velocityCount</div>
+            	<div class="details" >
+                	<span class="f_right c_gray_aaa">$stringUtil.substr($!obj.getCreateOn(),0,16) &nbsp;</span>
+                	#if($!member.getRole()=="1")
+                    <span class="nicheng_tangzhu" title="堂主" id="name_$!obj.getMemberID()" onmouseover="card('name_','star_mingpian_','$!obj.getMemberID()','shzhz_$member.getMemberID()',null);" >#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName() #end</span>
+                   #else
+                   <span id="name_$!obj.getMemberID()" onmouseover="card('name_','star_mingpian_','$!obj.getMemberID()','shzhz_$member.getMemberID()',null);" >#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName() #end</span>
+                   #end
+                    <span class="v_split">|</span>
+                    <span ><a target="_blank" class="mp_link" href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></span>
+                </div>
+                <div class="star_mingpian" id="star_mingpian_$!obj.getMemberID()"   style="display:none;left:0px; top:-182px;" >
+                	<dl class="clearfix">
+                        <dt><img src="$logo" /></dt>
+                        <dd>
+                            <p class="mp_star"><u class="f_right"><a target="_blank" class="mp_link"   href="/service/cjwt.jsp?type=member_8">$!memberRank.getLevel() $!memberRank.getTitle()</a></u>#if($!member.getRole()=="1")<u class="nicheng_tangzhu" title="堂主">#if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end</u>#else #if($parameterUtil.isNull($!member.getNickName()))$!member.getTrueName()#else$!member.getNickName()#end#end</p>
+                            <p class="mp_star">$!member.getProvince() $!member.getCity()</p>
+                            <p><span class="c_black_01">经验：<u class="c_org_02">$!member.getExp()</u>/$!memberRank.getMaxExp()</span></p>
+                            <p>
+                            	<div class="star_escore_line">
+                                    <p class="backend"></p>
+                                    #set($length = $mathTool.mul($mathTool.divFloat($!member.getExp(), $!memberRank.getMaxExp()),128))
+                                    <p style="width:${length}px;" class="frontend"></p>
+                                </div>
+                            </p>
+                        </dd>
+                    </dl>
+                    <ul class="star_fenshu clearfix mp_star">
+                    	<li>使用积分：$!scoreObject.getUseScore()</li>
+                        <li>赚取积分：$!scoreObject.getGetScore()</li>
+                        <li>最佳回复：$!member.getReplyBest()</li>
+                    </ul>
+                    <p class="text_overflow mp_star">我的专业：
+                        #if($member.getMajor().length() > 0)
+		                #foreach($cid in $member.getMajor().split(";"))
+		                <span  title="$!parameterUtil.primaryCategories($cid)">$!stringUtil.getAbc($!parameterUtil.primaryCategories($cid),6)</span>
+		                #end
+		          #else
+		                                             暂无
+		          #end
+		                </p>
+		                
+		                
+		              	<div class="huizhang_list_box"  style="position:relative;height:29px;" >
+	               		<div class="huizhang_list1" style="position:relative;width:192px;overflow:hidden;float:left;">
+                    	<ul id="shzhz_$member.getMemberID()" class="huizhang_list" style="position:relative;">
+                        </ul>
+                    	</div>
+                    	<div class="f_l" id="badge_page_shzhz_$member.getMemberID()" style="display:none;">
+                        <a class="i_arrow i_first " style="display:none;"></a>
+                        <a class="i_arrow i_pre mall_prev prevPage" ></a>
+                        <a  class="i_arrow i_next mall_next nextPage"  style="margin-left:5px;"></a>
+                        <a class="i_arrow i_last" style="margin-left:5px;display:none;"></a>
+                		</div>
+                    	<a href="javascript:void(0);" onclick="toHisInquiry('$!member.getMemberID()');return false;" class="ask_to_expert f_right" style="margin-top:0;"></a>
+                      </div>
+		                
+                </div>
+                
+                
+                         
+                #if($!obj.getIsExpPrice()=="1")
+                
+                <div id="reply_isLogin_$velocityCount" class="entry_panel clearfix">
+                	<p>
+                        <span class="label">经验报价：</span>
+                        <span class="price">$!obj.getPriceFac()</span>
+                    	<span class="label">单　　位：</span>
+                        <span class="pinpai" title="$!obj.getUnit()">$!obj.getUnit() &nbsp;</span>
+                    </p>
+                    <p>
+                        <span class="label"  style="vertical-align:top;">备　　注：</span>
+                        <span class="beizhu">
+                          $!stringUtil.nullString($!obj.getNotes()) &nbsp;
+                        </span>
+                    </p> 
+                </div>
+               
+                #else 
+                
+                
+                <div id="reply_isLogin_$velocityCount" class="entry_panel clearfix">
+                	<p>
+                        <span class="label">厂商报价：</span>
+                        <span class="price">$!obj.getPriceFac()</span>
+                       <span class="label">单　　位：</span>
+                        <span class="pinpai" title="$!obj.getUnit()">$!obj.getUnit() &nbsp;</span>
+                    </p>
+                   
+                    <p>
+                        <span class="label"  style="vertical-align:top;width:75px;">供应商信息：</span>
+                        <span class="beizhu" style="width:593px;vertical-align:top;">
+                           $!stringUtil.nullString($!obj.getNotes()) &nbsp;
+                        </span>
+                    </p> 
+                </div>
+                
+                #end
+                
+                <!--<div class="c_org_01" style="margin:8px;" id="isLogin_tip_$velocityCount" style="display:none">
+                                                                           询价回复请<a class="mp_link" style="margin-left:5px;margin-right:5px;" href="#;" onclick="LoginToSee()">登录</a>查看
+                </div>-->
+                
+                
+                <p class="m_top_10" id="fbzState_$velocityCount" style="display:none">
+                   
+                	<a  onclick="bestReply('$obj.getMemberID()','$!obj.getId()','$!obj.getPid()',this)" class="btn_xuanweizuijia"></a>
+                	<span style=" vertical-align:middle;" class="c_gray_999 m_left_10">如价格对您有所帮助，请选我为最佳回复！</span>
+                	<span class="icon_smile"></span>
+                </p>
+                
+                <p class="m_top_10" id="hfzState_$obj.getMemberID()" style="display:none">
+                    <a  onclick="show('answer_box_01_$velocityCount');show('qx_wanshan');hide('wanshan_huifu');hide('txt_shz');" class="btn_question_org" style="color: #C88110;" id="wanshan_huifu">完善我的回复</a>
+                    <a  onclick="hide('answer_box_01_$velocityCount');hide('qx_wanshan');show('wanshan_huifu');show('txt_shz');" class="btn_question_org"  id="qx_wanshan" style="display:none;color: #C88110;">取消我的完善</a>
+               </p>
+                
+
+                 <div  style="margin:10px 0; display:none;" id="answer_box_01_$velocityCount">
+            	<ul class="answer_box_tab">
+                	
+                    <!--
+                    1.当选择厂商报价时提示语
+                    <span class="f_right c_gray_666">提醒：请提供真实报价、供应商、联系人及联系方式！</span>
+                    1.当选择经验报价时提示语
+                    <span class="f_right c_gray_666">提醒：请提供真实报价！</span>	
+                    -->
+                    #if($!obj.getIsExpPrice()=="0")
+                     <span class="f_right c_gray_666">提醒：请提供真实报价、供应商、联系人及联系方式！</span>
+                	<li class="cur" tip="csbj_$velocityCount"><a >厂商报价</a></li>
+                	#else
+                	<span class="f_right c_gray_666">提醒：请提供真实报价！</span>	
+                    <li class="cur" tip="jybj_$velocityCount"><a>经验报价</a></li>
+                    #end
+                </ul>
+                
+                <!--	厂商报价层开始		-->
+                #if($!obj.getIsExpPrice()=="0")
+                <div class="answer_box" id="csbj_$velocityCount">
+                    <div class="answer_box_entry_panel clearfix" >
+                        <p>
+                        	<span class="label_01"><em>*</em>厂商报价：</span>
+                        	<input id="priceFac_$velocityCount"  type="text" class="txt input_box_border" style="width:90px;" value="$!obj.getPriceFac()" />
+                           <span class="label_01"><em>*</em>单　　位：</span>
+                        	<input id="unit_$velocityCount" type="text" class="txt input_box_border" style="width:90px;" value="$!obj.getUnit()" />
+                        </p>
+                        
+                        <p>
+                        	<span class="label_01" style="vertical-align:top"><em>*</em>供应商信息：</span>
+                            <textarea id="notes_$velocityCount" Tip="如能提供联系人及联系方式更易被选为最佳回复..." cols="" value="$!obj.getNotes()"  rows="" onkeyup="checkLength(this,'sy_$velocityCount');" cols="" rows="" class="txt input_box_border" style="width:536px;padding-left:5px;
+                    height:80px;">$!stringUtil.notNull($!obj.getNotes())</textarea>
+                        </p>
+                        <p>
+                        	<span class="f_right c_gray_888" id="sy_$velocityCount">还可以输入300字</span>
+                        	<span class="label_01">验 证 码：</span>
+                            <input id="codeValue_$velocityCount" type="text" class="txt input_box_border input_w_70 " />
+                            <img id="imgCode_$velocityCount" src="/authImg" />
+                            <u class="c_gray_999 " onclick="refreshCode('imgCode_$velocityCount');" style="cursor:pointer;">看不清，换一个</u>
+                        </p>
+                  	</div>
+                    <p style="margin-left:86px;">
+                        <input name="" type="button"  value="提交" class="common_button" href="#;"  onclick="loadMemberAskReply('$obj.getId()','$velocityCount',this,'csbj');" />
+                    </p>
+                </div>
+                <!--	厂商报价层结束		-->
+                #else
+                <!--	经验报价层开始		-->
+                <div class="answer_box" id="jybj_$velocityCount" >
+                    <div class="answer_box_entry_panel clearfix">
+                        <p>
+                        	<span class="label_01"><em>*</em>经验报价：</span>
+                        	<input id="priceFac_$velocityCount" type="text" class="txt input_box_border" style="width:90px;" value="$!obj.getPriceFac()"/>
+                        	<span class="label_01"><em>*</em>单　　位：</span>
+                        	<input id="unit_$velocityCount" type="text" class="txt input_box_border" style="width:90px;" value="$!obj.getUnit()" />
+                        </p>
+                        <p>
+                        	<span class="label_01" style="vertical-align:top;">备　　注：</span>
+                            <textarea id="notes_$velocityCount" cols="" Tip="如能提供联系人及联系方式更易被选为最佳回复..." value="$!obj.getNotes()" rows="" onkeyup="checkLength(this,'sy_$velocityCount');" class="txt input_box_border" style="width:535px;padding-left:5px;
+                    height:80px;">$!stringUtil.notNull($!obj.getNotes())</textarea>
+                        </p>
+                        <p>
+                        	<span class="f_right c_gray_888" id="sy_$velocityCount">还可输入300个字</span>
+                        	<span class="label_01">验 证 码：</span>
+                            <input id="codeValue_$velocityCount" type="text" class="txt input_box_border input_w_70 " />
+                            <img id="imgCode_$velocityCount" src="/authImg"/>
+                            <u class="c_gray_999 " onclick="refreshCode('imgCode_$velocityCount');" style=" cursor:pointer;">看不清，换一个</u>
+                        </p>
+                  	</div>
+                    <p style="margin-left:86px;">
+                    	<input name="" type="button"  value="提交" class="common_button" href="javascript:void(0);"  onclick="loadMemberAskReply('$obj.getId()','$velocityCount',this,'jybj');" />
+                    </p>
+                </div>
+                <!--	经验报价层结束		-->
+                #end
+            </div>
+     
+            </div>
+            
+           #end
+           #end
+        </div>
+   
+        
+    </div>
+	<div class="w_w_210 f_left m_left_10">
+    
+    		<div class="xunjia_fabu_box">
+        	<input name="" type="button" class="btn_fabu_xunjia" onclick="releaseAsk()"  />
+        </div>
+        
+        <div class="qiandao_box clearfix" style="position:relative; z-index:555;">
+        	<div class="date_time f_left">
+            	<span class="f_zise_14" id="xq"></span>
+                <span id="rq"></span>
+            </div>
+            <div class="qiandao_btn_box f_left" href="javascript:void(0);" onclick="memberSignIn();return false;" id="qiandao_btn_box"  onmouseover="show('tips_arrow');" onmouseout="hide('tips_arrow');">
+            	签到即获得1积分
+            </div>
+            <div class="qiandao_btn_box_gray f_left" style="display:none;" href="javascript:void(0);" onclick="hide('qiandao_btn_box');return false;" id="qiandao_btn_box_gray" onmouseover="show('tips_arrow_01');" onmouseout="hide('tips_arrow_01');">
+            	累计1天 连续1天
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新来过。</div>
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow_01">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>
+                    <p class="c_black_01 m_bottom_5">本次签到获得<b class="c_org_02" id="hdScore"></b>积分</p>
+                    每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新来过。</div>
+            </div>
+        </div>
+        
+    	
+    
+      <div class="border_1_gray m_top_10" id="wAskPrice" style="display:none">
+        	<h1 class="title_name">相关询价</h1>
+            <p style="padding:15px 0;">暂无相关询价！</p>
+      </div>
+    <div class="border_1_gray m_top_10" id="yAskPrice">
+        	<h1 class="title_name"><a id="more" href="javascript:void(0);" class="link_more_g f_r">更多</a>相关询价</h1>
+            <ul class="xiangguan_xj_box">
+             
+            </ul>
+        </div>
+      
+        
+    </div>
+</div>
+<div class="pop_jyanzhi_box" id="pop_jyanzhi_box" style="display:none;z-index:1000;top:76%;">
+	<h1 class="tile"><a href="javascript:void(0);" onclick="hide('pop_jyanzhi_box');hide('mask_layer');return false;" class="clos"></a>提示</h1>
+    <div class="jiantan_tips">
+    	<p>您选择最佳回复成功，恭喜您得到满意的材料报价！</p>
+        <p>本次经验值奖励：</p>
+        <p align="center"><span class="icon_jingyans"></span></p>
+        <p align="center" class="f_zise_14 f_blod green_jingyan" id="experienceValue ">经验值+$!askPrice.score</p>
+        <p class="padding_20" align="center">
+        	<input name="" type="button" class="btn_step_org" value="确定" onclick="reload('pop_jyanzhi_box')" />
+        </p>
+    </div>
+</div>
+
+
+<div class="common_pop_box" style="width:140px; margin-left:-70px; margin-top:235px; display:none;" id="bcsm_suc_box">
+	<p class="common_tips_suc">补充说明成功！</p>
+    <p class="c_gray_999" align="center" id="addedThatTheScore"  style="display:none">（本次支付2积分）</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" value="确定" onclick="reload('bcsm_suc_box')"/></p>
+</div>
+<div class="common_pop_box" style="width:155px;margin-left:-75px;margin-top:235px; display:none;" id="bcsm_fail_box">
+	<p class="common_tips_wrong">请输入补充说明内容！</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" value="确定" onclick="hide('bcsm_fail_box')"/></p>
+</div>
+
+
+<!--	追加悬赏提示层		-->
+<div class="common_pop_box" style="width:140px;margin-left:-70px; margin-top:235px;display:none;" id="zjxs_suc_box">
+	<p class="common_tips_suc">成功追加悬赏！</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" value="确定" onclick="reload('zjxs_suc_box');"/></p>
+</div>
+<div class="common_pop_box" style="width:155px; margin-left:-75px;margin-top:235px;display:none;" id="zjxs_fail_box">
+	<p class="common_tips_wrong">您的积分余额不足！</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" value="确定" onclick="hide('zjxs_fail_box')"/></p>
+</div>
+<!--	追加悬赏提示层		-->
+
+<!--	延长期限提示层		-->
+<div class="common_pop_box" style="width:140px; margin-left:-70px; margin-top:235px;display:none;" id="ycsq_suc_box">
+	<p class="common_tips_suc">成功延长期限！</p>
+    <p class="c_gray_999" align="center">（本次支付5积分）</p>
+    <p align="center" class="m_top_10"><input  type="button" class="common_button" value="确定" onclick="reload('ycsq_suc_box');"/></p>
+</div>
+<div class="common_pop_box" style="width:155px; margin-left:-75px;margin-top:235px;display:none;" id="ycsq_fail_box">
+	<p class="common_tips_wrong">您的积分余额不足！</p>
+    <p align="center" class="m_top_10"><input  type="button" class="common_button" value="确定" onclick="hide('ycsq_fail_box');"/></p>
+</div>
+<!--	延长期限提示层		-->
+
+
+<div class="common_pop_box" style="width:260px; display:none; margin-left:-130px; margin-top:355px;" id="txqz_suc_box">
+	<p class="common_tips_suc">您的求助信息已发送给目前在线的堂主！</p>
+    <p class="c_gray_999" align="center">请耐心等待回复...</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" value="确定" onclick="hide('txqz_suc_box');"/></p>
+</div>
+<div class="common_pop_box" style="width:260px; display:none; margin-left:-130px; margin-top:355px;" id="txqz_fail_box">
+	<p class="common_tips_wrong">您已发送过求助信息！请勿重复操作！</p>
+    <p class="c_gray_999" align="center">请耐心等待回复...</p>
+    <p align="center" class="m_top_10"><input name="" type="button" class="common_button" onclick="hide('txqz_fail_box');" value="确定"/></p>
+</div>
+
+
+<div class="mask_layer" id="mask_layer" style="display:none;height:200px;"></div>
+<div class="pop_set_nicheng" id="pop_set_nicheng" style="display:none;">
+	<h1>设置昵称</h1>
+    <div class="set_nicheng_box">
+    	<p>您还没有设置昵称，昵称作为您形象的一部分将出现在网站重要位置！</p>
+        <p>您的昵称：
+        	<input id="nickName" type="text" class="txt input_box_border input_w_250" />
+            <span class="c_gray_999">(最多可5个字的昵称)</span>
+            <!--
+            1.初始状态时
+            <span class="c_gray_999">(最多可5个字的昵称)</span>
+            2.当昵称有人使用的时候
+            <span class="i_tips_wrong">此昵称太受欢迎，已有人抢了</span>
+            3.当无此昵称时
+            <span class="i_tips_right">此昵称可以使用</span>
+            -->
+        </p>
+        <p style="padding:10px 0 0 70px;"><input name="" type="button" class="btn_step_org" value="确定" onclick="setNickName('replay');" /></p>
+    </div>
+</div>
+
+<!--	云造价会员回复询价提示	-->
+<div id="reply_to_reg" class="Module_pop" style="width:320px;top:380px;height:150px; margin-left:-185px; margin-top:-100px; display:none;z-index:1100;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:270px; height:120px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2 style="margin-bottom:15px;">该帐号为企业级服务帐号</h2>
+            <p style="color:#888;">回复询价请登陆您的个人会员服务帐号</p>
+            <p style="color:#888;">没有个人会员服务帐号？<a target="_blank" class="link_b_01" href="/common/reg_personal.html">马上注册>></a></p>
+            <p><a class="btn_sure" href="javascript:void(0)" onclick="hide('reply_to_reg');hide('mask_layer');hide('noteWin');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd> 
+    </dl>
+</div>
+
+ #parse($footer_dir)
+#parse($login_tip)
+<script language="javascript" src="$common_site/js/zjt/commonJS/cid_badge.js"></script>
+<script language="javascript" src="$common_site/js/common/cid_badge_util.js"></script>
+<script language="javascript" src="$common_site/js/zjt/ask/ask_info.js"></script>
+ <script language="javascript" src="$common_site/js/zjt/ask/ask_index_right.js"></script>
+ <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/reset.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_common.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_index.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_qestion.css" />
+</body>
+</html>
+

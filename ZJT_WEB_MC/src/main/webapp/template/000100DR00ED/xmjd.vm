@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>工程项目</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+      <link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+  </head>
+  
+  <body>
+            <div id="xmjd" class="item_xx">
+             
+				<div class="title_banner" style="width:277px;">
+					<div class="title_banner_left" ></div>
+					<div class="title_banner_center" style="width:271px;">
+						<div class="title_icon"></div>
+						<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2005/200504/')"><div class="title_text">项目进度</div></a>
+					    <a class="blue2_a gengduo"  href="$templateUtil.getInfoContentList('/20/2005/200504/')"  target="_blank">更多＞＞</a>
+					</div>
+					<div class="title_banner_right" ></div>
+				</div>
+				<div class="content" id="xmjd_scroll">
+					<div class="JQ-content-box">
+						<ul class="JQ-slide-content">
+						
+						        $!map.clear()
+	                    		$!map.put("tpath", "/20/2005/200504/")
+	                    		#set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true))
+	                    		#foreach($obj in $list)
+	                    		
+							  <li>
+							  #if($!obj.getIssueType()=="1")
+							  <div class="li_icon"></div><a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())">$!parameterUtil.truncString($!obj.getSubTitle(),38,"")  </a>
+					          #else
+					           <div class="li_icon"></div><a  target="_blank" class="black_a" href="$!obj.getUrl()">$!parameterUtil.truncString($!obj.getSubTitle(),38,"")  </a>
+					          #end
+					          </li>
+					          #end
+							
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+
+  </body>
+  </html>

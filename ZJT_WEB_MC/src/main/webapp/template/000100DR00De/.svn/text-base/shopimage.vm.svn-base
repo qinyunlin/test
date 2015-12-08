@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+## 获取商铺信息
+#set($epShop=$epShopService.getEpShopByEID($dataInfo.eid))
+## 获取分类信息
+#set($productClassifyList=$epShopService.getProductClassify($dataInfo.eid))
+## 获取企业图片信息
+#set($epAttachList=$epShopService.getEpAttachList(20, 1, "2", $dataInfo.eid))
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/common/common.css" />
+	<link type="text/css" rel="stylesheet" href="$!{c1wcw_dir}/css/common/ccwcw.css" />
+	<link type="text/css" rel="stylesheet" href="$!{c1wcw_dir}/css/shop/shop_index.css" />
+	<link type="text/css" rel="stylesheet" href="$!{c1wcw_dir}/css/shop/shop_introduction.css" />
+	<link type="text/css" rel="stylesheet" href="$!{c1wcw_dir}/css/shop/shop_certificate.css" />
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/jyeeda.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/plugins/jqueryTools.js"></script> 
+    <script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataStore.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/basic.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataCheck.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/ConCom.js"></script>
+	<title>$!{epShop.getName()}_企业图片_网材网</title>
+
+  </head>
+  
+ <body>
+	<!-- 引入头部 -->
+    #parse($shop_header_dir)
+	<!-- 商铺首页主体部分 -->
+	<div id="main">
+    <!-- 引入左部 -->
+    #parse($shop_left_dir)
+    <!-- 商铺主体右部 -->
+    <div class="introduction_main">
+    	<div class="introduction_title_bg">
+            <span class="introduction_title">企业图片</span>
+        </div>
+         <div id="img_title" class="img_title" style="display:none;"></div>
+         
+         
+        <!--   图片展示区域   --> 
+         <div class="shop_certificate_img">
+         	<div id="laureate-img">
+				#if($!{epAttachList.size()}>0)
+					<img id="img_certificate" style="border:1px solid #CCCCCC" height="440px" width="570px" src=#if($!{epAttachList.size()}>0)"$!{ftp_dir}$!{epAttachList.get(0).path}"#else""#end>
+	            #else
+					<div class="nofound"></div>
+				#end
+	         </div>
+	         <div class="clear"></div>
+		 </div>
+         
+         
+           <!-- 图片滚动 -->
+           <div id="p-right-down" class="main_down">
+		        <a class="prevPage browse left"></a>
+		        <div class="demand-scrcont">
+			         <div id="list" class="items" style="display: block;">
+						#foreach ($epAttach in $epAttachList )
+							<img src="$!{ftp_dir}$!{epAttach.path}" title="$!{epAttach.filename}"/>
+						#end
+					 </div>
+		             <div id="templistbody" style="display:none;">
+		                <img src="@{path|changeLogo}" title="@{filename}" />
+		             </div>
+		             <div class="clearing"></div>
+		        </div>
+		        <a class="nextPage browse right"></a>
+		   </div>
+        </div>
+    <div class="clearing"></div>
+    </div>
+    <!-- 引入尾部 -->
+    #parse($shop_footer_dir)
+    <script type="text/javascript" src="$!{c1wcw_dir}/js/shop/shop_image_html.js"></script>
+</body>
+</html>

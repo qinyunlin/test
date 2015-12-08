@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>造价通_中国建设行业大数据信息共享平台</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <meta name="description"
+            content="造价通是中国首个建设行业大数据平台，为您提供权威的工程造价信息查询服务，以信息价、指导价、参考价为基础，提供全面的人工，材料，设备机械价格及数据标准查询服务。为工程建设决策者提供权威的决策依据，为造价员提供专业的查价、询价以及造价知识学习的平台。"/>
+            <meta name="keywords"	
+                content="工程造价，云造价，造价信息，信息价，指导价，参考价，人工价，设备租赁价，材料报价，建议价，询价，造价员，造价知识"/>
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="stylesheet" type="text/css" href="$common_site/css/common/reset.css" />
+			    <link rel="stylesheet" type="text/css" href="$common_site/css/common/global.css" />
+			    <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/common.css"/>
+			    <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/sub.css"/>
+                <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+                <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/include/city_sel.css"/>
+                <script type="text/ecmascript" src="$common_site/js/common/jyeeda.js"></script>
+                <script type="text/ecmascript" src="$common_site/js/common/ConCom.js"></script>
+				<script type="text/ecmascript" src="$common_site/js/common/jquery.cookie.js"></script>
+                <script type="text/ecmascript" src="$common_site/js/zjt/commonJS/city_site.js"></script>
+                <script type="text/ecmascript" src="$common_site/js/common/site_select.js"></script>
+                <script type="text/ecmascript" src="$common_site/js/zjt/include/suspension.js"></script>
+				<script type="text/ecmascript" src="$common_site/js/zjt/index/www_index.js"></script>
+    </head>
+    <body>
+    
+    
+    <!--	header star	-->
+<div id="header_box">
+    <div id="header" >
+       <div class="inside-com-logo" style="margin-top:20px;"><a href="/" class="logo01" style="width:220px;"></a></div>
+    </div>
+</div>
+
+<!--	header end	-->
+
+<div class="sel_city_info">
+	<dl>
+    	<dt>选择站点</dt>
+        <dd>
+        	<ul>
+            	<li>
+                	<label>华南：</label>
+                    <a href="http://gd.zjtcn.com"  class="link_g_01 rg">广东</a>
+                    <a href="http://gx.zjtcn.com"  class="link_g_01 rg">广西</a>
+                    <a href="http://hainan.zjtcn.com"  class="link_g_01 rg">海南</a>
+
+                </li>
+                <li>
+                	<label>华中：</label>
+                    <a href="http://hunan.zjtcn.com"  class="link_g_01 rg">湖南</a>
+                    <a href="http://hubei.zjtcn.com"  class="link_g_01">湖北</a>
+                    <a href="http://henan.zjtcn.com"  class="link_g_01">河南</a>
+					<a href="http://jx.zjtcn.com"  class="link_g_01">江西</a>
+                </li>
+                <li>
+                	<label>华东：</label>
+                    <a href="http://sh.zjtcn.com"  class="link_g_01 rg">上海</a>
+                    <a href="http://zj.zjtcn.com"  class="link_g_01 rg">浙江</a>
+                    <a href="http://js.zjtcn.com"  class="link_g_01 rg">江苏</a>
+                    <a href="http://sd.zjtcn.com"  class="link_g_01">山东</a>
+                    <a href="http://ah.zjtcn.com"  class="link_g_01">安徽</a>
+                    <a href="http://fj.zjtcn.com"  class="link_g_01">福建</a>
+                </li>
+                <li>
+                	<label>华北：</label>
+                    <a href="http://bj.zjtcn.com"  class="link_g_01 rg">北京</a>
+                    <a href="http://tj.zjtcn.com"  class="link_g_01 rg">天津</a>
+                    <a href="http://hebei.zjtcn.com"  class="link_g_01">河北</a>
+                    <a href="http://shanxi.zjtcn.com"  class="link_g_01">山西</a>
+                    <a href="http://nmg.zjtcn.com"  class="link_g_01">内蒙古</a>
+                </li>
+                <li>
+                	<label>东北：</label>
+                    <a href="http://ln.zjtcn.com"  class="link_g_01">辽宁</a>
+                    <a href="http://jl.zjtcn.com"  class="link_g_01">吉林</a>
+                    <a href="http://hlj.zjtcn.com"  class="link_g_01 rg">黑龙江</a>
+                </li>
+                <li>
+                	<label>西南：</label>
+                    <a href="http://sc.zjtcn.com"  class="link_g_01 rg">四川</a>
+                    <a href="http://cq.zjtcn.com"  class="link_g_01">重庆</a>
+                    <a href="http://gz.zjtcn.com"  class="link_g_01">贵州</a>
+                    <a href="http://yn.zjtcn.com"  class="link_g_01 rg">云南</a>
+                    <a href="http://xz.zjtcn.com"  class="link_g_01">西藏</a>
+                </li>
+                <li>
+                	<label>西北：</label>
+                    <a href="http://sx.zjtcn.com"  class="link_g_01 rg">陕西</a>
+                    <a href="http://gs.zjtcn.com"  class="link_g_01">甘肃</a>
+                    <a href="http://nx.zjtcn.com"  class="link_g_01">宁夏</a>
+                    <a href="http://qh.zjtcn.com"  class="link_g_01">青海</a>
+                    <a href="http://xj.zjtcn.com"  class="link_g_01">新疆</a>
+					
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+</div>
+
+        #parse($footer_dir)
+    </body>
+</html>

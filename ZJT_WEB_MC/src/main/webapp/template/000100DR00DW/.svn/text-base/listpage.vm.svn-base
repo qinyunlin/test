@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+#set($listContent=$dataInfo.contents)
+#set($title=$dataInfo.title)
+#set($pageNo=1)
+#set($pageNo=$pageNo.parseInt($dataInfo.page))
+#set($pageSize=20)
+#set($pageSize=$pageSize.parseInt($dataInfo.pageSize))
+#set($recCount=20)
+#set($recCount=$recCount.parseInt($dataInfo.count))
+#set($pageCount=3)
+#set($pageCount=$pageCount.parseInt($dataInfo.pageCount))
+#set($firstPage=$dataInfo.firstPage)
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+ <title>$!typename - 工程项目资讯 -网材网</title>
+  <meta name="keywords" content="项目信息，建筑信息，工程信息，建筑行业" />
+  <meta name="description" content="工程项目资讯板块是由网材网发布的关于建材行业工程项目资讯信息。包含有工程项目最新采购信息，最新成果（建材求购方与建材供应商达成交易）信息的一个建材资讯平台！" />
+
+<script type="text/javascript" language="javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/select.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/dataCheck.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/plugins/jqueryTools.js"></script>
+<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/caigou/caigou.css">
+<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/rightMode.css">
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+  </head>
+ 
+  <body>
+   #parse($wcw_header)
+   #parse($hypd_nav)
+    
+    <div class="main">
+      <div class="ccwcw_zxnr_center2">			
+		$!map.clear()
+		$!map.put("isHot", "0")
+		$!map.put("isTop", "1")
+		$!map.put("tpath", "/20/2012/201204/20120410/")
+		#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+                #foreach($obj in $list)
+		
+
+        <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"><img alt="$!obj.getTitle()" width="950px" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"></a>
+   
+               #end
+        </div>
+       <div class="ccwcw_zxnr_center3">
+         <div class="ccwcw_zxnr_center3_left">
+            <div class="title_banner" style="width:662px;">
+                <div class="title_banner_left"></div>
+                <div class="title_banner_center" style="width:656px;">
+                    <div class="title_icon"></div>
+                    <div class="title_text" id="tname">$!title</div>
+                </div>
+                <div class="title_banner_right"></div>
+            </div>
+            <div class="ccwcw_zxnr_center3_left_bottom">
+                <div id="listbody">
+                         #foreach($obj in $!listContent)
+  <ul  class="ccwcw_zxnr_center3_left_bottom_div2">
+                       <li class="title"><div class="li_icon"></div><a id="title_a"  target="_blank" href="$templateUtil.getWcwInfoContentUrl($!obj.id,$!obj.tpath,$!obj.addTime)">$!obj.title</a></li>
+	                   <li class="time" >$!obj.addTime</li><br />
+	                   <li class="context">$!obj.summary</li>
+	                 </ul>
+                            #end
+                   </div>
+                  
+                  <div id="page"  class="ccwcw_zxnr_center3_left_bottom_div3">
+#parse($shop_page_dir)
+				  </div>
+            </div>
+         </div>
+               <div class="ccwcw_zxnr_center3_right">
+	                #parse($wcw_zxcg)
+	                
+	                <div class="ccwcw_zxnr_center3_right_div2">
+	                  
+          				
+							$!map.clear()
+							$!map.put("isHot", "0")
+							$!map.put("isTop", "1")
+							$!map.put("tpath", "/20/2012/201204/20120411/")
+							#set($list = $infoService.searchInfoContentSummarys(1, 1, $!map, true))
+							#foreach($obj in $list)
+	                   
+	                   <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"><img alt="$!obj.getTitle()"  src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/></a>
+	                                    #end
+	                </div>
+	                #parse($wcw_xmjd)
+	                
+	                  <div class="ccwcw_zxnr_center3_right_div2">
+	                    
+          				
+							$!map.clear();
+							$!map.put("isHot", "0");
+							$!map.put("isTop", "1");
+							$!map.put("tpath", "/20/2012/201204/20120412/");
+							#set($list = $infoService.searchInfoContentSummarys(1, 1, $!map, true))
+							#foreach($obj in $list)
+	                   
+	                  <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"> <img alt="$!obj.getTitle()" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/></a>
+	                   #end
+	                </div>
+	                
+	                <div class="ccwcw_zxnr_center3_right_div3">
+                     #parse($wcw_dfxmfb)
+                    </div>
+               </div>
+       </div>
+       
+   </div>
+    #parse($wcw_footer)
+      <script language="javascript" src="$wcw_common_site/js/common/pageTool.js" ></script>
+       <script type="text/javascript" src="$wcw_common_site/js/project/project_info.js"></script>
+  </body>
+</html>

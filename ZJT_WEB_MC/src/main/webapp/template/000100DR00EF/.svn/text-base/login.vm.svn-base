@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<title>登陆页面</title>
+		
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link type="text/css" rel="stylesheet"
+			href="$wcw_common_site/css/common/common.css" />
+		<link type="text/css" rel="stylesheet"
+			href="$wcw_common_site/css/common/login_register_common.css" />
+		<link type="text/css" rel="stylesheet"
+			href="$wcw_common_site/css/common/login.css" />
+<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/dataStore.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/dataCheck.js"></script>
+<script language="javascript"  src="$wcw_common_site/js/common/ConCom.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/jquery.cookie.js"></script>		
+		<script type="text/javascript"
+			src="$wcw_common_site/js/common/login_register_common.js"></script>	
+	</head>
+
+	<body>
+		<div class="login_bg">
+			<div id="main">
+				<div class="header">
+					<div class="LOGO" onclick="window.location.href='/'"></div>
+				</div>
+				<div class="container_login">
+					<div class="content_middle">
+						<div class="content_text">
+							<div class="content_container">
+								<div class="content_container_content">
+									<ul>
+										<li class="login_id">
+											<span style="color:red;">*</span>用户名：
+										</li>
+										<li>
+											<input type="text" id="memberID" class="text_input"
+												name="textfield">
+										</li>
+									</ul>
+									<ul>
+										<li class="login_id">
+											<span style="color:red;">*</span>密&nbsp;&nbsp;码：
+										</li>
+										<li>
+											<input type="password" id="pwd" class="text_input"
+												name="textfield">
+										</li>
+									</ul>
+									<ul>
+										<li class="login_id">
+											<span style="color:red;">*</span>验证码：
+										</li>
+										<li>
+											<input type="text" id="code" class="text_input2"
+												name="textfield">
+										</li>
+										<li style="width: 82px;height:26px;border:1px solid #D9D9D9;margin:2px 0 0 10px;">
+											<img id="imgCode" style="margin-top: 4px" src="/authImg" />
+										</li>
+										<li style="width: 67px;">
+											<a class="blue_change" href="#" onclick="refreshCode()">换一张</a>
+										</li>
+									</ul>
+									<ul>
+										<li class="detail">
+											<input type="checkbox" name="autologin" style="border: 0;">
+										</li>
+										<li class="detail_auto">
+											30天内自动登录（请勿在公用电脑上勾上此功能）
+										</li>
+									</ul>
+									<ul>
+										<div id="confirm" class="anniu_common anniu" onclick="login()" style="margin: 9px 0 0 56px;">登&nbsp;&nbsp;录</div>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="container_right">
+								<div class="container_top">
+									<div class="orange_title">
+										立即注册
+									</div>
+									<div class="gray_text">
+										如果您还不是网材网的会员，请点击下面按钮进行注册
+									</div>
+									<div class="anniu_common anniu" style="margin: 9px 0 0 0"
+										onclick="window.location.href='/common/register.html'">注&nbsp;&nbsp;册</div>
+								</div>
+								<div class="container_bottom">
+									<div class="orange_title">
+										忘记密码？
+									</div>
+									<div class="gray_text">
+										如果您忘记密码，请点击下面按钮取回密码
+									</div>
+									<div class="anniu_common anniu" style="margin: 9px 0 0 0"
+										onclick="window.location.href='/common/forgetpwd.html'">取回密码</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			#parse($wcw_footer)
+		</div>
+		<script type="text/javascript" src="$wcw_common_site/js/common/login.js"></script>
+	</body>
+</html>

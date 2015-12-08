@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>网材网</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css"
+			href="http://c1.ccwcw.com/css/common/common.css" />
+		<link type="text/css" rel="stylesheet"
+			href="http://c1.ccwcw.com/css/common/ccwcw.css" />
+</head>
+<style>
+#main
+{
+	width:950px;
+	margin:100px auto;
+}
+#info
+{
+	padding:0 20px 0 20px;
+	float:left;
+	margin:0 auto;
+	background-color:#EEF4F4;
+	border:2px #84B5AF solid;
+	text-align:left;
+}
+OL LI
+{
+	line-height:30px;	
+}
+</style>
+<body>
+<div id="main">
+  <div style="width:580px; margin:0 auto; font-size:16px; font-weight:bold; text-align:left; line-height:30px;"></div>
+  <div class="clearing"></div>
+	<div style="width:100%;line-height:30px;">
+         <div style="width:24%; float:left;line-height:30px;">
+        		<img src="http://c1.ccwcw.com/images/common/LOGO2.gif">
+                <div class="clearing"></div>
+          </div>
+          <div  id="info">非常抱歉，在我们的服务器上，无法找到您要访问的网页。您可以试试以下几种方法：</div>
+          <div style="float:left; width:76%; text-align:left;">
+          	<ol>
+            	<li>1.检查网址是否正确。</li>
+                <li>2.直接访问 <a href="/index.html" class="blue">网材网首页</a>。</li>
+               <!-- <li>3.如您想留下您的宝贵意见请进入 <a href="/module/help/feedback.html"  class="blue">意见箱</a></li>-->
+            </ol>
+          	<div class="clearing"></div>
+          </div>
+          <div class="clearing"></div>
+      </div>
+      <div class="clearing"></div>
+    <div style="width:52%;margin:0 auto; font-size:14px; font-weight:bold; text-align:left; line-height:30px;">
+    	页面将会在5秒后跳转到网材网首页。
+    	<div class="clearing"></div>
+    </div>  
+      <div class="clearing"></div>
+</div> 
+<script>
+setTimeout(gohome,5000);
+function gohome()
+{
+	window.location.href="/";
+}
+</script>
+</body>
+</html>

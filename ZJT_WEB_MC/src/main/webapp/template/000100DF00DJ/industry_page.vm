@@ -1,0 +1,216 @@
+##分页栏显示层
+<script language="javascript">
+     this.showBoxId = "page"; // 显示分页容器id   常规数字翻页条 
+     this.pageIndex = $!{pageNo};   // 当前页        
+     this.countPage = $!{pageCount};   // 总页数       
+     this.obj = null; //常规分页元素
+     this.pagesize=20;//每页显示条数（基于我们造价通和网材网平台收索数据我将此值默认为20条）
+     this.pageSum=0;//当前页显示条数
+     //设置总页数  
+     this.setCountPage = function (_countPage){  
+         if (_countPage != null) { this.countPage = _countPage; }  
+     };  
+     //绘制分页按钮  
+     this.Print = function (_countPage){  
+    	 //如果调用该方法是有传入页面总数 则根据传进来的总数绘制分页标签 否则根据查询条件返回的总数绘制分页表中
+         if (_countPage != null) {
+        	 this.countPage = _countPage; 
+         }
+         //获取分页控件存放的div元素
+         this.obj = document.getElementById(this.showBoxId);  
+         //如果总页数小于1和等于一是不显示分页按钮
+         if (this.countPage < 1) {
+        	 this.obj.innerHTML = "";
+        	 return; 
+         }  
+         //初始化上一页和下一页下标值
+         var tmpPrePageIndex = Number(this.pageIndex) - 1;  
+         var tmpNextPageIndex = Number(this.pageIndex) + 1;  
+         
+         //首页显示5
+         var btnCount =5;  
+         this.obj.innerHTML = "";  
+         //如果当前页为最后一页这得到最后页的条数
+         if (this.pageIndex == this.countPage) {  
+        	 this.pageSum=this.countPage-(this.pagesize*(this.countPage-1));
+         }else{
+        	 this.pageSum=this.pagesize;
+         }
+        //如果是当前页不在首页则创建上一页按钮
+         if (this.pageIndex > 1) {  
+             var _a1 = document.createElement("a");  
+             var _span0 = document.createElement("span");
+             _span0.innerHTML = "上一页";  
+             _span0.setAttribute("id", "pagePrev");
+             _a1.appendChild(_span0);
+             _a1.href = "javascript:void(0)";  
+             _a1.onclick = this._goTo("click", tmpPrePageIndex);  
+             this.obj.appendChild(_a1);  
+         }
+         if (this.countPage <=btnCount) {//当总页数少于分页按钮数目时  
+             for (var i = 0; i < this.countPage; ++i) { 
+            	 //保存显示的按钮文本值
+                 var tmpIndex = i + 1;  
+                 
+               //如果点击的分页按钮值等于当前分页下标这直接将该页面标记为选择状态不可点击
+                 if (tmpIndex == this.pageIndex) {  
+                     var _span1 = document.createElement("span");  
+                     _span1.setAttribute("id", "divs_span");  
+                     _span1.innerHTML = tmpIndex;  
+                     this.obj.appendChild(_span1);  
+                 } else { //创建所有页面 标签
+                     var _a1 = document.createElement("a");  
+                     _a1.innerHTML = tmpIndex;  
+                     _a1.href = "javascript:void(0)";  
+                     _a1.onclick = this._goTo("click", tmpIndex);  
+                     this.obj.appendChild(_a1);  
+                 }  
+             }  
+         } else {  
+             if (this.pageIndex < 5) {//当前页少于7时  
+                 for (var i = 0; i < btnCount; ++i) { 
+                	 //保存显示的按钮文本值
+                     var tmpIndex = i + 1; 
+                   //如果点击的分页按钮值等于当前分页下标这直接将该页面标记为选择状态不可点击
+                     if (tmpIndex == this.pageIndex) {  
+                         var _span1 = document.createElement("span");  
+                         _span1.setAttribute("id", "divs_span");  
+                         _span1.innerHTML = tmpIndex;  
+                         this.obj.appendChild(_span1);  
+                     } else {  //创建所有页面 页码标签
+                         var _a1 = document.createElement("a");  
+                         _a1.innerHTML = tmpIndex;  
+                         _a1.href = "javascript:void(0)";  
+                         _a1.onclick = this._goTo("click", tmpIndex);  
+                         this.obj.appendChild(_a1);  
+                     }  
+                 }  
+                 
+                 //小于7 大于6时后面创建省略号
+                 var _span1 = document.createElement("span");  
+                 _span1.innerHTML = "...";  
+                 this.obj.appendChild(_span1);  
+             } else {//当前页大于等于7时  
+                 if (this.pageIndex >= (this.countPage - 5)) {  
+                     var _a1 = document.createElement("a");  
+                     _a1.innerHTML = "1";  
+                     _a1.href = "javascript:void(0)";  
+                     _a1.onclick = this._goTo("click", 1);  
+                     this.obj.appendChild(_a1);  
+                     var _a2 = document.createElement("a");  
+                     _a2.innerHTML = "2";  
+                     _a2.href = "javascript:void(0)";  
+                     _a2.onclick = this._goTo("click", 2);  
+                     this.obj.appendChild(_a2);  
+                     var _span3 = document.createElement("span");  
+                     _span3.innerHTML = "...";  
+                     this.obj.appendChild(_span3); 
+                     for (var i = 0; i < 7; ++i) {  
+                         var tmpIndex = this.countPage - 6 + i;  
+                         
+                         //如果点击的分页按钮值等于当前分页下标这直接将该页面标记为选择状态不可点击
+                         if (tmpIndex == this.pageIndex) {  
+                             var _span1 = document.createElement("span");  
+                             _span1.setAttribute("id", "divs_span");  
+                             _span1.innerHTML = tmpIndex;  
+                             this.obj.appendChild(_span1);  
+                         } else {  
+                             var _a1 = document.createElement("a");  
+                             _a1.innerHTML = tmpIndex;  
+                             _a1.href = "javascript:void(0)";  
+                             _a1.onclick = this._goTo("click", tmpIndex);  
+                             this.obj.appendChild(_a1);  
+                         }  
+                     }  
+                 } else {  
+                     var _a1 = document.createElement("a");  
+                     _a1.innerHTML = "1";  
+                     _a1.href = "javascript:void(0)";  
+                     _a1.onclick = this._goTo("click", 1);  
+                     this.obj.appendChild(_a1);  
+                     var _a2 = document.createElement("a");  
+                     _a2.innerHTML = "2";  
+                     _a2.href = "javascript:void(0)";  
+                     _a2.onclick = this._goTo("click", 2);  
+                     this.obj.appendChild(_a2);  
+                     var _span4 = document.createElement("span");  
+                     _span4.innerHTML = "...";  
+                     this.obj.appendChild(_span4);  
+                     for (var i = 0; i < 5; ++i) {  
+                         var tmpIndex = this.pageIndex - 1 + i;  
+                         if (tmpIndex == this.pageIndex) {  
+                             var _span1 = document.createElement("span");  
+                             _span1.setAttribute("id", "divs_span");  
+                             _span1.innerHTML = tmpIndex;  
+                             this.obj.appendChild(_span1);  
+                         } else {  
+                             var _a1 = document.createElement("a");  
+                             _a1.innerHTML = tmpIndex;  
+                             _a1.href = "javascript:void(0)";  
+                             _a1.onclick = this._goTo("click", tmpIndex);  
+                             this.obj.appendChild(_a1);  
+                         }  
+                     }  
+                     var _span5 = document.createElement("span");  
+                     _span5.innerHTML = "...";  
+                     this.obj.appendChild(_span5);  
+                 }  
+             }  
+         }  
+
+         //如果当前也不为最后页是创建下一页按钮，如果问最后一页则不创建
+         if (this.pageIndex != this.countPage) {  
+        	 var _a3 = document.createElement("a");        	
+             _a3.href = "javascript:void(0)";
+             _a3.onclick = this._goTo("click", tmpNextPageIndex);            
+             var _span2 = document.createElement("span"); 
+             _span2.setAttribute("id", "pageNext");
+             _span2.innerHTML = "下一页";
+             _a3.appendChild(_span2);               
+             //将创建的下一页按钮添加到要显示的div中
+             this.obj.appendChild(_a3);  
+ 
+         }
+     }; 
+     
+     //分页跳转方法 
+     this._goTo = function (_type, _index) {  
+         var obj = this;  
+         if (_type == "index") {//跳转页面  
+             return function () {  
+                 obj.GoToPageIndex.apply(obj); 
+             };
+         }  
+         if (_type == "click") {//点击页面  
+        	 //分页下标
+             var arr1 = [_index];  
+             return function () {  
+         		 obj.GoToClick.call(obj, arr1);
+             } ;
+         }  
+     };  
+     
+     //点击页码 和上一页，下一页 方法
+     this.GoToClick = function (_arr) {  
+         this.pageIndex = _arr[0];  
+         if (parseInt(this.pageIndex) > 0 && parseInt(this.pageIndex) <= parseInt(this.countPage)) { 
+                  //根据下标将对应的页码状态改为选择状态
+                  this.GoToPage(this.pageIndex);   
+        	      var firstPage = "$!{firstPage}";
+		          this.location=firstPage.replace("{pageNo}", this.pageIndex);
+         } else{
+        	 if(parseInt(this.pageIndex)==1 || parseInt(this.pageIndex)>parseInt(this.countPage)){
+        		 return;
+        	 }
+         } 
+     };  
+     //绘制按钮判断如果不为第一页则无需重新绘制，只改变已经绘制的元素即可 （即只初始化一次）
+     if($!{pageNo}>=1){
+		 this.Print();
+	 }
+     
+     //根据下标将对应的页码状态改为选择状态
+	 this.GoToPage = function (pageIndex){
+		 this.Print();
+	 };
+</script>

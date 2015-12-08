@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>工程项目搜索 - 网材网 - 中国最大的建材信息网</title>
+ <meta name="keywords" content="建筑项目，建材项目，水电工程，土建项目，安装项目， " />
+<meta name="description" content="网材网工程项目搜索板块是最大的建材工程项目信息平台，大量的建材项目信息，建材采购信息，方便建材供应方参考！" />
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/searchlist/project_search.css">
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>	
+ 	<script type="text/javascript" src="$wcw_common_site/js/common/dataStore.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/grade_db.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_cid_db.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_cid_decode.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/shop_type_db.js"></script>	
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/searchlist/project_search.js"></script>
+	
+  </head>
+  
+  <body>
+   <!-- 头部 -->
+    #parse($wcw_header)
+	
+	<!-- 主体 -->
+	<div id="main">
+		<div class="main_l">
+			<div class="title_banner" style="width:950px;">
+				<div class="title_banner_left"></div>
+				<div class="title_banner_center" style="width:944px;">
+					<div class="title_icon"></div>
+					<div class="title_text" style="width:50px;">项目：</div>
+					<div class="title_text" style="width:842px;" id="project_search_name">&nbsp;</div>
+				</div>
+				<div class="title_banner_right"></div>
+			</div>
+			<div class="searchlist_container" id="data_msg">
+				<div class="searchlist_div" id="listbody">
+				</div>
+				<div id="page"></div>		
+			</div>
+			<div id="templistbody" style="display:none">
+			
+					<div class="searchlist_content">
+						<div class="list_num">@{rownum}</div>
+						<div class="list_img">
+						<a href="/module/V3/project/project_particular.jsp?id=@{id}">
+							<img width="80px" height="80px" src="$!fileUtil.getWcwFileUrl('@{photo}')" />
+							</a>
+						</div>
+						<div class="list_container">
+							<div class="list_container_t">
+								<div class="type_name"><a class="orange_a2" href="$templateUtil.getProjectUrl('@{id}')" style="font-size:14px;">@{name|trim_zhcn,70}</a></div>
+								<div class="com_area">发布时间：@{createOn|trim_date}</div>
+								<div class="com_area">项目类型：@{type}</div>
+							</div>
+							<div class="list_container_b">
+								<ul>
+									<li>项目地区：</li>
+									<li class="li_class">@{province}@{region}</li>
+									<li>建筑类别：</li>
+									<li class="li_class">@{buildType}</li>
+									<li>项目阶段：</li>
+									<li>@{stage|changeStage}</li>
+								</ul>
+								<ul>
+									<li>投资额：</li>
+									<li>@{investment}万元</li>
+								</ul>
+								<ul>
+									<li>描述：</li>
+									<li>@{description}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			</div>
+			
+			<div class="searchlist_container" id="error_msg" style="display:none">
+					<!-- 没有任何结果的提示信息 开始 -->
+					<div id="searchnone_content_center">
+						<div class="searchnone_content_center_top">
+							我们建议您：
+						</div>
+						<div class="clearing"></div>
+						<div class="searchnone_content_center_de">
+							1.看看输入的文字是否有误。
+						</div>
+						<div class="clearing"></div>
+						<div class="searchnone_content_center_de">
+							2.去掉可能不必要的字词，如“的”、“什么”等。
+						</div>
+						<div class="clearing"></div>
+						<div class="searchnone_content_center_de">
+							3.调整关键字，如“环球室内条纹瓷砖”改为“环球 室内条纹瓷砖”或“环球 条纹瓷砖”。
+						</div>
+						<div class="clearing"></div>
+						<div style="margin-left: 30px; display: inline" class="searchnone_content_center_de">
+							<input type="text" style="height: 24px; width: 400px" name="sorry_key">
+						</div>
+						<div class="search_again">
+							<a onclick="searchagain()" style="font-size: 12px;" class="black" href="#">重新搜索</a>
+						</div>
+						<div class="clearing"></div>
+						<div class="searchnone_content_center_de">
+							4.您使用中有任何问题，都可以通过电话联系我们！请拨打服务热线。
+						</div>
+						<div class="tel"></div>
+						<div class="tel_text">
+							020-85524476-606
+						</div>
+						<div class="clearing"></div>
+					</div>
+					<!-- 没有任何结果的提示信息 结束 -->			
+			</div>
+			<div class="clearing"></div>
+			<!-- 搜索页面_推荐商铺 -->
+			#parse($wcw_tjsp)
+		</div>
+		<div class="clearing"></div>
+	</div>
+	
+    <!-- 尾部 -->
+    #parse($wcw_footer)
+    <src
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript" src="$common_site/js/common/jyeeda.js"></script>
+<script language="javascript" src="$common_site/js/common/basic.js"></script>
+<script language="javascript" src="$common_site/js/common/ConCom.js"></script>
+<script language="javascript" src="$common_site/js/common/dataStore.js"></script>
+<script language="javascript" src="$common_site/js/common/jquery.cookie.js"></script>
+<script language="javascript" src="$common_site/js/common/common.js"></script>
+<script language="javascript" src="$common_site/js/common/msg.js"></script>
+<script language="javascript"  src="$common_site/js/common/msg_zhcn.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/cid_db.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/cid_util.js"></script>
+<title id="titlename">询价详情</title>
+</head>
+
+<body>
+#parse($header_dir)
+<div id="xunjia_content" style="text-align:left;">
+	<div class="f_left w_w_730" style="position:relative;">
+	
+	    #parse($ask_index_search)
+<div class="crumb">
+       <ul id="dqwz">
+			
+       </ul>
+   </div>
+    	
+        <div class="question_box">
+        	<div class="header clearfix" style="width:684px;">
+            	<h1 class="question_title">
+                	<span class="f_right txt_right c_org_02" id="status">审核中</span>
+                	<span class="icon_common i_being"></span>
+                    <span class="question_title_name">稀土钢芯铜铝绞导线</span>
+                </h1>
+                <div class="details">
+                    <span id="trueName"></span>
+                    <span class="v_split">|</span>
+                    <span class="i_reward">悬赏积分: <u class="c_org_02" id="xsScore"></u></span> 
+                    <span class="v_split">|</span>
+                     <span id="hitSum"></span>
+                </div>
+            </div>
+            
+            <div class="qb_body clearfix">
+            	<ul class="qestion_info_list">
+                	<li class="t_title">规格型号：</li>
+                    <li class="t_content" id="spec"></li>
+                    <li class="t_title">材料分类：</li>
+                    <li class="t_content" id="cid"></li>
+                    <li class="t_title" >数　　量：</li>
+                    <li class="t_content" id="amount"></li>
+                    <li class="t_title">报价地区：</li>
+                    <li class="t_content" id="addr"></li>
+                </ul>
+                <ul class="qestion_info_list m_left_20">
+                	<li class="t_title">档　　次：</li>
+                    <li class="t_content" id="grade"></li>
+                    <li class="t_title">用　　途：</li>
+                    <li class="t_content" id="purpose"></li>
+                    <li class="t_title">费用说明：</li>
+                    <li class="t_content" id="fysm"></li>
+                    <li class="t_title">到期时间：</li>
+                    <li class="t_content" id="validDate"></li>
+                </ul>
+                <ul class="qestion_info_list_01">
+                    <li class="t_title">备　　注：</li>
+                    <li class="t_content" id="notes"></li>
+                </ul>
+                <div id="fujian">
+                </div>
+                
+            </div>
+            
+            <div class="box_editor">
+            	<span class=" f_zise_14 f_blod" id="askPriceAudit">处理询价</span>
+                <span class="c_gray_888 m_left_20" >询价等待审核中，您可进行如下操作，一旦审核通过将不可修改和删除。</span>
+            </div>
+            
+            <div class="action_box_editor blue_border_box clearfix">
+            	<a href="" id="button"><span class="yh_new_btn i_edit">修改</span></a>
+                <em class="yh_btn_line_a"></em>
+                <span class="yh_new_btn i_del" onclick="show('pop_del_box');$('.mask_layer').show();" >删除</span>
+            </div>
+            <p class="padding_20"></p>
+            
+        </div>
+        
+        
+    </div>
+	<div class="w_w_210 f_left m_left_10">
+    
+    <div class="xunjia_fabu_box">
+        	<input name="" type="button" class="btn_fabu_xunjia" onclick="releaseAsk()"  />
+        </div>
+        
+        <div class="qiandao_box clearfix" style="position:relative; z-index:555;">
+        	<div class="date_time f_left">
+            	<span class="f_zise_14" id="xq"></span>
+                <span id="rq"></span>
+            </div>
+            <div class="qiandao_btn_box f_left" href="javascript:void(0);" onclick="memberSignIn()" id="qiandao_btn_box"  onmouseover="show('tips_arrow');" onmouseout="hide('tips_arrow');">
+            	签到即获得1积分
+            </div>
+            <div class="qiandao_btn_box_gray f_left" style="display:none;" href="javascript:void(0);" onclick="hide('qiandao_btn_box');" id="qiandao_btn_box_gray" onmouseover="show('tips_arrow_01');" onmouseout="hide('tips_arrow_01');">
+            	累计1天 连续1天
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新来过。</div>
+            </div>
+            <div class="tips_arrow" style="display:none" id="tips_arrow_01">
+                <div class="tips_arrow_info">
+                	<div class="arrow_top"></div>
+                    <p class="c_black_01 m_bottom_5">本次签到获得<b class="c_org_02" id="hdScore"></b>积分</p>
+                    每日签到一次，每次获得<u class="c_org_02">1</u>积分，连续签到<u class="c_org_02">3</u>天后，每次签到获得<u class="c_org_02">3</u>积分。中途断签，则重新来过。</div>
+            </div>
+        </div>
+        
+    	
+        
+         <div class="border_1_gray m_top_10" id="wAskPrice" style="display:none">
+        	<h1 class="title_name">相关询价</h1>
+            <p style="padding:15px 0;">暂无相关询价！</p>
+      </div>
+    <div class="border_1_gray m_top_10" id="yAskPrice">
+        	<h1 class="title_name"><a href="/ask/ask_search.html?type=all" class="link_gray_more f_right">更多></a>相关询价</h1>
+            <ul class="xiangguan_xj_box">
+             
+            </ul>
+        </div>
+                 
+    </div>
+</div>
+<div class="pop_del_box" id="pop_del_box" style="display:none;text-align:center;z-index:1001;">
+	<div class="fabu_xunja_tips_info_tips">
+    	<p>删除后，您将自动返回“会员中心-我发布的询价”！<br/>
+		确定删除该条审核中询价？
+        </p>
+    </div>
+    <p style="margin-left:120px;">
+        <input type="button" onclick="deleteAskPRice();" value="确定" class="common_button" name="">
+        <input type="button" onclick="hide('pop_del_box');$('.mask_layer').hide();" value="取消" class="common_button m_left_20" name="">
+    </p>
+</div>
+<div class="mask_layer" id="mask_layer" style="display:none;"></div>
+ #parse($footer_dir)
+<script language="javascript" src="$common_site/js/zjt/ask/ask_audit_info.js"></script>
+<script language="javascript" src="$common_site/js/zjt/ask/ask_index_right.js"></script>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/reset.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_common.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_qestion.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_index.css" />
+</body>
+</html>
+

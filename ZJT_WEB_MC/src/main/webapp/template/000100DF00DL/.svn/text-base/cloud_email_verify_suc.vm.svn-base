@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>云造价邮箱验证成功</title>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/reset.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/global.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/common_login.css"/>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/jyeeda.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/basic.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/ConCom.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/common.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/email/cloud_email_verify_suc.js"></script>
+
+</head>
+
+<body>
+
+
+
+<!--	header star	-->
+<div id="header_box">
+     <div id="header" style="margin:10px auto 0;">
+       <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">邮箱验证</span></div>
+     </div>
+</div>
+<!--	header end	-->
+
+<div class="co_01 border_1">
+    
+    <div class="reg_box">
+        <dl class="reg_suc_div clearfix">
+            <dt><span class="icon_suc"></span></dt>
+            <dd>
+                <h1>恭喜，邮箱验证成功！</h1>
+            </dd>
+        </dl>
+        <ul class="reg_ul_list">
+        	<li class="col_5">恭喜您成为造价通云造价会员，欢迎您使用造价通云造价服务！</li>
+        	<li class="col_5" style="margin-top:25px;"><span class="c_org_f5">造价通手机绑定功能全新上线，现在绑定即送300 积分</span><a href="http://vip.zjtcn.com/module/sjrz/index.jsp" class="bule_04 m_l_10">马上绑定</a></li>
+            <li class="col_5">
+            	绑定手机可以加强对您造价通账号的保护，第一时间收到服务反馈，并可<br/>及时获取造价通最新服务及各种优惠活动信息！
+            </li>
+            <li class="col_5 m_t_10"><span class="icon_ms_jr"><a id="jumpUrl" href="http://vip.zjtcn.com/index.jsp" class="bule_04">立即进入“云造价”</a></span></li>
+            <li class="col_5"><span class="icon_ms_jr"><a href="/" class="bule_04">随便逛逛</a></span></li>
+        </ul>
+	</div>
+    
+</div>
+
+</body>
+</html>

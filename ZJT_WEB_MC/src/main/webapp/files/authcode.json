@@ -1,0 +1,2467 @@
+{
+   "result" :
+      [
+         {
+            "YUNZHI_MANAGE" : "2017"
+         },
+         {
+            "YUNZHI_GUESTION_LIST" : "201701"
+         },
+         {
+            "YUNZHI_GUESTION_LIST_LOCK" : "201702"
+         },
+         {
+            "YUNZHI_GUESTION_LOCK" : "201703"
+         },
+         {
+            "YUNZHI_GUESTION_UNLOCK" : "201704"
+         },
+         {
+            "YUNZHI_GUESTION_DELETE" : "201705"
+         },
+         {
+            "YUNZHI_GUESTION_INFO" : "201706"
+         },
+         {
+            "YUNZHI_GUESTION_UPDATE" : "201707"
+         },
+         {
+            "YUNZHI_ANSWER_LIST" : "201708"
+         },
+         {
+            "YUNZHI_ANSWER_LIST_LOCK" : "201709"
+         },
+         {
+            "YUNZHI_ANSWER_LOCK" : "201710"
+         },
+         {
+            "YUNZHI_ANSWER_UNLOCK" : "201711"
+         },
+         {
+            "YUNZHI_ANSWER_DELETE" : "201712"
+         },
+         {
+            "YUNZHI_ANSWER_INFO" : "201713"
+         },
+         {
+            "YUNZHI_ANSWER_UPDATE" : "201714"
+         },
+         {
+            "YUNZHI_COMMENT_DELETE" : "201723"
+         },
+         {
+            "YUNZHI_TOPIC_LIST" : "201715"
+         },
+         {
+            "YUNZHI_TOPIC_LIST_LOCK" : "201716"
+         },
+         {
+            "YUNZHI_TOPIC_LOCK" : "201717"
+         },
+         {
+            "YUNZHI_TOPIC_UNLOCK" : "201718"
+         },
+         {
+            "YUNZHI_TOPIC_DELETE" : "201719"
+         },
+         {
+            "YUNZHI_TOPIC_INFO" : "201720"
+         },
+         {
+            "YUNZHI_TOPIC_UPDATE" : "201721"
+         },
+         {
+            "YUNZHI_TOPIC_CREATE" : "201722"
+         },
+         {
+            "MEM_SCORE_PRESENT" : "090404"
+         },
+         {
+            "GIFT_MANAGE" : "2011"
+         },
+         {
+            "GIFT_MANAGE_ADD" : "201101"
+         },
+         {
+            "GIFT_MANAGE_MOD" : "201102"
+         },
+         {
+            "GIFT_MANAGE_DEL" : "201103"
+         },
+         {
+            "GOV_MANAGE" : "0101"
+         },
+         {
+            "GOV_ADD" : "010101"
+         },
+         {
+            "GOV_DEL" : "010102"
+         },
+         {
+            "GOV_MOD" : "010103"
+         },
+         {
+            "GOV_VIEW" : "010104"
+         },
+         {
+            "GOV_SEARCH" : "010105"
+         },
+         {
+            "GOV_ADV_SEARCH" : "010106"
+         },
+         {
+            "GOV_UPLOAD" : "010107"
+         },
+         {
+            "GOV_DOWNLOAD" : "010108"
+         },
+         {
+            "GOV_REPORT_MANAGE" : "0102"
+         },
+         {
+            "GOV_REPORT_ADD" : "010201"
+         },
+         {
+            "GOV_REPORT_DEL" : "010202"
+         },
+         {
+            "GOV_REPORT_MOD" : "010203"
+         },
+         {
+            "GOV_REPORT_VIEW" : "010204"
+         },
+         {
+            "GOV_REPORT_SEARCH" : "010205"
+         },
+         {
+            "GOVPRICE_DETAIL_LIST" : "010110"
+         },
+         {
+            "GOV_OP_LIST" : "010111"
+         },
+         {
+            "GOV_MAIN_MANAGE" : "0103"
+         },
+         {
+            "GOV_MAIN_ADD" : "010301"
+         },
+         {
+            "GOV_MAIN_DEL" : "010302"
+         },
+         {
+            "GOV_MAIN_MOD" : "010303"
+         },
+         {
+            "GOV_MAIN_VIEW" : "010304"
+         },
+         {
+            "GOV_MAIN_SEARCH" : "010305"
+         },
+         {
+            "GOV_MAIN_UPLOAD" : "010306"
+         },
+         {
+            "GOV_MAIN_HIS" : ""
+         },
+         {
+            "FAC_MANAGE" : "0201"
+         },
+         {
+            "FAC_ADD" : "020101"
+         },
+         {
+            "FAC_DEL" : "020102"
+         },
+         {
+            "FAC_MOD" : "020103"
+         },
+         {
+            "FAC_VIEW" : "020104"
+         },
+         {
+            "FAC_SEARCH" : "020105"
+         },
+         {
+            "FAC_ADV_SEARCH" : "020106"
+         },
+         {
+            "FAC_UPLOAD" : "020107"
+         },
+         {
+            "FAC_DOWNLOAD" : "020108"
+         },
+         {
+            "FAC_SYNCH" : "020109"
+         },
+         {
+            "FAC_AUDIT" : "020110"
+         },
+         {
+            "FAC_SETCAT" : "020111"
+         },
+         {
+            "FAC_MYFAC_MANAGE" : "0202"
+         },
+         {
+            "FAC_MYFAC_ADD" : "020201"
+         },
+         {
+            "FAC_MYFAC_DEL" : "020202"
+         },
+         {
+            "FAC_MYFAC_MOD" : "020203"
+         },
+         {
+            "FAC_MYFAC_VIEW" : "020204"
+         },
+         {
+            "FAC_MYFAC_UPLOAD" : "020205"
+         },
+         {
+            "FAC_MYFAC_DOWNLOAD" : "020206"
+         },
+         {
+            "CORP_MANAGE" : "0301"
+         },
+         {
+            "CORP_ADD" : "030101"
+         },
+         {
+            "CORP_DEL" : "030102"
+         },
+         {
+            "CORP_MOD" : "030103"
+         },
+         {
+            "CORP_VIEW" : "030104"
+         },
+         {
+            "CORP_SEARCH" : "030105"
+         },
+         {
+            "CORP_LOCK" : "030106"
+         },
+         {
+            "CORP_UNLOCK" : "030109"
+         },
+         {
+            "CORP_CALFAC_STAT" : "030107"
+         },
+         {
+            "CORP_SORT" : "030108"
+         },
+         {
+            "CORP_AUDIT" : "030110"
+         },
+         {
+            "CORP_MEM_MANAGE" : "0302"
+         },
+         {
+            "CORP_MEM_ADD" : "030201"
+         },
+         {
+            "CORP_MEM_DEL" : "030202"
+         },
+         {
+            "CORP_MEM_MOD" : "030203"
+         },
+         {
+            "CORP_MEM_VIEW" : "030204"
+         },
+         {
+            "CORP_MEM_ADMIN" : "030205"
+         },
+         {
+            "CORP_PIC_MANAGE" : "0303"
+         },
+         {
+            "CORP_PIC_ADD" : "030301"
+         },
+         {
+            "CORP_PIC_DEL" : "030302"
+         },
+         {
+            "CORP_PIC_MOD" : "030303"
+         },
+         {
+            "CORP_PIC_VIEW" : "030304"
+         },
+         {
+            "CORP_MAG_MANAGE" : "0304"
+         },
+         {
+            "CORP_MAG_ADD" : "030401"
+         },
+         {
+            "CORP_MAG_DEL" : "030402"
+         },
+         {
+            "CORP_MAG_MOD" : "030403"
+         },
+         {
+            "CORP_MAG_VIEW" : "030404"
+         },
+         {
+            "CORP_MAG_SEARCH" : "030405"
+         },
+         {
+            "CORP_SHOP_MANAGE" : "0305"
+         },
+         {
+            "CORP_SHOP_OPENALL" : "030511"
+         },
+         {
+            "CORP_SHOP_ADD" : "030501"
+         },
+         {
+            "CORP_SHOP_DEL" : "030502"
+         },
+         {
+            "CORP_SHOP_MOD" : "030503"
+         },
+         {
+            "CORP_SHOP_VIEW" : "030504"
+         },
+         {
+            "CORP_SHOP_SEARCH" : "030505"
+         },
+         {
+            "CORP_SHOP_AUDIT" : "030506"
+         },
+         {
+            "CORP_SHOP_LOCK" : "030507"
+         },
+         {
+            "CORP_SHOP_UNLOCK" : "030508"
+         },
+         {
+            "CORP_SHOP_RENEW" : "030509"
+         },
+         {
+            "CORP_SHOP_BIND" : "030510"
+         },
+         {
+            "CORP_SHOP_UNAUDIT" : "030513"
+         },
+         {
+            "CORP_SHOP_VIEWMAT" : "030512"
+         },
+         {
+            "CORP_SHOP_UNAUDITMAT" : "030514"
+         },
+         {
+            "CORP_CXSHOP_VIEW" : "030518"
+         },
+         {
+            "COPR_CXSHOP_MOD" : "030519"
+         },
+         {
+            "CORP_CXSHOP_AUDIT" : "030520"
+         },
+         {
+            "CORP_CXSHOP_VIEWINFO" : "030521"
+         },
+         {
+            "CORP_SHOP_LOCKED" : "030515"
+         },
+         {
+            "CORP_SHOP_UNAUDIT_LOCK" : "030522"
+         },
+         {
+            "CORP_SHOP_NOMAT" : "030516"
+         },
+         {
+            "CORP_SHOP_HTML" : "030517"
+         },
+         {
+            "CORP_SHOP_TOP" : "030523"
+         },
+         {
+            "CORP_SHOP_LIST" : "030524"
+         },
+         {
+            "CORP_SHOP_SCORE_DETAIL" : "030525"
+         },
+         {
+            "CORP_SHOP_RECOMMEND" : "030526"
+         },
+         {
+            "CORP_SHOP_AWARD" : "030527"
+         },
+         {
+            "CORP_ATTACH_MANAGE" : "0306"
+         },
+         {
+            "CORP_ATTACH_ADD" : "030601"
+         },
+         {
+            "CORP_ATTACH_DEL" : "030602"
+         },
+         {
+            "CORP_ATTACH_MOD" : "030603"
+         },
+         {
+            "CORP_ATTACH_VIEW" : "030604"
+         },
+         {
+            "PROJ_MANAGE" : "0401"
+         },
+         {
+            "PROJ_ADD" : "040101"
+         },
+         {
+            "PROJ_DEL" : "040102"
+         },
+         {
+            "PROJ_MOD" : "040103"
+         },
+         {
+            "PROJ_VIEW" : "040104"
+         },
+         {
+            "PROJ_SEARCH" : "040105"
+         },
+         {
+            "PROJ_LOCK" : "040106"
+         },
+         {
+            "PROJ_AUDIT" : "040108"
+         },
+         {
+            "PROJ_UNLOCK" : "040107"
+         },
+         {
+            "PROJ_INFO_MANAGE" : "0409"
+         },
+         {
+            "PROJ_INFO_ADD" : ""
+         },
+         {
+            "PROJ_INFO_DEL" : "040902"
+         },
+         {
+            "PROJ_INFO_MOD" : "040903"
+         },
+         {
+            "PROJ_INFO_VIEW" : "040904"
+         },
+         {
+            "PROJ_PIC_MANAGE" : "0402"
+         },
+         {
+            "PROJ_PIC_ADD" : "040201"
+         },
+         {
+            "PROJ_PIC_DEL" : "040202"
+         },
+         {
+            "PROJ_PIC_MOD" : "040203"
+         },
+         {
+            "PROJ_PIC_VIEW" : "040204"
+         },
+         {
+            "PROJ_LOOK_MANAGE" : "0403"
+         },
+         {
+            "PROJ_LOOK_ADD" : "040301"
+         },
+         {
+            "PROJ_LOOK_DEL" : "040302"
+         },
+         {
+            "PROJ_LOOK_MOD" : "040303"
+         },
+         {
+            "PROJ_LOOK_VIEW" : "040304"
+         },
+         {
+            "PROJ_ENT_MANAGE" : "0404"
+         },
+         {
+            "PROJ_ENT_ADD" : "040401"
+         },
+         {
+            "PROJ_ENT_DEL" : "040402"
+         },
+         {
+            "PROJ_ENT_MOD" : "040403"
+         },
+         {
+            "PROJ_ENT_VIEW" : "040404"
+         },
+         {
+            "PROJ_STAGECAT_MANAGE" : "0405"
+         },
+         {
+            "PROJ_STAGECAT_ADD" : "040501"
+         },
+         {
+            "PROJ_STAGECAT_DEL" : "040502"
+         },
+         {
+            "PROJ_STAGECAT_MOD" : "040503"
+         },
+         {
+            "PROJ_STAGECAT_VIEW" : "040504"
+         },
+         {
+            "PROJ_BUILDCAT_MANAGE" : "0406"
+         },
+         {
+            "PROJ_BUILDCAT_ADD" : "040601"
+         },
+         {
+            "PROJ_BUILDCAT_DEL" : "040602"
+         },
+         {
+            "PROJ_BUILDCAT_MOD" : "040603"
+         },
+         {
+            "PROJ_BUILDCAT_VIEW" : "040604"
+         },
+         {
+            "ASK_MANAGE" : "0501"
+         },
+         {
+            "ASK_ADD" : "050101"
+         },
+         {
+            "ASK_PRICE_UNAUDITED_LIST" : "050112"
+         },
+         {
+            "ASK_REPLY_UNAUDITED_LIST" : "050113"
+         },
+         {
+            "ASK_PRICE_LOCKED_LIST" : "050114"
+         },
+         {
+            "ASK_PRICE_NOPASS_LIST" : "050116"
+         },
+         {
+            "ASK_PRICE_RECOMMEND" : "050117"
+         },
+         {
+            "ASK_PRICE_RECOMMEND_CANCEL" : "050118"
+         },
+         {
+            "ASK_PRICE_BATCH_TOEXAMINE" : "050119"
+         },
+         {
+            "ASKPRICE_NOPASS" : ""
+         },
+         {
+            "ASKREPLY_NOPASS_LIST" : "050120"
+         },
+         {
+            "ASKPRICE_UNTOEXAMINE" : "050121"
+         },
+         {
+            "MONITOR_ADD" : "050501"
+         },
+         {
+            "MONITOR_DEL" : "050502"
+         },
+         {
+            "ASK_REPLY_AUDIT" : "050207"
+         },
+         {
+            "VIP_ASK_UPLOAD" : "070416"
+         },
+         {
+            "ASK_DEL" : "050102"
+         },
+         {
+            "ASK_MOD" : "050103"
+         },
+         {
+            "ASK_VIEW" : "050104"
+         },
+         {
+            "ASK_SEARCH" : "050105"
+         },
+         {
+            "ASK_AUDIT" : "050106"
+         },
+         {
+            "ASK_LOCK" : "050107"
+         },
+         {
+            "ASK_UNLOCK" : "050108"
+         },
+         {
+            "ASK_ADMIN_DEL" : "050109"
+         },
+         {
+            "ASK_ADMIN_EXPORT" : "050111"
+         },
+         {
+            "ASKREPLY_ADMIN_IMPORT" : "050122"
+         },
+         {
+            "ASK_REP_MANAGE" : "0502"
+         },
+         {
+            "ASK_REP_ADD" : "050201"
+         },
+         {
+            "ASK_REP_DEL" : "050202"
+         },
+         {
+            "ASK_REP_MOD" : "050203"
+         },
+         {
+            "ASK_REP_VIEW" : "050204"
+         },
+         {
+            "ASK_REP_SCORE" : "050205"
+         },
+         {
+            "ASK_REP_ADDMAT" : "050206"
+         },
+         {
+            "ASK_MYASK_MANAGE" : "0503"
+         },
+         {
+            "ASK_MYASK_ADD" : "050301"
+         },
+         {
+            "ASK_MYASK_DEL" : "050302"
+         },
+         {
+            "ASK_MYASK_MOD" : "050303"
+         },
+         {
+            "ASK_MYASK_VIEW" : "050304"
+         },
+         {
+            "ASK_EX_MANAGE" : "0504"
+         },
+         {
+            "ASK_EX_ADD" : "050401"
+         },
+         {
+            "ASK_EX_DEL" : "050402"
+         },
+         {
+            "ASK_EX_MOD" : "050403"
+         },
+         {
+            "ASK_EX_VIEW" : "050404"
+         },
+         {
+            "ASK_EX_SEARCH" : "050405"
+         },
+         {
+            "ASK_EX_RECORD" : "050406"
+         },
+         {
+            "ASK_RETURN" : "050110"
+         },
+         {
+            "INFO_CALOG_MANAGE" : "0601"
+         },
+         {
+            "INFO_CALOG_ADD" : "060101"
+         },
+         {
+            "INFO_CALOG_DEL" : "060102"
+         },
+         {
+            "INFO_CALOG_MOD" : "060103"
+         },
+         {
+            "INFO_CALOG_VIEW" : "060104"
+         },
+         {
+            "RES_CALOG_ADD" : ""
+         },
+         {
+            "RES_CALOG_DEL" : ""
+         },
+         {
+            "RES_CALOG_MOD" : ""
+         },
+         {
+            "RES_CALOG_VIEW" : ""
+         },
+         {
+            "WEB_RES_ADD" : ""
+         },
+         {
+            "WEB_RES_DEL" : ""
+         },
+         {
+            "WEB_RES_MOD" : ""
+         },
+         {
+            "TEMPLATE_CALOG_ADD" : "060501"
+         },
+         {
+            "TEMPLATE_CALOG_DEL" : "060502"
+         },
+         {
+            "TEMPLATE_CALOG_MOD" : "060503"
+         },
+         {
+            "TEMPLATE_CALOG_VIEW" : "060504"
+         },
+         {
+            "AD_CATALOG_MANAGE" : ""
+         },
+         {
+            "AD_CATALOG_ADD" : ""
+         },
+         {
+            "AD_CATALOG_DEL" : ""
+         },
+         {
+            "AD_CATALOG_MOD" : ""
+         },
+         {
+            "AD_CATALOG_VIEW" : ""
+         },
+         {
+            "INFO_CONTENT_MANAGE" : "0602"
+         },
+         {
+            "INFO_CONTENT_ADD" : "060201"
+         },
+         {
+            "INFO_CONTENT_DEL" : "060202"
+         },
+         {
+            "INFO_CONTENT_MOD" : "060203"
+         },
+         {
+            "INFO_CONTENT_VIEW" : "060204"
+         },
+         {
+            "INFO_CONTENT_SEARCH" : "060205"
+         },
+         {
+            "INFO_CONTENT_AUDIT" : "060206"
+         },
+         {
+            "INFO_CONTENT_LOCK" : "060207"
+         },
+         {
+            "INFO_CONTENT_RESTORE" : "060208"
+         },
+         {
+            "INFO_CONTENT_COPY" : "060209"
+         },
+         {
+            "INFO_CONTENT_CORP" : "060210"
+         },
+         {
+            "INFO_CONTENT_SORT" : "060211"
+         },
+         {
+            "VIP_ADMIN_MANAGE" : "0701"
+         },
+         {
+            "VIP_ADMIN_ADD" : "070101"
+         },
+         {
+            "VIP_ADMIN_DEL" : "070102"
+         },
+         {
+            "VIP_ADMIN_MOD" : "070103"
+         },
+         {
+            "VIP_ADMIN_VIEW" : "070104"
+         },
+         {
+            "VIP_ADMIN_SEARCH" : "070105"
+         },
+         {
+            "VIP_ADMIN_RIGHT" : "070106"
+         },
+         {
+            "VIP_ADMIN_LOCK" : "070107"
+         },
+         {
+            "VIP_ADMIN_UNLOCK" : "070108"
+         },
+         {
+            "VIP_SYS_MANAGE" : "0702"
+         },
+         {
+            "VIP_SYS_ONLINE" : "070201"
+         },
+         {
+            "VIP_SYS_ENTERPRISE" : "070202"
+         },
+         {
+            "VIP_SYS_HISTORY" : "070203"
+         },
+         {
+            "VIP_SYS_MEMBER" : "070204"
+         },
+         {
+            "VIP_SYS_RIGHT" : "070205"
+         },
+         {
+            "VIP_MAT_MANAGE" : "0703"
+         },
+         {
+            "VIP_MAT_ADD" : "070301"
+         },
+         {
+            "VIP_MAT_DEL" : "070302"
+         },
+         {
+            "VIP_MAT_MOD" : "070303"
+         },
+         {
+            "VIP_MAT_VIEW" : "070304"
+         },
+         {
+            "VIP_MAT_SEARCH" : "070305"
+         },
+         {
+            "VIP_MAT_CALOG" : "070306"
+         },
+         {
+            "VIP_ASK_MANAGE" : "0704"
+         },
+         {
+            "VIP_ASK_ADD" : "070401"
+         },
+         {
+            "VIP_ASK_DEL" : "070402"
+         },
+         {
+            "VIP_ASK_MOD" : "070403"
+         },
+         {
+            "VIP_ASK_VIEW" : "070404"
+         },
+         {
+            "VIP_ASK_SEARCH" : "070405"
+         },
+         {
+            "VIP_ASK_AUDIT" : "070406"
+         },
+         {
+            "VIP_ASK_REP_ADD" : "070407"
+         },
+         {
+            "VIP_ASK_REP_DEL" : "070408"
+         },
+         {
+            "VIP_ASK_REP_MOD" : "070409"
+         },
+         {
+            "VIP_ASK_REP_VIEW" : "070410"
+         },
+         {
+            "VIP_ASK_REP_SEARCH" : "070411"
+         },
+         {
+            "VIP_ASK_REP_ADDMAT" : "070412"
+         },
+         {
+            "VIP_ASK_SCORE" : "070413"
+         },
+         {
+            "VIP_ASK_ADMIN_DEL" : "070414"
+         },
+         {
+            "VIP_ASK_EXPORT" : "070415"
+         },
+         {
+            "VIP_DATA_MANAGE" : "0705"
+         },
+         {
+            "VIP_DATA_VIEW" : "070501"
+         },
+         {
+            "VIP_SUP_MANAGE" : "0706"
+         },
+         {
+            "VIP_SUP_SUP" : "070601"
+         },
+         {
+            "VIP_SUP_MAT" : "070602"
+         },
+         {
+            "VIP_SUP_USEREC" : "070603"
+         },
+         {
+            "VIP_SUP_PURLIST" : "070604"
+         },
+         {
+            "VIP_SUP_PURSTAGE" : "070605"
+         },
+         {
+            "VIP_SUP_CALOG" : "070606"
+         },
+         {
+            "VIP_PROJ_MANAGE" : "0707"
+         },
+         {
+            "VIP_PROJ_PROJ" : "070701"
+         },
+         {
+            "VIP_PROJ_USEREC" : "070702"
+         },
+         {
+            "VIP_PROJ_PURLIST" : "070703"
+         },
+         {
+            "VIP_PROJ_PURSTAGE" : "070704"
+         },
+         {
+            "VIP_PROJ_CALOG" : "070705"
+         },
+         {
+            "VIP_TEMP_MANAGE" : "0708"
+         },
+         {
+            "VIP_TEMP_ADD" : "070801"
+         },
+         {
+            "VIP_TEMP_DEL" : "070802"
+         },
+         {
+            "VIP_TEMP_MOD" : "070803"
+         },
+         {
+            "VIP_TEMP_VIEW" : "070804"
+         },
+         {
+            "VIP_BUY_MANAGE" : "070901"
+         },
+         {
+            "VIP_SUPPLY_MANAGE" : "071001"
+         },
+         {
+            "VIP_TEMP_SUP" : "070805"
+         },
+         {
+            "USER_MANAGE" : "0801"
+         },
+         {
+            "USER_ADD" : "080101"
+         },
+         {
+            "USER_DEL" : "080102"
+         },
+         {
+            "USER_MOD" : "080103"
+         },
+         {
+            "USER_VIEW" : "080104"
+         },
+         {
+            "USER_PWD" : "080105"
+         },
+         {
+            "USER_UPLOAD" : "080106"
+         },
+         {
+            "USER_CUS_MANAGE" : "0802"
+         },
+         {
+            "USER_CUS_ADD" : "080201"
+         },
+         {
+            "USER_CUS_DEL" : "080202"
+         },
+         {
+            "USER_CUS_MOD" : "080203"
+         },
+         {
+            "USER_CUS_VIEW" : "080204"
+         },
+         {
+            "USER_MAT_MANAGE" : "0803"
+         },
+         {
+            "USER_MAT_ADD" : "080301"
+         },
+         {
+            "USER_MAT_DEL" : "080302"
+         },
+         {
+            "USER_MAT_MOD" : "080303"
+         },
+         {
+            "USER_MAT_VIEW" : "080304"
+         },
+         {
+            "WCW_MATERIALS_SEARCH" : "040706"
+         },
+         {
+            "WCW_MATERIALS_SETTING" : "040707"
+         },
+         {
+            "WCW_MATERIALS_DELETE" : "040708"
+         },
+         {
+            "USER_PROJ_MANAGE" : "0804"
+         },
+         {
+            "USER_PROJ_ADD" : "080401"
+         },
+         {
+            "USER_PROJ_DEL" : "080402"
+         },
+         {
+            "USER_PROJ_MOD" : "080403"
+         },
+         {
+            "USER_PROJ_VIEW" : "080404"
+         },
+         {
+            "USER_ATTEN_MANAGE" : "0805"
+         },
+         {
+            "USER_ATTEN_ADD" : "080501"
+         },
+         {
+            "USER_ATTEN_DEL" : "080502"
+         },
+         {
+            "USER_ATTEN_MOD" : "080503"
+         },
+         {
+            "USER_ATTEN_VIEW" : "080504"
+         },
+         {
+            "USER_PROFILE_MANAGE" : "0806"
+         },
+         {
+            "USER_PROFILE_ADD" : "080601"
+         },
+         {
+            "USER_PROFILE_DEL" : "080602"
+         },
+         {
+            "USER_PROFILE_MOD" : "080603"
+         },
+         {
+            "USER_PROFILE_VIEW" : "080604"
+         },
+         {
+            "USER_PROFILE_SEARCH" : "080605"
+         },
+         {
+            "USER_PROFILE_TYPE" : "080606"
+         },
+         {
+            "MEM_STAT_MANAGE" : "0901"
+         },
+         {
+            "MEM_STAT_ADD" : "090101"
+         },
+         {
+            "MEM_STAT_DEL" : "090102"
+         },
+         {
+            "MEM_STAT_MOD" : "090103"
+         },
+         {
+            "MEM_STAT_VIEW" : "090104"
+         },
+         {
+            "MEM_STAT_SEARCH" : "090105"
+         },
+         {
+            "MEM_MANAGE" : "0902"
+         },
+         {
+            "MEM_ADD" : "090201"
+         },
+         {
+            "MEM_DEL" : "090202"
+         },
+         {
+            "MEM_MOD" : "090203"
+         },
+         {
+            "MEM_VIEW" : "090204"
+         },
+         {
+            "MEM_SEARCH" : "090205"
+         },
+         {
+            "MEM_LOCK" : "090206"
+         },
+         {
+            "MEM_AUDIT" : "090207"
+         },
+         {
+            "MEM_RENEW" : "090208"
+         },
+         {
+            "MEM_RESETPWD" : "090209"
+         },
+         {
+            "MEM_RESETPWDSIMPLE" : "090218"
+         },
+         {
+            "MEM_UNLOCK" : "090210"
+         },
+         {
+            "MEM_SORT" : "090211"
+         },
+         {
+            "MEM_EXPORT" : "090212"
+         },
+         {
+            "MEM_AREA" : "090213"
+         },
+         {
+            "MEM_AUDITREC_VIEW" : "090214"
+         },
+         {
+            "MEM_GOVAREA" : "090215"
+         },
+         {
+            "MEM_CARD" : "090216"
+         },
+         {
+            "MEM_SCORE_RESET" : "090217"
+         },
+         {
+            "MEM_PAY_MANAGE" : "0903"
+         },
+         {
+            "MEM_PAY_ADD" : "090301"
+         },
+         {
+            "MEM_PAY_DEL" : "090302"
+         },
+         {
+            "MEM_PAY_MOD" : "090303"
+         },
+         {
+            "MEM_PAY_VIEW" : "090304"
+         },
+         {
+            "MEM_SCORE_DETAIL" : "090401"
+         },
+         {
+            "MEM_SCORE_FROZEN" : "090402"
+         },
+         {
+            "MEM_SCORE_THAW" : "090403"
+         },
+         {
+            "ADMIN_RIGHT_MANAGE" : "1001"
+         },
+         {
+            "ADMIN_RIGHT_ADD" : "100101"
+         },
+         {
+            "ADMIN_RIGHT_DEL" : "100102"
+         },
+         {
+            "ADMIN_RIGHT_MOD" : "100103"
+         },
+         {
+            "ADMIN_RIGHT_VIEW" : "100104"
+         },
+         {
+            "ADMIN_DEGREE_MANAGE" : "1002"
+         },
+         {
+            "ADMIN_DEGREE_ADD" : "100201"
+         },
+         {
+            "ADMIN_DEGREE_DEL" : "100202"
+         },
+         {
+            "ADMIN_DEGREE_MOD" : "100203"
+         },
+         {
+            "ADMIN_DEGREE_VIEW" : "100204"
+         },
+         {
+            "ADMIN_DEGREE_RIGHT" : "100205"
+         },
+         {
+            "ADMIN_ROLE_MANAGE" : "1003"
+         },
+         {
+            "ADMIN_ROLE_ADD" : "100301"
+         },
+         {
+            "ADMIN_ROLE_DEL" : "100302"
+         },
+         {
+            "ADMIN_ROLE_MOD" : "100303"
+         },
+         {
+            "ADMIN_ROLE_VIEW" : "100304"
+         },
+         {
+            "ADMIN_ROLE_RIGHT" : "100305"
+         },
+         {
+            "ADMIN_ROLE_DIRRIGHT" : "100306"
+         },
+         {
+            "ADMIN_USER_MANAGE" : "1004"
+         },
+         {
+            "ADMIN_USER_ADD" : "100401"
+         },
+         {
+            "ADMIN_USER_DEL" : "100402"
+         },
+         {
+            "ADMIN_USER_MOD" : "100403"
+         },
+         {
+            "ADMIN_USER_VIEW" : "100404"
+         },
+         {
+            "ADMIN_USER_PWD" : "100405"
+         },
+         {
+            "ADMIN_USER_CURRPWD" : "100406"
+         },
+         {
+            "ADMIN_SYS_MANAGE" : "1005"
+         },
+         {
+            "ADMIN_SYS_RESET" : "100501"
+         },
+         {
+            "FDBCK_MANAGE" : "1101"
+         },
+         {
+            "FDBCK_ADD" : "110101"
+         },
+         {
+            "FDBCK_DEL" : "110102"
+         },
+         {
+            "FDBCK_MOD" : "110103"
+         },
+         {
+            "FDBCK_VIEW" : "110104"
+         },
+         {
+            "FDBCK_SEARCH" : "110105"
+         },
+         {
+            "FDBCK_AUDIT" : "110106"
+         },
+         {
+            "FDBCK_LOCK" : "110107"
+         },
+         {
+            "FDBCK_UNLOCK" : "110108"
+         },
+         {
+            "FDBCK_ADDREPLY" : "110109"
+         },
+         {
+            "FDBCK_TYPE_MANAGE" : "1102"
+         },
+         {
+            "FDBCK_TYPE_ADD" : "110201"
+         },
+         {
+            "FDBCK_TYPE_DEL" : "110202"
+         },
+         {
+            "FDBCK_TYPE_MOD" : "110203"
+         },
+         {
+            "FDBCK_TYPE_VIEW" : "110204"
+         },
+         {
+            "QA_MANAGE" : "1201"
+         },
+         {
+            "QA_ADD" : "120101"
+         },
+         {
+            "QA_DEL" : "120102"
+         },
+         {
+            "QA_MOD" : "120103"
+         },
+         {
+            "QA_VIEW" : "120104"
+         },
+         {
+            "QA_SEARCH" : "120105"
+         },
+         {
+            "QA_SETTOP" : "120106"
+         },
+         {
+            "QA_AUDIT" : "120107"
+         },
+         {
+            "QA_LOCK" : "120108"
+         },
+         {
+            "QA_UNLOCK" : "120109"
+         },
+         {
+            "QA_REPLY" : "120110"
+         },
+         {
+            "QA_TYPE_MANAGE" : "1202"
+         },
+         {
+            "QA_TYPE_ADD" : "120201"
+         },
+         {
+            "QA_TYPE_DEL" : "120202"
+         },
+         {
+            "QA_TYPE_MOD" : "120203"
+         },
+         {
+            "QA_TYPE_VIEW" : "120204"
+         },
+         {
+            "EMAIL_TYPE_MANAGE" : "1301"
+         },
+         {
+            "EMAIL_TYPE_ADD" : "130101"
+         },
+         {
+            "EMAIL_TYPE_DEL" : "130102"
+         },
+         {
+            "EMAIL_TYPE_MOD" : "130103"
+         },
+         {
+            "EMAIL_TYPE_VIEW" : "130104"
+         },
+         {
+            "EMAIL_TEMP_MANAGE" : "1302"
+         },
+         {
+            "EMAIL_TEMP_ADD" : "130201"
+         },
+         {
+            "EMAIL_TEMP_DEL" : "130202"
+         },
+         {
+            "EMAIL_TEMP_MOD" : "130203"
+         },
+         {
+            "EMAIL_TEMP_VIEW" : "130204"
+         },
+         {
+            "EMAIL_TEMP_SEARCH" : "130205"
+         },
+         {
+            "EMAIL_TEMP_LOCK" : "130206"
+         },
+         {
+            "EMAIL_TEMP_UNLOCK" : "130207"
+         },
+         {
+            "EMAIL_TEMP_SEND" : "130208"
+         },
+         {
+            "EMAIL_ACCOUNT_MANAGE" : "1303"
+         },
+         {
+            "EMAIL_ACCOUNT_ADD" : "130301"
+         },
+         {
+            "EMAIL_ACCOUNT_DEL" : "130302"
+         },
+         {
+            "EMAIL_ACCOUNT_MOD" : "130303"
+         },
+         {
+            "EMAIL_ACCOUNT_VIEW" : "130304"
+         },
+         {
+            "EMAIL_ACCOUNT_SEARCH" : "130305"
+         },
+         {
+            "EMAIL_ACCOUNT_LOCK" : "130306"
+         },
+         {
+            "EMAIL_ACCOUNT_UNLOCK" : "130307"
+         },
+         {
+            "EMAIL_LABEL_MANAGE" : "1304"
+         },
+         {
+            "EMAIL_LABEL_ADD" : "130401"
+         },
+         {
+            "EMAIL_LABEL_DEL" : "130402"
+         },
+         {
+            "EMAIL_LABEL_MOD" : "130403"
+         },
+         {
+            "EMAIL_LABEL_VIEW" : "130404"
+         },
+         {
+            "EMAIL_LOG_MANAGE" : "1305"
+         },
+         {
+            "EMAIL_LOG_ADD" : "130501"
+         },
+         {
+            "EMAIL_LOG_DEL" : "130502"
+         },
+         {
+            "EMAIL_LOG_MOD" : "130503"
+         },
+         {
+            "EMAIL_LOG_VIEW" : "130504"
+         },
+         {
+            "EMAIL_LOG_SEARCH" : "130505"
+         },
+         {
+            "SUPPLY_MANAGE" : "1401"
+         },
+         {
+            "SUPPLY_ADD" : "140101"
+         },
+         {
+            "SUPPLY_DEL" : "140102"
+         },
+         {
+            "SUPPLY_MOD" : "140103"
+         },
+         {
+            "SUPPLY_VIEW" : "140104"
+         },
+         {
+            "SUPPLY_SEARCH" : "140105"
+         },
+         {
+            "SUPPLY_CONTACT" : "140106"
+         },
+         {
+            "SUPPLY_MSG_MANAGE" : "1402"
+         },
+         {
+            "SUPPLY_MSG_ADD" : "140201"
+         },
+         {
+            "SUPPLY_MSG_DEL" : "140202"
+         },
+         {
+            "SUPPLY_MSG_MOD" : "140203"
+         },
+         {
+            "SUPPLY_MSG_VIEW" : "140204"
+         },
+         {
+            "SUPPLY_MSG_REPLY" : "140205"
+         },
+         {
+            "SUPPLY_MSG_REP_DEL" : "140206"
+         },
+         {
+            "SUPPLY_MSG_SEARCH" : "140207"
+         },
+         {
+            "SUPPLY_ATT_MANAGE" : "1403"
+         },
+         {
+            "SUPPLY_ATT_ADD" : "140301"
+         },
+         {
+            "SUPPLY_ATT_DEL" : "140302"
+         },
+         {
+            "SUPPLY_ATT_MOD" : "140303"
+         },
+         {
+            "SUPPLY_ATT_VIEW" : "140304"
+         },
+         {
+            "SUPPLY_COL_MANAGE" : "1404"
+         },
+         {
+            "SUPPLY_COL_ADD" : "140401"
+         },
+         {
+            "SUPPLY_COL_DEL" : "140402"
+         },
+         {
+            "SUPPLY_COL_MOD" : "140403"
+         },
+         {
+            "SUPPLY_COL_VIEW" : "140404"
+         },
+         {
+            "SUPPLY_COL_SEARCH" : "140405"
+         },
+         {
+            "SUPPLY_ADMIN_MANAGE" : "1405"
+         },
+         {
+            "SUPPLY_ADMIN_ADD" : "140501"
+         },
+         {
+            "SUPPLY_ADMIN_DEL" : "140502"
+         },
+         {
+            "SUPPLY_ADMIN_MOD" : "140503"
+         },
+         {
+            "SUPPLY_ADMIN_VIEW" : "140504"
+         },
+         {
+            "SUPPLY_ADMIN_SEARCH" : "140505"
+         },
+         {
+            "SUPPLY_ADMIN_AUDIT" : "140506"
+         },
+         {
+            "SUPPLY_ADMIN_LOCK" : "140507"
+         },
+         {
+            "SUPPLY_ADMIN_UNLOCK" : "140508"
+         },
+         {
+            "DEMAND_MANAGE" : "1501"
+         },
+         {
+            "DEMAND_ADD" : "150101"
+         },
+         {
+            "DEMAND_DEL" : "150102"
+         },
+         {
+            "DEMAND_MOD" : "150103"
+         },
+         {
+            "DEMAND_VIEW" : "150104"
+         },
+         {
+            "DEMAND_SEARCH" : "150105"
+         },
+         {
+            "DEMAND_CONTACT" : "150106"
+         },
+         {
+            "DEMAND_MSG_MANAGE" : "1502"
+         },
+         {
+            "DEMAND_MSG_ADD" : "150201"
+         },
+         {
+            "DEMAND_MSG_DEL" : "150202"
+         },
+         {
+            "DEMAND_MSG_MOD" : "150203"
+         },
+         {
+            "DEMAND_MSG_VIEW" : "150204"
+         },
+         {
+            "DEMAND_MSG_REPLY" : "150205"
+         },
+         {
+            "DEMAND_MSG_REP_DEL" : "150206"
+         },
+         {
+            "DEMAND_MSG_SEARCH" : "150207"
+         },
+         {
+            "DEMAND_ATT_MANAGE" : "1503"
+         },
+         {
+            "DEMAND_ATT_ADD" : "150301"
+         },
+         {
+            "DEMAND_ATT_DEL" : "150302"
+         },
+         {
+            "DEMAND_ATT_MOD" : "150303"
+         },
+         {
+            "DEMAND_ATT_VIEW" : "150304"
+         },
+         {
+            "DEMAND_COL_MANAGE" : "1504"
+         },
+         {
+            "DEMAND_COL_ADD" : "150401"
+         },
+         {
+            "DEMAND_COL_DEL" : "150402"
+         },
+         {
+            "DEMAND_COL_MOD" : "150403"
+         },
+         {
+            "DEMAND_COL_VIEW" : "150404"
+         },
+         {
+            "DEMAND_COL_SEARCH" : "150405"
+         },
+         {
+            "DEMAND_ADMIN_MANAGE" : "1505"
+         },
+         {
+            "DEMAND_ADMIN_ADD" : "150501"
+         },
+         {
+            "DEMAND_ADMIN_DEL" : "150502"
+         },
+         {
+            "DEMAND_ADMIN_MOD" : "150503"
+         },
+         {
+            "DEMAND_ADMIN_VIEW" : "150504"
+         },
+         {
+            "DEMAND_ADMIN_SEARCH" : "150505"
+         },
+         {
+            "DEMAND_ADMIN_AUDIT" : "150506"
+         },
+         {
+            "DEMAND_ADMIN_LOCK" : "150507"
+         },
+         {
+            "DEMAND_ADMIN_UNLOCK" : "150508"
+         },
+         {
+            "RATION_LIB_MANAGE" : "1602"
+         },
+         {
+            "RATION_LIB_ADD" : "160201"
+         },
+         {
+            "RATION_LIB_DEL" : "160202"
+         },
+         {
+            "RATION_LIB_MOD" : "160203"
+         },
+         {
+            "RATION_LIB_JS_CREATE" : "160207"
+         },
+         {
+            "RATION_LIB_CG_UPDATE_DIC" : "160208"
+         },
+         {
+            "RATION_LIB_VIEW" : "160204"
+         },
+         {
+            "RATIONHIS_LIB_MANAGE" : "160205"
+         },
+         {
+            "RATIONHIS_LIB_VIEW" : "160206"
+         },
+         {
+            "MATERIALBASE_LIB_MANAGE" : "160106"
+         },
+         {
+            "MATERIALBASE_LIB_ADD" : "160101"
+         },
+         {
+            "MATERIALBASE_LIB_DEL" : "160102"
+         },
+         {
+            "MATERIALBASE_LIB_MOD" : "160103"
+         },
+         {
+            "MATERIALBASE_LIB_VIEW" : "160107"
+         },
+         {
+            "MATERIALBASE_LIB_SEARCH" : "160105"
+         },
+         {
+            "MATERIALBASEHIS_LIB_MANAGE" : ""
+         },
+         {
+            "MATERIALBASEHIS_LIB_VIEW" : ""
+         },
+         {
+            "MATERIALBASE_LIB_SET_FEATURES" : "160108"
+         },
+         {
+            "SCORE_RECORD_MANAGE" : "1701"
+         },
+         {
+            "SCORE_RECORD_ADD" : "170101"
+         },
+         {
+            "SCORE_RECORD_DEL" : "170102"
+         },
+         {
+            "SCORE_RECORD_MOD" : "170103"
+         },
+         {
+            "SCORE_RECORD_SEARCH" : "170105"
+         },
+         {
+            "SCORE_RECORD_VIEW" : "170104"
+         },
+         {
+            "SCORE_EXCHANGE_MANAGE" : "1702"
+         },
+         {
+            "SCORE_EXCHANGE_ADD" : "170201"
+         },
+         {
+            "SCORE_EXCHANGE_DEL" : "170202"
+         },
+         {
+            "SCORE_EXCHANGE_MOD" : "170203"
+         },
+         {
+            "SCORE_EXCHANGE_VIEW" : "170204"
+         },
+         {
+            "SCORE_EXCHANGE_SEARCH" : "170205"
+         },
+         {
+            "SCORE_RULE_MANAGE" : "1703"
+         },
+         {
+            "SCORE_RULE_ADD" : "170301"
+         },
+         {
+            "SCORE_RULE_DEL" : "170302"
+         },
+         {
+            "SCORE_RULE_MOD" : "170303"
+         },
+         {
+            "SCORE_RULE_VIEW" : "170304"
+         },
+         {
+            "SCORE_RULE_SEARCH" : "170305"
+         },
+         {
+            "SCORE_GOODS_MANAGE" : "1704"
+         },
+         {
+            "SCORE_GOODS_ADD" : "170401"
+         },
+         {
+            "SCORE_GOODS_DEL" : "170402"
+         },
+         {
+            "SCORE_GOODS_MOD" : "170403"
+         },
+         {
+            "SCORE_GOODS_VIEW" : "170404"
+         },
+         {
+            "SCORE_GOODS_SEARCH" : "170405"
+         },
+         {
+            "PRODUCT_CLASSIFY_MANAGE" : "0407"
+         },
+         {
+            "PRODUCT_CLASSIFY_VIEW" : "040701"
+         },
+         {
+            "PRODUCT_CLASSIFY_DEL" : "040702"
+         },
+         {
+            "PRODUCT_CLASSIFY_MOD" : "040703"
+         },
+         {
+            "PRODUCT_CLASSIFY_ADD" : "040704"
+         },
+         {
+            "PRODUCT_CLASSIFY_STEUP" : "040705"
+         },
+         {
+            "MOSTLY_PRODUCT_MANAGE" : "0408"
+         },
+         {
+            "MOSTLY_PRODUCT_VIEW" : "040801"
+         },
+         {
+            "MOSTLY_PRODUCT_ADD" : "040802"
+         },
+         {
+            "MOSTLY_PRODUCT_MOD" : "040803"
+         },
+         {
+            "MOSTLY_PRODUCT_DEL" : "040804"
+         },
+         {
+            "MOSTLY_PRODUCT_ODER" : "040805"
+         },
+         {
+            "MOSTLY_PRODUCT_TAILOR" : "040806"
+         },
+         {
+            "VIP_RECRUIT_MANAGE_LIST" : ""
+         },
+         {
+            "VIP_RECRUIT_MANAG_ADD" : ""
+         },
+         {
+            "VIP_RECRUIT_MANAG_PUTOUT" : ""
+         },
+         {
+            "VIP_RECRUIT_MANAG_DEL" : ""
+         },
+         {
+            "CREATE_PROJECT_HTML" : "040109"
+         },
+         {
+            "CREATE_SUNSHINE_HTML" : "040110"
+         },
+         {
+            "CREATE_RECRUIT_HTML" : "040111"
+         },
+         {
+            "LOCAL_MATERIAL_TYPE" : "010109"
+         },
+         {
+            "ORDERS_DETAIL" : "030206"
+         },
+         {
+            "ORDERS_ADD" : "030207"
+         },
+         {
+            "ORDERS_EDIT" : "030208"
+         },
+         {
+            "ORDERS_INVOICE" : "030209"
+         },
+         {
+            "ORDERSITEM_ADD" : "030210"
+         },
+         {
+            "ORDERSITEM_EDIT" : "030211"
+         },
+         {
+            "ORDERSITEM_DEL" : "030212"
+         },
+         {
+            "STANORDERSITEM_LIST" : "030213"
+         },
+         {
+            "STANORDERSITEM_ADD" : "030214"
+         },
+         {
+            "STANORDERSITEM_EDIT" : "030219"
+         },
+         {
+            "STANORDERSITEM_DEL" : "030220"
+         },
+         {
+            "ORDERGROUP_ADD" : "030215"
+         },
+         {
+            "ORDERGROUP_VIEW_ORDERSITEM_LIST" : "030216"
+         },
+         {
+            "ORDERGROUP_SET_CURR" : "030217"
+         },
+         {
+            "ORDERSITEM_SET_ONLINE" : "030218"
+         },
+         {
+            "ORDERSITEM_SET_ONLINE_CANCEL" : "030223"
+         },
+         {
+            "ORDERS_IMPORT" : "030221"
+         },
+         {
+            "ORDERS_HANDLE" : "030222"
+         },
+         {
+            "RECHARGE_MANAGE" : "2001"
+         },
+         {
+            "RECHARGE_RECONCILIATION" : "200101"
+         },
+         {
+            "RECHARGE_ACCOUNTDETAIL" : "200102"
+         },
+         {
+            "FAC_AUTO_TYPED" : "020114"
+         },
+         {
+            "FAC_TYPE_CHECKED" : "020113"
+         },
+         {
+            "FAC_UPDATE_DIC" : "020112"
+         },
+         {
+            "VIP_OFFLINE_ASKPRICE_EXPORT" : "070417"
+         },
+         {
+            "VIP_OFFLINE_ASKPRICE_VIEW" : "070418"
+         },
+         {
+            "VIP_OFFLINE_ASKPRICE_EDIT" : "070423"
+         },
+         {
+            "VIP_SYN_MATERIAL_LIB" : "070419"
+         },
+         {
+            "VIP_OFFLINE_PRICE_VIEW" : "070420"
+         },
+         {
+            "VIP_OFFLINE_ASKPRICE_DEL" : "070421"
+         },
+         {
+            "CITYCIRCLE_MANAGE" : "1801"
+         },
+         {
+            "CITYCIRCLE_SET" : "180101"
+         },
+         {
+            "REFERENCEMATERIALPRICE_MANAGE" : "1901"
+         },
+         {
+            "FAC_REFERENCEMATERIALPRICE_SET_OR_CANCLE" : "020115"
+         },
+         {
+            "FAC_REFERENCEMATERIALPRICE_SET_ALL" : "020116"
+         },
+         {
+            "REFERENCEMATERIALPRICE_VIEW" : "190101"
+         },
+         {
+            "HIS_REFERENCEMATERIALPRICE_VIEW" : "190102"
+         },
+         {
+            "SYNCH_REFERENCEMATERIALPRICE" : "190103"
+         },
+         {
+            "PRICEMATERIAL_SET_OR_CANCLE" : "190104"
+         },
+         {
+            "REFERENCEMATERIALPRICE_EXPORT" : "190105"
+         },
+         {
+            "REFERENCEMATERIALPRICE_IMPORT" : "190106"
+         },
+         {
+            "REFERENCEMATERIALPRICE_SET_DIFFRATIO" : "190109"
+         },
+         {
+            "REFERENCEMATERIALPRICE_EDIT" : "190110"
+         },
+         {
+            "REFERENCEMATERIALPRICE_CALC" : "190111"
+         },
+         {
+            "REFERENCEMATERIALPRICE_PUBLISH" : "190112"
+         },
+         {
+            "REFERENCEMATERIALPRICE_PUBLISH_MANAGE" : "190113"
+         },
+         {
+            "REFERENCEMATERIALPRICE_SET_TOP" : "190114"
+         },
+         {
+            "REFERENCEMATERIALPRICE_SET_REFMATPRICE" : "190115"
+         },
+         {
+            "REFERENCEPRICE_MANAGE" : "1902"
+         },
+         {
+            "REFERENCEPRICE_DETAIL_LIST" : "190201"
+         },
+         {
+            "MATERIALPRICE_IMPORT" : "190108"
+         },
+         {
+            "REFERENCE_PRICE_MANAGEMENT" : "1903"
+         },
+         {
+            "RELEASE_REFERENCE_PRICE" : "190301"
+         },
+         {
+            "UPDATE_REFERENCEPRICE_TITLE" : "190302"
+         },
+         {
+            "DELETE_REFERENCEPRICE_TITLE" : "190303"
+         },
+         {
+            "EXPORT_REFERENCEPRICE_TITLE" : "190304"
+         },
+         {
+            "AREA_MANAGEMENT" : "1904"
+         },
+         {
+            "STATISTICAL_INFO_PRICE_AREA" : "190401"
+         },
+         {
+            "GENERATION_AREAJS_FILE" : "190402"
+         },
+         {
+            "OPEN_AREA_SITE" : "190403"
+         },
+         {
+            "ADD_AREA" : "190404"
+         },
+         {
+            "EDIT_AREA" : "190405"
+         },
+         {
+            "REFERENCEMATERIALPRICE_ISPRICEMATERIAL_EXPORT" : "190107"
+         },
+         {
+            "CREATE_ONEASKPRICE_HTML" : "050115"
+         },
+         {
+            "UPLOAD_ASKPRICE_TO_ENTERPRISE" : "070422"
+         },
+         {
+            "MESSAGETEMPLATE_MANAGE" : "2002"
+         },
+         {
+            "MESSAGETEMPLATE_ADD" : "200201"
+         },
+         {
+            "MESSAGETEMPLATE_MOD" : "200202"
+         },
+         {
+            "MESSAGETEMPLATE_DEL" : "200203"
+         },
+         {
+            "MESSAGETEMPLATE_LOCK" : "200204"
+         },
+         {
+            "MESSAGETEMPLATE_UNLOCK" : "200205"
+         },
+         {
+            "MESSAGETEMPLATE_VIEW_LOCKLIST" : "200206"
+         },
+         {
+            "VIP_EP_MANAGE" : "2003"
+         },
+         {
+            "VIP_EP_VIEW" : "200301"
+         },
+         {
+            "VIP_EP_EDIT" : "200302"
+         },
+         {
+            "VIP_EP_ORDER_EXPORT" : "200303"
+         },
+         {
+            "VIP_EP_ORDER_LIST" : "200304"
+         },
+         {
+            "VIP_EP_LOCK" : "200305"
+         },
+         {
+            "VIP_EP_ADD_MEM_LIST" : "200306"
+         },
+         {
+            "VIP_EP_AUTH_LIST" : "200307"
+         },
+         {
+            "VIP_EP_LOCK_LIST" : "200308"
+         },
+         {
+            "VIP_EP_UNLOCK" : "200309"
+         },
+         {
+            "VIP_EP_DEL" : "200310"
+         },
+         {
+            "VIP_ORDER_MANAGE" : "2004"
+         },
+         {
+            "VIP_ORDER_VIEW" : "200401"
+         },
+         {
+            "VIP_ORDER_DO_INVONCE" : "200402"
+         },
+         {
+            "VIP_AUTH_MANAGE" : "2005"
+         },
+         {
+            "VIP_AUTH_ADD" : "200501"
+         },
+         {
+            "VIP_AUTH_DEL" : "200502"
+         },
+         {
+            "PURCHASE_EP_LOCK_LIST" : "200311"
+         },
+         {
+            "CREDIT_PURCHASE_EP_LIST" : "200312"
+         },
+         {
+            "CREDIT_PURCHASE_EP_DETAIL" : "200313"
+         },
+         {
+            "CREDIT_PURCHASE_EP_SCORE_DETAIL" : "200314"
+         },
+         {
+            "CREDIT_PURCHASE_EP_ADD" : "200315"
+         },
+         {
+            "CORP_SHOP_EPATTACH_LIST" : "030528"
+         },
+         {
+            "CORP_SHOP_EPATTACH_UPLOAD" : "030529"
+         },
+         {
+            "CORP_SHOP_EPATTACH_VIEW" : "030530"
+         },
+         {
+            "CORP_SHOP_EPATTACH_EDIT" : "030531"
+         },
+         {
+            "INFO_CONTENT_UPLOAD" : "060105"
+         },
+         {
+            "CREDIT_SCORE_RULE_MANAGE" : "2008"
+         },
+         {
+            "CREDIT_SCORE_RULE_ADD" : "200801"
+         },
+         {
+            "CREDIT_SCORE_RULE_EDIT" : "200802"
+         },
+         {
+            "CREDIT_SCORE_RULE_DEL" : "200803"
+         },
+         {
+            "AWARD_ADD" : "030532"
+         },
+         {
+            "AWARD_VIEW" : "030533"
+         },
+         {
+            "AWARD_EDIT" : "030534"
+         },
+         {
+            "MEM_LOCK_LIST" : "090219"
+         },
+         {
+            "MEM_UPDATE_EMAIL" : "090220"
+         },
+         {
+            "PURCHASE_MEM_MANAGE" : "2006"
+         },
+         {
+            "PURCHASE_MEM_VIEW" : "200601"
+         },
+         {
+            "PURCHASE_MEM_LOCK" : "200602"
+         },
+         {
+            "PURCHASE_MEM_AUDIT" : "200603"
+         },
+         {
+            "PURCHASE_MEM_RENEW" : "200604"
+         },
+         {
+            "PURCHASE_MEM_RELEVANCE" : "200605"
+         },
+         {
+            "PURCHASE_MEM_EXPORT" : "200606"
+         },
+         {
+            "PURCHASE_MEM_LOCK_LIST" : "200607"
+         },
+         {
+            "PURCHASE_MEM_DELETE" : "200608"
+         },
+         {
+            "PURCHASE_MEM_UNLOCK" : "200609"
+         },
+         {
+            "PURCHASE_MEM_MOD" : "200610"
+         },
+         {
+            "VIP_OFFLINE_ASKPRICE_IMGUPLOAD" : "070424"
+         },
+         {
+            "BASE_MATERIAL_MANAGE" : "2007"
+         },
+         {
+            "BASE_MATERIAL_LIST" : "200701"
+         },
+         {
+            "BASE_MATERIAL_IMPORT" : "200702"
+         },
+         {
+            "BASE_MATERIAL_EXPORT" : "200703"
+         },
+         {
+            "BASE_MATERIAL_VIEW" : "200704"
+         },
+         {
+            "BASE_MATERIAL_EDIT" : "200705"
+         },
+         {
+            "BASE_MATERIAL_SYSNC" : "200706"
+         },
+         {
+            "BASE_MATERIAL_BATCH_UP_AREA" : "200707"
+         },
+         {
+            "EVALUATION_MANAGE" : ""
+         },
+         {
+            "EVALUATION_UPDATE_VIEW" : ""
+         },
+         {
+            "EVALUATION_UPLOAD_VIEW" : ""
+         },
+         {
+            "EVALUATION_DELETE_VIEW" : ""
+         },
+         {
+            "FAC_LIST_DOWNLOAD" : "020117"
+         },
+         {
+            "SHOP_COUNT_MANAGE" : "0307"
+         },
+         {
+            "SHOP_SUBCID_COUNT" : "030701"
+         },
+         {
+            "SHOP_BRAND_COUNT" : "030702"
+         },
+         {
+            "SHOP_AREA_COUNT" : "030703"
+         },
+         {
+            "REFERENCEMATERIALPRICE_SET_WEIGHT" : "190116"
+         },
+         {
+            "SHOP_REMIND" : "030535"
+         },
+         {
+            "VIP_BRANDSHOP_LIST" : ""
+         },
+         {
+            "ACTIVITY_MANAGE" : "2010"
+         },
+         {
+            "ACTIVITY_MANAGE_ADD" : "201001"
+         },
+         {
+            "ACTIVITY_MANAGE_EDIT" : "201002"
+         },
+         {
+            "ACTIVITY_MANAGE_VIEW" : "201003"
+         },
+         {
+            "ACTIVITY_MANAGE_UPDATE_STATE" : "201004"
+         },
+         {
+            "ACTIVITY_MANAGE_GIFT_ADD" : "201005"
+         },
+         {
+            "ACTIVITY_MANAGE_GIFT_EDIT" : "201006"
+         },
+         {
+            "ACTIVITY_MANAGE_EXCHANGE" : "201007"
+         },
+         {
+            "ACTIVITY_MANAGE_EXCHANGE_LIST" : "201008"
+         },
+         {
+            "ACTIVITY_MANAGE_GIFT_DEL" : "201009"
+         },
+         {
+            "ACTIVITY_MANAGE_EXCHANGE_VIEW" : "201010"
+         },
+         {
+            "ACTIVITY_MANAGE_GIFT_SEND" : "201011"
+         },
+         {
+            "ACTIVITY_MANAGE_EXCHANGE_CANCEL" : "201012"
+         },
+         {
+            "CC_DATACLEAN" : "2012"
+         },
+         {
+            "CC_DATACLEAN_LOGIN" : "201201"
+         },
+         {
+            "SCORE_INIT" : "170106"
+         },
+         {
+            "SCOREORDERS_INVOICE" : "030224"
+         },
+         {
+            "SCOREORDERS_DETAIL" : "030225"
+         },
+         {
+            "SCOREORDERS_IMPORT" : "030226"
+         },
+         {
+            "WENKU_DOCUMENT_LIST" : "2013"
+         },
+         {
+            "WENKU_DOCUMENT_INFO" : "201301"
+         },
+         {
+            "WENKU_DOCUMENT_LIST_NOAUDIT" : "201302"
+         },
+         {
+            "WENKU_DOCUMENT_INFO_NOAUDIT" : "201303"
+         },
+         {
+            "WENKU_DOCUMENT_AUDIT" : "201304"
+         },
+         {
+            "WENKU_DOCUMENT_LIST_NOPASS" : "201305"
+         },
+         {
+            "WENKU_DOCUMENT_INFO_NOPASS" : "201306"
+         },
+         {
+            "WENKU_DOCUMENT_LIST_LOCK" : "201307"
+         },
+         {
+            "WENKU_DOCUMENT_INFO_LOCK" : "201308"
+         },
+         {
+            "WENKU_DOCUMENT_LOCK_CANCEL" : "201309"
+         },
+         {
+            "WENKU_DOCUMENT_DEL" : "201310"
+         },
+         {
+            "WENKU_DOCUMENT_LOCK" : "201311"
+         },
+         {
+            "WENKU_DOCUMENT_REAUDIT" : "201312"
+         },
+         {
+            "WENKU_DOCUMENT_RECOMMEND" : "201313"
+         },
+         {
+            "WENKU_INDEX_CREATE" : "201314"
+         },
+         {
+            "WENKU_ITEM_MANAGE" : "201315"
+         },
+         {
+            "WENKU_DOCUMENT_ICON" : "201316"
+         },
+         {
+            "WENKU_MEMBER_LIST" : "2014"
+         },
+         {
+            "WENKU_MEMBER_INFO" : "201401"
+         },
+         {
+            "VIP_EP_DIR_AUTH" : "200317"
+         },
+         {
+            "VIP_EP_RENEWAL" : "200318"
+         },
+         {
+            "VIP_EP_AREA" : "200319"
+         },
+         {
+            "VIP_EP_SCORE_DETAIL" : "200320"
+         },
+         {
+            "VIP_EP_OPEN_TRY" : "200321"
+         },
+         {
+            "VIP_EP_RECHARGE_DETAIL" : "200322"
+         },
+         {
+            "VIP_EP_RECHARGE_RECONCILIATION" : "200323"
+         },
+         {
+            "VIP_EP_RECHARGE_ACCOUNTDETAIL" : "200324"
+         },
+         {
+            "VIP_EP_ACCOUNT_MOVE" : "200316"
+         },
+         {
+            "DEMAND_ADMIN_ISRECOMMEND" : "150509"
+         },
+         {
+            "SUPPLY_ADMIN_ISRECOMMEND" : ""
+         },
+         {
+            "SUPPLY_ADMIN_MONTHTOP" : "140510"
+         },
+         {
+            "BASE_MATERIAL_VIEW_PRICE" : "200708"
+         },
+         {
+            "GOV_REMARK" : "010112"
+         },
+         {
+            "SHOP_FRONTLINE_BRAND_SETTING" : "030704"
+         },
+         {
+            "DATA_GRAB_MANAGE" : "2015"
+         },
+         {
+            "DATA_GRAB_SOURCE_LIST" : "201501"
+         },
+         {
+            "DATA_GRAB_SOURCE_ADD" : "201502"
+         },
+         {
+            "DATA_GRAB_SOURCE_DEL" : "201503"
+         },
+         {
+            "DATA_GRAB_DOWNLOAD" : "201504"
+         },
+         {
+            "LAMP_AREA_LIST" : "2016"
+         },
+         {
+            "LAMP_AREA_ADD" : "201601"
+         },
+         {
+            "LAMP_AREA_EDIT" : "201602"
+         },
+         {
+            "LAMP_BOOTH_LIST" : "201603"
+         },
+         {
+            "LAMP_BOOTH_ADD" : "201604"
+         },
+         {
+            "LAMP_BOOTH_EDIT" : "201605"
+         },
+         {
+            "LAMP_BOOTH_EXTENDVALIDDATE" : "201606"
+         },
+         {
+            "LAMP_BOOTH_STATUS" : "201607"
+         },
+         {
+            "LAMP_BOOTH_DEL" : "201608"
+         },
+         {
+            "LAMP_AREA_DEL" : ""
+         },
+         {
+            "REFERENCEMATERIALPRICE_RECOMMENDED_FAC_MAT" : "190117"
+         },
+         {
+            "API_KEY_MANAGE" : "2018"
+         },
+         {
+            "API_KEY_ADD" : "201801"
+         },
+         {
+            "API_KEY_EDIT" : "201802"
+         },
+         {
+            "API_KEY_DEL" : "201803"
+         }
+      ],
+   "state" : "success",
+   "success" : true
+}

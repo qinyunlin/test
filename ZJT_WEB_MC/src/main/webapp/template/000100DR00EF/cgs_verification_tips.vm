@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+  <link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/reset.css" />
+<link type="text/css" rel="stylesheet"href="$wcw_common_site/css/common/cg_yz.css" />
+
+		
+<title>邮箱验证</title>
+</head>
+
+<body>
+ #parse($wcw_header)
+<div class="gy_yz_box" style="text-align:left;">
+    <div class="yz_suc_box">
+        <span class="yz_icon_tips">只需最后一步验证邮箱，即可立即享受采购管家服务</span>
+        <div class="yz_suc_reason">
+            我们已经发送了一封验证邮件到您的邮箱，验证通过后您可进入采购管家。<br/>
+            同时，忘记密码还可以直接用邮箱找回，让您的账号更安全。<br/><br/>
+            <div class="btn_verification_box" style="margin-top:10px;">
+                <span class="f_left"><a class="btn_verification" href="#" ></a></span>
+                <a class="yz_link f_left margin_left_10 text_underline" href="#" onclick="toSendMail();">重新发送验证邮件</a>
+                <a class="yz_link f_left margin_left_10 text_underline" href="#" onclick="showUpdateMailWin();">修改邮箱</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mask_layer" style="display:none;" id="mask_layer"></div>
+<div class="email_tips_box" style="display:none;" id="email_tips_box">
+    <div class="close_box"><a href="javascript:void(0);" title="关闭" class="icon_closed" onclick="hide('email_tips_box');">关闭</a></div>
+    <p>
+        我们发送了一封验证邮件到您的邮箱<br/>
+        <a class="yz_link email_font" id="emailtwo" href="#"></a><br/>
+        请到您的邮箱中收取邮件进行验证。<br/><br/>
+       <a href="#" class="email_btn_org" onclick="emailInterface()"/>立即验证</a>
+       <a href="#" class="email_btn_gray margin_l_10" onclick="hide('email_tips_box');"/>关闭</a>
+    </p>
+</div>
+
+<!--	修改邮箱	-->
+<div class="set_email_tips_box" style="display:none;" id="set_email_tips_box">
+    <h1>
+        <a href="javascript:void(0);" title="关闭" class="icon_closed_01" onclick="hide('set_email_tips_box');">关闭</a>
+        修改邮箱
+    </h1>
+    <p>您当前的邮箱：<span id="emailSpan"></span></p>
+    <p>新的邮箱地址：<input type="text" value="" name="updateEmailName" id="updateEmailName" class="txt_input"/></p>
+    <div class="padding_80_box font_12 color_gray_999 line_height_18">请输入您常用的邮箱地址，提交后系统将发送一份验证邮件到您的邮箱。</div>
+    <div class="padding_80_box"><a href="#" class="email_btn_gray" onclick="updateMail();"/>确定</a></div>
+</div>
+<!--	修改邮箱	-->
+
+<!--	邮箱修改成功	-->
+<div class="set_email_tips_suc_box" style="display:none;" id="set_email_tips_suc_box">
+    <p>邮箱修改成功！已发送新的验证邮件！</p>
+    <p><input name="" type="button" value="确定" class="email_btn_gray" onclick="hide('set_email_tips_suc_box');"/></p>
+</div>
+#parse($wcw_footer)
+<script language="javascript"
+			src="$wcw_common_site/js/common/dataStore.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/msg.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+		<script type="text/javascript" src="http://c2.zjtcn.com/js/common/dataCheck.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/email/email_suc.js"></script>
+</body>
+</html>

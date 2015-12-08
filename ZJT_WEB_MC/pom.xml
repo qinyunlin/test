@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>MC</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ZJT_WEB_MC</name>
+	<description>ZJT_WEB_MC</description>
+	
+	<!--  引用上级配置  -->
+	<parent>
+		<groupId>com.concom</groupId>
+		<artifactId>concom-zjt-parent</artifactId>
+		<version>1.0.0-RELEASE</version>
+		<relativePath>../ZJT_AGGREGATE/pom_parent.xml</relativePath>
+	</parent>
+	
+	<!--  发布的名字  -->
+	<build>
+		<finalName>mc</finalName>
+	</build>
+
+		
+	<!-- 针对不同的环境配置过滤参数值 -->
+	<profiles>
+		<profile>
+			<!-- 开发环境 -->
+			<id>dev</id>
+			<properties>
+				<!-- CC_MC -->
+				<site.template_real_dir>D:\\eclipse-neting\\code\\ZJT_WEB_MC\\src\\main\\webapp\\template</site.template_real_dir>
+				<site.template_dir>\\template\\</site.template_dir>
+				<site.html_dir>D:\\eclipse-neting\\code\\zjt_html\\</site.html_dir>
+				<site.content_html>D:\\eclipse-neting\\code\\news\\</site.content_html>
+				<site.news_site>http://www.zjtcn.com</site.news_site>
+				<site.tomcat.home>E:\\maven\\apache-tomcat-6.0.35</site.tomcat.home>
+				<site.ccwcw_html>D:\\eclipse-neting\\code\\zjt_html\\www.ccwcw.com\\</site.ccwcw_html>
+				<site.wcw_news_site>http://www.ccwcw.com</site.wcw_news_site>
+				<site.log_level>debug</site.log_level>
+				<site.site_path>D:\\eclipse-neting\\code\\ZJT_WEB_MC\\src\\main\\webapp</site.site_path>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<properties>
+				<!-- CC_MC -->
+				<site.template_real_dir>/site/mc/template/</site.template_real_dir>
+				<site.template_dir>/template/</site.template_dir>
+				<site.html_dir>/site/zjt_html/</site.html_dir>
+				<site.content_html>/site/news/</site.content_html>
+				<site.news_site>http://www.zjtcn.com</site.news_site>
+				<site.tomcat.home>/site</site.tomcat.home>
+				<site.ccwcw_html>/site/zjt_html/www.ccwcw.com/</site.ccwcw_html>
+				<site.wcw_news_site>http://www.ccwcw.com</site.wcw_news_site>
+				<site.log_level>debug</site.log_level>
+				<site.site_path>/site/mc</site.site_path>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 31 32 33测试环境 -->
+			<id>stest</id>
+			<properties>
+				<!-- CC_MC -->
+				<site.template_real_dir>/site/mc/template/</site.template_real_dir>
+				<site.template_dir>/template/</site.template_dir>
+				<site.html_dir>/site/zjt_html/</site.html_dir>
+				<site.content_html>/site/news/</site.content_html>
+				<site.news_site>http://www.zjtcn.com</site.news_site>
+				<site.tomcat.home>/site</site.tomcat.home>
+				<site.ccwcw_html>/site/zjt_html/www.ccwcw.com/</site.ccwcw_html>
+				<site.wcw_news_site>http://www.ccwcw.com</site.wcw_news_site>
+				<site.log_level>debug</site.log_level>
+				<site.site_path>/site/mc</site.site_path>
+			</properties>
+		</profile>
+
+		<profile>
+			<!-- 34测试环境 -->
+			<id>test34</id>
+			<properties>
+				<!-- CC_MC -->
+				<site.template_real_dir>/site/mc/template/</site.template_real_dir>
+				<site.template_dir>/template/</site.template_dir>
+				<site.html_dir>/site/zjt_html/</site.html_dir>
+				<site.content_html>/site/news/</site.content_html>
+				<site.news_site>http://www.zjtcn.com</site.news_site>
+				<site.tomcat.home>/productSite</site.tomcat.home>
+				<site.ccwcw_html>/site/zjt_html/www.ccwcw.com/</site.ccwcw_html>
+				<site.wcw_news_site>http://www.ccwcw.com</site.wcw_news_site>
+				<site.log_level>error</site.log_level>
+				<site.site_path>/site/mc</site.site_path>
+			</properties>
+		</profile>
+	</profiles>
+	<dependencies>
+		<!-- SiteMesh是一个用来在JSP中实现页面布局和装饰(layout and decoration)的框架组件 -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+		<!-- Velocity是一个基于java的模板引擎 -->
+		<dependency>
+			<groupId>com.concom</groupId>
+			<artifactId>velocity-tools-view</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- Apache POI是一个开源的Java读写Excel、WORD等微软OLE2组件文档的项目。 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.6</version>
+		</dependency>
+		<!-- 实现对XML的读写转成对JavaBean的操作的工具包 -->
+		<dependency>
+			  <groupId>com.concom</groupId>
+			  <artifactId>xmlbean</artifactId>
+			  <version>1.0</version>
+		</dependency>
+	</dependencies>
+</project>

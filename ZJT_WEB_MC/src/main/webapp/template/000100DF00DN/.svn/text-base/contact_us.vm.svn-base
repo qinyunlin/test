@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系我们_造价通($dataInfo.province)</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+</head>
+<body>
+		<!--	header star	-->
+<div id="header_box">
+    <div id="header">
+        	<div class="inside-com-logo" ><a href="/" class="logo01" ></a></div>
+        <div class="f_l top_nav">
+            <a href="/help/about_zjt.html" class="ab_m">关于造价通</a>
+            <a href="/help/contact_us.html" class="cur">联系我们</a>
+            <a href="/help/zsdl.html">招商代理</a>
+        </div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div class="co_01 border_1">
+
+	<h1 class="til_name"><span>公司地址</span></h1>
+    
+    <div class="contact_box">
+    
+    	<div>
+            <h3>广东中建普联科技有限公司<h3>
+                <h3>总部</h3>
+                联系地址：广州市天河区棠安路146号金豪商务大厦4033室<br>
+                邮政编码：501665<br>
+                <font color="red">全国统一服务热线：400-888-9639</font><br>
+                <font color="red">全国统一服务QQ：4008889639</font><br>
+                <font color="red">全国统一服务邮箱：kf@zjtcn.com</font><br>
+                联系电话：020-85544604<br>
+                传真：020-85603159；020-85603269<br>
+            </div>
+            
+            <div>
+                <h3>华南本部</h3>
+			             联系地址：广州市天河区棠安路146号金豪商务大厦4033室<br> 
+			             邮政编码：501665<br> 
+			             联系电话：020-85544604    <br>
+			             传真：020-85603159；020-85603269
+            </div>
+            
+            <div>
+                <h3>华北本部</h3>
+			            地址：天津市南开区复康路23号增1号（天津市工程建设交易服务中心）<br> 
+			             邮政编码：300191<br> 
+			             联系电话：022—60905355； 13682110232<br>
+			             传真：022-23661186
+            </div>
+            
+            <div>
+                <h3>西南本部</h3>
+			            地址：成都市青羊区太升北路55号太升苑二单元1404<br> 
+			            邮政编码：610000<br> 
+			            联系电话：028-83312898
+            </div>
+            
+            <div>
+                <h3>黑龙江分公司</h3>
+			           地址：哈尔滨市南岗区马端街401号米兰国际623室<br> 
+			            邮政编码：150009<br> 
+			           联系电话：0451-82300071<br>
+			           传真：0451-82353761
+            </div>
+            
+            <div>
+                <h3>江门办事处</h3>
+			          地址：江门市江海区江海一路83号住建大厦三楼造价站330室<br> 
+			          邮政编码：529000<br> 
+			          联系电话：0750-3831912<br>
+			           传真：0750-3310933
+            </div>
+        
+    
+    </div>
+	
+</div>
+<div class="mask_layer" style="display:none;" id="mask_layer"></div>
+#parse($footer_dir)
+</body>
+</html>

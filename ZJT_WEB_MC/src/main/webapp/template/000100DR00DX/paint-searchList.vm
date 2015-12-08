@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>网材网_涂料商铺列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/tradeChannel/paint_searchList.css">
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script> 
+	<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/ConCom.js"></script> 
+	<script type="text/javascript" src="$wcw_common_site/js/common/dataStore.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/dataCheck.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_feibiao.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_gongqiu_type.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_gongqiu_db.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/stuff_gongqiu_decode.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	
+  </head>
+  
+  <body>
+   <!-- 头部 -->
+  #parse($wcw_header)
+	#parse($hypd_nav)
+	<div id="main">
+	<!-- 行业分类链接容器 -->
+	<div class="type_container">
+		<div class="type_container_l"></div>
+		<div class="type_container_c">
+			<div class="type_title" id="stuff_gq_1_title">涂料及防腐防水材料：</div>
+			<div class="type_div">
+				
+				<div class="stateBody" id="ration_2_waiting" style="display: none;"><div class="waiting"></div> </div><div class="stateBody" id="ration_2_nofound" style="display: none;"><div class="nofound"></div> </div><div class="stateBody" id="ration_2_noauth" style="display: none;"><div noauth""="" class="class="></div></div><ul id="ration_2" style="display: block;">
+					<li><a onclick="searchShop('1101','建筑涂料',this)" href="#" class="orange_a">建筑涂料</a></li>
+				
+					<li><a onclick="searchShop('1103','功能性涂料',this)" href="#" class="blue_a">功能性涂料</a></li>
+				
+					<li><a onclick="searchShop('1105','木器涂料',this)" href="#" class="blue_a">木器涂料</a></li>
+				
+					<li><a onclick="searchShop('1106','金属涂料',this)" href="#" class="blue_a">金属涂料</a></li>
+				
+					<li><a onclick="searchShop('1107','道路、桥梁涂料',this)" href="#" class="blue_a">道路、桥梁涂料</a></li>
+				
+					<li><a onclick="searchShop('1109','工业设备涂料',this)" href="#" class="blue_a">工业设备涂料</a></li>
+				
+					<li><a onclick="searchShop('1111','通用涂料',this)" href="#" class="blue_a">通用涂料</a></li>
+				
+					<li><a onclick="searchShop('1141','油料、树脂',this)" href="#" class="blue_a">油料、树脂</a></li>
+				
+					<li><a onclick="searchShop('1143','颜料、填料',this)" href="#" class="blue_a">颜料、填料</a></li>
+				
+					<li><a onclick="searchShop('1145','涂料辅助材料',this)" href="#" class="blue_a">涂料辅助材料</a></li>
+				
+					<li><a onclick="searchShop('1151','耐酸砖、板',this)" href="#" class="blue_a">耐酸砖、板</a></li>
+				
+					<li><a onclick="searchShop('1155','沥青',this)" href="#" class="blue_a">沥青</a></li>
+				
+					<li><a onclick="searchShop('1157','防水卷材',this)" href="#" class="blue_a">防水卷材</a></li>
+				
+					<li><a onclick="searchShop('1159','防水油膏、剂、粉、胶类',this)" href="#" class="blue_a">防水油膏、剂、粉、胶类</a></li>
+				
+					<li><a onclick="searchShop('1161','止水材料',this)" href="#" class="blue_a">止水材料</a></li>
+				
+					<li><a onclick="searchShop('1171','其他防腐防水材料',this)" href="#" class="blue_a">其他防腐防水材料</a></li>
+				</ul>
+			</div>
+
+			<div class="clearing"></div>
+		</div>
+		<div class="type_container_r"></div>
+	</div>
+	<div class="clearing"></div>
+	<!-- 主体 -->
+	<div id="main">
+		<div class="main_l">
+			<div class="title_banner" style="width:665px;">
+				<div class="title_banner_left"></div>
+				<div class="title_banner_center" style="width:659px;">
+					<div class="title_icon"></div>
+					<div class="title_text">涂料商铺</div>
+				</div>
+				<div class="title_banner_right"></div>
+			</div>
+			<div class="searchlist_container">
+				<div class="searchlist_div">
+				
+				
+					<div id="listbody"></div>
+					<div id="page"></div>
+					<!-- template -->
+					<div id="template" style="display:none;">
+						<div class="searchlist_content">
+							<div class="list_num">@{rownum}</div>
+							<div class="list_img">
+								<img width="80px" height="80px" src="@{picPath|changeLogo}" />
+							</div>
+							<div class="list_container">
+								<div class="list_container_t">
+									<div class="type_name" title=""><a class="blue_a type_name_id" href="#" style="font-size:14px;">建筑涂料</a></div>
+									<div class="type_company" title="@{name}"><a  target="_blank" class="orange_a" href="$!templateUtil.getShopUrl('@{eid}')" style="font-size:14px;">@{name}</a></div>
+									<div class="com_area" title="@{area}">@{area}</div>
+									<div class="list_text">@{shopType|changeType}</div>
+								</div>
+								<div class="list_container_b">
+									<div class="list_container_b_mM" title="@{mainMaterial}">主营材料：@{mainMaterial}</div>
+									<div class="list_container_b_sA" title="@{saleArea}">销售区域：@{saleArea}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="main_r">
+			<!-- 价格行情模块 -->
+			#parse($wcw_jghq)
+			
+			<div class="img_div1">
+			
+				$!map.clear()
+				$!map.put("tpath","/20/2012/201203/201")
+				$!map.put("isTop", "1")
+				#set($list = $infoService.searchInfoContentSummarys(1,1,$!map,true))
+				#foreach($obj in $list)
+			
+			
+				<a rel="external nofollow" href="$!obj.getUrl()" target="_blank">
+				<img alt="$!obj.getTitle()" width="277px" height="110px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" />
+				</a>
+			#end
+			</div>
+			
+			<!-- 涂料资讯模块 -->
+			#parse($wcw_tlzx)
+			
+			<div class="img_div2">
+				
+				$!map.clear()
+				$!map.put("tpath","/20/2012/201203/201")
+				$!map.put("isTop", "1")
+				#set($list = $infoService.searchInfoContentSummarys(1,1,$!map,true))
+				#foreach($obj in $list)
+			
+				<a rel="external nofollow"  href="$!obj.getUrl() " target="_blank">
+				<img width="277px" alt="$!obj.getTitle()" height="110px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" />
+				</a>
+			#end
+			</div>
+			
+			<!-- 案例介绍模块 -->
+			#parse($wcw_aljs)
+			
+			<!-- 标准法规模块 -->
+			#parse($wcw_bzfg)
+		</div>
+		<div class="clearing"></div>
+	</div>
+	</div>
+    <!-- 尾部 -->
+    #parse($wcw_footer)
+    <script type="text/javascript" src="$wcw_common_site/js/tradeChannel/paint/paint_searchList.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="mask_layer" id="mask_layer" style="display:none;"></div>
+<div class="Module_pop" id="login_tip_div" style="width:275px; height:120px;top:380px; margin-left:-140px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:225px; height:90px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您需要登录后操作！</h2>
+            <a id="login_jump_location" href="" class="link_b_01">立即登录</a>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('login_tip_div');hide('mask_layer');" style="margin:10px 0 0 15px;">确定</a></p>
+        </dd>
+    </dl>
+</div>

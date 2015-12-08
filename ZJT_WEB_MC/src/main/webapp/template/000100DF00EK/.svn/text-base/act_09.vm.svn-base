@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="造价通_建设行业第一大数据应用服务平台,拥有全球领先的云造价技术，云造价含有:批量查价、批量询价、批量管价等服务；平台上还有丰富的信息价、造价通参考价、供应商报价等功能" />
+<meta name="keywords" content="信息价、工程造价、造价通参考价、供应商报价、云造价、批量查价、批量询价" />
+<title>造价通_建设行业第一大数据应用服务平台</title>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/reset.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/global.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/site_nav.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/member/footer.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/storePage/storePage.css"/>
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/reset.css" />
+<link type="text/css" rel="stylesheet" href="http://c2.zjtcn.com/css/act/zt_yjtg.css" />
+<script language="javascript" src="http://c2.zjtcn.com/js/common/jyeeda.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/basic.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/ConCom.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/common.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/dataStore.js"></script>
+<script language="javascript" src="http://c2.zjtcn.com/js/common/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/msg_zhcn.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/storePage.js"></script>
+</head>
+
+<body>
+<div id="yjtg_contanier">
+	<div class="box01"></div>
+    <div class="box02"></div>
+    <div class="box03"></div>
+    <div class="box04"></div>
+    <div class="box05"></div>
+    <div class="box06"></div>
+    <div class="box07"></div>
+    <div class="box08"></div>
+    <div class="box09"></div>
+    <div class="box10"></div>
+    <div class="box11"></div>
+    <div class="box12"></div>
+    <div class="box13"></div>
+    <div class="box14"></div>
+    <div class="box15"></div>
+    <div class="box16"></div>
+    <div class="box17"></div>
+    <div class="box18"></div>
+    <div class="box19"></div>
+    <div class="box20"></div>
+    <div class="box21"></div>
+    <div class="box22"></div>
+    <div class="box23">
+    	<div class="lx_info">
+        	<h1 class="hy">云造价体验免费申请</h1>
+            <p class="tips_txt">请输入您方便接听的电话，确定无误请点击下方提交按钮，我们将在<span class="c_red_f00">1</span>个工作日内联系您。</p>
+            <div class="tx_lx">
+            	<table>
+                	<tr>
+                    	<th width="10%">手机</th>
+                        <td width="48%"><input id="phone" type="text"  class="input_box" style="width:170px; color:#bbb;" value="请输入您的手机号码"/></td>
+                        <td width="42%" rowspan="2" valign="top">
+                        	<a href="javascript:void(0);" class="btn_tj_lx" onclick="save();"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th>固话</th>
+                        <td><input id="area" type="text"  class="input_box" style="width:60px;color:#bbb;" value="区号"/><input id="mobile" type="text"  class="input_box" style="width:98px;color:#bbb;" value="电话号码"/></td>
+                    </tr>
+                    <tr>
+                    	<th></th>
+                        <td colspan="2">
+                        	<input id="codeValue" type="text"  class="input_box" style="width:80px;color:#bbb;" value="输入验证码"/><span class="yzm_box">
+                        	<span class="yzm_box">
+                        		<img id="imgCode" src="/authImg" />
+                        	</span>
+                            <a href="javascript:void(0);" onclick="refreshCode('imgCode');" class="change_yzm">看不清，换一个</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box24"></div>
+</div>
+</body>
+<script language="javascript"
+			src="http://c2.zjtcn.com/js/common/dataCheck.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/act/zt_yjtg.js"></script>
+<script language="javascript"
+      src="http://c2.zjtcn.com/js/common/dataCheck.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/act/zt_yjtg.js"></script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4ade2c8e6844b0bd0044762340e48a8b' type='text/javascript'%3E%3C/script%3E")) </script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F81a4c25fae275637fbb6329a87549d38' type='text/javascript'%3E%3C/script%3E")) </script>
+</html>

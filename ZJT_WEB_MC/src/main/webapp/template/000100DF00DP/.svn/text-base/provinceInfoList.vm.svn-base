@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+#set($listContent=$dataInfo.contents)
+#set($title=$dataInfo.title)
+#set($pageNo=1)
+#set($pageNo=$pageNo.parseInt($dataInfo.page))
+#set($pageSize=20)
+#set($pageSize=$pageSize.parseInt($dataInfo.pageSize))
+#set($recCount=20)
+#set($recCount=$recCount.parseInt($dataInfo.count))
+#set($pageCount=3)
+#set($pageCount=$pageCount.parseInt($dataInfo.pageCount))
+#set($firstPage=$dataInfo.firstPage)
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>省站文件-造价通</title>
+ <meta name="keywords" content="工程造价,造价信息,造价文件 "/>
+ <meta name="description" content="造价通地方文件提供与工程造价相关的地方造价文件信息" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zx_center/common.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/storePage/zjtStorePage.css"/>
+  <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+<script language="javascript" src="$common_site/js/zjt/include/news_index.js" ></script>
+</head>
+<body>
+	<div id="header_box">
+	    <div id="header">
+	        <a href="/" class="logo f_l"></a>
+	        <div class="f_l top_nav">
+	            <a href="/news/210103/cata_210103_1.html" >行业资讯</a>
+	            <a href="/210101/cata_210101_1.html">地方文件</a>
+	            <a href="/210102/cata_210102_1.html" class="cur" >省站文件</a>
+	            <a href="/210104/cata_210104_1.html">材料工艺</a>
+	        </div>
+	    </div>
+	</div>
+	<!--	header end	-->
+	<div id="infoType" style="display:none;">/21/2101/210102/</div>
+	<div id="contanier">
+		<div class="left">
+	    	<div class="border_1_box clearfix">
+	        	<h1 class="border_title">
+	            	<div class="f_r" style="position:relative;">
+		            	<div class="jg_search">
+		                    <div class="jg_search_input">
+		                        <input id="font_input" type="text" value="请输入关键字" style="color:#999999;"/>
+		                        <s onclick="toSearch();"></s>
+		                    </div>
+		                </div>
+	                </div>
+	            	省站文件
+	            </h1>
+	            <ul class="list_ul clearfix">
+	            	<li class="l_01">标题</li>
+	                <li class="l_02">时间</li>
+	            </ul>
+	            <ul class="date_ul clearfix" style="border-bottom:none;">
+	               #foreach($obj in $listContent)
+	            	<li>
+	                	<span class="l_01"><a target="_blank" href="$templateUtil.getInfoContentUrl($!obj.id,$!obj.tpath,$!obj.addTime)" title="$!obj.title">$parameterUtil.truncString($!obj.title,38 ,"")</a></span>
+	                    <span class="l_02">$parameterUtil.truncString($!obj.addTime,10,"")</span>
+	                </li>
+	               #end
+	               
+	            </ul>
+	             <div class="digg" id="page">
+	                #parse($industry_page_dir)
+	                </div>
+	        </div>
+	    </div>
+	    <div class="right">
+	       #parse($city_file)
+	       #parse($province_file)
+	       #parse($material_file)	        
+	    </div>
+	</div>
+	
+	<div class="mask_layer" style="display:none;" id="mask_layer"></div>
+	#parse($footer_dir)
+</body>
+</html>

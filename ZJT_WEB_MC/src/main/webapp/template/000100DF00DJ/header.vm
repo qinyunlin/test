@@ -1,0 +1,91 @@
+<script language="javascript" type="text/javascript" src="$common_site/js/common/jyeeda.js"></script>
+<script language="javascript" type="text/javascript" src="$common_site/js/common/basic.js"></script>
+<script language="javascript" src="$common_site/js/common/ConCom.js"></script>
+<script type="text/javascript" src="$common_site/js/common/common.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/zjt/commonJS/city_site.js"></script>
+<script type="text/ecmascript" src="$common_site/js/common/site_select.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/jquery.smartFloat.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/zjt/include/header.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/plungins/jquery.popcenter.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/initTopAndFooter.js"></script>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />  
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/reset.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/site_nav.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+<!--	快捷导航	-->
+<div id="top-div" class="topnav-nav clearfix">
+
+</div>
+<!--	快捷导航	-->
+<!--	header <span class="logo-title"></span>	-->
+<div class="header clearfix">
+	<h1><a href="/" title="${dataInfo.province}造价通" class="logo"></a></h1>
+    <div class="select-city"> 
+    	<p><a href="javascript:void(0);" class="font-c-6 arrow-sel-city" onclick="suspension_div();return false;">$dataInfo.province</a></p>
+    	 <input type="hidden" value="$dataInfo.province" id="lvProvince"/>
+        <p><a href="javascript:void(0);" onclick="suspension_div();return false;" class="font-c-6">[切换站点]</a></p>
+        <!--	切换城市	-->
+        <div id="switchTheCity_div" class="switch-city" style="display:none;">
+        	<span>
+        		选择站点
+                <a href="javascript:void(0);" class="closeBtn" onclick="hide('switchTheCity_div');return false;" title="关闭"></a>
+            </span>
+            <ul id="select_city_site_div">
+            
+            </ul>
+        </div>
+        <!--	切换城市	-->
+    </div>
+    
+    <div class="search-panel">
+    	<ul class="search-panel-li clearfix">
+            <li><a  link="/facs/c_t_p1" tip="fac_price" href="javascript:void(0);" class="selected">市场价</a></li>
+            <li><a  link="/ration/sd_t_p1" tip="gov_search" href="javascript:void(0);">造价通参考价</a></li>
+        	<li><a  link="/gov/sc_d_t_p1" tip="gov_search"  href="javascript:void(0);">信息价</a></li>
+            <li><a  link="/gys/c_t_p1" tip="fac" href="javascript:void(0);">供应商</a></li>
+           <li><a  link="/search.html" tip="xunjia" href="javascript:void(0);">询价</a></li>
+        </ul>
+        <iframe id="menuframe" src="javascript:void(0);" style="width: 1px; height: 1px; position: absolute; left: 0; top: 0; display: none; z-index: 999"></iframe>
+ <div    id="menudiv"   style="width: 1px; height: 1px; position: absolute; left: 0px; background-color:red;top: 64px;*top:64px;  display: none; z-index: 888;"></div>    
+        <div class="search-panel-input">
+        	<input type="text" id="key" placeholder="请输入材料名称规格关键字 如“普线 Ф10 ”" class="txt-inp" /><input type="button" onclick="toSearch();" class="btn-search" value="搜索" />
+        	<input type="button" class="key-board" title="特殊符号" value="符">
+			<div class="spe-symbol">
+				<ul class="">
+					<i class="icon-closes"></i>
+					<li><a href="javascript:void(0);">Ф</a></li>
+					<li><a href="javascript:void(0);">δ</a></li>
+					<li><a href="javascript:void(0);">°</a></li>
+					<li><a href="javascript:void(0);">×</a></li>
+					<li><a href="javascript:void(0);">#</a></li>
+					<li><a href="javascript:void(0);">Ⅱ</a></li>
+					<li><a href="javascript:void(0);">Ⅲ</a></li>
+					<li><a href="javascript:void(0);">½</a></li>
+					<li><a href="javascript:void(0);">¼</a></li>
+				</ul>
+			</div>
+        </div>
+
+    </div>
+    <div class="qr-code" id="gyzjt_div"> 
+    	<span class="qr-img">关注造价通</span><a class="btn-close-qr" href="javascript:void(0);" onclick="hide('gyzjt_div');" title="关闭"></a>
+    </div>
+</div>
+<!--	header	-->
+<!--	mainNav	-->
+<ul class="mainNav clearfix">
+	<li><a  href="/" class="location_z select">首页</a></li>
+    <li><a  href="/fac/index.html" class="location_z">市场价</a></li>
+    <li><a  href="/ration/d_t_p1.html" class="location_z">造价通参考价</a></li>
+    <li><a  href="/gov/c_cs_d_t_p1.html" class="location_z">信息价</a></li>
+    <li style="position:relative;"><a  target="_blank" href="http://xunjia.zjtcn.com">询价圈</a>
+    	<!--<div id="xunjiaTips" style="position:absolute; left:-80px; top:22px; width:156px; height:105px; background:url(http://c2.zjtcn.com/images/zjt/qipao_156x105.png) no-repeat; z-index: 999; display:none;">
+    		<span style="width:26px; height:26px; float:right; display:block; cursor:pointer;" onclick="closeXunjiaTips();"></span>
+    	</div>-->
+    	<span style="position:absolute; left:75px; top:-4px; width:16px; height:16px; background:url(http://c2.zjtcn.com/images/zjt/icon_news_16x16.png) no-repeat;"></span>
+    </li>
+    <li><a  href="$!{wenku_dir}" target="_blank">文库</a></li>
+    <li><a  href="http://yunzhi.zjtcn.com" target="_blank">云知</a></li>
+    <li><a  href="$!{info_dir}" target="_blank">资讯中心</a></li>
+</ul>
+<!--	mainNav	--> 

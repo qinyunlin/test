@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>采购商会员注册</title>
+  <link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/registration_common.css" />
+</head>
+
+<body>
+<div id="contanier">
+	<!-- header star	-->
+	<div class="header">
+    	<a href="http://www.ccwcw.com/" class="link_back_index f_r f_14">返回首页</a>
+    	<a class="logo" href="http://www.ccwcw.com/" title="网材网"></a>
+    </div>
+    <!-- header end	-->
+    
+    <!-- content star	-->
+    <div class="content">
+    	<h1 class="title_bg">采购商会员注册</h1>
+        <div class="content_box">
+        	<div class="content_box_center">
+            	<div class="form_box">
+                    <div class="tips_right_box">
+                    	<span class="icon_suc_box">恭喜您，注册成功！</span>
+                        <div class="suc_reason">
+                        	<p>恭喜您成为网材网采购商会员,欢迎您使用网材网!</p>
+                            <p>想要享受网材网更优质的服务,请购买VIP服务! 联系电话:<span class="numbers_color">400-888-9639</span></p>
+                            <span class="icon_into">马上进入<a href="/account/purchaser_index.jsp" class="link_back_index txt_underline">会员中心</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_box_bottom"></div>
+        </div>
+    </div>
+    <!-- content end	-->
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>网材网_涂料首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+  </head>
+  
+  <body>
+  
+  <div class="bzfg_div">
+         
+	<div class="title_banner" style="width: 277px;">
+		<div class="title_banner_left"></div>
+		<div class="title_banner_center" style="width: 271px;">
+			<div class="title_icon"></div>
+			<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2006/200603/20060301/')"><div class="title_text">标准法规</div></a>
+		    <a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2006/200603/20060301/')"  target="_blank">更多＞＞</a>
+		</div>
+		<div class="title_banner_right"></div>
+	</div>
+	<div class="bzfg_content">
+	
+				             $!map.clear()
+	                    	 $!map.put("tpath", "/20/2006/200603/20060301/")
+	                    	#set($list = $infoService.searchInfoContentSummarys(8, 1,$!map, true))   
+	                    	#foreach($obj in $list)
+		<ul>
+			<li>
+				
+			</li>
+			<li class="bzfg_text">
+			  #if($!obj.getIssueType()=="1")
+				<a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())" style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),38,"")</a>
+			  #else
+			    <a  target="_blank" class="black_a" href="$!obj.getUrl()" style="font-size: 14px;">$!parameterUtil.truncString($!obj.getSubTitle(),38,"")</a>
+			  #end
+			</li>
+		</ul>
+		#end
+		
+	</div>
+
+</div>
+
+  </body>
+  </html>

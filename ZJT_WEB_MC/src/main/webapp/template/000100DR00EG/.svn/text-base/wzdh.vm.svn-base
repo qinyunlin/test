@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>网材网-网站导航</title>
+  <meta http-equiv="imagetoolbar" content="no">
+  <link href="$wcw_common_site/css/wzdh/wzdh.css" type="text/css" rel="stylesheet">
+  <link href="$wcw_common_site/css/common/common.css" type="text/css" rel="stylesheet">
+	</head>
+</body>
+
+  <div class="main">
+#parse($wzdh_header)
+     <div class="content_one">
+      <div class="title_banner" style="width:950px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:944px;">
+							<div class="title_icon"></div>
+							<a href="/ygcg/">
+							<div class="title_text">阳光采购</div>
+							</a>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+				<div class="content_one_bottom">
+				    <ul>
+                                      <li><a  href="http://www.ccwcw.com/news/200405/cata_200405_1.html" target="_blank">活动现场</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200406/cata_200406_1.html" target="_blank">媒体报道</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200402/cata_200402_1.html" target="_blank">合作采购商</a></li>
+                                    </ul>
+				</div>
+     </div>
+     <div class="content_two">
+       <div class="title_banner" style="width:950px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:944px;">
+							<div class="title_icon"></div>
+							<a href="/ygcg/">
+							<div class="title_text">工程项目</div>
+							</a>
+					</div>
+					<div class="title_banner_right"></div>
+	</div>
+                           <div class="content_one_bottom" >
+				  <ul>
+                                      <li><a  href="http://www.ccwcw.com/gcxm/gcxmlist/gcxm_1.html" target="_blank">项目采购</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200506/cata_200506_1.html" target="_blank">最新成果</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200505/cata_200505_1.html" target="_blank">采购信息</a></li>
+                                      <li><a href="http://www.ccwcw.com/gcxm/recruitlist/gcxm_1.html" target="_blank">供应商招募</a></li>
+                                      <li><a href="http://www.ccwcw.com/gcxm/purchaseList.html?stuff= target="_blank"">求购信息</a></li>
+                                      <li><a href="http://www.ccwcw.com/news/200504/cata_200504_1.html" target="_blank">项目进度</a></li>
+                                    </ul>
+				</div>
+     </div>
+     <div class="content_three">
+       <div class="title_banner" style="width:950px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:944px;">
+							<div class="title_icon"></div>
+							<a href="/ygcg/">
+							<div class="title_text">行业频道</div>
+							</a>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+                             <div class="content_one_bottom" >
+                                 <ul>
+				     <li><a href="http://www.ccwcw.com/hypd/searchList.html">供应商列表</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/2008/cata_2008_1.html" target="_blank">团购促销</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200702/cata_200702_1.html" target="_blank">特价建材</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/2003/cata_2003_1.html" target="_blank">价格行情</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/2002/cata_2002_1.html" target="_blank">行业资讯</a></li>
+                                      <li><a  href="http://www.ccwcw.com/news/200704/cata_200704_1.html" target="_blank">成功案例</a></li>
+                                      <li><a href="http://www.ccwcw.com/news/2009/cata_2009_1.html" target="_blank">展会信息</a></li>
+                                      <li><a href="http://www.ccwcw.com/news/2010/cata_2010_1.html" target="_blank">网材宝典</a></li>
+				  </ul>
+                               </div>
+     </div>
+     <div class="content_four">
+       <div class="title_banner" style="width:950px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:944px;">
+							<div class="title_icon"></div>
+							<a href="/ygcg/">
+							<div class="title_text">网材信息</div>
+							</a>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+                               <div class="content_one_bottom">
+                                   <ul>
+                                      <li><a  target="_blank" href="http://www.ccwcw.com/news/200101/cata_200101_1.html">网站公告</a></li>
+                                      <li>广告服务</li>
+                                      <li>会员服务</li>
+                                      <li><a href="http://www.ccwcw.com/bottom/bzzx-xssl-list.html">帮助中心</a></li>
+                                     </ul>
+				</div>
+     </div>
+#parse($wcw_footer)
+  </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/msg_zhcn.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+		<script type="text/javascript" src="$common_site/js/common/not_found.js"></script>
+		<script type="text/javascript" src="$common_site/js/common/common.js"></script>
+		<style>
+#not_found {
+	margin: 15px 50px;
+	color: #343434;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+#not_found .not_found_top {
+	height: 130px;
+	border-bottom: 1px dashed #D8DBE2;
+	position:relative;
+}
+
+#not_found .not_found_image {
+	background-image:
+		url(http://c1.zjtcn.com/images/cn/common/butterfly.gif);
+	background-position: 0 0;
+	height: 125px;
+	width: 108px;
+	float: left;
+}
+
+.not_found_top .not_found_top_right {
+	background-image:url(http://c1.zjtcn.com/images/cn/common/not_found_title.gif);
+	width:355px;
+	height:46px;
+	float: left;
+	position: absolute;
+	top: 83px;
+	left:105px;
+}
+
+#not_found .not_found_bottom {
+	margin: 20px 0 0;
+	float: left;
+	display:inline;
+}
+
+.not_found_bottom .font-size {
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+}
+
+.not_found_bottom .btn {
+	background-image:
+		url(http://c1.zjtcn.com/images/cn/common/button.jpg);
+	background-position: 0 -413px;
+	height: 19px;
+	width: 70px;
+	float: left;
+	margin: 5px 0 0 25px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 12px;
+	display: inline;
+	line-height: 19px;
+}
+
+.not_found_bottom .font {
+	float: left;
+	height: 32px;
+	float: left;
+	font-size: 14px;
+	line-height: 32px;
+}
+
+.not_found_bottom .restart_btn {
+	background-image:
+		url(http://c1.zjtcn.com/images/cn/common/button.jpg);
+	background-position: 0 -387px;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 23px;
+	float: left;
+	left: 5px;
+	font-size: 12px;
+	position: relative;
+	cursor: pointer;
+}
+
+.not_found_bottom .post_btn {
+	background-image:
+		url(http://c1.zjtcn.com/images/cn/common/button.jpg);
+	background-position: 0 -436px;
+	background-repeat: no-repeat;
+	width: 73px;
+	height: 19px;
+	font-size: 12px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+</style>
+
+	</head>
+	<body
+		style="overflow: scroll; overflow-x: hidden; overflow-y: hidden; width: 99%; height: 90%; border: none;">
+		<div id="not_found">
+			<div class="not_found_top">
+				<div class="not_found_image"></div>
+				<div class="not_found_top_right strong">
+					
+				</div>
+				<div class="clearing"></div>
+			</div>
+			<div class="clearing"></div>
+			<div class="not_found_bottom">
+				<div class="strong" style="font-size: 14px;">
+					我们建议您：
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size">
+					1.您可以尝试其他相近意义的关键字，如“杜鹃”改为“映山红”
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size">
+					<input type="text" style="width: 347px; float: left;"
+						id="research_input">
+					<div class="restart_btn" onclick="reSearch()"></div>
+				</div>
+				<div class="clearing"></div>
+
+				<div class="font-size" style="width: 100%; display: none;"
+					id="notfoundask">
+					<span class="font">2.您可以进行人工询价</span>
+					<span class="btn" onclick="nofound()">发布询价</span>
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size" style="width: 100%; display: none;"
+					id="notfoundfac">
+					<span class="font">2.您可以搜索您需要的材料的供应商报价</span>
+					<span class="btn" onclick="nofound()">供应商报价</span>
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size" id="notfoundsug" style="width: 100%;display: none;">
+					<span class="font">2.如果您有疑问可以留下您的宝贵意见</span>
+					<span class="btn"
+						onclick="javascript:window.top.location.href='/module/help/feedback.html';">意见反馈</span>
+
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size" id="notfoundsug1" style="width: 100%;">
+					<span class="font">3.如果您有疑问可以留下您的宝贵意见</span>
+					<span class="btn"
+						onclick="javascript:window.top.location.href='/module/help/feedback.html';">意见反馈</span>
+
+				</div>
+				<div class="clearing"></div>
+				<div class="font-size" id="notfoundyhfk" style="display: none;">
+					4.用户反馈
+				</div>
+				<div class="clearing"></div>
+				<div id="notfoundtext" style="display: none;">
+					<textarea rows="5" cols="51" id="content"></textarea>
+				</div>
+				<div class="clearing"></div>
+				<div class="post_btn" style="top: 10px; display: none;"
+					onclick="submitAdv()"></div>
+				<div class="clearing"></div>
+			</div>
+			<div class="clearing"></div>
+		</div>
+		<div class="clearing"></div>
+	</body>
+</html>

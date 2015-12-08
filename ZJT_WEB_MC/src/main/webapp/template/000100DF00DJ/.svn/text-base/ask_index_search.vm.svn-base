@@ -1,0 +1,39 @@
+
+
+
+<div class="search_top_box">
+	<ul class="xj_tj_top f_left">
+    	 #set($resolvedSum=$askService.searchAskPriceCount("isLock=0 and status=3 and province='$dataInfo.province'"))
+        	    #set($toSolveSum=$askService.searchAskPriceCount("isLock=0 and status=2 and province='$dataInfo.province'  and ValidDate > now()"))
+            	<li class="bor_bottom">已解决询价：<u class="c_org_02 tj_date">$!resolvedSum</u> 个</li>
+                <li class="bor_top">待解决询价：<u class="c_org_02 tj_date">$!toSolveSum</u> 个</li>
+    </ul>
+    <div class="w_w_520 f_left m_left_10">
+    	<div class="search_input_box clearfix">
+        	<input id="ask_name" type="text" tip="搜索擅长的材料询价进行回复赚取积分…" class="search_top_input f_left" />
+            <input name="" type="button" class="search_top_button_01 f_left" href="javascript:void(0);" onclick="search_Resolved();"/>
+            <input name="" type="button" class="search_top_button f_left" href="javascript:void(0);" onclick="search_ask();"/>
+        </div>
+        #set($cidNames=$askService.sudCidReplyCountByMonth($dataInfo.province))
+        	
+            <div class="hot_link clearfix">
+        	<u class="c_org_01 f_left">热门询价：</u>
+        	
+        	$stringUtil.subCidNameSplit($cidNames)
+
+            </div>
+    </div>
+</div>
+
+
+
+
+ <div class="pop_xunjia_box" id="pop_xunjia_box" tip="" style="display:none;text-align:left;">
+	<h1 class="tile"><a href="javascript:void(0);" onclick="hide('pop_xunjia_box');" class="clos"></a></h1>
+    <div style="margin:0px 50px 20px;">
+    	<span class="shuru_icon">请输入您要回复的询价关键字：</span>
+        <p class="m_bottom_5"><input id="titlename" type="text"  class="input_box_border" style="width:400px;"/></p>
+        <p class="m_bottom_5">
+        	<input name="" type="button"  value="搜索询价" class="common_button" href="javascript:void(0);" onclick="search_two();" class="clos"/>			</p>
+    </div>
+</div>   

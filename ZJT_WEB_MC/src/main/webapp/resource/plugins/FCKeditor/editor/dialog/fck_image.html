@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2007 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Image Properties dialog window.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Image Properties</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex, nofollow" />
+	<link href="common/fck_dialog_common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="common/fck_dialog_common.js" ></script>
+	<script type="text/javascript" src="fck_image/fck_image.js" ></script>
+	<script type="text/javascript" src="http://c1.ccwcw.com/js/common/ConCom.js"></script>
+	<script type="text/javascript" src="http://c1.ccwcw.com/js/common/jyeeda.js"></script>
+</head>
+<body scroll="no" style="overflow: hidden">
+	<div id="divInfo">
+		<table cellspacing="1" cellpadding="1" border="0" width="100%" height="48">
+			<tr>
+				<td>
+					<table cellspacing="0" cellpadding="0" width="100%" border="0">
+						<tr>
+							<td width="100%">
+								
+							</td>
+							<td style="display: none" nowrap="nowrap" rowspan="2">
+		
+							</td>
+						</tr>
+						<tr>
+						  <td valign="top"><iframe id="upimgtarget" name="upimgtarget" width="0px;" height="0px;" frameborder="0"></iframe>
+						  <form id="upload_pic" method="post" enctype="multipart/form-data" target="upimgtarget">
+						     <input type="hidden" id="txtUrl"  size="45" name="txtUrl" value=""  />
+							   <input type="file" id="newfile"  size="45" name="newfile"  value="上传图片"/>
+								<input  type="button" id="uploaded" name="uploaded" value="上传图片" onclick="uploadFile()"/>
+							</form>
+							
+						 </td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+	  </table>
+	  <script type="text/javascript">
+	  function uploadFile(){
+	  	var file = document.getElementById("newfile");
+	  	if(checkimg(file.value)){
+	  		document.getElementById("upload_pic").action = "http://ftp.zjtcn.com/file/CommonUpload?path=http://mc.zjtcn.com/resource/plugins/FCKeditor/editor/dialog/uploadimg.jsp&rstype=RS_INFO";
+	  		document.getElementById('upload_pic').submit();
+	  	}
+	  	
+	  }
+	  function checkimg(img){
+	  	var img = img.slice(img.lastIndexOf('.')).toLowerCase();
+	  	var patrn = /jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG/;
+	  	if(!patrn.test(img)){
+	  		alert("本系统支持GIF、JPG、JPEG三种类型图片的上传!");
+	  		return false;
+	  	}
+	  	return true;
+	  }
+	  </script>
+	</div>
+</body>
+</html>

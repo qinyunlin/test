@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>帮助中心_新手上路</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script language="javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataCheck.js" ></script>
+	<script language="javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/bottom/bottom_common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/bottom/bzzx_xssl_list.js"></script>
+
+  </head>
+  
+  <body>
+  	#parse($wcw_header)
+  	<div id="main">
+  		#parse($bottomLeft)
+  		<div class="bottom_right">
+  			<!-- 新手上路_资讯列表 -->
+  			<div class="bottom_container" id="xssl_list" style="margin-bottom:0px;">
+  				<div class="bottom_container_title">
+  					<div class="bottom_container_title_left"></div>
+  					<div class="bottom_container_title_center">
+  						<div class="bottom_container_title_icon"></div>
+  						<div class="bottom_container_title_text">新手上路</div>
+  					</div>
+  					<div class="bottom_container_title_right"></div>
+  				</div>
+  				<div id="xssl_summary" class="bottom_container_content">
+  					<div class="xgwt_container">
+  						$!map.clear()
+				$!map.put("tpath", "/20/2013/201309/20130901/")
+				#set($list = $infoService.searchInfoContentSummarys(20, 1,$!map, true))
+				#foreach($obj in $list)
+  						<ul>
+  							<li class="xmsqs_orange_p"></li>
+  							<li class="why_text">
+	  							<a class="blue_a" href="/bottom/bzzx-xssl-content.html?cid=$!obj.getId()" style="font-size:14px;">
+	  								$!parameterUtil.truncString($!obj.getTitle(),100,"" )
+	  							</a>
+  							</li>
+  						</ul>
+  					#end
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="clearing"></div>
+  	</div>
+  </body>
+   <link type="text/css" rel="stylesheet"
+			href="$wcw_common_site/css/bottom/bottom_common.css" />
+</html>

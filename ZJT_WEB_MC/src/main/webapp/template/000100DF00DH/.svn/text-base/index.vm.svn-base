@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>询价学堂_最好的建材价格分享平台_($dataInfo.province)造价通</title>
+<meta name="description"
+	content="造价通询价学堂开启行业一对一询价人工服务模式，及时、准确、高效解决特殊材料、非标材料询价难题，针对新型材料询价、偏僻材料询价、非标材料询价、配电箱询价、园林苗木询价、特种设备询价等需求，提供人工询价服务，为您解决各类建材询价、经验价等问题。"/>
+<meta name="keywords"	
+	content="询价，材料询价，人工询价，一对一询价，非标材料询价，配电箱询价，园林苗木询价，经验价"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/common/common.css" /
+ <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/reset.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_common.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/ask/xunjia_index.css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+</head>
+
+<body>
+
+<!--	开通云造价服务	-->
+<div id="ask_vip_service" class="Module_pop" style="width:320px;top:380px;height:150px; margin-left:-185px; margin-top:-100px; display:none;z-index:1100;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:270px; height:120px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2 style="margin-bottom:15px;">抱歉，您当前暂无询价的权限！</h2>
+            <p style="color:#888;">联系客服开通云造价服务即可询价</p>
+            <a target="_blank" class="link_b_01" href="/common/reg_cloud_ pro.html">云造价介绍</a>
+            <p><a class="btn_sure" href="javascript:void(0)" onclick="hide('ask_vip_service');hide('mask_layer');hide('noteWin');return false;" style="margin:10px 0 0 70px;">关闭</a></p>
+        </dd>
+    </dl>
+</div>
+
+#parse($header_dir)
+  <div id="xunjia_content" style="text-align:left;" class="clearfix">
+	<div class="f_left w_w_730" style="position:relative;">
+    	#parse($ask_index_search)
+    	<div class="m_top_10">
+            <div class="w_w_200 f_left">
+                <div class="border_1_gray" style="height:834px;*height:850px;">
+                    <h1 class="title_name">材料分类</h1>
+                    <dl class="left_menu_box">
+                        <dt>建筑 • 装饰</dt>
+                        <dd>
+                            <a href="${dataInfo.siteUrl}/ask/ask_0401_recommend_1.html">水泥</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_8001_recommend_1.html">水泥砂浆</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_8021_recommend_1.html">普通混凝土</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_0201_recommend_1.html">橡胶板</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_0505_recommend_1.html">胶合板</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_06_recommend_1.html">玻璃</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_07_recommend_1.html">陶瓷地砖</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_0801_recommend_1.html">大理石</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_0803_recommend_1.html">花岗石</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_09_recommend_1.html">天花墙板</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_1109_recommend_1.html">铝合金门窗</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_1119_recommend_1.html">全玻门、自动门</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_13_recommend_1.html">油漆涂料</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_15_recommend_1.html">绝热材料</a>
+                        </dd>
+                        <dt>安装材料</dt>
+                        <dd>
+                            <a href="${dataInfo.siteUrl}/ask/ask_17_recommend_1.html">管材</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_19_recommend_1.html">阀门</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_22_recommend_1.html">水暖通风</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_23_recommend_1.html">消防</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_2647_recommend_1.html">电源插座转换器</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_2533_recommend_1.html">庭院、广场、道路、景观灯</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_28_recommend_1.html">电线电缆</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_2905_recommend_1.html">母线槽</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_2907_recommend_1.html">电缆头</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3001_recommend_1.html">报警、出入口控制器材</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3005_recommend_1.html">停车场管理器材</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_51_recommend_1.html">水泵</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3017_recommend_1.html">楼宇自控系统器材</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5003_recommend_1.html">空调器</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5309_recommend_1.html">消毒加药装置</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5601_recommend_1.html">乘客电梯</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5603_recommend_1.html">载货电梯</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5701_recommend_1.html">入侵报警设备</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5707_recommend_1.html">电视监控设备</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5725_recommend_1.html">门禁系统</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_5739_recommend_1.html">会议电话设备</a>
+                        </dd>
+                        <dt>市政园林</dt>
+                        <dd>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3305_recommend_1.html">铸铁及铁构件</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3603_recommend_1.html">土工格栅</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3601_recommend_1.html">道路构件</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3607_recommend_1.html">路面天然石构件</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3609_recommend_1.html">广场砖</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3621_recommend_1.html">交通标志</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3625_recommend_1.html">交通岗亭</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3627_recommend_1.htm">护栏、隔离栅</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3201_recommend_1.html">乔木</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3203_recommend_1.html">灌木</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3205_recommend_1.html">藤本植物</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3207_recommend_1.html">地被植物</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3213_recommend_1.html">花卉</a>
+                            <a href="${dataInfo.siteUrl}/ask/ask_3209_recommend_1.html">棕榈科植物</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        
+            <div class="w_w_520 f_left m_left_10">
+            	
+            	<div class="xj_banner_box" id="xj_banner_box">
+                	<ul class="banner_list">
+                    	 <div id="temp1" class="jq_class">
+                    	 
+                    	 
+                    	 
+                    	    <div class="banner_box JQ-content-box" style="overflow: hidden;position: relative;">
+            	<ul class="banner_list JQ-slide-content" style="position: absolute;">
+                	$map.clear()
+	                $!map.put("tpath", "/21/2107/210705/21070503/")
+					$!map.put("province",$dataInfo.province)
+			        #set($list=$infoService.searchInfoContentForAdv(5, 1,$!map))
+			        #foreach($obj in $list)
+						<li>
+							<a href="$obj.getUrl()" target="_blank">
+							<img width="520px" height="202px" alt="$!obj.getTitle()" rel="external nofollow"  src="$!fileUtil.getFileUrl($!obj.getPicPath())"/>
+							</a>
+						</li>
+                    #end
+                </ul>
+                <ul class="count_list JQ-slide-nav">
+                	#foreach($obj in $list)
+						#if($velocityCount == 1)
+					              <li><a href="javascript:void(0);" class="cur"></a></li>
+						#else
+                                 <li><a href="javascript:void(0);"></a></li>
+						#end
+					#end
+                </ul>
+            </div>
+                    	 
+                    	 
+							
+						</div>
+                    </ul>
+                   
+                </div>
+                
+                <div class="border_1_gray m_top_10 clearfix">
+                    <h1 class="title_name">今日推荐询价</h1>
+                    <ul class="xunjia_list" id="listBody" style="height:115px;*height:120px;">
+                    	
+                    </ul>
+                </div>
+                
+                <div id="recommendBody" style="display:none;">
+                    
+                
+                	<li class="clearfix">
+                    	<span class="ans_num text_overflow f_right" title="@{trueName,nickname|nameNull}">@{trueName,nickname|nameNull}</span>
+                        <span class="icon_price f_left">@{score}</span>
+                        <span class="xunjia_list_title f_left text_overflow" title="@{name}"><a href="${dataInfo.siteUrl}/ask_info/@{id}.html" target="_blank">@{name}</a></span>
+                    </li>
+                  
+                </div>
+                
+                <div class="border_1_gray m_top_10 clearfix">
+                   <div class="tab_xj_txt">
+                        <ul>
+                            <li ><a href="${dataInfo.siteUrl}/ask/ask_list/recommend1.html" id="yjj_xunjia" class="cur_d">已解决询价</a></li>
+                            <li ><a href="${dataInfo.siteUrl}/ask/ask_list/recommend1.html" id="djj_xunjia"  >待解决询价</a></li>
+                        </ul>
+                        <a id="gd_div" class="link_more_g f_r" href="/ask/ask_recommend_1.html">更多</a>
+                    </div>
+                    <ul class="list_title">
+                    	<li>
+                        	<span class="diqu">发布日期</span>
+                        	<span class="xuanshan">悬赏</span>
+                            <span class="biaoti">材料名称</span>
+                        </li>
+                    </ul>
+                    <ul class="xunjia_list" id="listbody_to" style="height:360px;*height:370px;display:none;">
+       
+                        
+                    </ul>
+                    <div id="yjjxunjia" style="display:none;">
+                     <ul class="xunjia_list" id="listbody_yj" style="height:360px;*height:370px;">
+       
+                        
+                     </ul>
+                    </div>
+                   
+                </div>
+                <div id="toSolveBody" style="display:none;">
+                   <li class="clearfix">
+                        	<span class="ans_city text_overflow" title="@{createOn}">@{createOn|split_date}</span>
+                            <span class="icon_price f_left">@{score}</span>
+                            <span class="xunjia_list_title f_left text_overflow" title="@{name}"><a href="${dataInfo.siteUrl}/ask_info/@{id}.html" target="_blank">@{name}</a></span>
+                        </li>
+                </div>
+                
+                <div id="toSolveBody_yj" style="display:none;">
+                   <li class="clearfix">
+                        	<span class="ans_city text_overflow" title="@{createOn}">@{createOn|split_date}</span>
+                            <span class="icon_price f_left">@{score}</span>
+                            <span class="xunjia_list_title f_left text_overflow" title="@{name}"><a href="${dataInfo.siteUrl}/ask_info/@{id}.html" target="_blank">@{name}</a></span>
+                        </li>
+                </div>
+            </div>
+        </div>
+    </div>
+  #parse($ask_index_right)
+#parse($login_tip)
+</body>
+ #parse($footer_dir)
+ <script type="text/javascript" src="$common_site/js/common/easySlider1.5.js"></script>
+<script type="text/javascript" src="$common_site/js/common/jq.Slide.js"></script>
+ <script type="text/javascript" src="$common_site/js/zjt/ask/ask_index.js"></script>
+ <script type="text/javascript">kfguin="4008889639";eid="218808P8z8p8y8y8z8z8y";ws="www.zjtcn.com"; type="0";wpadomain="b";</script> 
+ <script type="text/javascript" src="http://c2.zjtcn.com/js/common/imqqkf.js?t=110922"></script>
+</html>

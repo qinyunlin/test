@@ -1,0 +1,553 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2003-2004 The Apache Software Foundation.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  $Id: toolbox.xml,v 1.6 2004/02/20 13:13:42 marino Exp $
+-->
+<toolbox>
+<!-- 站点常量 -->
+  <data type="String">
+  	<key>common_site</key>
+  	<scope>application</scope>
+  	<value>http://c2.zjtcn.com</value>
+  </data>
+  
+  <data type="String">
+  	<key>city_file</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/CityFlie.vm</value>
+  </data>
+  <data type="String">
+  	<key>province_file</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/ProvinceFile.vm</value>
+  </data>
+  <data type="String">
+  	<key>material_file</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/MaterialTechnics.vm</value>
+  </data>
+  
+  <!-- 头部页面模板路径 -->
+  <data type="String">
+  	<key>header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/header.vm</value>
+  </data>
+   <data type="String">
+   	 <key>zjt_tip</key>
+	 <scope>application</scope>
+	 <value>/template/000100DF00DJ/pop_tip.vm</value>
+   </data>
+      <data type="String">
+   	 <key>login_tip</key>
+	 <scope>application</scope>
+	 <value>/template/000100DF00DJ/login_tip.vm</value>
+   </data>
+    <!-- 资讯头部页面模板路径 -->
+    <data type="String">
+  	<key>industry_header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/industry_header.vm</value>
+  </data>
+  <!-- 底部页面模板路径 -->
+  <data type="String">
+  	<key>footer_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/footer.vm</value>
+  </data>
+   <data type="String">
+   	<key>ask_index_right</key>
+	<scope>application</scope>
+	<value>/template/000100DF00DJ/ask_index_right.vm</value>
+   </data>
+   
+   <data type="String">
+   	  <key>ask_index_search</key>
+	  <scope>application</scope>
+	  <value>/template/000100DF00DJ/ask_index_search.vm</value>
+   	</data>
+<!-- 商铺data start addByXuefun 20120307 -->
+  <!-- 网材网配置站点常量  -->
+  <data type="String">
+    <key>doll</key>
+    <scope>application</scope>
+    <value>$</value>
+  </data>
+  <data type="String">
+    <key>ftp_dir</key>
+    <scope>application</scope>
+    <value>http://ftp.ccwcw.com</value>
+  </data>
+  <data type="String">
+  	<key>ftp_pic</key>
+    <scope>application</scope>
+    <value>http://ftp.zjtcn.com</value>  
+  </data>
+  <data type="String">
+    <key>ftp_concom_dir</key>
+    <scope>application</scope>
+    <value>http://ftp.ccwcw.com</value>
+  </data>
+  <data type="String">
+    <key>ccwcw_dir</key>
+    <scope>application</scope>
+    <value>http://www.ccwcw.com</value>
+  </data>
+  <data type="String">
+    <key>c1wcw_dir</key>
+    <scope>application</scope>
+    <value>http://c1.ccwcw.com</value>
+  </data>
+  <data type="String">
+    <key>sorry_dir</key>
+    <scope>application</scope>
+    <value>http://c1.ccwcw.com/images/common/sorry.jpg</value>
+  </data>
+  <data type="String">
+    <key>info_dir</key>
+    <scope>application</scope>
+    <value>http://info.zjtcn.com</value>
+  </data>
+  <data type="String">
+    <key>wenku_dir</key>
+    <scope>application</scope>
+    <value>http://doc.zjtcn.com</value>
+  </data>
+  <!-- 头部页面模板路径 -->
+  <data type="String">
+  	<key>shop_header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_header.vm</value>
+  </data>
+  <!-- 左边页面模板路径 -->
+  <data type="String">
+  	<key>shop_left_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_left.vm</value>
+  </data>
+  <!-- 底部页面模板路径 -->
+  <data type="String">
+  	<key>shop_footer_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_footer.vm</value>
+  </data>
+  <!-- 分页模板路径 -->industry_page
+  <data type="String">
+  	<key>shop_page_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_page.vm</value>
+  </data>
+  
+  
+ <data type="String">
+  	<key>industry_page_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DF00DJ/industry_page.vm</value>
+  </data>
+  
+  
+  
+    <!--企业商铺 头部页面模板路径 -->
+  <data type="String">
+  	<key>shop_enterprise_header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_enterprise_header.vm</value>
+  </data>
+  <!-- 左边页面模板路径 -->
+  <data type="String">
+  	<key>shop_enterprise_left_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_enterprise_left.vm</value>
+  </data>
+  <!-- 底部页面模板路径 -->
+  <data type="String">
+  	<key>shop_enterprise_footer_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_enterprise_footer.vm</value>
+  </data>
+  
+  
+  
+    <!--vip商铺 头部页面模板路径 -->
+  <data type="String">
+  	<key>shop_vip_header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_vip_header.vm</value>
+  </data>
+  <!-- 左边页面模板路径 -->
+  <data type="String">
+  	<key>shop_vip_left_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_vip_left.vm</value>
+  </data>
+  <!-- 底部页面模板路径 -->
+  <data type="String">
+  	<key>shop_vip_footer_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/shop_vip_footer.vm</value>
+  </data>
+<!-- 商铺data end -->
+<!-- 会员中心data start addByXuefun 20120319 -->
+  <!-- 头部页面模板路径 -->
+  <data type="String">
+  	<key>account_header_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/account_header.vm</value>
+  </data>
+  <!-- 采购商菜单页面模板路径 -->
+  <data type="String">
+  	<key>account_purchaser_menu_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/account_purchaser_menu.vm</value>
+  </data>
+  <data type="String">
+  	<key>account_supplier_menu_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/account_supplier_menu.vm</value>
+  </data>
+  <!-- 底部页面模板路径 -->
+  <data type="String">
+  	<key>account_footer_dir</key>
+  	<scope>application</scope>
+  	<value>/template/000100DR00ED/account_footer.vm</value>
+  </data>
+<!-- 会员中心data end -->
+
+   <!-- 网材网配置站点常量 -->
+   <data type="String">
+     <key>wcw_common_site</key>
+     <scope>application</scope>
+     <value>http://c1.ccwcw.com</value>
+   </data>
+   <!-- 头部页面模板路径 -->
+   <data>
+     <key>wcw_header</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/header.vm</value>
+   </data>
+
+   <!-- 行业平道头部栏目 -->
+   <data>
+     <key>hypd_nav</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/nav.vm</value>
+   </data>
+   
+    <!-- 价格行情模板路径 -->
+   <data>
+     <key>wcw_jghq</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/jghq.vm</value>
+   </data>
+  
+   <!-- 成功故事模板路径 -->
+   <data>
+     <key>wcw_cggs</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/cggs.vm</value>
+   </data>
+   
+    <!-- 特价建材模板路径 -->
+   <data>
+     <key>wcw_tjjc</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/tjjc.vm</value>
+   </data>
+   
+     <!-- 行业资讯模板路径 -->
+   <data>
+     <key>wcw_hyzx</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/hyzx.vm</value>
+   </data>
+    <!-- 团购促销模板路径 -->
+   <data>
+     <key>wcw_tgcx</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/tgcx.vm</value>
+   </data>
+   
+    <!-- 热门资讯模板路径 -->
+   <data>
+     <key>wcw_rmzx</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/rmzx.vm</value>
+   </data>
+   
+    <!-- 网材宝典模板路径 -->
+   <data>
+     <key>wcw_wcbd</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/wcbd.vm</value>
+   </data>
+   
+    <!-- 展会信息模板路径 -->
+   <data>
+     <key>wcw_zhxx</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/zhxx.vm</value>
+   </data>
+   
+   <!-- 最新采购 -->
+    <data>
+     <key>wcw_zxcg</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/zxcg.vm</value>
+   </data>
+   
+    <!-- 项目进度 -->
+    <data>
+     <key>wcw_xmjd</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/xmjd.vm</value>
+   </data>
+   <!-- 案例介绍 -->
+   <data>
+      <key>wcw_aljs</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/aljs.vm</value>
+   </data>
+    <!-- 标准法规 -->
+   <data>
+      <key>wcw_bzfg</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/bzfg.vm</value>
+   </data>
+    <!-- 涂料资讯 -->
+   <data>
+      <key>wcw_tlzx</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/tlzx.vm</value>
+   </data>
+    <!--阳光采购列表右侧 -->
+   <data>
+      <key>wcw_ygcg</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/ygcg.vm</value>
+   </data>
+   <data>
+   	<key>wzdh_header</key>
+	<scope>application</scope>
+	<value>/template/000100DR00ED/wzdh-header.vm</value>
+	
+   </data>
+     <!--阳光采购内容右侧 -->
+   <data>
+      <key>wcw_ygcgnrcl</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/ygcgnrcl.vm</value>
+   </data>
+     <!--推荐商铺 -->
+   <data>
+      <key>wcw_tjsp</key>
+      <scope>application</scope>
+      <value>/template/000100DR00ED/tjsp.vm</value>
+   </data>
+   <!-- 地方项目发布 -->
+    <data>
+     <key>wcw_dfxmfb</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/dfxmfb.vm</value>
+   </data>
+      <!-- 团购促销右侧径 -->
+   <data>
+     <key>wcw_cxyl</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/cxyl.vm</value>
+   </data>
+     <!-- 底部页面模板路径 -->
+   <data>
+     <key>wcw_footer</key>
+     <scope>application</scope>
+     <value>/template/000100DR00ED/footer.vm</value>
+   </data>
+   
+   <!-- 底部导航左侧 -->
+   <data>
+     <key>bottomLeft</key>
+     <scope>application</scope>
+     <value>/template/000100DR00EG/bottomLeft.vm</value>
+   </data>
+   <!-- 造价通默认会员头像 -->
+   <data>
+   	<key>manLogo</key>
+   	<scope>application</scope>
+   	<value>http://ftp.zjtcn.com/member/logo/dflogo1.jpg</value>
+   </data>
+   <data>
+   	<key>womanLogo</key>
+   	<scope>application</scope>
+   	<value>http://ftp.zjtcn.com/member/logo/dflogo2.jpg</value>
+   </data>
+   
+   <tool>
+   	<key>memberRankUtil</key>
+	<scope>application</scope>
+	<class>org.yeeda.costexpress.util.member.MemberRankUtil</class>
+   </tool>
+   
+  <tool>
+  	<key>dateUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.DateUtil</class>
+  </tool>
+  
+  <tool>
+  	<key>stringUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.StringUtil</class>
+  </tool>
+  
+  <tool>
+  	<key>fileUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.file.FileUtil</class>
+  </tool>
+
+  <tool>
+  	<key>priceUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.PriceUtil</class>
+  </tool>
+  
+  <tool>
+  	<key>parameterUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.ParameterUtil</class>
+  </tool>
+  
+  <tool>
+  	<key>templateUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.cms.util.TemplateUtil</class>
+  </tool>
+  
+  
+    <tool>
+  	<key>rationUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.RationLibUtil</class>
+  </tool>
+  
+  <tool>
+  	<key>rationLibUtil</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.service.ration.impl.RationLibServiceImp</class>
+  </tool>
+
+  <!-- 资讯栏目 -->
+  <tool>
+    <key>infoService</key>
+    <scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.InfoContentServiceImpl</class>
+  </tool>
+  <!--地区取值-->
+  <tool>
+  	<key>areaManagementService</key>
+	<scope>application</scope>
+	<class>org.yeeda.costexpress.cms.toolbox.impl.AreaManagementServiceImpl</class>
+	
+  </tool>
+  <!--首页 价格行情 -->
+  <tool>
+     <key>mainMaterialService</key>
+     <scope>application</scope>
+     <class>org.yeeda.costexpress.cms.toolbox.impl.MainMaterialServiceImpl</class>
+  </tool>
+  <!--非标询价 -->
+  
+ <tool>
+ 	<key>materialService</key>
+	<scope>application</scope>
+	<class>org.yeeda.costexpress.cms.toolbox.impl.MaterialServiceImpl</class>
+ </tool>
+  <tool>
+  	<key>askService</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.cms.toolbox.impl.AskPriceServiceImpl</class>
+  </tool>
+  <!-- 企业商铺 -->
+  <tool>
+    <key>epShopService</key>
+    <scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.EpShopServiceImpl</class>
+  </tool>
+  <tool>
+  <!-- 查询当前地区最新的造价通参考价 -->
+  	<key>govService</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.cms.toolbox.impl.GovMaterialServiceImpl</class>
+  </tool>
+  
+  <!-- 供应商报价 -->
+  <tool>
+  	<key>facService</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.cms.toolbox.impl.FacMaterialServiceImpl</class>
+  </tool>  
+  
+  <!-- 阳光采购 -->
+  <tool>
+    <key>sunshinePurchaseService</key>
+    <scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.SunshinePurchaseServiceImpl</class>
+  </tool>
+  <!-- 工程项目 -->
+  <tool>
+    <key>projectService</key>
+    <scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.ProjectServiceImpl</class>
+  </tool>
+  
+  <!--企业类-->
+  <tool>
+  	<key>enterpriceService</key>
+	<scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.EnterpriceServiceImpl</class>
+  </tool>
+  <!-- 供应商招募 -->
+  <tool>
+     <key>recruitService</key>
+     <scope>application</scope>
+     <class>org.yeeda.costexpress.cms.toolbox.impl.RecruitServiceImpl</class>
+  </tool>
+  
+  <!-- 涂料栏目 -->
+  <tool>
+    <key>demandService</key>
+    <scope>application</scope>
+    <class>org.yeeda.costexpress.cms.toolbox.impl.EpDemandServiceImpl</class>
+  </tool>
+  
+  <!-- 礼品赠送 -->
+  <tool>
+  	<key>goodService</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.service.score.impl.GoodsServiceImpl</class>
+  </tool> 
+  
+  <tool>
+  	<key>mathTool</key>
+  	<scope>application</scope>
+  	<class>org.yeeda.costexpress.util.MathFloat</class>
+  </tool>
+  
+  <tool>
+  	<key>map</key>
+  	<scope>application</scope>
+  	<class>java.util.HashMap</class>
+  </tool>
+ </toolbox>

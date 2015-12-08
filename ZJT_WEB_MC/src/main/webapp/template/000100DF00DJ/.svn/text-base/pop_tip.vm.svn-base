@@ -1,0 +1,818 @@
+<!--	下载信息价	-->
+<div id="download_gov" class="pop-div-box" style="width:500px;top:380px; margin-left:-250px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>下载信息价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('download_gov');return false;" ></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="jifen-download-tips">
+    		<p id="gov_lack_tips" style="display:none;">您的企业下载份数已用完，您可以为企业 <a class="font-bule-1-u" href="http://vip.zjtcn.com/serviceManage.html" target="_blank" onclick="hide('mask_layer');hide('download_gov');">续购份数</a> 或选择以下方式自行下载：</p>
+    		<p><i onclick="chooseCheck(this)" class="input-option option-on" value="score"></i>积分下载：300<i class="icon-jifen-img"></i> <span class="f-color-red m-l-10" id="gov_lack_score" style="display:none;">积分余额不足</span></p>
+            <p style="margin-left:18px;">
+            	您的积分余额：<span class="f-color-red" id="gov_currScore"></span><i class="icon-jifen-img"></i><a class="font-bule-1-u m-l-10" href="http://gd.zjtcn.com/service/cjwt.jsp?type=member_6" target="_blank" onclick="hide('mask_layer');hide('download_gov');">如何获得积分？</a>
+            	<span id="gov_phoneVerification" style="display:none;" class="f-color-red ml-20">绑定手机即送200积分</span><a id="gov_phoneVerification_url" class="font-bule-1-u m-l-10" href="http://gd.zjtcn.com/member/sjrz/index.jsp" target="_blank" onclick="hide('mask_layer');hide('download_gov');">马上绑定>></a>
+            </p>
+            <p class="m-t-10"><i onclick="chooseCheck(this)" class="input-option option-no" value="tcoin"></i>T&nbsp;币&nbsp;下载：18<i class="icon-Tbi-img"></i> <span class="f-color-red m-l-10" id="gov_lack_tcoin" style="display:none;">T币余额不足</span></p>
+            <p style="margin-left:18px;">您的T币余额：<span class="f-color-red" id="gov_tcoin"></span><i class="icon-Tbi-img"></i><a class="font-bule-1-u m-l-10" href="http://pay.zjtcn.com/tbTopUp.html" target="_blank" onclick="hide('mask_layer');hide('download_gov');">充值T币</a></p>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="downLoad();hide('download_gov');">确定</a>
+        <a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('download_gov');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+
+<div id="download_gov_tip" class="pop-div-box" style="width:300px;top:380px;  margin-left:-150px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>下载信息价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('download_gov_tip');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="jifen-download-tips">
+    		<p>升级企业云造价高级服务，材价下载享受最大优惠！</p>
+            <p><a class="font-bule-1-u" href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" onclick="hide('mask_layer');hide('download_gov_tip');">了解企业云造价高级服务>></a></p>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="hide('mask_layer');hide('download_gov_tip');return false;">确定</a>
+        <a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('download_gov_tip');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	下载信息价	-->
+
+<!--	下载供应商报价	-->
+<div id="download_fac" class="pop-div-box" style="width:500px;top:380px;  margin-left:-250px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>下载供应商报价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('download_fac');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+        <div class="jifen-download-tips">
+        	<p id="fac_lack_tips" style="display:none;">您的企业下载份数已用完，您可以为企业 <a class="font-bule-1-u" href="http://vip.zjtcn.com/serviceManage.html" target="_blank" onclick="hide('mask_layer');hide('download_fac');">续购份数</a> 或选择以下方式自行下载：</p>
+    		<p><i onclick="chooseCheck(this)" class="input-option option-on" value="score"></i>积分下载：50<i class="icon-jifen-img"></i> <span class="f-color-red m-l-10" id="fac_lack_score" style="display:none;">积分余额不足</span></p>
+            <p style="margin-left:18px;">
+            	您的积分余额：<span class="f-color-red" id="fac_currScore"></span><i class="icon-jifen-img"></i><a class="font-bule-1-u m-l-10" href="http://gd.zjtcn.com/service/cjwt.jsp?type=member_6" target="_blank" onclick="hide('mask_layer');hide('download_fac');">如何获得积分？</a>
+            	<span id="fac_phoneVerification" style="display:none;" class="f-color-red ml-20">绑定手机即送200积分</span><a id="fac_phoneVerification_url" class="font-bule-1-u m-l-10" href="http://gd.zjtcn.com/member/sjrz/index.jsp" target="_blank" onclick="hide('mask_layer');hide('download_fac');">马上绑定>></a>
+            </p>
+            <p class="m-t-10"><i onclick="chooseCheck(this)" class="input-option option-no" value="tcoin"></i>T&nbsp;币&nbsp;下载：8<i class="icon-Tbi-img"></i> <span class="f-color-red m-l-10" id="fac_lack_tcoin" style="display:none;">T币余额不足</span></p>
+            <p style="margin-left:18px;">您的T币余额：<span class="f-color-red" id="fac_tcoin"></span><i class="icon-Tbi-img"></i><a class="font-bule-1-u m-l-10" href="http://pay.zjtcn.com/tbTopUp.html" target="_blank" onclick="hide('mask_layer');hide('download_fac');">充值T币</a></p>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="downLoad();hide('download_fac');">确定</a>
+        <a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('download_fac');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+    
+</div>
+<div id="download_fac_tip" class="pop-div-box" style="width:300px;top:380px;  margin-left:-150px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>下载供应商报价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('download_fac_tip');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="jifen-download-tips">
+    		<p>升级企业云造价高级服务，材价下载享受最大优惠！</p>
+            <p><a class="font-bule-1-u" href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" onclick="hide('mask_layer');hide('download_fac_tip');">了解企业云造价高级服务>></a></p>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="hide('mask_layer');hide('download_fac_tip');return false;">确定</a>
+        <a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('download_fac_tip');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	下载供应商报价	-->
+
+
+<!--	收藏材价 收藏条数足的时候提示	-->
+<div id="collect_mat" class="pop-div-box" style="width:450px;top:380px;  margin-left:-225px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏材价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_mat');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<dl class="shou-cj clearfix">
+        	<dt><span class="tips-icon-com i-suc-img"></dt>
+            <dd>
+            	<p class="h-titles">收藏成功！</p>
+            	<p id="collect_mat_member" style="display:none;">您选择的材价已收藏到个人会员中心“<a class="font-bule-1-u" href="http://gd.zjtcn.com/member/my_caijia/my_caijia.jsp" target="_blank" onclick="hide('mask_layer');hide('collect_mat');">我的材价</a>”列表</p>
+            	<p id="collect_mat_enterprise" style="display:none;">您选择的材价已收藏到云造价空间“<a class="font-bule-1-u" href="http://vip.zjtcn.com/caijia/cjk.html" target="_blank" onclick="hide('mask_layer');hide('collect_mat');">材价库</a>”列表</p>
+            </dd>
+        </dl>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="hide('mask_layer');hide('collect_mat');return false;">确定</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	收藏材价 收藏条数足的时候提示	-->
+
+<!--	收藏材价 收藏条数不足的时候提示	-->
+<div id="collect_mat_tips" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏材价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_mat_tips');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles">抱歉，您的收藏条数不足！</p>
+                    <p><b>本次收藏条数：</b><span id="collect_mat_total"></span></p>
+                    <p><b>剩余收藏条数：</b><span id="collect_mat_residue"></span></p>
+                    <p class="m-t-10">您可以选择：</p>
+                    <p><a href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" class="font-bule-1" onclick="hide('mask_layer');hide('collect_mat_tips');">续购条数>></a><span class="ml-20">1<i class="icon-Tbi-img"></i> /100条</span></p>
+                    <p><a href="javascript:void(0)" onclick="collectByScore()" class="font-bule-1">积分兑换>></a><span class="ml-20">1<i class="icon-jifen-img"></i> /1条</span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_mat_tips');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	收藏材价 收藏条数不足的时候提示	-->
+
+<div id="collect_mat_score" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_mat_score');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles">注：本次收藏中有<span id="collect_mat_score_num"></span>条需使用积分！</p>
+                    <p><b>收藏所需积分：</b><span id="collect_mat_score_total"></span></p>
+                    <p><b>您的积分余额：</b><span id="collect_mat_score_residue"></span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_mat_score');collectMatByScore();">确定收藏</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+
+<div id="collect_mat_score_lack" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_mat_score');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles f-color-red">抱歉，您的积分余额不足！</p>
+                    <p><b>本次收藏条数：</b><span id="collect_mat_score_lack_total"></span></p>
+                    <p><b>剩余收藏条数：</b><span id="collect_mat_score_lack_residue"></span></p>
+                    <p class="m-t-10">您可以选择：</p>
+                    <p><a href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" onclick="hide('mask_layer');hide('collect_mat_score_lack');" class="font-bule-1">续购条数>></a></p>
+                    <p><a href="http://gd.zjtcn.com/member/my_zh/my_jifen_sy.jsp" target="_blank" onclick="hide('mask_layer');hide('collect_mat_score_lack');" class="font-bule-1">积分兑换>></a></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_mat_score_lack');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+
+
+<!--	收藏供应商 收藏条数足的时候提示	-->
+<div id="collect_fac" class="pop-div-box" style="width:450px;top:380px;  margin-left:-225px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏供应商</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_fac');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<dl class="shou-cj clearfix">
+        	<dt><span class="tips-icon-com i-suc-img"></dt>
+            <dd>
+            	<p class="h-titles">收藏成功！</p>
+            	<p id="collect_fac_member" style="display:none;">您选择的供应商已收藏到个人会员中心“<a class="font-bule-1-u" href="http://gd.zjtcn.com/member/my_gys/my_gys.jsp" target="_blank" onclick="hide('mask_layer');hide('collect_fac');">我的供应商</a>”列表</p>
+            	<p id="collect_fac_enterprise" style="display:none;">您选择的供应商已收藏到云造价空间“<a class="font-bule-1-u" href="http://vip.zjtcn.com/gys/gys.html" target="_blank" onclick="hide('mask_layer');hide('collect_fac');">供应商库</a>”列表</p>
+            </dd>
+        </dl>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="hide('mask_layer');hide('collect_fac');return false;">确定</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	收藏供应商 收藏条数足的时候提示	-->
+
+<!--	收藏供应商 收藏条数不足的时候提示	-->
+<div id="collect_fac_tips" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏供应商</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_fac_tips');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles f-color-red">抱歉，您的收藏条数不足！</p>
+                    <p><b>本次收藏条数：</b><span id="collect_fac_total"></span></p>
+                    <p><b>剩余收藏条数：</b><span id="collect_fac_residue"></span></p>
+                    <p class="m-t-10">您可以选择：</p>
+                    <p><a href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" onclick="hide('mask_layer');hide('collect_fac_tips');" class="font-bule-1">续购条数>></a><span class="ml-20">1<i class="icon-Tbi-img"></i> /100条</span></p>
+                    <p><a href="javascript:void(0)" onclick="collectFaccByScore()" class="font-bule-1">积分兑换>></a><span class="ml-20">1<i class="icon-jifen-img"></i> /1条</span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_fac_tips');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	收藏供应商 收藏条数不足的时候提示	-->
+
+<div id="collect_fac_score" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_fac_score');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles">注：本次收藏中有<span id="collect_fac_score_num"></span>条需使用积分！</p>
+                    <p><b>收藏所需积分：</b><span id="collect_fac_score_total"></span></p>
+                    <p><b>您的积分余额：</b><span id="collect_fac_score_residue"></span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_fac_score');collectFacByScore();">确定收藏</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+
+<div id="collect_fac_score_lack" class="pop-div-box" style="width:400px;top:380px;  margin-left:-200px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>收藏</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('collect_fac_score');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles f-color-red">抱歉，您的积分余额不足！</p>
+                    <p><b>本次收藏条数：</b><span id="collect_fac_score_lack_total"></span></p>
+                    <p><b>剩余收藏条数：</b><span id="collect_fac_score_lack_residue"></span></p>
+                    <p class="m-t-10">您可以选择：</p>
+                    <p><a onclick="hide('mask_layer');hide('collect_fac_score_lack');" href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" class="font-bule-1">续购条数>></a><span class="ml-20">1<i class="icon-Tbi-img"></i> /100条</span></p>
+                    <p><a onclick="hide('mask_layer');hide('collect_fac_score_lack');" href="http://gd.zjtcn.com/member/my_zh/my_jifen_sy.jsp" target="_blank" class="font-bule-1">积分兑换>></a><span class="ml-20">1<i class="icon-jifen-img"></i> /1条</span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('collect_fac_score_lack');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+
+<!--	查看材价 无企业授权提示	-->
+<div id="checkPrice_member" class="pop-div-box" style="width:450px;top:380px;  margin-left:-225px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>查看材价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('checkPrice_member');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles">抱歉，您当前暂无查看价格权限！</p>
+                    <p class="m-t-10">选择以下方式：</p>
+                    <p><a onclick="hide('mask_layer');hide('checkPrice_member');" href="http://gd.zjtcn.com/member/my_zh/my_jifen_sy.jsp" target="_blank" class="font-bule-1">积分兑换查价>></a></p>
+                    <p><a onclick="hide('mask_layer');hide('checkPrice_member');" href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" class="font-bule-1">T币购买查价服务>></a></p>
+                    <p><a onclick="hide('mask_layer');hide('checkPrice_member');" href="http://gd.zjtcn.com/member/my_fwgl/my_fwgl.jsp" target="_blank" class="font-bule-1">升级企业云造价高级服务>></a><span class="ml-20">查价更优惠</span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('checkPrice_member');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	查看材价 无企业授权提示	-->
+
+<!--	查看材价 企业查价到期提示	-->
+<div id="checkPrice_enterprise" class="pop-div-box" style="width:450px;top:380px;  margin-left:-225px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>查看材价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('checkPrice_enterprise');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    
+    <div class="modal-center">
+    	<div class="shou-cj-no">
+    		<dl class="tips-shot clearfix">
+            	<dt><span class="tips-icon-com i-jg-img"></dt>
+                <dd>
+                	<p class="h-titles">抱歉，您当前暂无查看价格权限！</p>
+                    <p>您的企业查价服务已到期，您可以为企业 <a class="font-bule-1-u" onclick="hide('mask_layer');hide('checkPrice_enterprise');" href="http://vip.zjtcn.com/serviceManage.html" target="_blank">续期</a> 或</p>
+                    <p class="m-t-10">选择以下方式：</p>
+                    <p><a onclick="hide('mask_layer');hide('checkPrice_enterprise');" href="http://gd.zjtcn.com/member/my_zh/my_jifen_sy.jsp" target="_blank" class="font-bule-1">积分兑换查价>></a></p>
+                    <p><a onclick="hide('mask_layer');hide('checkPrice_enterprise');" href="http://vip.zjtcn.com/serviceManage.html" target="_blank" class="font-bule-1">T币购买查价服务>></a></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-close" onclick="hide('mask_layer');hide('checkPrice_enterprise');return false;">关闭</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	查看材价 企业查价到期提示	-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="mask_layer" id="mask_layer" style="display:none;"></div>
+<div id="ckjg" class="Module_pop" style="width:370px;top:380px;height:200px; margin-left:-185px; margin-top:-100px; display:none;z-index:999;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:170px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2 style="margin-bottom:15px;">抱歉，您当前暂无查看价格权限！</h2>
+            <p style="color:#888;">您可以：</p>
+            <p style="color:#888;"><a target="_blank" href="http://gd.zjtcn.com/member/my_zh/my_jifen_sy.jsp" class="f_r link_b_02" onclick="hide('ckjg');hide('mask_layer');hide('noteWin');">马上去兑换</a>1.使用积分兑换查价服务</p>
+            <p style="color:#888;"><a target="_blank" href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="f_r link_b_02" onclick="hide('ckjg');hide('mask_layer');hide('noteWin');">马上去购买</a>2.购买套餐服务后免费查价</p>
+            <p><a class="btn_sure" href="javascript:void(0)" onclick="hide('ckjg');hide('mask_layer');hide('noteWin');return false;" style="margin:10px 0 0 70px;">关闭</a></p>
+        </dd>
+    </dl>
+</div>
+
+<!--	开通云造价服务	-->
+<div id="vip_service" class="Module_pop" style="width:320px;top:380px;height:150px; margin-left:-185px; margin-top:-100px; display:none;z-index:999;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:270px; height:120px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2 style="margin-bottom:15px;">抱歉，您当前暂无查看价格权限！</h2>
+            <p style="color:#888;">联系客服开通云造价服务即可查价</p>
+            <a target="_blank" class="link_b_01" href="/common/reg_cloud_ pro.html">云造价介绍</a>
+            <p><a class="btn_sure" href="javascript:void(0)" onclick="hide('vip_service');hide('mask_layer');hide('noteWin');return false;" style="margin:10px 0 0 70px;">关闭</a></p>
+        </dd>
+    </dl>
+</div>
+
+<!--	收藏信息价	-->
+<div id="count_jf" class="Module_pop" style="width:390px; height:200px; top:380px; margin-left:-145px; margin-top:-100px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:170px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('mask_layer');hide('count_jf');return false;" title="关闭"></a>
+    	<div class="info">
+            <h1 id="collect_title">收藏信息价<span class="price">（<u class="icon_jinbi" id="sz_xxj1">1</u>/条）</span></h1>
+            <p>注：您的收藏条数已用完，本次收藏中有<span class="red_tips_txt" id="jf_zg"></span>条需使用积分！</p>
+            <div class="yu_tips">
+                <p><b>收藏所需积分：</b><u class="icon_jinbi" id="sz_sxjf1"></u></p>
+                <p><b>您的积分余额：</b><u class="icon_jinbi" id="score_ye1"></u></p>
+            </div>
+        </div>
+        <p align="center"><a href="javascript:void(0);"  onclick="subfrom('1','');hide('mask_layer');hide('noteWin');hide('count_jf');return false;"  class="btn_sure">确定收藏</a></p>
+    </div>
+</div>
+
+
+
+<!--	收藏信息价	-->
+<div id="count_jf_gys" class="Module_pop" style="width:390px; height:200px; top:380px; margin-left:-145px; margin-top:-100px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:170px;">
+    	<a class="close_pop" href="javascript:void(0)" onclick="hide('mask_layer');hide('count_jf_gys');" title="关闭"></a>
+    	<div class="info">
+            <h1 id="collect_title1">收藏信息价<span class="price">（<u class="icon_jinbi" id="sz_xxj2">1</u>/条）</span></h1>
+            <p>注：您的收藏条数已用完，本次收藏中有<span class="red_tips_txt" id="jf_zg2"></span>条需使用积分！</p>
+            <div class="yu_tips">
+                <p><b>收藏所需积分：</b><u class="icon_jinbi" id="sz_sxjf2"></u></p>
+                <p><b>您的积分余额：</b><u class="icon_jinbi" id="score_ye2"></u></p>
+            </div>
+        </div>
+        <p align="center"><a href="javascript:void(0);"  onclick="addClient('1',null);hide('mask_layer');hide('noteWin');hide('count_jf_gys');return false;" class="btn_sure">确定收藏</a></p>
+    </div>
+</div>
+
+<div  id="count_jf_z" class="Module_pop" style="width:390px; height:270px;top:380px;margin-left:-145px; margin-top:-125px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:240px;">
+    	<a class="close_pop" href="javascript:void(0)" onclick="hide('mask_layer');hide('count_jf_z');hide('noteWin');" title="关闭"></a>
+    	<div class="info">
+            <h1 id="collect_title_one">收藏信息价<span class="price">（<u class="icon_jinbi" id="sz_xxj">1</u>/条）</span></h1>
+            <p>注：您的收藏条数已用完，本次收藏中有<span class="red_tips_txt"  id="jf_buz" >5</span>条需使用积分！</p>
+            <div class="yu_tips">
+        	<p><b>收藏所需积分：</b><u class="icon_jinbi"  id="sz_sxjf"></u></p>
+            <p><b>您的积分余额：</b><u class="icon_jinbi"  id="score_ye"></u></p>
+            <p class="red_tips_txt" style="margin-top:10px;">抱歉，您的积分余额不足！</p>
+            <p>
+            	<a id="buy_jifen" target="_blank" href="http://gd.zjtcn.com/member/my_zh/my_jifen_buy.jsp" class="link_b_02" onclick="hide('mask_layer');hide('count_jf_z');hide('noteWin');" >购买积分>></a>
+                <a id="buy_other" target="_blank" href="/service/cjwt.jsp?type=member_6" style="margin-left:15px;" class="link_b_02" onclick="hide('mask_layer');hide('count_jf_z');hide('noteWin');" >其他获取积分方式>></a>
+            </p>
+            <p id="bind_mobile_box" class="red_tips_txt" style="margin:5px 10px 0 0;">
+            	绑定手机即送<b>200</b>积分&nbsp;&nbsp;&nbsp;
+            	<a id="bind_mobile" target="_blank" href="http://gd.zjtcn.com/member/sjrz/index.jsp" class="link_b_02">马上绑定>></a>
+           	</p>
+        </div>
+        </div>
+        <p align="center"><a href="javascript:void(0)" onclick="hide('mask_layer');hide('count_jf_z');hide('noteWin');return false;" class="btn_sure">关闭</a></p>
+    </div>
+</div>
+
+
+
+<div class="Module_pop" id="login_tip_div" style="width:280px; height:120px;top:380px; margin-left:-140px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:230px; height:90px;">
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您需要登录后操作！</h2>
+            <a id="login_jump_location" href="" class="link_b_01">立即登录</a>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('login_tip_div');hide('mask_layer');return false;" style="margin:10px 0 0 15px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+<div class="Module_pop" id="sfhu_tip" style="width:370px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('sfhu_tip');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂此无查看权限！</h2>
+            <p>升级为“<a target="_blank" title="客服在线" onclick="hide('sfhu_tip');hide('mask_layer');javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="link_b_01">云造价会员</a>”，即可查看全国范围信息</p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('sfhu_tip');hide('mask_layer');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<!--	省级会员层	-->
+<div class="Module_pop" id="dfhu_tip" style="width:370px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('dfhu_tip');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此查看权限！</h2>
+            <p>升级为“<a target="_blank" href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('dfhu_tip');hide('mask_layer');">省级会员</a>”，即可查看全省范围信息</p>
+            <p><a class="btn_sure" href="javascript:void(0);"  onclick="hide('dfhu_tip');hide('mask_layer');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+
+
+<div class="Module_pop" id="sfhu_tip_down" style="width:370px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('sfhu_tip_down');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂此无下载权限！</h2>
+            <p>升级为“<a target="_blank"  title="客服在线" onclick="hide('sfhu_tip_down');hide('mask_layer');javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="link_b_01">云造价会员</a>”，即可下载整份信息价</p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('sfhu_tip_down');hide('mask_layer');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<!--	省级会员层	-->
+<div class="Module_pop" id="dfhu_tip_down" style="width:370px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('dfhu_tip_down');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此下载权限！</h2>
+            <p>升级为“<a target="_blank" href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('dfhu_tip_down');hide('mask_layer');">省级会员</a>”，即可下载整份信息价</p>
+            <p><a class="btn_sure" href="javascript:void(0);"  onclick="hide('dfhu_tip_down');hide('mask_layer');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+
+<!--	省级会员层	-->
+<div class="Module_pop" id="zshy_tip" style="width:370px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:320px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('zshy_tip');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此查看权限！</h2>
+            <p>升级为“<a target="_blank" href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('zshy_tip');hide('mask_layer');">正式会员</a>”，即可下载整份信息价</p>
+            <p><a class="btn_sure" href="javascript:void(0);"  onclick="hide('zshy_tip');hide('mask_layer');return false;" style="margin:10px 0 0 70px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+<!--	收藏信息价	-->
+<div id="xz_div" class="Module_pop" style="width:315px; height:164px; top:380px; margin-left:-145px; margin-top:-100px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:265px; height:134px;">
+    	<a class="close_pop" href="javascript:void(0)" onclick="hide('mask_layer');hide('xz_div');" title="关闭"></a>
+    	<div class="info">
+            <h1 id="xz_title"></h1>
+            <div class="yu_tips">
+                <p><b>下载所需积分：</b><u class="icon_jinbi" id="xz_score" >300</u></p>
+                <p><b>您的积分余额：</b><u class="icon_jinbi" id="xz_score_ye"></u></p>
+            </div>
+        </div>
+        <p align="center"><a href="javascript:void(0);"  onclick="downLoad();hide('xz_div');return false;" class="btn_sure">确定下载</a></p>
+    </div>
+</div>
+<div class="Module_pop" style="width:250px;z-index: 1001; height:70px; position:absolute;margin-left:-110px; margin-top:-35px; display:none;" id="tip_xz_diving">
+	<div class="tm_c"></div>
+    <div class="content" style=" width:200px; height:40px;">
+    	<a title="关闭" onclick="hide('tip_xz_diving');hide('mask_layer');" href="javascript:void(0)" class="close_pop"></a>
+    	<div class="tips_box"><span class="i_loading"></span>正在准备下载中...<br/></div>
+    </div>
+</div>
+<div id="xz_score_tip" class="Module_pop" style="width:390px; height:242px;top:380px;margin-left:-145px; margin-top:-125px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:212px;">
+    	<a class="close_pop" href="javascript:void(0)" onclick="hide('mask_layer');hide('xz_score_tip');return false;" title="关闭"></a>
+    	<div class="info">
+            <h1 id="xz_title_score"></h1>
+            <div class="yu_tips">
+        	<p><b>下载所需积分：</b><u class="icon_jinbi"  id="xz_score_one"></u></p>
+            <p><b>您的积分余额：</b><u class="icon_jinbi"  id="xz_score_yebz"></u></p>
+            <p class="red_tips_txt" style="margin-top:10px;">抱歉，您的积分余额不足！</p>
+            <p>
+            	<a target="_blank" id="buy_jifen_1" href="http://gd.zjtcn.com/member/my_zh/my_jifen_buy.jsp" class="link_b_02" onclick="hide('mask_layer');hide('xz_score_tip');">购买积分>></a>
+                <a target="_blank" id="buy_other_1" href="/service/cjwt.jsp?type=member_6" style="margin-left:15px;" class="link_b_02" onclick="hide('mask_layer');hide('xz_score_tip');">其他获取积分方式>></a>
+            </p>
+            <p id="bind_mobile_box_1" class="red_tips_txt" style="margin:5px 10px 0 0;">
+            	绑定手机即送<b>200</b>积分&nbsp;&nbsp;&nbsp;
+            	<a id="bind_mobile_1" target="_blank" href="http://gd.zjtcn.com/member/sjrz/index.jsp" class="link_b_02">马上绑定>></a>
+           	</p>
+        </div>
+        </div>
+        <p align="center"><a href="javascript:void(0)" onclick="hide('mask_layer');hide('xz_score_tip');return false;" class="btn_sure">关闭</a></p>
+    </div>
+</div>
+
+
+
+<div class="Module_pop" id="collect_suc" style="width:420px; height:120px; margin-left:-145px; margin-top:-60px;top:380px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:370px; height:90px;">
+    	<a class="close_pop" href=""></a>
+    	<dt><span class="i_tips i_suc"></span></dt>
+    	<dd class="tips_box">
+            <h2>收藏成功！</h2>
+            <p id="suc_tip">您选择的材价已收藏到会员中心“<a target="_blank"  href="" class="link_b_01" onclick="hide('collect_suc');hide('mask_layer');return false;">材价库</a>”列表</p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('collect_suc');hide('mask_layer');return false;" style="margin:10px 0 0 80px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+
+<div class="Module_pop" id="repeatSup" style="width:390px; height:120px;top:380px; margin-left:-145px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:90px; text-align:center;">
+        <h2>温馨提示</h2>
+        <p style=" text-align:left; padding:10px;">您本次的选择中有<span class="h" id="repeatSum">32</span>条已经收藏过，系统将不再重复收藏。</p>
+        <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('repeatSup');hide('mask_layer');subfrom('','1');return false;">知道了</a></p>
+    </div>
+</div>
+
+
+
+
+
+<div class="Module_pop" id="colloct_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('colloct_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此收藏权限！</h2>
+            <p>升级服务,<a target="_blank"  href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('colloct_auth');hide('mask_layer');">了解服务详情</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('colloct_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+<div class="Module_pop" id="sf_colloct_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('sf_colloct_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此收藏权限！</h2>
+           <p>请升级服务,<a target="_blank" title="客服在线" onclick="hide('sf_colloct_auth');hide('mask_layer');javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="link_b_01" >在线咨询</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('sf_colloct_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<div class="Module_pop" id="down_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('down_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此下载权限！</h2>
+            <p>升级服务,<a target="_blank"  href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('down_auth');hide('mask_layer');">了解服务详情</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('down_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<div class="Module_pop" id="sf_down_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('sf_down_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此下载权限！</h2>
+            <p>请升级服务,<a target="_blank" title="客服在线" onclick="hide('sf_down_auth');hide('mask_layer');javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="link_b_01" >在线咨询</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('sf_down_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<div class="Module_pop" id="see_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('see_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此查看权限！</h2>
+            <p>升级服务,<a target="_blank"  href="http://gd.zjtcn.com/member/zjt_fw/zjt_fw.jsp" class="link_b_01" onclick="hide('see_auth');hide('mask_layer');">了解服务详情</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('see_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+<div class="Module_pop" id="sf_see_auth" style="width:300px; height:120px;top:380px; margin-left:-135px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <dl class="content" style=" width:250px; height:90px;">
+    	<a class="close_pop" href="javascript:void(0);" onclick="hide('sf_see_auth');hide('mask_layer');return false;"></a>
+    	<dt><span class="i_tips i_jg"></span></dt>
+    	<dd class="tips_box">
+            <h2>抱歉，您暂无此查看权限！</h2>
+            <p>请升级服务,<a target="_blank"  class="link_b_01" title="客服在线" onclick="hide('sf_see_auth');hide('mask_layer');javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">在线咨询</a></p>
+            <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('sf_see_auth');hide('mask_layer');return false;" style="margin:10px 0 0 10px;">确定</a></p>
+        </dd>
+    </dl>
+</div>
+
+
+
+<div id="Module_pop" class="Module_pop" style="width:450px;top:380px; height:300px; margin-left:-225px; margin-top:-150px;display:none;">
+	<div class="tm_c"></div>
+    <div class="content ckj_lsjg" style=" width:400px; height:270px;">
+    	<a class="close_pop" href="javascript:void(0)" onclick="hide('mask_layer');hide('Module_pop');return false;"></a>
+    	<h2>查看历史报价 <span>注：目前仅支持最新3条历史报价查询</span></h2>
+        <ul class="lsjg_info clearfix">
+        	<li id="mat_gys" class="short m_r_10 t_sl" title="供应商：世邦五交化"><b>供应商：</b>世邦五交化</li>
+            <li id="mat_city" class="short t_sl" title=""></li>
+        	<li id="mat_name_spec"title="材料：夹层玻璃</b>（5.0mm白玻+0.76PVB+5.0mm白玻）"  class="t_sl"><b>材料：夹层玻璃</b>（5.0mm白玻+0.76PVB+5.0mm白5.0mm白玻+0.76PVB+5.0mm白玻）</li>
+        </ul>
+        <div class="lsjg_list">
+        	<table>
+            	<tr>
+                	<th width="50%">报价</th>
+                    <th width="50%">时间</th>
+                </tr>
+                
+            </table>
+            <div id="rationPrice_list">
+            
+            </div>
+        </div>
+        <p align="center"><a  href="javascript:void(0)" onclick="hide('mask_layer');hide('Module_pop');" class="btn_sure">关闭</a></p>
+    </div>
+</div>
+
+
+
+<div id="bz_fd_div" class="look_bz_box Module_pop" style="display:none;top:380px;">
+	<a href="javascript:void(0);" onclick="hide('bz_fd_div');hide('mask_layer');" class="close_pop"></a> 
+    <h2>编制说明</h2>
+    <div class="look_bz_co">
+      <!--   <p style=" display:none;">供应商：<b>广东中建普联科技有限公司</b></p> -->
+        <p style="margin-top:5px;" id="notes_div">
+        </p>
+    </div>
+ </div>
+
+<!--	关注	-->
+<div id="attent_mat" class="pop-div-box" style="width:450px; margin-left:-225px; margin-top:-100px; display:none;">
+	<!--	title-top	-->
+	<div class="title-top">
+    	<span>关注材价</span>
+        <a class="close-btn" href="javascript:void(0)" title="关闭" onclick="hide('mask_layer');hide('attent_mat');return false;"></a>
+    </div>
+    <!--	title-top	-->
+    <div class="modal-center">
+    	<dl class="shou-cj clearfix">
+        	<dt><span class="tips-icon-com i-suc-img"></dt>
+            <dd>
+            	<p class="h-titles">关注成功！</p>
+            	<p id="collect_mat_enterprise">您选择的材价已关注到云造价空间“<a class="font-bule-1-u" href="http://vip.zjtcn.com/caijia/gzdcj.html" target="_blank">关注的材料</a>”列表</p>
+            </dd>
+        </dl>
+    </div>
+    <!--	modal-footer	-->
+    <div class="modal-footer">
+    	<a href="javascript:void(0)" class="btn-sure" onclick="hide('mask_layer');hide('attent_mat');return false;">确定</a>
+    </div>
+    <!--	modal-footer	-->
+</div>
+<!--	关注	-->
+<div class="Module_pop" style="width:250px;z-index: 1001; height:70px; position:absolute;margin-left:-110px; margin-top:-35px; display:none;" id="attent_loading_box">
+	<div class="tm_c"></div>
+    <div class="content" style=" width:200px; height:40px;">
+    	<a title="关闭" onclick="hide('attent_loading_box');hide('mask_layer');" href="javascript:void(0)" class="close_pop"></a>
+    	<div class="tips_box"><span class="i_loading"></span>正在关注中...<br/></div>
+    </div>
+</div>
+
+<div class="Module_pop" id="attent_replay_box" style="width:390px; height:120px;top:380px; margin-left:-145px; margin-top:-60px; display:none;">
+	<div class="tm_c">ddd</div>
+    <div class="content" style=" width:340px; height:90px; text-align:center;">
+        <h2>温馨提示</h2>
+        <p style=" text-align:left; padding:10px;">您本次的选择中有<span class="h" id="attent_replay_num">1</span>条已经关注过，系统将不再重复关注。</p>
+        <p><a class="btn_sure" href="javascript:void(0);" onclick="hide('attent_replay_box');hide('mask_layer');">知道了</a></p>
+    </div>
+</div>

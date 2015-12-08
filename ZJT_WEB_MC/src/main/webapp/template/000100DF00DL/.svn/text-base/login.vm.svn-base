@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员登录_造价通($dataInfo.province)</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/reset.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+</head>
+
+<body>
+
+<!--	header star	-->
+<div id="header_box">
+    <div id="header">
+        	<div class="inside-com-logo" ><a href="http://gd.zjtcn.com" class="logo01"></a><span class="logo-title">用户登录</span></div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div class="login_div" style="background-color:#050505;">
+	<div class="login_bg" style=" background:url($common_site/images/zjt/login/yun_hd_bg.jpg) no-repeat;">
+    	<a href="javascript:void(0);"  onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  class="btn_ljzx" title="立即咨询"></a>
+        <div class="login_form">
+        	<h1>登录造价通</h1>
+            <ul>
+            	<li><input id="memberID" type="text"  class="login_input"  value="用户名" style="width:250px;"/></li>
+                <li><input type="password" id="pwd"  class="login_input"  value="" style="width:250px;"/><label id="pwd_tip"style="color: #45617E;font-size: 14px;left: 42px;position: absolute;top: 136px;">密码</label></li>
+                <li style="margin-bottom:5px;">
+                	<input id="code" type="text"  class="login_input"  value="验证码" style="width:84px; float:left;"/>
+                    <span class="yam_box f_l"><img style="margin-top:8px;" id="imgCode" src="javascript:void(0);" /></span>
+                    <a href="javascript:void(0);" class="gray_09 change_yzm" onclick="refreshCode();return false;">看不清换一张</a>
+                </li>
+                <li style="width:295px;margin-bottom:5px;">
+                	<input style="height:34px;float:left;"  type="checkbox" name="autologin" checked/>
+                    <span  style="width:270px;float:right;line-height:34px;color:#999999;"> 30天内自动登录（请勿在公用电脑上勾上此功能）</span>
+                </li>
+                <li >
+                	<a href="javascript:void(0);" class="btn_login" onclick="login();return false;">登 录</a>
+                	<a rel="external nofollow"  href="/common/reg_sel.html" class="gray_09" style="margin-left:10px;">免费注册</a>
+                    <a href="/common/LostPassword.html" class="gray_09" style="margin-left:10px;">忘记密码</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+#parse($footer_dir)
+
+<script type="text/javascript" src="$common_site/js/common/login.js"></script>
+</body>
+</html>

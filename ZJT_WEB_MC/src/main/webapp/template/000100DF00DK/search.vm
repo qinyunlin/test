@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		 <title>供应商报价_($dataInfo.province)各地建材厂商、供应商材料报价_($dataInfo.province)造价通</title>
+    <meta name="description"
+        content="50000多家优质材料供应商，定期为您提供最新的材料厂商报价，各类主材、辅材价格、设备机械租赁价格、厂商合同价、建议价每月更新，累计报价材料达数千万。"/>
+        <meta name="keywords"	
+            content="厂商报价，建材价格，材料报价，设备租赁价，建议价"/>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+#parse($header_dir)
+<!--	container	-->
+<div class="container">
+	<!--	面包屑	-->
+	<div class="breadCrumb">
+    	<a href="/">首页</a><i>&gt;</i><a href="/fac">供应商</a><i>&gt;</i><span>"<i class="f-color-red" id="keyspan"></i>"搜索结果</span>
+    </div>
+    <!--	面包屑	-->
+    <div class="layout-box m-t-5 clearfix">
+    	<!--	左侧树	-->
+    	<div class="f-l w-240">
+        	<div class="bor-shadow-box">
+            	<h2 class="tit-name-01">材料分类</h2>
+                <div class="tree-controls ztree" id="treeDemo"></div>
+            </div>
+            <!--<div class="adBox-240 m-t-10">广告位</div>-->
+        </div>
+        <!--	左侧树	-->
+        <!--	右侧筛选与数据列表	-->
+        <div class="f-r w-850">
+        	<!--	筛选	-->
+        	<div class="bor-shadow-box">
+                <!--	时间	-->
+            	<dl class="nav-category sel_city_box_dl bor-no clearfix">
+                	<dt>地区：</dt>
+                    <dd>
+                    	<ul class="nav-category-li clearfix">
+                        	
+                        </ul>
+                    </dd>
+                </dl>
+                <!--	时间	-->
+            </div>
+            <!--	筛选	-->
+            <!--	数据列表	-->
+            <div class="bor-shadow-box m-t-10 clearfix">
+            	<!--	标题	--> 
+            	<h2 class="tit-name-02"><b>供应商</b></h2>
+                <!--	标题	-->
+                <!--	操作栏	-->
+                <div class="date-t-option m-t-10 clearfix"> 
+                	<a href="javascript:void(0);" name="collect"  class="btn-collection f-l">收藏</a>
+                    <div class="moudle-page f-r" style="padding:0;">
+                    	<div class="page-mune f-r">
+                            <div id="page1" class="manu f_r"></div>
+                        </div>
+                    </div>
+                    <span class="f-r results-total">找到相关材料共 <b id="searchCount">0</b> 条</span>
+                </div>
+                <!--	操作栏	-->
+                <!--	数据显示	-->
+                <div class="moudle-date-box">
+                	<table>
+                        <tr>
+                        	<th width="20px"><input id="mycaijia_id" type="checkbox" value="" class="all_selector" /></th>
+                            <th width="52%">供应商信息</th>
+                            <th width="25%" class="txt-c">地区</th>
+                            <th width="20%" class="txt-c">操作</th>
+                        </tr>
+					</table>
+					 <div id="listbody"></div>
+                     <div id="page" class="digg"></div>
+                </div>
+                <!--	数据显示	-->
+                <a href="javascript:void(0);" style="margin-left:10px;margin-bottom:8px;" name="collect" class="btn-collection f-l">收藏</a>
+            </div>
+            <!--	数据列表	-->
+        </div>
+        <!--	右侧筛选与数据列表	-->
+    </div>
+</div>
+<!--	container	-->
+<div id="templatebody" style="display:none;">
+	<table>
+	    <tr id="row_@{rownum}">
+                <td width="20px"><input name="m_id" type="checkbox" value="@{eid}" class="all_selector" /></td>
+                <td width="52%">
+                	<p class="td-companyName"><a target="_blank"  href="@{city|setSite}">@{name}</a></p>
+                    <p class="td-main-material">
+                    	主营材料：@{subcid|showCidName}
+                    </p>
+                </td>
+                <td width="25%" class="txt-c">@{province} @{city}</td>
+                <td width="20%" class="txt-c">
+                	<a href="@{city|setSite}" class="btn-view-quotation">查看报价</a>
+                </td>
+            </tr>
+    </table>
+</div>
+#parse($footer_dir)
+#parse($zjt_tip)
+<link rel="stylesheet" type="text/css" href="$common_site/js/plungins/JQuery zTree v3.5.01/css/zTreeStyle/zjtZTreeStyle.css" />
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.exedit-3.5.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/SearchStore.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/zhcn_db_fac.js"></script>
+<script type="text/javascript" src="$common_site/js/common/zhcn_select.js"></script>
+<script type="text/javascript" src="$common_site/js/common/search_common.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/fac/shop_search.js"></script>
+</body>
+</html>

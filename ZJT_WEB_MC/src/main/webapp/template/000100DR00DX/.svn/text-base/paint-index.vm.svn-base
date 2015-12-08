@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>网材网_涂料首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/tradeChannel/paint_index.css"/>
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/jq.Slide.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/tradeChannel/paint/paint_index.js"></script>
+  </head>
+  
+  <body onload="StyleCss();">
+   <!-- 头部 -->
+    #parse($wcw_header)
+	<!-- 主体 -->
+	#parse($hypd_nav)
+    <div class="main">
+		<!-- 涂料采购 -->
+		<div class="nav_line_div">
+			<div class="nav_line">
+				<a  target="_blank" black_a href="http://www.ccwcw.com/gcxm/purchaseList.html?stuff=/涂料及防腐防水材料/">
+				<div class="nav_line_title">涂料采购：</div>
+				</a>
+				<div class="slide_nav">
+					<ul>
+						
+							$!map.clear()
+							$!map.put("isAudit","1")
+							$!map.put("isLock","0")
+							$!map.put("cname","/涂料及防腐防水材料/")
+							#set($list = $demandService.search(1,2,"",$!map,null,"updateOn desc",true))
+							#foreach($obj in $list)
+						<a  target="_blank" class="black_a" href="/gcxm/details.html?id=$!obj.getId() &title=$!obj.getTitle()">
+							<li class="xmsqs_orange_p"></li>
+							<li>$!obj.getTitle() </li>
+							<li class="nav_company">$!obj.getEname()</li>
+						</a>
+						     #end
+								
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 涂料产品目录、滚动广告、推荐商铺 -->
+		<div class="container1">
+			<div class="container1_left">
+				<div class="title_banner" style="width:278px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:272px;">
+						<div class="title_icon"></div>
+						<div class="title_text">涂料产品目录</div>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+				<div class="tlcpmu_content">
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=建筑涂料&searchType=1" style="font-size:14px;">建筑涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=内墙乳胶漆&searchType=1">内墙乳胶漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=防火涂料&searchType=1">防火涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=防水涂料&searchType=1">防水涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=真石漆&searchType=1">真石漆</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=外墙乳胶漆&searchType=1">外墙乳胶漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=防霉涂料&searchType=1">防霉涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=地坪涂料&searchType=1">地坪涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=弹性漆&searchType=1">弹性漆</a></li>
+					</ul>
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=木器涂料&searchType=1" style="font-size:14px;">木器涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:13px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=水性木器漆&searchType=1">水性木器漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=家具漆&searchType=1">家具漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=地板漆&searchType=1">地板漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=聚酯漆&searchType=1">聚酯漆</a></li>
+					</ul>
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=汽车涂料&searchType=1" style="font-size:14px;">汽车涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=底涂漆&searchType=1">底涂漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=中涂漆&searchType=1">中涂漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=面漆&searchType=1">面漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=罩光漆&searchType=1">罩光漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=修补漆&searchType=1">修补漆</a></li>
+					</ul>
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=船舶涂料&searchType=1" style="font-size:14px;">船舶涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=船壳漆&searchType=1">船壳漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=船舱漆&searchType=1">船舱漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=船底防污漆&searchType=1">船底防污漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=船底防锈漆&searchType=1">船底防锈漆</a></li>
+					</ul>
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=通用涂料&searchType=1" style="font-size:14px;">通用涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=调和漆&searchType=1">调和漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=清漆&searchType=1">清漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=轻工涂料&searchType=1">轻工涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=工业涂料&searchType=1">工业涂料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=橡胶漆&searchType=1">橡胶漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=磁漆&searchType=1">磁漆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=路用涂料&searchType=1">路用涂料</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=道路标志漆&searchType=1">道路标志漆</a></li>
+					</ul>
+					<ul class="tlcpmu_title">
+						<li class="xmsqs_orange_p3"></li>
+						<li class="tlcpmu_title_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=涂料原料&searchType=1" style="font-size:14px;">涂料原料</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=钛白粉&searchType=1">钛白粉</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=滑石粉&searchType=1">滑石粉</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=铝银浆&searchType=1">铝银浆</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=立德粉&searchType=1">立德粉</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=消泡剂&searchType=1">消泡剂</a></li>
+					</ul>
+					<ul>
+						<li class="tlcpmu_text" style="margin-left:12px;"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=润湿剂&searchType=1">润湿剂</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=固化剂&searchType=1">固化剂</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=珠光粉&searchType=1">珠光粉</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=流平剂&searchType=1">流平剂</a></li>
+						<li class="black_line"></li>
+						<li class="tlcpmu_text"><a  target="_blank" class="black_a" href="http://www.ccwcw.com/search/jiancai-search.html?name=分散剂&searchType=1">分散剂</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="container1_right">
+				<div class="slide_gd_div">
+					<div class="slide_gd">
+						<DIV id="temp1" class="jq_class">
+							<DIV class=JQ-content-box>
+								<UL class=JQ-slide-content>
+									
+										$!map.clear()
+										$!map.put("tpath","/20/2012/201203/20120317/")
+										#set($list = $infoService.searchInfoContentSummarys(20,1,$!map,true))
+										#foreach($obj in $list)
+									<li>
+										<a rel="external nofollow" href="$!obj.getUrl()" target="_blank">
+										<img alt="$!obj.getTitle()" width="656px" height="257px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/>
+										</a>
+									</li>
+									#end
+								</ul>
+								<ul class="JQ-slide-nav">
+									#foreach($obj in $list)
+												#if($velocityCount == 1)
+											              <li class="on">$velocityCount</li>
+												#else
+                                                          <li>$velocityCount</li>
+												#end
+											#end
+					            </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tjsp_div">
+					<div class="tjsp_title">
+						<a  target="_blank" class="black_a" href="/hypd/searchList.html"><div class="tjsp_title_text" >推荐商铺</div></a>
+					</div>
+					<div class="tjsp_content">
+						<div class="tjsp_content_div">
+							
+								$!map.clear()
+								$!map.put("cname","/装饰/涂料及防腐防水材料/")
+								$!map.put("isAudit","1")
+								$!map.put("isLock","0")
+								#set($list = $epShopService.searchShop(6, 1, null, $!map,"sort desc,updateOn desc", true))
+								#foreach($obj in $list)
+						
+							<div class="tjsp_main">
+								<div class="tjsp_main_img_div">
+								<a  target="_blank" href="$!templateUtil.getShopUrl($!obj.getEid()) ">
+									<div class="tjsp_main_img">
+										<img width="80px" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getLogo())"/>
+									</div>
+								</a>
+								</div>
+								<div class="tjsp_main_title">
+									<a  target="_blank" class="blue_a" href="$!templateUtil.getShopUrl($!obj.getEid()) ">$!obj.getFname()</a>
+								</div>
+							</div>
+							#end
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 广告位1 -->
+		<div class="advertisement">
+			
+				$!map.clear()
+				$!map.put("tpath","/20/2012/201203/20120318/")
+				$!map.put("isTop", "1")
+				#set($list = $infoService.searchInfoContentSummarys(1,1,$!map,true))
+				#foreach($obj in $list)
+				<a rel="external nofollow" href="$!obj.getUrl()" target="_blank" style="display: block; width:950px; height: 80px;" >
+					<img width="950px" alt="$!obj.getTitle()" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/>
+				</a>
+			#end
+		</div>
+		
+		<!-- 涂料资讯、推荐建材 -->
+		<div class="container2">
+			<div class="container2_left">
+			
+
+				<div class="title_banner" style="width:277px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:271px;">
+						<div class="title_icon"></div>
+						<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020201/') "><div class="title_text">涂料资讯</div></a>
+					    <a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020201/')"  target="_blank">更多＞＞</a>
+					</div>
+					<div class="title_banner_right"> </div>
+				</div>
+				<div class="tlzx_div">
+					<div class="tlzx_content">
+						
+								$!map.clear()
+                    	$!map.put("tpath", "/20/2002/200202/20020201/")
+                    	#set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true))  
+                    	#foreach($obj in $list)
+						<ul>
+							<li class="xmsqs_orange_p2"></li>
+							<li class="tlzx_text">
+								<a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+								style="font-size:14px;">
+									$!parameterUtil.truncString($!obj.getSubTitle(),40,"") 
+								</a>
+							</li>
+						</ul>
+						#end
+					</div>
+				</div>
+			</div>
+			<div class="container2_right">
+				<div class="title_banner" style="width:665px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:659px;">
+						<div class="title_icon"></div>
+						<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020202/')"><div class="title_text">推荐建材</div></a>
+						<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020202/')"  target="_blank">更多＞＞</a>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+				<div class="tjjc_div">
+					<div class="tjjc_content">
+					
+						$!map.clear()
+                    	$!map.put("tpath", "/20/2002/200202/20020202/")
+                    	#set($list = $infoService.searchInfoContentSummarys(4, 1, $!map, true))  
+                    	#foreach($obj in $list)
+					
+						<div class="tjjc_content_div">
+							<div class="tjjc_type">$!parameterUtil.truncString($!obj.getSubTitle(),18) </div>
+							<div class="tjjc_content_img1">
+								<a  target="_blank" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())" 
+								style="display: block; width:118px;height:119px;"><img alt="$!obj.getTitle()" width="118px" height="119px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"></a>
+							</div>
+							<div class="tjjc_content_title"><a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())">$!obj.getSummary()</a></div>
+						</div>
+						#end
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 广告位2 -->
+		<div class="advertisement">
+			
+				$!map.clear()
+				$!map.put("tpath","/20/2012/201203/20120319/")
+				$!map.put("isTop", "1")
+				#set($list= $infoService.searchInfoContentSummarys(1,1,$!map,true))
+				#foreach($obj in $list)
+				<a rel="external nofollow" href="$!obj.getUrl()" target="_blank" style="display: block; width:950px; height: 80px;" >
+					<img width="950px" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/>
+				</a>
+			#end
+		</div>
+		
+		<!-- 案例介绍、价格行情、原材料信息 -->
+		<div class="container3">
+			<!-- 案例介绍模块 -->
+			<div class="container3_left">
+			#parse($wcw_aljs)
+			</div>
+			<div class="container3_right">
+				<div class="jghq_jsgy_div">
+					<div class="title_banner" style="width:329px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width:323px;">
+							<div class="title_icon"></div>
+							<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2003/200305/')"><div class="title_text">价格行情</div></a>
+							<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2003/200305/')"  target="_blank">更多＞＞</a>
+						</div>
+						<div class="title_banner_right"></div>
+					</div>
+					<div class="jghq_jsgy_content">
+					$!map.clear()
+                    	$!map.put("tpath", "/20/2003/200305/")
+                    	#set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true))   
+                    	#foreach($obj in $list)
+						<ul>
+							<li><a  target="_blank" class="black_a" 
+							href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+							style="font-size:14px">$!parameterUtil.truncString($!obj.getSubTitle(),40,"")</a></li>
+						</ul>
+					#end
+					</div>
+				</div>
+				<div class="yclxx_div">
+					<div class="title_banner" style="width:328px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width:322px;">
+							<div class="title_icon"></div>
+							<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020204/')"><div class="title_text">原材料信息</div></a>
+							<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020204/')"  target="_blank">更多＞＞</a>
+						</div>
+						<div class="title_banner_right"></div>
+					</div>
+					<div class="yclxx_content">
+						$!map.clear()
+                    	$!map.put("tpath", "/20/2002/200202/20020204/")
+                    	#set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true))
+                    	#foreach($obj in $list )
+						<ul>
+							<li><a  target="_blank" class="black_a" 
+							title="$!obj.getSubTitle()" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+							style="font-size:14px">$!parameterUtil.truncString($!obj.getSubTitle(),40,"") </a></li>
+						</ul>
+					#end	
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 涂料施工问题研究、技术工艺、标准法规 -->
+		<div class="container4">
+			<div class="container3_left">
+				<div class="title_banner" style="width:277px;">
+					<div class="title_banner_left"></div>
+					<div class="title_banner_center" style="width:271px;">
+						<div class="title_icon"></div>
+						<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020205/')"><div class="title_text">涂料施工问题研究</div></a>
+						<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020205/')"  target="_blank">更多＞＞</a>
+					</div>
+					<div class="title_banner_right"></div>
+				</div>
+				<div class="tlsgwtyj_content">
+				
+						$!map.clear()
+                    	$!map.put("tpath", "/20/2002/200202/20020205/")
+                    	 #set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true)) 
+                    	#foreach($obj in $list)
+					<ul>
+						<li class="xmsqs_orange_p2"></li>
+						<li class="tlsgwtyj_text">
+							<a  target="_blank" class="black_a"  title="$!obj.getSubTitle()"
+							href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+							style="font-size:14px;">$!parameterUtil.truncString($!obj.getSubTitle(),36,"")</a>
+						</li>
+					</ul>
+					#end
+				</div>
+			</div>
+			<div class="container3_right">
+				<div class="jghq_jsgy_div">
+					<div class="title_banner" style="width:329px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width:323px;">
+							<div class="title_icon"></div>
+							<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2002/200202/20020206/')"><div class="title_text">技术工艺</div></a>
+							<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2002/200202/20020206/')"  target="_blank">更多＞＞</a>
+						</div>
+						<div class="title_banner_right"></div>
+					</div>
+					<div class="jghq_jsgy_content">
+						
+						$!map.clear()
+                    	$!map.put("tpath", "/20/2002/200202/20020206/")
+                    	#set($list = $infoService.searchInfoContentSummarys(8, 1,$!map, true))
+                    	#foreach($obj in $list)
+						<ul>
+							<li><a  target="_blank" class="black_a" title="$!obj.getSubTitle()"
+							href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+							style="font-size:14px">$!parameterUtil.truncString($!obj.getSubTitle(),40,"") </a></li>
+						</ul>
+					#end	
+					</div>
+				</div>
+				<div class="bzfg_div">
+					<div class="title_banner" style="width:328px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width:322px;">
+							<div class="title_icon"></div>
+								<a  target="_blank" class="black_a" href="$templateUtil.getInfoContentList('/20/2006/200603/20060301/')"><div class="title_text">标准法规</div></a>
+								<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2006/200603/20060301/')"  target="_blank">更多＞＞</a>
+						</div>
+						<div class="title_banner_right"></div>
+					</div>
+					<div class="bzfg_content" style="width:326px;">
+					
+						$!map.clear()
+                    	$!map.put("tpath", "/20/2006/200603/20060301/")
+                    	#set($list = $infoService.searchInfoContentSummarys(8, 1, $!map, true)) 
+                    	#foreach($obj in $list)
+						<ul>
+							
+							<li  class="bzfg_text">
+								<a  target="_blank"  class="black_a" title="$!obj.getSubTitle()"
+									href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"
+								 style="font-size:14px;" title="$!obj.getSubTitle() ">$!parameterUtil.truncString($!obj.getSubTitle(),40,"")</a>
+							</li>
+						</ul>
+					#end
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+    <!-- 尾部 -->
+    #parse($wcw_footer)
+  </body>
+</html>

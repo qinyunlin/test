@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ #set($content = $dataInfo.recruit)
+ #set($content1 = $dataInfo.recruitBean)
+ #set($registrationSuppliersList=$dataInfo.registrationSuppliersList)
+ #set($shortlistedSuppliersList=$dataInfo.shortlistedSuppliersList)
+
+<html>
+	<head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<title>$!content.title - 供应商招募详细</title>
+
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/project/providerConscribe.css">
+		<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+		<script type="text/javascript" src="$wcw_common_site/js/common/dataStore.js"></script>
+	</head>
+  <body>
+    #parse($wcw_header)
+		<div id="infocontent" style="display:inline;">
+			<div class="main" style="margin-top: 8px;">
+				<div class="center_one">
+					<div class="c_o_border">
+						<div>
+							<div class="c_o_title">
+								<div id="c_o_title_left"></div>
+								<div id="c_o_title_temp">
+									<span id="title" style="line-height: 42px;font-family:'微软雅黑'">
+                                                                           $!content.title
+                                                                       </span>
+								</div>
+								<div id="c_o_title_right"></div>
+							</div>
+							<span id="picPath" style="display:none;"></span>
+							<img alt="$!content.title" style="float:right;margin-right:7px;height:238px;width:432px;" src="$!fileUtil.getWcwFileUrl($!content1.picPath)"id="picpathImg"/>
+							
+						</div>
+					    <div class="c_o_content">
+                               <div style="width:24px;float:left;">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+								<div id="description" style="line-height:28px;min-height:150px;height:auto!important;height:150px;">$!content1.description</div>
+						</div>
+					</div>
+				</div>
+				<div class="center_two">
+					<div class="c_t_content">
+						<div class="c_t_left">
+							<div class="c_t_title">
+							</div>
+							<div class="c_t_qd" align="center">
+								<span id="procurementdetail">$!content1.procurementdetail</span>
+							</div>
+							<div class="c_t_bmtitle">
+							</div>
+							<div class="c_t_bmcontent">
+								<div class="bmgys" align="left">
+									<div class="bmgys_title">
+										报名供应商:
+									</div>
+									<div class="bmgys_name">
+										<ul id="list_body">
+                                                                                     #foreach($obj in $registrationSuppliersList)
+                                                                             <li>
+                                                                                 <a  target="_blank" class="black_a" href="$!templateUtil.getShopUrl($!obj.eid)">$!obj.ename</a>
+                                                                             </li>
+                                                                             #end
+										</ul>
+									</div>
+								</div>
+								<div class="bmgys" style="margin-left:9px;" align="left">
+									<div class="bmgys_title">
+										入围供应商:
+									</div>
+									<div class="bmgys_name">
+										<ul id="short_listbody">
+                                                                                    #foreach($obj in $shortlistedSuppliersList)
+                                                          <li>
+                                       <a class="black_a"  target="_blank" href="$!templateUtil.getShopUrl($!obj.eid)">$!obj.ename</a>
+                                                          </li>
+                                                       #end
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c_t_right">
+							<div class="c_t_rcontent">
+								<div class="c_t_rtitle"></div>
+								<div class="c_t_sqfimage">
+									<span id="sqsPath" style="display:none;"></span>
+									<a  id="sqsPathA" target="_blank"><img id="sqsPathImg" alt="$!obj.getTitle()" src="$!fileUtil.getWcwFileUrl($!content.sqsPath)" width="180px" height="290px"/></a>
+								</div>
+								<div class="c_t_rtitle2"></div>
+								<div class="c_t_lcbc"></div>
+								<div class="c_t_zxbm" onclick="addApplyUser($!content.id,'$!content.eid');"></div>
+								<div class="c_t_rtitle3"></div>
+								<div class="c_t_ryq">
+									<ul>
+										<li id="requirement">$!content.requirement</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			#parse($wcw_footer)
+		</div>
+	</body>
+  <script type="text/javascript" src="$wcw_common_site/js/project/recruit_detail.js"></script>
+</html>

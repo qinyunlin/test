@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>帮助中心_网站应用类</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script language="javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataCheck.js" ></script>
+	<script language="javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/bottom/bottom_common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/bottom/bzzx_wzyyl_content.js"></script>
+
+  </head>
+  
+  <body>
+  	#parse($wcw_header)
+  	<div id="main">
+  		#parse($bottomLeft)
+  		<div class="bottom_right">
+  			<!-- 网站应用类_内容 -->
+  			<div class="bottom_container" id="wzyyl_div" style="margin-bottom:0px;">
+  				<div class="bottom_container_title">
+  					<div class="bottom_container_title_left"></div>
+  					<div class="bottom_container_title_center">
+  						<div class="bottom_container_title_icon"></div>
+  						<div class="bottom_container_title_text" id="title"></div>
+  					</div>
+  					<div class="bottom_container_title_right"></div>
+  				</div>
+  				<div id="content" class="bottom_container_content">
+  				</div>
+  			</div>
+  			
+  			<!-- 网站应用类_相关问题 -->
+  			<div class="bottom_container" id="wzyyl_xgwt_div">
+  				<div class="bottom_container_title">
+  					<div class="bottom_container_title_left"></div>
+  					<div class="bottom_container_title_center">
+  						<div class="bottom_container_title_icon"></div>
+  						<div class="bottom_container_title_text">相关问题</div>
+  					</div>
+  					<div class="bottom_container_title_right"></div>
+  				</div>
+  				<div class="bottom_container_content">
+  					<div class="xgwt_container" id="title_list">
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="clearing"></div>
+  		<div id="template" style="display: none;">
+  			<ul>
+  				<li class="xmsqs_orange_p"></li>
+  				<li class="why_text">
+	  				<a class="blue_a" href="#" style="font-size:14px;" onclick="searchContent(@{id})">@{title}</a>
+  				</li>
+  			</ul>
+  		</div>
+  	</div>
+  </body>
+   <link type="text/css" rel="stylesheet"
+			href="$wcw_common_site/css/bottom/bottom_common.css" />
+</html>

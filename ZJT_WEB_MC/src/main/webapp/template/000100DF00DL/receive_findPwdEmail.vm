@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找回密码</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+<script type="text/javascript" src="$common_site/js/zjt/findPwd/receive_findPwdEmail.js"></script>
+</head>
+
+<body>
+
+	<div id="header_box">
+	        <div id="header" style="margin:10px auto 0;">
+	          <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">找回密码</span></div>
+	        </div>
+	</div>	
+
+
+	<div class="co_01 border_1">
+	
+		<div class="find_psword_box">
+	    	<ul class="find_steps clearfix">
+	        	<li><span>1</span>填写您验证的邮箱</li>
+	            <li class="gray_jt"></li>
+	            <li class="cur"><span>2</span>接收密码找回邮件</li>
+	            <li class="gray_jt"></li>
+	            <li><span>3</span>重置密码</li>
+	        </ul>
+	        <div class="steps_01_txt" id="email">
+	        	
+	        </div>
+	        <div class="find_bottom">
+	        	如果您无法通过此方式找回密码，请联系客服：
+	            <a href="" class="find_pw_kf"></a>
+	        </div>
+	    </div>
+	
+	</div>
+</body>
+</html>

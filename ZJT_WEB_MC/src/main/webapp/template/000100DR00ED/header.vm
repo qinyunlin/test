@@ -1,0 +1,132 @@
+
+<link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/common.css" />
+<link type="text/css" rel="stylesheet" href="$wcw_common_site/css/common/header.css" />
+<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/jq.Slide.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/include/header.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/include/select.js"></script>
+
+
+<div class="header">
+	<div class="top_banner">
+    	<div class="ccwcw_user_info">
+    		<div class="user_info_div">
+	    		<div class="user_info_left">
+	    			<div class="user_info" id="ccwcw_login_info">
+		    			<ul>
+							<li style="float:right;">
+								<span class="deep_red F_left">[</span>
+								<a href="/common/register.html" rel="external nofollow" target="_self" class="F_left hand orange2">免费注册</a>
+								<span class="deep_red F_left">]</span>
+							</li>
+							<li style="float:right;">
+								<span class="deep_red F_left">[</span>
+								<a href="/common/login.html"  rel="external nofollow" target="_self" class="F_left hand orange2">请登录</a>
+								<span class="deep_red F_left">]</span>
+							</li>
+							<li style="float:right;">
+								<span class="info_text" style="color:#5B5B5B">欢迎来到网材网！</span>
+							</li>
+						</ul>
+	    			</div>
+	    		</div>
+	    		<div class="user_info_right">
+	    			<a class="gray_link" href="/bottom/wzdh.html"  rel="external nofollow" style="margin-left:15px;float:right;display:inline;">网站导航</a>
+	    			<a class="gray_link" href="/bottom/bzzx-xssl-list.html"  rel="external nofollow" style="margin-left:20px;float:right;display:inline;">帮助中心</a>
+	    			<a class="gray_link"  rel="external nofollow" href="javascript:void(0)" onclick="addfavorite_q()" style="margin-left:10px;float:right;display:inline;">加入收藏</a>
+	    			<a class="gray_link"   href="http://dengshi.ccwcw.com" target="_blank"  style="margin-left:10px;float:right;display:inline;color:#7A4817;font-weight:bold;">网材灯饰网</a>
+	    			
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+<!-- 20140112 -->
+<div class="top-big-banner" style="display:none;">
+  <div class="top-big-banner-box" style="width:950px;overflow:hidden;">
+        <div class="big-box">
+           	 <img src="http://c2.zjtcn.com/images/2014_ma_big.jpg" width="1000" height="330" />
+        </div>
+        <div class="small-box">
+             <img src="http://c2.zjtcn.com/images/2014_ma_small.jpg" width="1000" height="70" />
+        </div>
+  </div>
+</div>
+    <iframe id="menuframe" src="#" style="width: 1px; height: 1px; position: absolute; left: 0; top: 0; display: none; z-index: 99"></iframe>
+	<div    id="menudiv"   style="width: 1px; height: 1px; position: absolute; left: 0; top: 0; background-color: #FFFFFF; display: none; z-index: 100"></div>    
+    <div class="header_main">
+	    <div class="logo_search">
+	    	<a href="http://www.ccwcw.com" title="网材网"><div class="LOGO"></div></a>
+	    	<div class="search_div">
+	    		<div class="search_container">
+	    			<div class="search_type_div">
+	    				<ul>
+	    					<li class="search_type_select search_type_common" id="jcgy" tpath="1">建材供应</li>
+	    					<li class="search_line1"></li>
+	    					<li class="search_type search_type_common"  tpath="2" id="gcxm">工程项目</li>
+	    					<li class="search_line1"></li>
+	    					<li class="search_type search_type_common" tpath="3" id="jcqg">建材求购</li>
+	    					<li class="search_line1"></li>
+	    					<li class="search_type search_type_common" tpath="4" id="qyml">企业名录</li>
+	    				</ul>
+	    			</div>
+	    			<div class="search_content">
+	    				<div class="search_text">
+	    					<input type="text" id="search_name" name="search_name" class="search_name_class" onKeyUp="txtinput(event,'search_name','fac')"/>
+	    				</div>
+	    				<div class="search_line2"></div>
+	    				<div class="search_button search_common" id="search_function"></div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="contact_phone_div">
+	    		<div class="contact_phone"></div>
+	    	<div style="margin-top: 8px;margin-left:70px;float:left">进入</div><div style="float:right"><a target="_blank" href="http://dengshi.ccwcw.com"><img width="120px" height="30px" src="http://c1.ccwcw.com/images/wcdsw_logo.gif"/></a></div>
+	    	</div>
+	    </div>
+	    <div class="nav_div">
+	    	<div class="nav">
+	    	 <ul id="nav_1">
+	    	    <div id="line1"></div> 
+	    		<li id="one"><a href="/" class="black_a" >首&nbsp;页</a></li>
+	    		<div id="line2"></div>
+	    		<li id="two"><a href="/ygcg" class="black_a" >阳光采购</a></li>
+	    		<div id="line3"></div>
+	    		<li id="three"><a href="/gcxm" class="black_a" >工程项目</a></li>
+	    		<div id="line4"></div>
+	    		<li id="four"><a href="/hypd" class="black_a" >行业频道</a></li>
+	    		<div id="line5"></div>
+              </ul>
+	    		<div id="scroolTxt">
+	    			<div class="JQ-content-box">
+	    				<ul class="JQ-slide-content">
+	    					
+	    					$!map.clear()
+					        $!map.put("tpath","/20/2001/200102/")
+                                                #set($list=$infoService.searchInfoContentSummarys(3,1,$!map,true))
+	                                        #foreach($obj in $list)	
+				    	            <li class="li_scrool">
+				    			<a class="white_a" href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())">
+				    			$!parameterUtil.truncString($!obj.getSubTitle(),42,"")
+                                                         </a>
+                                                     </li>
+				    		 #end	
+		    			</ul>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="nav_bottom_line1"></div>
+	    	<div class="nav_bottom_line2"></div>
+	    	<div class="nav_bottom_line3"></div>
+	    </div>
+    </div>
+</div>
+<div class="title_banner" style="width:300px;display:none;">
+	<div class="title_banner_left"></div>
+	<div class="title_banner_center" style="width:294px;">
+		<div class="title_icon"></div>
+		<div class="title_text">阳光采购交易会</div>
+	</div>
+	<div class="title_banner_right"></div>
+</div>

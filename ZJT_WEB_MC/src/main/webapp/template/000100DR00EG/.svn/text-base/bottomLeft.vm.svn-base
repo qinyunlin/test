@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>网材网注册页面</title>
+ 
+	</head>
+
+	<body>
+		<div class="bottom_left">
+  	<div class="nav_common blue_nav" id="gywc" onclick="showDiv('gywc',this)">关于网材网</div>
+  	  	<div class="nav_common blue_nav" id="gywcdsw" onclick="showDiv('gywcdsw',this)">关于网材灯饰网</div>
+  	<div class="nav_common blue_nav" id="fzjg" onclick="showDiv('fzjg',this)">分支结构</div>
+  	<div class="nav_common blue_nav" id="ggfw" onclick="showDiv('ggfw',this)">广告服务</div>
+  	<div class="nav_common blue_nav" id="hyfw" onclick="showDiv('hyfw',this)">会员服务</div>
+  	<div class="nav_common blue_nav" id="yjfk" onclick="showDiv('yjfk',this)">意见反馈</div>
+  	<div class="nav_common blue_nav" id="wzdh" onclick="showDiv('wzdh',this)">网站导航</div>
+  	<div class="nav_common blue_nav" id="flsm" onclick="showDiv('flsm',this)">法律声明</div>
+  	<div class="nav_common blue_nav" id="zxkf" onclick="showDiv('zxkf',this)">在线客服</div>
+  	<div class="nav_common blue_nav" id="bzzx" onclick="showDiv('bzzx',this)">帮助中心</div>
+  	<div class="second_nav" id="xssl" style="display:none;" onclick="showDiv2('xssl',this)">新手上路</div>
+  	<div class="second_nav" id="wzyyl" style="display:none;" onclick="showDiv2('wzyyl',this)">网站应用类</div>
+  	<div class="second_nav" id="ssbzzx" style="display:none;" onclick="showDiv2('ssbzzx',this)">搜索帮助中心</div>
+</div>
+	</body>
+</html>

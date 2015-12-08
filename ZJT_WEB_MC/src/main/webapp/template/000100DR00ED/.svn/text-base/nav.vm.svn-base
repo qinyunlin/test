@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>行业频道l</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$common_site/css/tradeChannel/index.css">
+		
+  </head>
+  
+  <body>
+
+   <div id="nav">
+		<div class="l_B"></div>
+		<div class="c_B">
+
+			<a  target="_blank"  href="/hypd/searchList.html?id=04">门窗</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=12">瓷砖</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=62">石材</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=01">地板</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=14">家具</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=13">卫浴</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=56">电梯</a>
+			<a  target="_blank"  href="/hypd/searchList.html?id=09">&nbsp;涂&nbsp;料</a>
+
+		</div>
+		<div class="r_B"></div>
+</div>
+</body>
+</html>

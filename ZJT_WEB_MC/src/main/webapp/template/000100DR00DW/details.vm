@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>求购详细</title>
+    
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/tuangou/details.css">
+		<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/rightMode.css">
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script language="javascript"
+			src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+	<script language="javascript"
+			src="$wcw_common_site/js/common/basic.js"></script>
+	<script language="javascript"
+			src="$wcw_common_site/js/common/ConCom.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>	
+	    <script type="text/javascript" src="$wcw_common_site/js/project/project_info.js"></script>
+  </head>
+  
+  <body>
+    #parse($wcw_header)
+    <div id="main">
+    <div id="banner01">
+    	
+						          $!map.clear()
+                    	$!map.put("tpath", "/20/2012/201204/20120413/")
+                    	#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))  
+                    	#foreach($obj in $list)
+			<a rel="external nofollow" href="$!obj.getUrl()" target="_blank"> <img width="950px" alt="$!obj.getTitle()" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" /> </a>
+			
+			                #end
+    </div>
+    
+    <div id="pro_details" >
+    	<div id="pro_details_l">
+    		<div class="title" >求购：<font id="name"></font></div>
+    		<div class="content">
+    			<div class="pro_info">
+    				<div class="pro_img">
+    						<img id="photo" src="$wcw_common_site/images/tuangou/pro_icon.gif" width="317px" height="317px">
+    				</div>
+    				<div class="pro_txt" >
+    					<ul>
+    						<li class="liclass">产品名称：<font style="font-weight: 700; font-size: 14px;" id="name"></font>	</li>
+    						<li class="liclass">数&nbsp;&nbsp;&nbsp;&nbsp;量：<span  id="amount" style="font-size: 14px;"></span>	</li>
+    						<li class="liclass">品&nbsp;&nbsp;&nbsp;&nbsp;牌：<span id="brand" style="font-size: 14px;"></span></li>
+    						<li class="liclass">规格型号：<span id="spec" style="font-size: 14px;font-weight:700"></span></li>
+    						<li class="liclass">有效时间：<span id="endTime" style="font-size: 14px;"></span></li>
+							<li class="liclass">公司名称：<font color="red" style="font-size:14px;" id="ename"></font></li>
+							<li class="liclass">地&nbsp;&nbsp;&nbsp;&nbsp;区：<font color="red" style="font-size:14px;" id="addr"></font></li>
+							<li class="liclass">联系信息：<font color="red" style="font-size:14px;" id="linkman"><a href="/common/login.html"><b>正式会员查看</b></a></font></li>
+							<li class="liclass">电&nbsp;&nbsp;&nbsp;&nbsp;话：<span id="phone" style="font-size: 14px;"></span></li>
+							<li class="liclass">传&nbsp;&nbsp;&nbsp;&nbsp;真：<span id="fax" style="font-size: 14px;"></span></li>
+							<li class="liclass">电子邮箱：<span id="email" style="font-size: 14px;"></span></li>
+							<li class="liclass">Q&nbsp;&nbsp;&nbsp;&nbsp;Q：<span id="qq" style="font-size: 14px;"></span></li>
+							<li class="liclass">M&nbsp;&nbsp;S&nbsp;&nbsp;N：<span id="msn" style="font-size: 14px;"></span></li>
+							
+    					</ul>
+    				</div>
+    				<div class="clearing"></div>
+    			</div>
+    			
+    			
+    		</div>
+    		<div class="detail">
+    				<div class="detail_title">详细信息</div>
+    				<div class="detail_content" id="content">
+    				</div>
+    		</div>
+    		
+    	</div>
+    	
+    	<div style="width:277px; height:1060px; float: right;" >
+					#parse($wcw_zxcg)
+			
+			<div class="ad">
+	   			  $!map.clear()
+					$!map.put("isHot", "0")
+					$!map.put("isTop", "1")
+					$!map.put("tpath", "/20/2012/201204/20120414/")
+					#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+					#foreach($obj in $list)
+			
+			        <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"><img alt="$!obj.getTitle()" style="display: block; height: 110px; width: 277px;" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"></a>
+			   
+			    #end
+	   		</div>
+	   		
+			#parse($wcw_xmjd)
+			
+			<div class="ad">
+	   			 $!map.clear()
+					$!map.put("isHot", "0")
+					$!map.put("isTop", "1")
+					$!map.put("tpath", "/20/2012/201204/20120415/")
+					#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+					#foreach($obj in $list)
+					
+			
+			        <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"><img alt="$!obj.getTitle()" style="display: block; height: 110px; width: 277px;" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"></a>
+			   
+			     #end
+	   		</div>
+	   		
+	   		#parse($wcw_dfxmfb)
+    	</div>
+    </div>
+    </div>
+  	<script  type="text/javascript" src="$wcw_common_site/js/project/details.js"></script>
+   #parse($wcw_footer)
+  </body>
+</html>

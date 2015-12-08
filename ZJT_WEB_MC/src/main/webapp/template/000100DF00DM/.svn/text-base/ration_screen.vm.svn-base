@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <title>造价通参考价_($dataInfo.province)最准确的建材参考价格_($dataInfo.province)造价通</title>
+		<meta name="description"
+			content="造价通参考价，每月发布最新的建材价格信息，材料价格走势，覆盖土建、装饰、安装、市政、园林五大类别，涵盖600多个材料分类，为($dataInfo.province)各地提供客观、精准的材料价格预算参考依据。"/>
+		<meta name="keywords"	
+			content="参考价，主材价格，材料价格参考，预算价格，价格走势"/>
+		
+
+    </head>
+    <body>
+        #parse($header_dir)
+<div class="crumb">
+    <ul>
+        <li class="crumb_hp"><a href="">首页</a></li>
+        <li><a href="">造价通参考价</a></li>
+        <li><a href="">装饰材料</a></li>
+        <li>玻璃、陶瓷及面砖</li>
+    </ul>
+</div>
+
+<!--	contanier	-->
+<div id="contanier"  class="clearfix">
+    <!--	left	-->	
+    <div class="left">
+        <div class="bo_1 W_178">
+            <h1 class="bo_title">材料分类</h1>
+            <dl class="left_tree">
+                <dd>
+                    <b class="i_l_open"></b><a href="" class="left_fl t_sl">玻璃、陶瓷及面砖陶瓷及面砖陶瓷及面砖陶瓷及面砖</a>
+                    <ul>
+                        <li class="selected"><a href="">夹层玻璃</a></li>
+                        <li><a href="">平板玻璃</a></li>
+                        <li><a href="">钢化玻璃钢化玻璃钢化玻璃钢化玻璃钢化玻璃钢化玻璃</a></li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b class="i_l_closed"></b><a href="">装饰线条、装饰件</a>
+                    <ul style="display:none;">
+                        <li><a href="">夹层玻璃</a></li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b class="i_l_closed"></b><a href="">电线电缆及光纤光缆</a>
+                    <ul style="display:none;">
+                        <li><a href="">夹层玻璃</a></li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b class="i_l_closed"></b><a href="">电气线路敷设材料</a>
+                    <ul style="display:none;">
+                        <li><a href="">夹层玻璃</a></li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b class="i_l_closed"></b><a href="">园林绿化</a>
+                    <ul style="display:none;">
+                        <li><a href="">夹层玻璃</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    
+    </div>
+    <!--	left	-->	
+    
+    <!--	right	-->
+    <div class="right">
+        <h1 class="r_tit_name">广州市参考价</h1>
+        
+        <!--	Module_Page box	-->
+        <div class="Module_Page clearfix" style="margin-top:20px;">
+            <div class="total f_l">
+                <a href="" class="btn_sure">收藏</a>
+            </div>
+            <div class="manu f_r">
+            	<!--
+            	<span class="f_l count_xg">找到相关材料共 <b>975</b> 件</span>
+                <span class="f_l option_t_tip"><b>1</b>/100</span>
+                -->
+                <a href="#" class="page_prev_no">上一页</a>
+                <a href="#" class="page_next">下一页</a>
+            </div>
+        </div>
+        <!--	Module_Page box	-->
+        
+        <!--	moudle_date_box	-->
+        <div class="moudle_date_box">
+            <table>
+                <tr>
+                    <th width="19%">
+                    	<span class="th_input"><input name="" type="checkbox" value="" class="all_selector" /></span>名称
+                    </th>
+                    <th width="15%">规格/型号</th>
+                    <th width="8%" class="txt_c">单位</th>
+                    <th width="12%" class="txt_c">参考价￥</th>
+                    <th width="10%" class="txt_c">日期</th>
+                    <th width="8%" class="txt_c">涨跌</th>
+                    <th width="8%" class="txt_c">走势图</th>
+                    <th width="14%">来源</th>
+                </tr>
+                <tr>
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><a href="" class="link_b_01">会员查看</a></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_up"></span>3.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr class="odd_bg">
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><a href="" class="link_b_01">查看价格</a></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_down"></span>1.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr>
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">135.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c">--</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr class="odd_bg">
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">275.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_up"></span>3.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr>
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">275.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_down"></span>1.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr class="odd_bg">
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">135.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c">--</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr>
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">275.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_up"></span>3.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr class="odd_bg">
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">275.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_down"></span>1.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr>
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">135.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c">--</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+                <tr class="odd_bg">
+                    <td>
+                    	<dl>
+                        	<dt><input name="" type="checkbox" value="" class="all_selector" /></dt>
+                    		<dd>夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃夹层玻璃</dd>
+                        </dl>
+                    </td>
+                    <td>5.0mm白玻<br/>+0.76PVB+5.0mm<br/>白玻</td>
+                    <td class="txt_c">m²</td>
+                    <td class="txt_c"><span class="i_r_price">275.00</span></td>
+                    <td class="txt_c">2012-04-09</td>
+                    <td class="txt_c"><span class="icon_arrow_up"></span>3.00</td>
+                    <td class="txt_c"><a href="" class="icon_qst"></a></td>
+                    <td>红宝星玻璃；洛玻；华锋安全玻璃</td>
+                </tr>
+            </table>
+        </div>
+        <!--	moudle_date_box	-->
+        
+        <!--	Module_Page box	-->
+        <div class="Module_Page clearfix" style="margin-top:15px;">
+            <div class="total f_l">
+                <a href="" class="btn_sure">收藏</a>
+            </div>
+            <div class="manu f_r">
+                <a href="#" class="page_prev">上一页</a>
+                <a href="#">1</a>
+                <span class="page_cur">2</span>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <span class="page_break">...</span>
+                <a href="#" class="page_next">下一页</a>
+                <!--
+                <span class="page_skip">
+                    共100页 到第
+                    <input name="" type="text"/>
+                    页
+                    <a class="btn_sure" href=""/>确定</a>
+                </span>
+                -->
+            </div>
+        </div>
+        <!--	Module_Page box	-->
+        
+    </div>
+    <!--	right	-->	
+    
+    
+</div>
+<!--	contanier	-->
+
+
+#parse($footer_dir)
+</body>
+</html>

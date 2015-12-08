@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>VIP会员登录_造价通($dataInfo.province)</title>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/msg_zhcn.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="$common_site/css/common/common.css" />
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/vip/vip_index.css" />
+		<link type="text/css" rel="stylesheet"
+			href="$common_site/css/common/vip_login_cn.css" />
+		<link rel="stylesheet" type="text/css"
+			href="$common_site/css/common/zjtcn.css" />
+		<script language="javascript" src="$common_site/js/common/jquery.cookie.js"></script>
+	    <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/reset.css" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+	</head>
+
+
+	<body>
+
+		<div id="main" style="margin: 0 auto;">
+			<div
+				style="text-align: left; margin: 5px auto; _margin: 3px auto 0; margin: 5px auto\9; float: left; width: 79%; padding-left: 10px;">
+				<a href="/"> <img
+						src="$common_site/images/zjt/common/zjtLOGO.jpg"> </a>
+			</div>
+			<div style="float: left; margin: 9px auto; display: inline;">
+				<ul>
+					<li style="float: left; height: 24px; width: 180px; _width: ;">
+						<a href="/"
+							style="float: left; width: 70px; color: #297BA2; * left: -10px; * position: relative; margin-left: 20px; * margin-left: 25px; display: inline;">返回首页</a>
+						<a href="#"
+							style="float: left; border-left: 1px solid #287494; width: 70px; color: #297BA2; * left: -10px; * position: relative;">帮助中心</a>
+					</li>
+					<div class="clearing"></div>
+					<li
+						style="left: -10px; * position: relative; color: #383838; float: left; margin-left: 10px; * margin-left: 15px; display: inline;">
+						服务热线：
+						<span style="color: #FF2402;">020-85544604</span>
+					</li>
+				</ul>
+
+			</div>
+			<div class="clearing"></div>
+			<div class="main_left" style="margin:0;">
+				<div class="left_de" style="margin-top: 52px">
+					<div class="de_name">
+						用户名：
+					</div>
+					<div class="de_value">
+						<input type="text" tabindex="1"
+							style="width: 184px; padding: 3px; float: left; margin-top: 10px"
+							id="name" />
+					</div>
+				</div>
+				<div class="left_de">
+					<div class="de_name">
+						密 码：
+					</div>
+					<div class="de_value" style="width: 205px">
+						<input id="password" type="password" tabindex="2"
+							style="width: 184px; padding: 3px; float: left; margin-top: 10px" />
+					</div>
+					<span><a href="/common/LostPassword.html"
+						style="color: #0071B7;" class="bluegreen">找回密码</a> </span>
+				</div>
+				<div class="left_de">
+					<div class="de_name">
+						验证码：
+					</div>
+					<div class="de_value" style="width: 97px;">
+						<input type="text" tabindex="3"
+							style="width: 90px; padding: 3px; float: left; margin-top: 10px"
+							id="uyzm" />
+					</div>
+					<div class="de_value" style="width: 85px; margin-left: 10px;">
+						<img src="#"  style="margin-top: 12px;" id="imgCode"/>
+					</div>
+					<span><a href="#" class="bluegreen"
+						style="color: #0071B7;" onClick="refreshCode()">换个验证码</a> </span>
+				</div>
+				<div class="left_de" style="height: 20px;">
+					<div class="de_name" style="line-height: 20px;"></div>
+					<div class="de_value" style="line-height: 20px; width: 15px">
+						<input type="checkbox" name="" tabindex="4"
+							style="height: 14px; margin-top: 3px; float: left" id="autologin" />
+					</div>
+					<div class="de_value"
+						style="color: #6A6A6A; line-height: 20px; width: 255px; padding-left: 5px; display: inline">
+						30天内自动登录（请勿在公共电脑选此功能）
+					</div>
+				</div>
+				<div class="left_de" style="margin-top: 20px">
+					<div class="de_value" style="width: 350px;position:relative;">
+						<div class="loading"></div>
+						<div class="button_before login_common" onClick="login()">
+							登 录
+						</div>
+						<div class="rerurn_btn"
+							onClick="javascript:window.open('/')"></div>
+					</div>
+				</div>
+				<div class="left_de">
+					<div class="de_value"
+						style="width: 260px; margin-top: 30px; left: 28px; position: relative; color: #333333;">
+						<span class="strong font_size_14">还没注册成为造价通会员？</span>
+						<span> <a href="#" class="strong red font_size_14"
+							style="color: #FF4701;" onclick="register()">立即注册</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="main_right" style="width:545px;">
+				<div class="right_bg">
+					<div class="right_pic">
+						<img
+							src="$common_site/images/zjt/common/vip_right.jpg"
+							width="517" height="167" />
+					</div>
+				</div>
+				<div class="right_down">
+					<div class="right_down_de1">
+						<div class="text_top">
+							询价共享
+						</div>
+						<div class="text_down">
+							同一公司会员可共享询价信息
+						</div>
+					</div>
+					<div class="right_down_de2">
+						<div class="text_top">
+							材价共享
+						</div>
+						<div class="text_down">
+							同一公司会员可共享材价信息
+						</div>
+					</div>
+					<div class="right_down_de3">
+						<div class="text_top">
+							客户共享
+						</div>
+						<div class="text_down">
+							同一公司会员可共享供应商客户信息
+						</div>
+					</div>
+					<div class="right_down_de4">
+						<div class="text_top">
+							信息安全
+						</div>
+						<div class="text_down">
+							享受VIP级别信息安全保护
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearing"></div>
+		</div>
+		  #parse($footer_dir)
+		<script type="text/javascript" src="$common_site/js/common/vip_login.js"></script>
+	</body>
+</html><script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-18131443-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>

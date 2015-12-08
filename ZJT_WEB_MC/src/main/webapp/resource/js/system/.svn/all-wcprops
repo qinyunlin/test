@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/concom/!svn/ver/25459/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system
+END
+account_add.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/account_add.js
+END
+account_manage.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/account_manage.js
+END
+areaManagement.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/concom/!svn/ver/25459/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/areaManagement.js
+END
+sys_rights_manage.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/sys_rights_manage.js
+END
+role_edit_admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_edit_admin.js
+END
+role_edit_menber.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_edit_menber.js
+END
+role_manage_member.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_manage_member.js
+END
+account_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/account_edit.js
+END
+role_add_admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_add_admin.js
+END
+role_manage_admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_manage_admin.js
+END
+role_catalog_manage.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/role_catalog_manage.js
+END
+sys_config.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/concom/!svn/ver/4654/ZJTCN/ZJT_WEB_MC/trunk/src/main/webapp/resource/js/system/sys_config.js
+END

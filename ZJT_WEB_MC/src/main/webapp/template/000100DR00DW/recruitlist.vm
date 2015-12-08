@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+#set($listContent=$dataInfo.contents)
+#set($pageNo=1)
+#set($pageNo=$pageNo.parseInt($dataInfo.page))
+#set($pageSize=20)
+#set($pageSize=$pageSize.parseInt($dataInfo.pageSize))
+#set($recCount=20)
+#set($recCount=$recCount.parseInt($dataInfo.count))
+#set($pageCount=3)
+#set($pageCount=$pageCount.parseInt($dataInfo.pageCount))
+#set($firstPage=$dataInfo.firstPage)
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>供应商招募 - 网材网 - 中国最大的建材信息网</title>
+  <meta name="keywords" content=" 工程项目信息，建筑项目信息，建筑工程信息，建材品牌" />
+  <meta name="description" content="建材供应商招募是网材网网平台中的建筑项目采购方根据自己需求信息，面对全国建材供应商进行建材品牌招募的信息平台！" />
+
+
+    	<script type="text/javascript" language="javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/ConCom.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/select.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/dataCheck.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/stuff_code.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/plugins/jqueryTools.js"></script>
+<script type="text/javascript" src="$wcw_common_site/js/common/procurementRange.js"></script>
+    <script type="text/javascript" src="$wcw_common_site/js/project/project_info.js"></script>
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/tuangou/details.css">
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/project/pro_list.css">
+		<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/rightMode.css">
+	<script type="text/javascript">
+
+		$(function(){
+			$('div.pro_img_icon li').hover(function(){
+				$(this).addClass('selected');
+				var index = $(this).attr('index');
+				$('#img_border').css('left',index*80);
+				$('#pro_img').attr('src','$wcw_common_site/images/tradeChannel/01.jpg');
+				$('#pro_img').parent().attr('href','$wcw_common_site/images/tradeChannel/01.jpg');
+			},function(){
+				$(this).removeClass('selected');
+			});
+			
+		});
+	</script>
+	<style>
+		#listbody{
+			height:auto;
+		}
+		#listbody li{
+			overflow:hidden;
+		}
+	</style>
+  </head>
+  
+  <body>
+    #parse($wcw_header)
+    <div id="main">
+    <div id="banner01">
+    	
+			$!map.clear()
+                    	$!map.put("tpath", "/20/2012/201204/20120407/")
+                    	#set($list = $infoService.searchInfoContentSummarys(1, 1, $!map, true))
+                    	#foreach($obj in $list)
+			<a rel="external nofollow" href="$!obj.getUrl() " target="_blank"> <img width="950px" alt="$!obj.getTitle()" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" /> </a>
+			
+			#end
+    </div>
+    
+    <div id="pro_details">
+    	<div id="xmcg">
+    		<div class="xmcg_container">
+    				<div class="title_banner" style="width: 665px;">
+						<div class="title_banner_left"></div>
+						<div class="title_banner_center" style="width: 659px;">
+							<div class="title_icon"></div>
+							<div class="title_text">
+								供应商招募
+							</div>
+						</div>
+						<div class="title_banner_right"></div>
+					</div>
+					
+					<div class="xmcg_content">
+						<ul id="xmcg_title">
+							<li style="width: 40px;">序号</li>
+							<li style="width: 220px;">招募主题</li>
+							<li style="width: 190px;">采购范围</li>
+							<li style="width: 100px;">发布时间</li>
+							<li style="width: 100px;">截止日期</li>
+						</ul>
+						<div id="listbody">
+
+                              
+							#foreach($obj in $!listContent)
+<ul onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
+								<a title="采购范围：$parameterUtil.purchasingRange($!obj.procurementrange)"  target="_blank" href="$templateUtil.getRecruitUrl($!obj.id)">
+								<li style="width: 40px;">$!velocityCount</li>
+								<li style="text-align:left;width: 220px;cursor:pointer;overflow:hidden;" title="$!obj.title">
+									$!obj.title
+								</li>
+								<li style="padding-left:5px;width: 190px; text-align: center;overflow:hidden;" title="$parameterUtil.purchasingRange($!obj.procurementrange)">
+									$parameterUtil.purchasingRange($!obj.procurementrange)
+								</li>
+								<li style="width: 100px;" title="$!obj.startTime">$!obj.startTime</li>
+								<li style="width: 100px;" title="$!obj.endTime">$!obj.endTime</li>
+								</a>
+							</ul>
+                                               #end
+                                                    </div>
+						
+					
+						
+						<div id="page">#parse($shop_page_dir)</div>
+					</div>
+    		</div>
+    		
+    	</div>
+    	
+    	<div style="width:277px; height:1060px; float: right;" >
+			#parse($wcw_zxcg)
+			
+			<div class="ad">
+	   			
+							$!map.clear()
+							$!map.put("isHot", "0")
+							$!map.put("isTop", "1")
+							$!map.put("tpath", "/20/2012/201204/20120408/")
+							#set($list = $infoService.searchInfoContentSummarys(1, 1, $!map, true))
+							#foreach($obj in $list)
+	                   
+	                   <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"><img alt="$!obj.getTitle()"  src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/></a>
+	                           #end
+	   		</div>
+	   		
+			#parse($wcw_xmjd)
+			
+			<div class="ad">
+ 			    
+       				
+					$!map.clear()
+					$!map.put("isHot", "0")
+					$!map.put("isTop", "1")
+					$!map.put("tpath", "/20/2012/201204/20120409/")
+					#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+					#foreach($obj in $list)
+	                 
+	                 <a rel="external nofollow" href="$!obj.getUrl() " target="_blank"><img alt="$!obj.getTitle()"  src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/></a>
+                #end
+	   		</div>
+	   		
+	   		#parse($wcw_dfxmfb)
+    	</div>
+    </div>
+    </div>
+   #parse($wcw_footer)
+   
+   <script language="javascript" src="$wcw_common_site/js/common/pageTool.js" ></script>
+
+  </body>
+</html>

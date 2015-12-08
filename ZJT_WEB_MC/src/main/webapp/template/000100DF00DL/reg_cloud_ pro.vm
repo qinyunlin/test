@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>云造价服务申请开通中</title>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/reset.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/global.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/zjt/common_login.css"/>
+</head>
+
+<body>
+<!--	header star	-->
+<div id="header_box">
+    <div id="header" style="margin:0px auto;">
+        <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">用户注册</span></div>
+    </div>
+</div>
+<!--	header end	-->
+
+<!--	banner_bg	-->
+<div class="banner_bg">
+	<div class="banner_bg_box">
+    	<span class="step_txt">服务申请开通中...</span>
+    	<a href="#" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" class="go_zxzx" title="在线咨询"></a>
+    </div>
+</div>
+<!--	banner_bg	-->
+
+<div class="yzj_contanier">
+	<div class="reg_left">
+    	<h2>云造价注册申请开通中</h2>
+        
+        <dl class="sq_suc_box">
+        	<dt><span class="icon_zcsq_sqz"></span></dt>
+            <dd>
+            	<h3>您的云造价企业服务正在申请开通中，造价通客服将在第一时间联系您。您也可以通过页面上方联系方式直接联系客服！</h3>
+            </dd>
+        </dl>
+        
+    </div>
+    <div class="gnjs_right">
+    	<ul>
+        	<li>
+                <span class="icon_td ic_sjwt_01"></span>
+                <h2>解决：数据储存问题</h2>
+                <p>
+                    在云空间下建立起云存储动态数据库（材价库）；按材料分类与编码标准，实现对价格数据的有效整合分析、存储与共享，同时对数据进行动态积累，实现长远性的数据循环应用。
+                </p>
+            </li>
+            <li>
+                <span class="icon_td ic_aqwt_01"></span>
+                <h2>解决：数据安全问题</h2>
+                <p>
+                    在云存储模式下，虚拟化的技术及专业的信息管理能为客户端数据使用提供安全可靠的保障，用户数据的管理、存储均通过造价通云端来完成。解决因人员流失、信息被盗取造成的商业机密外漏风险。
+                </p>
+            </li>
+            <li>
+                <span class="icon_td ic_clwt_01"></span>
+                <h2>解决：材料询价问题</h2>
+                <p>
+                    交给专业的询价人员进行，由专业的材料工程师审核与回复，同时解决时间成本问题，降低数据信息采集渠道信用风险。
+                </p>
+            </li>
+            <li class="bg_none">
+                <span class="icon_td ic_cbwt_01"></span>
+                <h2>解决：成本控制问题</h2>
+                <p>
+                    成本控制包含人力资源成本、系统自建成本、时间成本、数据管理成本、信息风险成本等。一站式数据管理解决，成本可预见性，一朝采用，长久受益，企业成本降低可达80%以上。
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>CIAS5 Application</display-name>
+
+	<filter>
+		<filter-name>WriteThreadMarkFilter</filter-name>
+		<filter-class>org.yeeda.costexpress.filter.WriteThreadMarkFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WriteThreadMarkFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/module/*</url-pattern>
+	</filter-mapping>
+
+   <servlet>
+	    <servlet-name>govSearch</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialGovLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>govSearch</servlet-name>
+	    <url-pattern>/search/gov.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>facSearch</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialFacLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>facSearch</servlet-name>
+	    <url-pattern>/search/fac.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>shopSearch</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.ShopLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>shopSearch</servlet-name>
+	    <url-pattern>/search/shop.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>refSearch</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialRefLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>refSearch</servlet-name>
+	    <url-pattern>/search/ref.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>Analyzer</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.AnalyzerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>Analyzer</servlet-name>
+	    <url-pattern>/analyzer/Analyzer.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>velocity</servlet-name>
+		<servlet-class>
+			org.apache.velocity.tools.view.servlet.VelocityViewServlet
+		</servlet-class>
+		<init-param>
+			<param-name>org.apache.velocity.toolbox</param-name>
+			<param-value>/WEB-INF/classes/toolbox.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.apache.velocity.properties</param-name>
+			<param-value>
+				/WEB-INF/classes/velocity.properties
+			</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>velocity</servlet-name>
+		<url-pattern>*.vm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>MaterialGovLucene</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialGovLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>MaterialGovLucene</servlet-name>
+	    <url-pattern>/material/govSearch.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>MaterialFacLucene</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialFacLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>MaterialFacLucene</servlet-name>
+	    <url-pattern>/material/facSearch.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>ShopLucene</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.ShopLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>ShopLucene</servlet-name>
+	    <url-pattern>/material/shopSearch.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>MaterialRefLucene</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.lucene.servlet.MaterialRefLuceneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>MaterialRefLucene</servlet-name>
+	    <url-pattern>/material/refSearch.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>priceImageServlet</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.price.servlet.PriceImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>priceImageServlet</servlet-name>
+	    <url-pattern>/priceImage.do</url-pattern>
+	</servlet-mapping>
+	
+	   <servlet>
+		<servlet-name>ValidationEmailServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.ValidationEmailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidationEmailServlet</servlet-name>
+		<url-pattern>/ValidationEmial.do</url-pattern>
+	</servlet-mapping>
+	<!-- 区域管理-->
+	<servlet>
+		<servlet-name>AreaManagementServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.areaSiteManage.servlet.AreaManagementServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AreaManagementServlet</servlet-name>
+		<url-pattern>/AreaManagementServlet</url-pattern>
+	</servlet-mapping>
+	<!--区域管理-->
+	
+	
+	
+	<!-- 城市圈管理 addBy qinyunlin-->
+	<servlet>
+		<servlet-name>CityRingServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.material.CityRingServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CityRingServlet</servlet-name>
+		<url-pattern>/cityRingServlet</url-pattern>
+	</servlet-mapping>
+	<!--城市圈管理-->
+	
+	
+	<servlet>
+		<servlet-name>ScoreDetailCountServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.score.servlet.ScoreDetailCountServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ScoreDetailCountServlet</servlet-name>
+		<url-pattern>/score/ScoreDetailCountServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 材料分类自动检查 -->
+	<servlet>
+		<servlet-name>MaterialTypeCheckServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.material.servlet.MaterialTypeCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaterialTypeCheckServlet</servlet-name>
+		<url-pattern>/MaterialTypeCheckServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 材料分类词库上传更新 -->
+	<servlet>
+		<servlet-name>MaterialTypeUploadServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.material.servlet.MaterialTypeUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaterialTypeUploadServlet</servlet-name>
+		<url-pattern>/MaterialTypeUploadServlet</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>TemplateHtmlServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.TemplateHtmlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TemplateHtmlServlet</servlet-name>
+		<url-pattern>/TemplateHtml.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ActivityInfoServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.activity.ActivityInfoServlet
+		</servlet-class>
+	</servlet>
+	<!-- 在线支付配置信息 -->
+	<servlet>
+		<servlet-name>OnlinePayServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.onlinePay.OnlinePayServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OnlinePayServlet</servlet-name>
+		<url-pattern>/onlinePay/OnlinePayServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 活动管理 -->
+	<servlet-mapping>
+		<servlet-name>ActivityInfoServlet</servlet-name>
+		<url-pattern>/act/ActivityInfoServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 活动管理 -->
+	<!-- 用户管理 -->
+	<servlet>
+		<servlet-name>ApplyUserViewServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.activity.ApplyUserViewServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ApplyUserViewServlet</servlet-name>
+		<url-pattern>/apply/ApplyUserViewServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ActUserInfoServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.activity.ActUserInfoServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ActUserInfoServlet</servlet-name>
+		<url-pattern>/act/ActUserInfoServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 用户管理 -->
+	<!-- 产品分类管理 -->
+	<servlet>
+		<servlet-name>ProductClassifyServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.productClassify.ProductClassifyServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductClassifyServlet</servlet-name>
+		<url-pattern>/classify/ProductClassifyServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 产品分类管理 end -->
+
+
+	<!-- 主打产品管理 -->
+	<servlet>
+		<servlet-name>MostlyProductServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.mostlyProduct.MostlyProductServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MostlyProductServlet</servlet-name>
+		<url-pattern>/product/MostlyProductServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 主打产品管理 end -->
+	<!-- 用户信息导出 -->
+	<servlet>
+
+		<servlet-name>ReortUserExcelServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.activity.ReortUserExcelServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReortUserExcelServlet</servlet-name>
+		<url-pattern>/reort/ReortUserExcelServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 用户信息导出 -->
+	<!-- 定额 start -->
+	<servlet>
+		<servlet-name>RationLibServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.ration.RationLibServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RationLibServlet</servlet-name>
+		<url-pattern>/servlet/RationLibServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>cgRationLibServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.ration.cgRationLibServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>cgRationLibServlet</servlet-name>
+		<url-pattern>/servlet/cgRationLibServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MaterialBaseLibServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.ration.MaterialBaseLibServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MaterialBaseLibServlet</servlet-name>
+		<url-pattern>/servlet/MaterialBaseLibServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 定额 end -->
+	<!-- 商铺servlet start -->
+	<servlet>
+		<servlet-name>EpShopServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.enterprise.EpShopServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EpShopServlet</servlet-name>
+		<url-pattern>/ep/EpShopServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 商铺servlet end -->
+	
+	
+		<!-- 商铺统计servlet start -->
+	<servlet>
+		<servlet-name>EpShopCountServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.enterprise.EpShopCountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EpShopCountServlet</servlet-name>
+		<url-pattern>/ep/EpShopCountServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 商铺统计servlet end -->
+	
+	
+	<!-- 邮件管理servlet开始 -->
+	<servlet>
+		<servlet-name>EmailTemplateServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.email.servlet.EmailTemplateServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailTemplateServlet</servlet-name>
+		<url-pattern>/email/EmailTemplateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmailSendLogServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.email.servlet.EmailSendLogServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailSendLogServlet</servlet-name>
+		<url-pattern>/email/EmailSendLogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmailAccountServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.email.servlet.EmailAccountServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailAccountServlet</servlet-name>
+		<url-pattern>/email/EmailAccountServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmailTypeServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.email.servlet.EmailTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailTypeServlet</servlet-name>
+		<url-pattern>/email/EmailType.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmailLabelServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.email.servlet.EmailLabelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailLabelServlet</servlet-name>
+		<url-pattern>/email/EmailLabelServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 邮件管理servlet结束 -->
+	<servlet>
+		<servlet-name>OpinionServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.Inquiry.servlet.OpinionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OpinionServlet</servlet-name>
+		<url-pattern>/OpinionServlet.do</url-pattern>
+	</servlet-mapping>
+
+	<!--资源管理 -->
+	<servlet>
+		<servlet-name>ResCatalogServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.ResCatalogServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResCatalogServlet</servlet-name>
+		<url-pattern>/ResCatalog.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ResTypeServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.ResTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResTypeServlet</servlet-name>
+		<url-pattern>/ResType.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WebResServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.WebResServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebResServlet</servlet-name>
+		<url-pattern>/WebRes.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AJAXProxy</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.AJAXProxy</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AJAXProxy</servlet-name>
+		<url-pattern>/AJAXProxy.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.UserLoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<url-pattern>/account/UserLogin.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WcwUserServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.WcwUserServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WcwUserServlet</servlet-name>
+		<url-pattern>/wcwUser/wcwUserServlet.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CustomerServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.CustomerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CustomerServlet</servlet-name>
+		<url-pattern>/account/Customer.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.VerifyCodeServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CountMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.CountMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdvSearchMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.AdvSearchMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CompareGovMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.CompareGovMaterialServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SearchAnalyseServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.SearchAnalyseServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MyMaterialServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.MyMaterialServlet</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>SearchItemServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.SearchItemServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FacMaterialPicServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.FacMaterialPicServlet
+		</servlet-class>
+	</servlet>
+	
+	
+	<servlet>
+		<servlet-name>FacMaterialHistoryPriceServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.FacMaterialHistoryPriceServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RecMaterialSearchServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.RecMaterialSearchServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberManageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.MemberManageServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AppMemberManageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.AppMemberManageServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MaterialDownloadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.MaterialDownloadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FacMaterialUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.FacMaterialUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FacMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.FacMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.MemberServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GovMaterialUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMaterialUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GovMatTitleServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMatTitleServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminRoleServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.AdminRoleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminManageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.AdminManageServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InfoContentServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.InfoContentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InfoContentTypeServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.InfoContentTypeServlet</servlet-class>
+	</servlet>
+	<!-- 模板分类管理 -->
+	<servlet>
+		<servlet-name>TemplateCatalogServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.cms.servlet.TemplateCatalogServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TemplateCatalogServlet</servlet-name>
+		<url-pattern>/TemplateCatalog.do</url-pattern>
+	</servlet-mapping>
+	<!-- 模板内容管理 -->
+	<servlet>
+		<servlet-name>TemplateBaseServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.TemplateBaseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TemplateBaseServlet</servlet-name>
+		<url-pattern>/TemplateBase.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 广告分类管理 -->
+	<servlet>
+		<servlet-name>infoAdcataLog</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.InfoAdCatalogServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>infoAdcataLog</servlet-name>
+		<url-pattern>/Infoad.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 广告内容管理 -->
+	<servlet>
+		<servlet-name>SerchInfoAd</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.InfoAdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SerchInfoAd</servlet-name>
+		<url-pattern>/SearchInfoAd.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchInfoContentServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.SearchInfoContentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SystemConfigServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.SystemConfigServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GovMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AccountValidateServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.netpay.AccountValidateServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GovMaterialIndexServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMaterialIndexServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FacMaterialIndexServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.FacMaterialIndexServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberSearchServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.MemberSearchServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ReportServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.ReportServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnterpriseServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EnterpriseServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpMaterialServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpMaterialServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpCustomerServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpCustomerServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpRequestPriceServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpRequestPriceServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EpEnterpriseAskPriceServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.askprice.vip.servlet.EpEnterpriseAskPriceServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EpResponsePriceServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpResponsePriceServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnterpriseCatalogServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EnterpriseCatalogServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnterprisePicServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EnterprisePicServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProjectServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.project.ProjectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProjectCatalogServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.project.ProjectCatalogServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MyProjectServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.project.MyProjectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProjPicServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.project.ProjPicServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpRequestPriceUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpRequestPriceUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GovMaterialPDFServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMaterialPDFServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSecurityServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpSecurityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpResponsePriceUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpResponsePriceUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>/toHtml</display-name>
+		<servlet-name>ToHtml</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.ToHtml</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ToCmsHtml</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.ToHtml</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderConfirmServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.netpay.OrderConfirmServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GenHtmlServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.GenHtmlServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdvSearchMaterialForBaselibServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.AdvSearchMaterialForBaselibServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountMaterialForBaselibServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.CountMaterialForBaselibServlet
+		</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>GovMatStatServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.GovMatStatServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountProMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.projectmat.CountProMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdvSearchProMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.projectmat.AdvSearchProMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.projectmat.ProMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdvSearchProMaterialBaselibServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.projectmat.AdvSearchProMaterialBaselibServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>QuestionServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.QuestionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MagFacServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.MagFacServlet</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>img</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.AuthImg</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AskServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.AskServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpAskScoreServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpAskScoreServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpMemberServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpMemberServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpMaterialExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpMaterialExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpRequestExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpRequestExportServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EpSupplierServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpSupplierServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupAttachServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpSupAttachServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupMaterialServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpSupMaterialServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpProjectServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpProjectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpDemandServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpDemandServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupplierExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpSupplierExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupplierUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpSupplierUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupMaterialUplaodServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpSupMaterialUplaodServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EpSupMaterialExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpSupMaterialExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpProjectExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpProjectExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpProjSupplierServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpProjSupplierServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpPurchaseListServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpPurchaseListServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpPurchaseStageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpPurchaseStageServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpProjSupplierExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpProjSupplierExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpPurchaseListExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpPurchaseListExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpPurchaseStageExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpPurchaseStageExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpMaterialUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.EpMaterialUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberStatServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.MemberStatServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EnterpriseTempCatalogServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EnterpriseTempCatalogServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupplierServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupplierServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTemplateServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTemplateServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupplierUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupplierUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupplierExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupplierExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupMaterialUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupMaterialUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpTempSupMaterialExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.vip.template.EpTempSupMaterialExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MainMaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.MainMaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MainMaterialUploadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.MainMaterialUploadServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberProfileServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.MemberProfileServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>OpinionTypeServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.Inquiry.servlet.OpinionTypeServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpMessageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpMessageServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpDemandCollServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpDemandCollServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpSupplyCollServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpSupplyCollServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpSupplyServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpSupplyServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberAuditServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.member.MemberAuditServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpAttachServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpAttachServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpAccountServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.EpAccountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpResponseExportServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.enterprise.EpResponseExportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AskMessageServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.AskMessageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AskCountExServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.AskCountExServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>GoodsServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.score.GoodsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>EpScoreCntServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.score.EpScoreCntServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ScoreServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.score.ScoreServlet</servlet-class>
+	</servlet>
+	<!--addy qinyunlin addTime 2013-01-07 服务咨询-->
+	<servlet>
+		<servlet-name>ServiceAdvisoryServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.serviceAdvisory.servlet.ServiceAdvisoryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServiceAdvisoryServlet</servlet-name>
+		<url-pattern>/servlet/ServiceAdvisoryServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>ScoreRuleServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.score.ScoreRuleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>passport_setcookie</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.member.PassportServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AskPriceExportServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.AskPriceExportServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CMSGenHtmlServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.CMSGenHtmlServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CMSPreViewServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.cms.servlet.CMSPreViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CMSPreViewServlet</servlet-name>
+		<url-pattern>/servlet/CMSPreViewServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CMSGenHtmlServlet</servlet-name>
+		<url-pattern>/servlet/GenHtmlServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>img</servlet-name>
+		<url-pattern>/authImg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<url-pattern>/account/VerifyCodeServlet.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CountMaterialServlet</servlet-name>
+		<url-pattern>/CountMaterial.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdvSearchMaterialServlet</servlet-name>
+		<url-pattern>/AdvSearchMaterial.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CompareGovMaterialServlet</servlet-name>
+		<url-pattern>/CompareGovMaterial.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MyMaterialServlet</servlet-name>
+		<url-pattern>/account/MyMaterial.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SearchAnalyseServlet</servlet-name>
+		<url-pattern>/ProjectAnalyse/Analyse.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SearchItemServlet</servlet-name>
+		<url-pattern>/ProjectAnalyse/Item.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacMaterialPicServlet</servlet-name>
+		<url-pattern>/FacMaterialPic.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacMaterialHistoryPriceServlet</servlet-name>
+		<url-pattern>/FacMaterialHisyoryPrice.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RecMaterialSearchServlet</servlet-name>
+		<url-pattern>/RecMaterialSearch.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberManageServlet</servlet-name>
+		<url-pattern>/mc/Member.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AppMemberManageServlet</servlet-name>
+		<url-pattern>/mc/appMember.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>OrdersServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.orders.OrdersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrdersServlet</servlet-name>
+		<url-pattern>/mc/Order.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>OrdersItemServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.orders.OrdersItemServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrdersItemServlet</servlet-name>
+		<url-pattern>/mc/OrdersItemServlet.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>MaterialDownloadServlet</servlet-name>
+		<url-pattern>/MaterialDownload.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacMaterialUploadServlet</servlet-name>
+		<url-pattern>/FacMaterialUpload.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacMaterialServlet</servlet-name>
+		<url-pattern>/FacMaterial.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberServlet</servlet-name>
+		<url-pattern>/account/Member.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMaterialUploadServlet</servlet-name>
+		<url-pattern>/GovMaterialUpload.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMatTitleServlet</servlet-name>
+		<url-pattern>/GovMatTitle.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminRoleServlet</servlet-name>
+		<url-pattern>/mc/AdminRoleServlet.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminManageServlet</servlet-name>
+		<url-pattern>/mc/AdminManage.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InfoContentServlet</servlet-name>
+		<url-pattern>/InfoContent.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InfoContentTypeServlet</servlet-name>
+		<url-pattern>/InfoContentType.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SearchInfoContentServlet</servlet-name>
+		<url-pattern>/SearchInfoContent.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SystemConfigServlet</servlet-name>
+		<url-pattern>/sys/SystemConfig.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMaterialServlet</servlet-name>
+		<url-pattern>/GovMaterial.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AccountValidateServlet</servlet-name>
+		<url-pattern>/netpay/AccountValidate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMaterialIndexServlet</servlet-name>
+		<url-pattern>/GovMaterialIndex</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FacMaterialIndexServlet</servlet-name>
+		<url-pattern>/FacMaterialIndex</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberSearchServlet</servlet-name>
+		<url-pattern>/MemberSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReportServlet</servlet-name>
+		<url-pattern>/ReportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnterpriseServlet</servlet-name>
+		<url-pattern>/ep/EnterpriseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpMaterialServlet</servlet-name>
+		<url-pattern>/ep/EpMaterialServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpCustomerServlet</servlet-name>
+		<url-pattern>/ep/EpCustomerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpRequestPriceServlet</servlet-name>
+		<url-pattern>/ep/EpRequestPriceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EpEnterpriseAskPriceServlet</servlet-name>
+		<url-pattern>/mc/EpEnterpriseAskPriceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EpResponsePriceServlet</servlet-name>
+		<url-pattern>/ep/EpResponsePriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnterpriseCatalogServlet</servlet-name>
+		<url-pattern>/ep/EnterpriseCatalogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnterprisePicServlet</servlet-name>
+		<url-pattern>/ep/EnterprisePicServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProjectServlet</servlet-name>
+		<url-pattern>/project/ProjectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProjectCatalogServlet</servlet-name>
+		<url-pattern>/proj/ProjectCatalogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyProjectServlet</servlet-name>
+		<url-pattern>/project/MyProjectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProjPicServlet</servlet-name>
+		<url-pattern>/Project/ProjPicServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpRequestPriceUploadServlet</servlet-name>
+		<url-pattern>/ep/EpRequestPriceUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMaterialPDFServlet</servlet-name>
+		<url-pattern>/GovMaterialPDFServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSecurityServlet</servlet-name>
+		<url-pattern>/ep/EpSecurityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpResponsePriceUploadServlet</servlet-name>
+		<url-pattern>/ep/EpResponsePriceUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ToHtml</servlet-name>
+		<url-pattern>/servlet/ToHtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ToCmsHtml</servlet-name>
+		<url-pattern>/servlet/ToCmsHtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderConfirmServlet</servlet-name>
+		<url-pattern>/netpay/OrderConfirm</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GenHtmlServlet</servlet-name>
+		<url-pattern>/GenHtmlServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdvSearchMaterialForBaselibServlet</servlet-name>
+		<url-pattern>/AdvSearchMaterialForBaselib</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CountMaterialForBaselibServlet</servlet-name>
+		<url-pattern>/CountMaterialForBaselib</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GovMatStatServlet</servlet-name>
+		<url-pattern>/GovMatStatServlet.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CountProMaterialServlet</servlet-name>
+		<url-pattern>/CountProMaterial</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdvSearchProMaterialServlet</servlet-name>
+		<url-pattern>/AdvSearchProMaterial</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProMaterialServlet</servlet-name>
+		<url-pattern>/ProMaterial</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdvSearchProMaterialBaselibServlet</servlet-name>
+		<url-pattern>/AdvSearchProMaterialBaselib</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>QuestionServlet</servlet-name>
+		<url-pattern>/QuestionServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MagFacServlet</servlet-name>
+		<url-pattern>/MagFacServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AskServlet</servlet-name>
+		<url-pattern>/ask/AskServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpAskScoreServlet</servlet-name>
+		<url-pattern>/ep/EpAskScoreServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpMemberServlet</servlet-name>
+		<url-pattern>/ep/EpMemberServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpMaterialExportServlet</servlet-name>
+		<url-pattern>/ep/EpMaterialExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpRequestExportServlet</servlet-name>
+		<url-pattern>/ep/EpRequestExportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EpSupplierServlet</servlet-name>
+		<url-pattern>/ep/EpSupplierServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupAttachServlet</servlet-name>
+		<url-pattern>/ep/EpSupAttachServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupMaterialServlet</servlet-name>
+		<url-pattern>/ep/EpSupMaterialServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpProjectServlet</servlet-name>
+		<url-pattern>/ep/EpProjectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpDemandServlet</servlet-name>
+		<url-pattern>/ep/EpDemandServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupplierExportServlet</servlet-name>
+		<url-pattern>/ep/EpSupplierExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupplierUploadServlet</servlet-name>
+		<url-pattern>/ep/EpSupplierUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupMaterialUplaodServlet</servlet-name>
+		<url-pattern>/ep/EpSupMaterialUplaodServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupMaterialExportServlet</servlet-name>
+		<url-pattern>/ep/EpSupMaterialExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpProjectExportServlet</servlet-name>
+		<url-pattern>/ep/EpProjectExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpProjSupplierServlet</servlet-name>
+		<url-pattern>/ep/EpProjSupplierServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpPurchaseListServlet</servlet-name>
+		<url-pattern>/ep/EpPurchaseListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpPurchaseStageServlet</servlet-name>
+		<url-pattern>/ep/EpPurchaseStageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpProjSupplierExportServlet</servlet-name>
+		<url-pattern>/ep/EpProjSupplierExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpPurchaseListExportServlet</servlet-name>
+		<url-pattern>/ep/EpPurchaseListExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpPurchaseStageExportServlet</servlet-name>
+		<url-pattern>/ep/EpPurchaseStageExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpMaterialUploadServlet</servlet-name>
+		<url-pattern>/ep/EpMaterialUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberStatServlet</servlet-name>
+		<url-pattern>/mc/MemberStatServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnterpriseTempCatalogServlet</servlet-name>
+		<url-pattern>/ep/EnterpriseTempCatalogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupplierServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupplierServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTemplateServlet</servlet-name>
+		<url-pattern>/ep/EpTemplateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupMaterialServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupMaterialServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupplierUploadServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupplierUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupplierExportServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupplierExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupMaterialUploadServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupMaterialUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpTempSupMaterialExportServlet</servlet-name>
+		<url-pattern>/ep/EpTempSupMaterialExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MainMaterialServlet</servlet-name>
+		<url-pattern>/MainMaterial</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MainMaterialUploadServlet</servlet-name>
+		<url-pattern>/MainMaterialUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberProfileServlet</servlet-name>
+		<url-pattern>/mc/MemberProfileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OpinionTypeServlet</servlet-name>
+		<url-pattern>/inquiry/OpinionTypeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpMessageServlet</servlet-name>
+		<url-pattern>/ep/EpMessageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpDemandCollServlet</servlet-name>
+		<url-pattern>/ep/EpDemandCollServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupplyCollServlet</servlet-name>
+		<url-pattern>/ep/EpSupplyCollServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpSupplyServlet</servlet-name>
+		<url-pattern>/ep/EpSupplyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberAuditServlet</servlet-name>
+		<url-pattern>/mc/MemberAuditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpAttachServlet</servlet-name>
+		<url-pattern>/ep/EpAttachServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpAccountServlet</servlet-name>
+		<url-pattern>/ep/EpAccountServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpResponseExportServlet</servlet-name>
+		<url-pattern>/ep/EpResponseExportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AskMessageServlet</servlet-name>
+		<url-pattern>/AskMessageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AskCountExServlet</servlet-name>
+		<url-pattern>/AskCountExServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GoodsServlet</servlet-name>
+		<url-pattern>/score/GoodsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EpScoreCntServlet</servlet-name>
+		<url-pattern>/ep/EpScoreCntServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ScoreServlet</servlet-name>
+		<url-pattern>/score/ScoreServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ScoreRuleServlet</servlet-name>
+		<url-pattern>/score/ScoreRuleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>passport_setcookie</servlet-name>
+		<url-pattern>/sso/setCookie.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AskPriceExportServlet</servlet-name>
+		<url-pattern>/AskPriceExportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ApplyUserServlet</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.vip.ApplyUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ApplyUserServlet</servlet-name>
+		<url-pattern>/ApplyUserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RecruitServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.recruitManage.RecruitServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecruitServlet</servlet-name>
+		<url-pattern>/mc/RecruitServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 阳光采购servlet -->
+	<servlet>
+		<servlet-name>sunshinePurchase</servlet-name>
+		<servlet-class>org.yeeda.costexpress.servlet.sunshinePurchase.SunshinePurchaseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sunshinePurchase</servlet-name>
+		<url-pattern>/sunshinePurchase.do</url-pattern>
+	</servlet-mapping>
+	<!-- 材料分类管理Servlet -->
+	<servlet>
+		<servlet-name>MaterialTypeServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.material.MaterialTypeServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaterialTypeServlet</servlet-name>
+		<url-pattern>/MaterialType.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>OrdersItemTraceAuditServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.orders.OrdersItemTraceAuditServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrdersItemTraceAuditServlet</servlet-name>
+		<url-pattern>/OrdersItemTraceAuditServlet.do</url-pattern>
+	</servlet-mapping>
+	
+	<!--begin add by heyang 2012-09-07 for 配置询价、回复相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>AskPriceServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.askprice.member.servlet.AskPriceServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AskPriceServlet</servlet-name>
+		<url-pattern>/ask/AskPriceServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-09-07 for 配置询价、回复相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2012-09-27 for 配置套餐组相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>OrderGroupServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.ordersitem.group.servlet.OrderGroupServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderGroupServlet</servlet-name>
+		<url-pattern>/ordersitem/group/OrderGroupServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-09-27 for 配置套餐组相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2012-11-07 for 材料相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>MaterialServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.material.servlet.MaterialServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaterialServlet</servlet-name>
+		<url-pattern>/material/MaterialServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-11-07 for 材料相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2012-12-06 for 在线充值相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>RechargeOrderServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.order.recharge.servlet.RechargeOrderServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RechargeOrderServlet</servlet-name>
+		<url-pattern>/mc/order/RechargeOrderServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-12-06 for 在线充值Servlet处理类 -->
+	
+	<!--begin add by heyang 2012-12-26 for 站内信相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>MessageServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.message.servlet.MessageServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MessageServlet</servlet-name>
+		<url-pattern>/mc/message/MessageServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-12-26 for 站内信相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2012-12-27 for 积分充值相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>ScoreOrderServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.order.score.servlet.ScoreOrderServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScoreOrderServlet</servlet-name>
+		<url-pattern>/mc/order/ScoreOrderServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2012-12-27 for 积分充值Servlet处理类 -->
+	
+	<!--begin add by heyang 2013-01-16 for Vip会员中心相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>EpVipServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.vip.servlet.EpVipServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EpVipServlet</servlet-name>
+		<url-pattern>/mc/vip/EpVipServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-01-16 for Vip会员中心相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2013-01-16 for Vip会员中心相关Servlet处理类 -->
+	<servlet>
+		<servlet-name>VipEpAccountServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.vip.servlet.VipEpAccountServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VipEpAccountServlet</servlet-name>
+		<url-pattern>/mc/vip/VipEpAccountServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-01-16 for Vip会员中心相关Servlet处理类 -->
+	
+	<!--begin add by heyang 2013-06-07 for 诚信积分设置 -->
+	<servlet>
+		<servlet-name>CreditScoreServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.score.servlet.CreditScoreServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreditScoreServlet</servlet-name>
+		<url-pattern>/mc/score/CreditScoreServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-06-07 for 诚信积分设置 -->
+	
+	<!--begin add by heyang 2014-01-07 for api授权码 -->
+	<servlet>
+		<servlet-name>api</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.api.servlet.ApiKeyServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>api</servlet-name>
+		<url-pattern>/mc/api.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2014-01-07 for api授权码 -->
+
+	<!--begin add by zhengreate 2013-12-16  云知话题管理 -->
+	<servlet>
+		<servlet-name>TopicServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.yunzhi.servlet.TopicServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TopicServlet</servlet-name>
+		<url-pattern>/yunzhi/TopicServlet</url-pattern>
+	</servlet-mapping>
+	<!--end add by zhengreate 2013-12-16  云知话题管理 -->
+	
+	<!--begin add by zhengreate 2013-12-16  云知话题管理 -->
+	
+	<servlet>
+		<servlet-name>YunzhiQuestionServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.yunzhi.servlet.QuestionServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>YunzhiQuestionServlet</servlet-name>
+		<url-pattern>/yunzhi/QuestionServlet</url-pattern>
+	</servlet-mapping>
+	<!--end add by zhengreate 2013-12-16  云知话题管理 -->
+	
+	<!--begin add by zhengreate 2013-12-16  云知回答管理 -->
+	<servlet>
+		<servlet-name>AnswerServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.yunzhi.servlet.AnswerServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AnswerServlet</servlet-name>
+		<url-pattern>/yunzhi/AnswerServlet</url-pattern>
+	</servlet-mapping>
+	<!--end add by zhengreate 2013-12-16  云知回答管理 -->
+	
+	<!--begin add by zhengreate 2013-12-16  云知评论管理 -->
+	<servlet>
+		<servlet-name>CommentServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.yunzhi.servlet.CommentServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommentServlet</servlet-name>
+		<url-pattern>/yunzhi/CommentServlet</url-pattern>
+	</servlet-mapping>
+	<!--end add by zhengreate 2013-12-16  云知评论管理 -->
+
+    <!--begin add by hongyanjiu 2013-05-31  交易评价管理 -->
+	<servlet>
+		<servlet-name>evaluationServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.evaluation.servlet.EvaluationServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>evaluationServlet</servlet-name>
+		<url-pattern>/mc/evaluationServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by hongyanjiu 2013-05-31 for 交易评价管理 -->
+	
+	<!--begin add by heyang 2013-06-21  业务测试接口-->
+	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.TestServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/mc/TestServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-06-21 for 业务测试接口 -->
+	
+	<!--begin add by heyang 2013-07-09 业务测试接口-->
+	<servlet>
+		<servlet-name>DataGrabServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.data.servlet.DataGrabServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataGrabServlet</servlet-name>
+		<url-pattern>/mc/DataGrabServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-07-09 for 业务测试接口 -->
+	
+	<!--begin add by heyang 2013-11-29 网络数据抓取接口-->
+	<servlet>
+		<servlet-name>MaterialInitServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.material.servlet.MaterialInitServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaterialInitServlet</servlet-name>
+		<url-pattern>/mc/MaterialInitServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by heyang 2013-11-29 for 网络数据抓取接口 -->
+	
+	<!-- begin add by yuanqian 2013-08-08 for 活动管理 -->
+	<servlet>
+	    <servlet-name>activityManageServlet</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.servlet.activityManage.ActivityManageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>activityManageServlet</servlet-name>
+	    <url-pattern>/mc/activityManageServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by yuanqian 2013-08-08 for 活动管理 -->
+	
+	<!-- begin add by weizhengui 2013-08-12 for 礼品管理 -->
+	<servlet>
+	    <servlet-name>giftManageServlet</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.servlet.activityManage.GiftManageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>giftManageServlet</servlet-name>
+	    <url-pattern>/mc/giftManageServlet</url-pattern>
+	</servlet-mapping>
+	<!--end add by weizhengui 2013-08-12 for 礼品管理 -->
+	<!-- begin add by yuanqian 2013-09-04 for 文库管理 -->
+	<servlet>
+	    <servlet-name>wenkuServlet</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.servlet.wenku.WenkuServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>wenkuServlet</servlet-name>
+	    <url-pattern>/mc/wenkuServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by yuanqian 2013-09-04 for 文库管理 -->
+	<servlet>
+		<servlet-name>WenkuDocDownloadServlet</servlet-name>
+		<servlet-class>
+			org.yeeda.costexpress.servlet.wenku.WenkuDocDownloadServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WenkuDocDownloadServlet</servlet-name>
+		<url-pattern>/WenkuDocDownloadServlet</url-pattern>
+	</servlet-mapping>
+	<!-- begin add by yuanqian 2013-12-12 for 灯博会管理 -->
+	<servlet>
+	    <servlet-name>lampManageServlet</servlet-name>
+	    <servlet-class>org.yeeda.costexpress.servlet.lamp.LampManageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>lampManageServlet</servlet-name>
+	    <url-pattern>/mc/lampManageServlet.do</url-pattern>
+	</servlet-mapping>
+	<!--end add by yuanqian 2013-12-12 for 灯博会管理 -->
+	<listener>
+		<listener-class>org.yeeda.costexpress.listener.MemberLoginListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.yeeda.costexpress.listener.OnlineMemberListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.yeeda.costexpress.listener.PageRefreshSchedulerListener
+		</listener-class>
+	</listener>
+	<mime-mapping>
+		<extension>xls</extension>
+		<mime-type>application/xls</mime-type>
+	</mime-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.html</location>
+	</error-page>
+	<filter>
+		<filter-name>memberfilter</filter-name>
+		<filter-class>org.yeeda.costexpress.filter.WCWMemberAuthFilter</filter-class>
+		<init-param>
+			<param-name>nologin</param-name>
+			<param-value>/login.html</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>memberfilter</filter-name>
+		<url-pattern>/module/account/*</url-pattern>
+	</filter-mapping>
+	<!-- 操作超时 -->
+	<session-config>
+		<session-timeout>180</session-timeout>
+	</session-config>
+
+</web-app>

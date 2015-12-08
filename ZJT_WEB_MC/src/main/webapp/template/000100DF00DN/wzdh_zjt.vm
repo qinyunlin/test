@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>关于造价通_造价通($dataInfo.province)</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/wzdh/common.css"/>
+  <link rel="stylesheet" type="text/css" href="$common_site/css/zjt/main/common.css" />
+	</head>
+	<body>
+<div class="webmap_header_box">
+	<div class="webmap_header clearfix">
+    	<a href="${dataInfo.siteUrl}" class="back_index">造价通首页</a>
+    			<div class="inside-com-logo" ><a href="http://gd.zjtcn.com" class="logo01"></a><span class="logo-title">网站导航</span></div>
+    </div>
+</div>
+<div class="webmap_contanier">
+	<div class="web_link clearfix">
+    	<h1>材价查询服务</h1>
+        <ul>
+            <li><a href="${dataInfo.siteUrl}/fac/index.html">市场价</a></li>
+            <li><a href="${dataInfo.siteUrl}/ration/d_t_p1.html">造价通参考价</a></li>
+        	<li><a href="${dataInfo.siteUrl}/gov/c_cs_d_t_p1.html">信息价</a></li>
+            <li><a href="http://xunjia.zjtcn.com">询价圈</a></li>
+        </ul>
+    </div>
+    
+   <!-- <div class="web_link clearfix">
+    	<h1>工程指标服务</h1>
+        <dl class="clearfix">
+        	<dt><a href="">[典型工程案例]</a></dt>
+            <dd>
+            	<a href="">商业</a><a href="">办公</a><a href="">体育</a><a href="">文化</a><a href="">教育</a><a href="">医疗</a><a href="">科研</a><a href="">居住</a><a href="">交通</a><a href="">园林</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="">[设计咨询公司]</a></dt>
+            <dd>
+            	<a href="">商业</a><a href="">办公</a><a href="">体育</a><a href="">文化</a><a href="">教育</a><a href="">医疗</a><a href="">科研</a><a href="">居住</a><a href="">交通</a><a href="">园林</a>
+            </dd>
+        </dl>
+    </div>-->
+    
+   <div class="web_link clearfix">
+    	<h1>文库服务</h1>
+        <dl class="clearfix">
+        	<dt><a href="http://doc.zjtcn.com/list/1.htm">[造价编制实例]</a></dt>
+            <dd>
+            	<a href="http://doc.zjtcn.com/search/8.htm">工程预算实例</a><a href="http://doc.zjtcn.com/search/9.htm">工程概算实例</a><a href="http://doc.zjtcn.com/search/10.htm">工程结算实例</a><a href="http://doc.zjtcn.com/search/11.htm">工程估算实例</a><a href="http://doc.zjtcn.com/search/12.htm">工程招标文件</a><a href="http://doc.zjtcn.com/search/13.htm">工程投标实例</a><a href="http://doc.zjtcn.com/search/39.htm">工程造价指标</a><a href="http://doc.zjtcn.com/search/40.htm">工程量清单实例</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://doc.zjtcn.com/list/2.htm">[造价管理]</a></dt>
+            <dd>
+            	<a href="http://doc.zjtcn.com/search/14.htm">管理制度</a><a href="http://doc.zjtcn.com/search/42.htm">岗位职责</a><a href="http://doc.zjtcn.com/search/15.htm">管理流程</a><a href="http://doc.zjtcn.com/search/43.htm">工程成本管理</a><a href="http://doc.zjtcn.com/search/41.htm">预控措施</a><a href="http://doc.zjtcn.com/search/44.htm">职称评定</a><a href="http://doc.zjtcn.com/search/45.htm">工作总结</a><a href="http://doc.zjtcn.com/search/46.htm">工程索赔实例</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://doc.zjtcn.com/list/3.htm">[计价依据]</a></dt>
+            <dd>
+            	<a href="http://doc.zjtcn.com/search/16.htm">国家定额</a><a href="http://doc.zjtcn.com/search/48.htm">清单计价规范</a><a href="http://doc.zjtcn.com/search/17.htm">地方定额</a><a href="http://doc.zjtcn.com/search/49.htm">各地造价文件</a><a href="http://doc.zjtcn.com/search/47.htm">定额解释</a><a href="http://doc.zjtcn.com/search/50.htm">各地造价信息</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://doc.zjtcn.com/list/4.htm">[工程合同范本]</a></dt>
+            <dd>
+            	<a href="http://doc.zjtcn.com/search/18.htm">设计合同</a><a href="http://doc.zjtcn.com/search/51.htm">监理合同</a><a href="http://doc.zjtcn.com/search/52.htm">施工合同</a><a href="http://doc.zjtcn.com/search/53.htm">建筑合同</a><a href="http://doc.zjtcn.com/search/54.htm">市政合同</a><a href="http://doc.zjtcn.com/search/57.htm">拆迁合同</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://doc.zjtcn.com/list/5.htm">[知识资料]</a></dt>
+            <dd>
+            	<a href="http://doc.zjtcn.com/search/19.htm">基础知识</a><a href="http://doc.zjtcn.com/search/20.htm">学习资料</a><a href="http://doc.zjtcn.com/search/58.htm">考试资料</a><a href="http://doc.zjtcn.com/search/59.htm">学生论文</a><a href="http://doc.zjtcn.com/search/60.htm">毕业设计</a><a href="http://doc.zjtcn.com/search/61.htm">实习报告</a>
+            </dd>
+        </dl>
+    </div>
+    
+    <div class="web_link clearfix">
+    	<h1>云知</h1>
+        <ul>
+        	<li><a href="http://yunzhi.zjtcn.com/topic/topic-list.html">所有话题</a></li>
+            <li><a href="http://yunzhi.zjtcn.com/discover/fx.html">发现</a></li>
+        </ul>
+    </div>
+    
+    <div class="web_link clearfix">
+    	<h1>资讯服务</h1>
+        <dl class="clearfix">
+        	<dt><a href="http://info.zjtcn.com/news/">[行业新闻]</a></dt>
+            <dd>
+            	<a href="http://info.zjtcn.com/news/predict/">行情预测</a><a href="http://info.zjtcn.com/news/dynamic/">行业动态</a><a href="http://info.zjtcn.com/news/important/">行业观点</a><a href="http://info.zjtcn.com/news/local/">地市新闻</a><a href="http://info.zjtcn.com/news/green/">新型/节能/环保</a><a href="http://info.zjtcn.com/news/industrial/">产业经济</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://info.zjtcn.com/policies/">[政策法规]</a></dt>
+            <dd>
+            	<a href="http://info.zjtcn.com/policies/nationallaws/">国家法律</a><a href="http://info.zjtcn.com/policies/documents/">地方文件</a><a href="http://info.zjtcn.com/policies/administrative/">行政法规</a><a href="http://info.zjtcn.com/policies/valuation/">计价依据</a><a href="http://info.zjtcn.com/policies/departmental/">部门规章</a><a href="http://info.zjtcn.com/policies/quota/">定额解释</a>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt><a href="http://info.zjtcn.com/education/">[教育培训]</a></dt>
+            <dd>
+            	<a href="http://info.zjtcn.com/education/dynamic/">考试动态</a><a href="http://info.zjtcn.com/education/continuing/">继续教育</a><a href="http://info.zjtcn.com/education/materials/">学习资料</a>
+            </dd>
+        </dl>
+    </div>
+    
+    
+    
+   <!--  <div class="web_link clearfix">
+    	<h1>招聘服务</h1>
+        <ul>
+        	<li><a href="">招聘职位</a></li>
+            <li><a href="">招聘企业</a></li>
+            <li><a href="">职场指南</a></li>
+        </ul>
+    </div>-->
+    
+</div>
+<div class="mask_layer" style="display:none;" id="mask_layer"></div>
+		#parse($footer_dir)
+
+	</body>
+</html><script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-18131443-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>

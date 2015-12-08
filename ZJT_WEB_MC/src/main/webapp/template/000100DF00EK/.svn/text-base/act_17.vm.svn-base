@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>第五代</title>
+<link type="text/css" rel="stylesheet" href="$common_site/css/act/wdzjt/reset.css" />
+<link type="text/css" rel="stylesheet" href="$common_site/css/act/wdzjt/index.css" />
+<script src="$common_site/js/common/jyeeda.js"></script>
+<script src="$common_site/js/act/wdzjt/parallax.js"></script>
+</head>
+<body>
+<ul class="fixedNav">
+	<li class="cur">
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+	<li>
+		<em class="icon"></em>
+	</li>
+
+</ul>	
+
+<div class="wrapBox" id="wrapBox">
+<div class="section section-1">
+    <div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper"  >
+                <img src="$common_site/images/act/wdzjt/bg01_01.png" id="star-wrapper-1" class="star01" />
+            </div>
+            <h3 class="subTxt">
+            	造价通平台——2014年工程造价信息化引用的革命之作！提升的不仅是速度，而是全新的体验；提高的不仅是数据量，而是大数据时代的云应用。全新互联网平台宽屏体现方式，windows8风格设计，数据直观察觉，云应用无处不在……
+            </h3>
+            <h2 class="titleBar">造价数据，从此由你做主</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title_02_01.png"/></h1>
+            <div class="subTitle"><img src="$common_site/images/act/wdzjt/title_01_01.png"/></div>
+        </div>
+    </div>
+</div>
+<div class="section section-2">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper"  >
+                <img src="$common_site/images/act/wdzjt/bg02_01.png" class="star01" id="star-wrapper-2"/>
+            </div>
+            <h3 class="subTxt">
+            	“红头文件”——上世纪60年代以前，政府通过红头文件的形式  发布主要建材价格，作为工程预算、结算、采购、支付等依据。
+            </h3>
+            <h2 class="titleBar">材料价格，文件说了算</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title02-01.png"/></h1>
+        </div>
+    </div>
+</div>
+<div class="section section-3">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper">
+            	<img id="star-wrapper-3" src="$common_site/images/act/wdzjt/bg03_03.jpg" class="star03"/>
+                <img id="star-wrapper-4" src="$common_site/images/act/wdzjt/bg03_02.jpg" class="star02"/>
+                <img id="star-wrapper-5" src="$common_site/images/act/wdzjt/bg03_01.png" class="star01"/>
+            </div>
+            <h3 class="subTxt">
+            	“指导价”——上世纪80年代以前，政府通过发布指导价文件，规定主要建材价格，作为工程预算、结算、采购、支付等依据。
+            </h3>
+            <h2 class="titleBar">材料价格，政府指导</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title03-01.png"/></h1>
+        </div>
+    </div>
+</div>
+<div class="section section-4">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper">
+            	<img src="$common_site/images/act/wdzjt/bg04_03.png" id="star-wrapper-6" class="star03"/>
+                <img src="$common_site/images/act/wdzjt/bg04_02.png" id="star-wrapper-8" class="star02"/>
+                <img src="$common_site/images/act/wdzjt/bg04_01.png" id="star-wrapper-7" class="star01"/>
+            </div>
+            <h3 class="subTxt">
+            	“造价信息期刊”——上世纪80年代以后，各地政府开始由造价站通过期刊的形式公布省、市常用材料价格信息。期刊每个月或每个季度发布一次，作为政府投资项目编制预结算的参考依据。但在改革开放的背景下，越来越多的信息需要通过市场的手段来获取，期刊越来越不能满足工程造价的需要……
+            </h3>
+            <h2 class="titleBar">材料价格，翻翻期刊</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title04-01.png"/></h1>
+        </div>
+    </div>
+</div>
+<div class="section section-5">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper">
+            	<img id="star-wrapper-9" src="$common_site/images/act/wdzjt/bg05_02.png" class="star02"/>
+                <img id="star-wrapper-10" src="$common_site/images/act/wdzjt/bg05_01.png" class="star01"/>
+            </div>
+            <h3 class="subTxt">
+            	“造价通3.0”——2007年至2013年5月，造价通从为政府提供编制信息价数据来源，到提供网上信息价查询，到提供供应商数据、造价通参考价，到提出在线询价概念。作为改变传统材价获取模式的经典之作，造价通以查价、询价为基础的服务在造价信息发展史上留下浓墨重彩的一笔！目前市场上以查价、询价为主的网站不胜枚举，其中更多网站缺乏了创新的思维和务实的经营，造价信息网站开始被更多人诟病，详见“**在线，**68，**网……”
+            </h3>
+            <h2 class="titleBar">查价格，上造价通</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title05-01.png"/></h1>
+        </div>
+    </div>
+</div>
+<div class="section section-6">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="star-wrapper">
+            	<img id="star-wrapper-11" src="$common_site/images/act/wdzjt/bg06_03.png" class="star03"/>
+            	<img id="star-wrapper-12" src="$common_site/images/act/wdzjt/bg06_02.png" class="star02"/>
+                <img id="star-wrapper-13" src="$common_site/images/act/wdzjt/bg06_01.png" class="star01"/>
+            </div>
+            <h3 class="subTxt">
+            	古语云：问渠那得清如许，为有源头活水来。工程造价数据以万亿数量级轻松步入大数据大门，每年都还在以超过50%的速度递增。当别人还在大海捞针，轻描淡写地宣扬科技改变工作的时候，造价通悄然站在了建设行业大数据平台的历史拐点。互联网平台化，建设行业发展国际化，市场经济改革深入化，企业竞争数据化，个人应用体验化……造价行业第五代全新感觉信息化产品尽在造价通。
+            </h3>
+            <h2 class="titleBar">工程造价信息化进入大数据时代的革命之作</h2>
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title06-02.png"/></h1>
+        </div>
+    </div>
+</div>
+
+<div class="section section-7">
+	<div class="inner01">
+    	<div class="textArea">
+        	<div class="jieshao">
+               <dl class="clearfix">
+                    <dt><span class="iconImg-01"></span></dt>
+                    <dd>
+                    	<h1>品牌保证</h1>
+                        <h2><span>造价通</span><br />七年磨一剑，再次引领革命</h2>
+                        <p>
+                        	2008年，首创询价服务模式<br />
+                            2008年，首创数据库服务<br />
+                            2013年，首创大数据服务<br />
+                            2014年，造价行业第五代信息化产品正式上线
+                        </p>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt><span class="iconImg-02"></span></dt>
+                    <dd>
+                    	<h1>智能化</h1>
+                        <h2>建材国标智能分类，您身边的建材分类专家</h2>
+                        <p>
+                        	2013年5月1日，《中华人民共和国建设工程人工材料机械设备价格数据标准》发布。<br/>同期，造价通推出按照国标分类功能，48个大类，超过1000个子类，平台自动智能按分类储存企业建材价格数据。
+                        </p>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt><span class="iconImg-05"></span></dt>
+                    <dd>
+                    	<h1>云安全</h1>
+                        <h2>云数据库，时刻满足您的需要</h2>
+                        <p>
+                        	华为云数据安全解决方案，彻底保障数据安全。<br/>不用自建数据库，云技术带给您无处不在的数据体验。
+                        </p>
+                    </dd>
+                </dl>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-8">
+	<div class="inner01">
+    	<div class="textArea">
+        	<div class="jieshao">
+               <dl class="clearfix">
+                    <dt><span class="iconImg-03"></span></dt>
+                    <dd>
+                    	<h1>大数据</h1>
+                        <h2>平台资源整合，市场一线价格，动态尽在您掌握</h2>
+                        <p>
+                        	全国建材生产厂家，各级经销商，建材城销售人员与您互动，更有采购人员，设计师加入互动，更多惊喜等您发现……<br/>更快，更准的搜索引擎，所想如所见。
+                        </p>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt><span class="iconImg-04"></span></dt>
+                    <dd>
+                    	<h1>云服务</h1>
+                        <h2>不知不觉，数据积累在您的云端</h2>
+                        <p>
+                        	24小时服务在您身边。<br/>线下询价自动导入您的云数据库。
+                        </p>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt><span class="iconImg-06"></span></dt>
+                    <dd>
+                    	<h1>个性化</h1>
+                        <h2>按需定制，我知道您想要的</h2>
+                        <p>
+                        	查询、询价、数据库服务单独定制，让您的每一分钱都物超所值。<br/>下载、收藏、人工服务，开启造价信息服务“私人定制”时代。
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section section-9">
+	<div class="inner">
+    	<div class="textArea">
+            <div class="fwBox02"><a class="link-xq" href="/common/toApplyFor_cloud.html">查看详情</a></div>
+            <h3 class="tileBar"></h3> 
+            <div class="fwBox">
+                <div class="bgB01" onmouseover="this.className='bgB01-bg';" onmouseout="this.className='bgB01';"><span></span></div>
+                <div class="bgB02" onmouseover="this.className='bgB02-bg';" onmouseout="this.className='bgB02';"><span></span></div>
+                <div class="bgB03" onmouseover="this.className='bgB03-bg';" onmouseout="this.className='bgB03';"><span></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section section-10">
+	<div class="inner">
+    	<div class="textArea">
+            <h1 class="mainTitle"><img src="$common_site/images/act/wdzjt/title07-02.png"/></h1>
+            <a href="/"><img src="$common_site/images/act/wdzjt/title07-btn.png" class="bg08-btn"/></a>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+//document.body.style.overflow = 'hidden';
+var ie6 = !-[1,]&&!window.XMLHttpRequest;
+ie6 || loadImg.init();
+</script>
+
+<div style="display:none"><script src="http://s23.cnzz.com/z_stat.php?id=1252945908&web_id=1252945908" language="JavaScript"></script></div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa01b74f783ea1eda2c633ceefd483123' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

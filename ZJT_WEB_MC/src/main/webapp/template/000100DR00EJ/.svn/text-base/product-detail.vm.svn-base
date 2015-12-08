@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+## 获取商铺信息
+#set($epShop=$epShopService.getEpShopByEID($dataInfo.eid))
+## 获取建材产品详细信息
+#set($facMaterialNoPrice=$epShopService.getFacMaterialNoPrice($stringUtil.paseInt($dataInfo.id)))
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/common/reset.css" />
+<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/common/topbar_common.css" />
+<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/shop/shops03_common.css" />
+<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/shop/shops03_product_in_detail.css" />
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/jyeeda.js"></script> 
+    <script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataStore.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/basic.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataCheck.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/ConCom.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/shop_type_db.js"></script>
+		<script type="text/javascript" src="$!{c1wcw_dir}/js/common/common.js"></script>
+	<title>$!{epShop.getName()}_产品详细_网材网</title>
+
+  </head>
+  
+ <body>
+	<!-- 引入头部 -->
+    #parse($shop_vip_header_dir)
+
+
+
+<!--	contanier star	-->
+<div class="contanier">
+	 #parse($shop_vip_left_dir)
+  <div class="right">
+    
+    	<!--	moudel_box_right star	-->
+        <div class="moudel_box_right">
+        	<h1 class="title_bg">产品详细</h1>
+        	<div class="cpxx_box">
+                <dl>
+                    <dt><img id="topPhoto" src=#if($stringUtil.nullTrim($!{facMaterialNoPrice.topPhoto}))"$!{ftp_pic}$!{facMaterialNoPrice.topPhoto}"#else"$!{default_eplogo}"#end  /></dt>
+                        <dd>
+	                          <h3>$!{facMaterialNoPrice.name}</h3>
+	                        <p><span class="f_c_g_09">规　　格：</span> $!{facMaterialNoPrice.spec}</p>
+	                        <p><span class="f_c_g_09">品　　牌：</span> $!{facMaterialNoPrice.brand}</p>
+	                        <p><span class="f_c_g_09">档　　次：</span>$!parameterUtil.changeGrade($!{facMaterialNoPrice.grade})</p>
+	                        <p><span class="f_c_g_09">产　　地：</span> $!{facMaterialNoPrice.city}</p>
+	                        <p><span class="f_c_g_09">时　　间：</span><script language="javascript">document.write(changeTime("$!{facMaterialNoPrice.issueDate}"));</script></p>
+	                    </dd>
+                </dl>
+          </div>
+            
+            
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!--	contanier end	-->
+    <!-- 引入尾部 -->
+    #parse($shop_vip_footer_dir)
+</body>
+</html>

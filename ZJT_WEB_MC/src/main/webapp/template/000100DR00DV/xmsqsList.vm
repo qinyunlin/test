@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#set($listContent=$dataInfo.contents)
+#set($title=$dataInfo.title)
+#set($pageNo=1)
+#set($pageNo=$pageNo.parseInt($dataInfo.page))
+#set($pageSize=20)
+#set($pageSize=$pageSize.parseInt($dataInfo.pageSize))
+#set($recCount=20)
+#set($recCount=$recCount.parseInt($dataInfo.count))
+#set($pageCount=3)
+#set($pageCount=$pageCount.parseInt($dataInfo.pageCount))
+#set($firstPage=$dataInfo.firstPage)
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>阳光采购_项目授权书列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/ygcg/xmsqs.css">
+	<script type="text/javascript" language="javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+    <script type="text/javascript" src="$wcw_common_site/js/project/project_info.js"></script>
+  </head>
+  <body>
+    #parse($wcw_header)
+     <div id="main">
+     	<div class="xmsqs_main">
+	     	<div class="ygcg_r_title" style="width:948px;margin-bottom:8px;">
+		    	<div class="ygcg_r_title_l"></div>
+		    	<div class="ygcg_r_title_c" style="padding-left:12px;width:790px;">项目授权书列表</div>
+		    	<div class="ygcg_r_title_r"></div>
+		    </div>
+		    <div class="xmsqs_container">
+		        <div id="listbody" class="listbody_class">
+		         
+                    	#foreach($obj in $!listContent)
+                    	<div class="xmsqs_content" >
+								    		<div class="xmsqs_img">
+								    			<a  target="_blank" href="$templateUtil.getWcwInfoContentUrl($!obj.id,$!obj.tpath,$!obj.addTime)"><img width="281px" alt="$!obj.subTitle" height="402px" src="$!fileUtil.getWcwFileUrl($!obj.picPath)" /></a>
+								    		</div>
+								    		<div class="xmsqs_name">
+								    			<a  target="_blank" class="black_a" href="$templateUtil.getWcwInfoContentUrl($!obj.id,$!obj.tpath,$!obj.addTime)" style="font-size:14px;">$!obj.getEname()</a>
+								    		</div>
+								    	</div>
+			    	#end
+		        </div>
+		    
+		    	
+		    	  <div id="page">
+#parse($shop_page_dir)
+				  </div>
+		    </div>
+		    <div class="clearing"></div>
+	    </div>
+     </div>
+     #parse($wcw_footer)
+
+  </body>
+
+</html>

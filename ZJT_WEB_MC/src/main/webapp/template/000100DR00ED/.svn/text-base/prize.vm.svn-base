@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>网材网_奖品信息</title>
+		<link type="text/css" rel="stylesheet" href="$common_site/css/common/common.css">
+		<link type="text/css" rel="stylesheet" href="$common_site/css/common/zjtcn.css">
+		<link type="text/css" rel="stylesheet" href="$common_site/css/zjt/include/prize.css">
+
+		<script language="javascript"
+			src="$common_site/js/common/jyeeda.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/basic.js"></script>
+		<script language="javascript"
+			src="$common_site/js/common/ConCom.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/msg.js"></script>
+		<script type="text/javascript"
+			src="$common_site/js/common/common.js"></script>
+	</head>
+
+	<body style="overflow: scroll-y">
+
+		<div style="height: 951px;margin: 5px auto 0;width: 950px;">
+			$!map.clear()
+                    	$!map.put("tpath", "/20/2012/201205/")
+                    	$!map.put("isTop","1")
+                    	#set($list = $infoService.searchInfoContentSummarys(1, 1, $!map, true)) 
+                    	#foreach($obj in $list)
+	                    	#if($!obj.getIssueType() != "4")
+	                    	  	<img src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"/>
+	                    	#else
+	                    		<embed rel="external nofollow" width="100%" height="100%" id="adv2_flash" plugspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="opaque" quality="autohigh" src="$!fileUtil.getWcwFileUrl($!obj.getUrl())">
+	                    	#end
+	                    #end
+		</div>
+		<div class="clearing"></div>
+		<div id="main" class="template_main_up">
+			<div id="img_area">
+				#set($list = $goodService.search(1, 36, null, null ,null ,null, false))
+				#foreach($obj in $list)
+				<div class="img_block">
+					<div class="box">
+						<img width=160 height=160 src="$fileUtil.getPicUrl($obj.getPhoto(), 160)" />
+					</div>
+					<div class="content">
+						$obj.getName()
+						<div class="clearing"></div>
+						礼品号:$obj.getCode()
+						<div class="clearing"></div>
+						描述：$obj.getDescription()
+						<div class="clearing"></div>
+						兑换金币:$obj.getScore()
+					</div>
+				</div>
+				#end
+				<div class="clearing"></div>
+				<p>活动细则：</p>
+<p>1.礼包的材质、尺寸、图片和性能具体信息请以实物为准。</p>
+<p>2.更多活动详情请拨打造价通客服热线：400-888-9639 。</p>
+<p>3.兑换后会扣除相应金币，兑换的礼品及兑换金币不能退回。</p>
+<p>4.在法律允许的范围内，广州网丁信息科技有限公司保留对金币活动的解释权。</p>
+<p > <img src="$common_site/images/zjt/common/ico_word.gif"/><a class="red" href="http://ftp.zjtcn.com/doc/金币兑换申请表网材.doc" style="font-size:14px;" >金币兑换申请表下载</a></p>
+			</div>
+			<div class="clearing"></div>
+		</div>
+		      #parse($footer_dir)
+		<script>
+		  init();
+		</script>
+	</body>
+</html><script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-18131443-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>

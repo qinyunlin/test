@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$dataInfo.province市场价_$dataInfo.province各地建材厂商、供应商材料报价-$dataInfo.province造价通</title>
+    <meta name="description"
+        content="$dataInfo.province造价通，市场价频道50多万家优质材料供应商，定期为您提供最新的$dataInfo.province地区材料厂商报价，各类主材、辅材价格、设备机械租赁价格、厂商合同价、建议价每月更新，累计报价材料达数千万。（信息来自$dataInfo.province造价通 gd.zjtcn.com）"/>
+        <meta name="keywords"	
+            content="市场价，$dataInfo.province供应商材料报价,$dataInfo.province建材价格,$dataInfo.province造价通"/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />      
+</head>
+<body>
+#parse($header_dir)
+<!--	container	-->
+<div class="container">
+	<!--	面包屑	-->
+	<div class="breadCrumb">
+    	<a href="/">首页</a><i>&gt;</i><span>$dataInfo.province市场价</span>
+    </div>
+    #set($htm=".html")
+    <!--	面包屑	-->
+    <div class="clearfix">
+    	<div class="f-l w-840" id="shop_list_show">
+				<!--	土建材料	-->
+	        	<h1 class="tit-name"><i class="icon-tj"></i>土建材料</h1>
+	            <div id="tujian" class="bor-shadow-box">
+	             #set($cidList=$rationLibUtil.getCodeList("1", false))
+	            	<div class="tab-materialType">
+	            	      #set($count = 1)
+		                	#foreach($cidObj in $cidList)
+		                	   #if($count == 1 && $cidObj.getCode() != "00")
+	                             <a  href="/fac/c_t$cidObj.getCode()_p1$htm" class="cur" onclick="clickShopCname('$cidObj.getCode()');" >$cidObj.getOtherName()</a>
+	                           #elseif($count == 2)
+	                            <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm" class="selected" onclick="clickShopCname('$cidObj.getCode()');" >$cidObj.getOtherName()</a>
+	                           #elseif($cidObj.getCode() != "00")
+	                             <a href="/fac/c_t$cidObj.getCode()_p1$htm"  onclick="clickShopCname('$cidObj.getCode()');" >$cidObj.getOtherName()</a>
+	                           #end
+	                           #set($count = $count + 1)
+	                        #end
+	                </div>
+	                 #set($cidCount = 1)
+	                 #foreach($cidObj in $cidList)
+	                    #if($cidObj.getCode() != "00")
+	                        #if($cidCount == 1)
+	                        	<div class="over">
+	                        #else
+	                        	<div style="display: none;" class="over">
+	                        #end
+	                        #set($cidCount = $cidCount + 1)
+	                            <ul   class="tab-companyName clearfix">
+	                                $map.clear()
+	                                $!map.put("cid",$cidObj.getCode())
+	                                #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+	                                #foreach($shopObj in $shopList)
+	                                    <li>#set($htm=".html")
+	                                        <a  title="$shopObj.getName()" target="_blank" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+	                                            $parameterUtil.truncString($shopObj.getName(), 26,"")
+	                                        </a>
+	                                    </li>
+	                                #end
+	                            </ul>
+	                        </div>
+	                     #end
+	             	 #end 
+	            </div>
+	            <!--	土建材料	-->
+	            <!--	装饰材料	-->
+	        	<h1 class="tit-name m-t-10"><i class="icon-zs"></i>装饰材料</h1>
+	            <div id="zhuangshi" class="bor-shadow-box">
+	              <div>
+		            	#set($cidList=$rationLibUtil.getCodeList("2", 1, 9, false))
+		            	<div class="tab-materialType">
+		        	        #set($count = 1)
+		                	#foreach($cidObj in $cidList)
+		                	#if($count == 1)
+		                	   <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm" class="selected" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+		                    #else
+		                       <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+		                    #end
+		                    #set($count = $count + 1)
+		                    #end
+		            	
+		                </div>
+		                
+		                #set($cidCount = 1)
+		                #foreach($cidObj in $cidList)
+		                #if($cidCount == 1)
+		                	<div class="over">
+		                #else
+		                	<div style="display: none;" class="over">
+		                #end
+		                #set($cidCount = $cidCount + 1)
+		                    <ul class="tab-companyName clearfix">
+		                        $map.clear()
+		                        $!map.put("cid",$cidObj.getCode())
+		                        #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+		                        #foreach($shopObj in $shopList)
+		                            <li> #set($htm=".html")
+		                                <a class="blue" target="_blank" title="$shopObj.getName()" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+		                                    $parameterUtil.truncString($shopObj.getName(), 26,"")
+		                                </a>
+		                            </li>
+		                        #end
+		                    </ul>
+		                </div>
+		             	#end
+	             	</div>   
+	             	<div>
+		                #set($cidList=$rationLibUtil.getCodeList("2", 2, 9, false))
+		                <div class="tab-materialType bor-t-1">
+		                    #set($count = 1)
+			            	#foreach($cidObj in $cidList)
+			            	#if($count == 1)
+			            	    <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm" class="selected" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+			                #else
+			                    <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+			                #end
+			                #set($count = $count + 1)
+			                #end
+		                </div>
+		                
+		                #set($cidCount = 1)
+		                #foreach($cidObj in $cidList)
+		                #if($cidCount == 1)
+		                	<div class="over">
+		                #else
+		                    <div style="display: none;" class="over">
+		                #end
+		                #set($cidCount = $cidCount + 1)
+		                    <ul class="tab-companyName clearfix">
+		                        $map.clear()
+		                        $!map.put("cid",$cidObj.getCode())
+		                        #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+		                        #foreach($shopObj in $shopList)
+		                            <li> #set($htm=".html")
+		                                <a class="blue" target="_blank" title="$shopObj.getName()" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+		                                    $parameterUtil.truncString($shopObj.getName(), 26,"")
+		                                </a>
+		                            </li>
+		                        #end
+		                    </ul>
+		                 </div>
+		             	#end
+	                </div>
+	               
+	            </div>
+	            <!--	装饰材料	-->
+	            <!--	安装材料	-->
+	        	<h1 class="tit-name m-t-10"><i class="icon-az"></i>安装材料</h1>
+	            <div id="anzhuang" class="bor-shadow-box">
+	              <div>
+		              #set($cidList=$rationLibUtil.getCodeList("3", 1, 12, false))
+		            	<div class="tab-materialType">
+		            	    #set($count = 1)
+		                	#foreach($cidObj in $cidList)
+		                	#if($count == 1)
+		                	    <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm" class="selected" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>   
+		                    #else
+		                        <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+		                    #end
+		                    #set($count = $count + 1)
+		                    #end
+		                </div>
+		                
+		                #set($cidCount = 1)
+		                #foreach($cidObj in $cidList)
+		                #if($cidCount == 1)
+		                	<div class="over">
+		                #else
+		                	<div style="display: none;" class="over">
+		                #end
+		                #set($cidCount = $cidCount + 1)
+		                    <ul class="tab-companyName clearfix">
+		                        $map.clear()
+		                        $!map.put("cid",$cidObj.getCode())
+		                        #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+		                        #foreach($shopObj in $shopList)
+		                            <li> #set($htm=".html")
+		                                <a target="_blank" title="$shopObj.getName()" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+		                                    $parameterUtil.truncString($shopObj.getName(), 26,"")
+		                                </a>
+		                            </li>
+		                        #end
+		                    </ul>
+		                </div>
+		             	#end
+	                </div>
+	                <div>
+		                #set($cidList=$rationLibUtil.getCodeList("3", 2, 12, false))
+		                <div class="tab-materialType bor-t-1">
+		                
+		                    #set($count = 1)
+		                	#foreach($cidObj in $cidList)
+		                	#if($count == 1)
+		                	   <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm" class="selected" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+		                    #else
+		                       <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+		                    #end
+		                    #set($count = $count + 1)
+		                    #end
+		                </div>
+
+		                #set($cidCount = 1)
+		                #foreach($cidObj in $cidList)
+		                #if($cidCount == 1)
+		                	<div class="over">
+		                #else
+		                	<div style="display: none;" class="over">
+		                #end
+		                #set($cidCount = $cidCount + 1)
+		                    <ul class="tab-companyName clearfix">
+		                        $map.clear()
+		                        $!map.put("cid",$cidObj.getCode())
+		                        #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+		                        #foreach($shopObj in $shopList)
+		                            <li> #set($htm=".html")
+		                                <a  target="_blank" title="$shopObj.getName()" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+		                                    $parameterUtil.truncString($shopObj.getName(), 26,"")
+		                                </a>
+		                            </li>
+		                        #end
+		                    </ul>
+		                </div>
+		             	#end 
+	                </div>
+	            </div>
+	            <!--	安装材料	-->
+	            <!--	市政园林	-->
+	        	<h1 class="tit-name m-t-10"><i class="icon-sz"></i>市政园林</h1>
+	            <div id="yuanlinshizheng" class="bor-shadow-box">
+	            	<div class="tab-materialType">
+	            	 #set($cidList=$rationLibUtil.getCodeList("5", false))
+	            	 #set($count = 1)
+	            	 #foreach($cidObj in $cidList)
+	            	
+	            	 #if($count == 1)
+	            	    <a class="cur" href="/fac/c_t$cidObj.getCode()_p1$htm"  onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+	                 #else
+	                    <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+	                 #end
+	            	
+	                 #set($count = $count + 1)
+	                 #end
+	        		 #set($cidList1=$rationLibUtil.getCodeList("4", false))
+	            	 #foreach($cidObj in $cidList1)
+	                  <a href="/fac/c_t$cidObj.getCode()_p1$htm" onclick="clickShopCname('$cidObj.getCode()');">$cidObj.getOtherName()</a>
+	                 #end
+	                </div>
+	                
+	                #set($tmp = $cidList.addAll($cidList1))
+	                <!-- 分类企业框 -->
+	                #set($cidCount = 1)
+	                #foreach($cidObj in $cidList)
+	                #if($cidCount == 1)
+	                	<div class="over">
+	                #else
+	                	<div style="display: none;" class="over">
+	                #end
+	                #set($cidCount = $cidCount + 1)
+	                    <ul class="tab-companyName clearfix">
+	                        $map.clear()
+	                        $!map.put("cid",$cidObj.getCode())
+	                        #set($shopList=$epShopService.searchEnterprise(9,1,"province='$dataInfo.province' and isAudit=1 and isLock=0 and matCount !=0",$map, "", true))
+	                        #foreach($shopObj in $shopList)
+	                            <li> #set($htm=".html")
+	                                <a target="_blank" title="$shopObj.getName()" href="/fac/t_$shopObj.getEid()_p1$htm"> 
+	                                    $parameterUtil.truncString($shopObj.getName(), 26,"")
+	                                </a>
+	                            </li>
+	                        #end
+	                    </ul>
+	                </div>
+	             	#end
+	            </div>
+	            <!--	市政园林	-->
+	         
+	            
+        </div>
+        
+        
+        <div class="f-r w-250">
+        	<!--	最新市场价	-->
+            <div class="bor-shadow-box" style="margin-top:33px;">
+            	<h1 class="tit-01"><span></span>最新市场价</h1>
+                <ul class="news-supplier-quotation">
+                 #set($list=$facService.showAdvPrice(10,1,$dataInfo.province))
+                #foreach($obj in $list)
+                  <li><span class="material f-l" title="$!obj.getName()">$!obj.getName()</span><span class="offer f-r">$!obj.getPricem()</span></li>
+                #end 
+                </ul>
+            </div>
+            <!--	最新市场价	-->
+            <!--	诚信供应商	-->
+            <div class="bor-shadow-box m-t-10">
+            	<h1 class="tit-01"><span></span>诚信供应商</h1>
+                <ul class="honesty-supplier">
+                     #set($list=$epShopService.integrityShop(8,1,'isIntegrity=1',null,null,true))
+                     #foreach($obj in $list)
+                        <li> #set($htm=".html")
+                            <a target="_blank" href="/fac/t_$obj.getEid()_p1$htm" title="$obj.getName()" class="companyName">$obj.getName()</a>
+                            <p class="main-material">主营材料：$!rationUtil.getNameByCodes($obj.getSubcid())</p>
+                        </li>
+                     #end
+                </ul>
+            </div>
+            
+            <!--  
+              <div class="m-t-10" style="width:234px;height:60px;">
+	                <script type="text/javascript">
+					    /*市场价首页B11-234*60*/
+					    var cpro_id = "u1908809";
+					</script>
+					<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+	            </div>
+            
+            -->
+            <!--	诚信供应商	-->
+            <!-- <div class="adBox-250 m-t-10">广告位</div>-->
+        </div>
+    </div>
+  <!--  
+       <div>
+	            <div class="m-t-10 m-b-10 f-l" style="width:640px;height:60px;">
+	                <script type="text/javascript">
+					    /*市场价首页B21-640*60*/
+					    var cpro_id = "u1908794";
+					</script>
+					<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+	            </div>
+	            
+	               <div class="m-t-10 m-b-10 f-l" style="width:460px;height:60px;">
+	               <script type="text/javascript">
+					    /*市场价首页B22-460*60*/
+					    var cpro_id = "u1908799";
+					</script>
+					<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+	            </div>
+	        </div>    
+</div>-->
+<!--	container	-->
+#parse($footer_dir)
+<div id="J_Feedback" class="feedback" style="display: block;">
+	<a class="btn" style="text-decoration:none;" href="/service/yjfk.jsp">
+	<img src="http://c2.zjtcn.com/images/zjt/img_yjfk_38x38.png"/>
+	<span>我要反馈</span>
+	</a>
+</div>
+<div class="mask_layer" style="display:none; z-index: 888;" id="mask_layer"></div>
+<script src="$common_site/js/zjt/fac/fac_index.js" type="text/javascript"></script>
+<script type="text/javascript">kfguin="4008889639";eid="218808P8z8p8y8y8z8z8y";ws="www.zjtcn.com"; type="0";wpadomain="b";</script> 
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/imqqkf.js?t=110922"></script>
+<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=1254096661&web_id=1254096661" language="JavaScript"></script></div>
+<div style="display:none"><script src="http://s19.cnzz.com/z_stat.php?id=1253062838&web_id=1253062838" language="JavaScript"></script></div>
+
+
+</body>
+  
+  
+</html>

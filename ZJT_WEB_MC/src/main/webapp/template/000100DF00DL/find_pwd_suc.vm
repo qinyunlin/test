@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找回密码造价通($dataInfo.province)</title>
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/login/common.css"/>
+</head>
+
+<body>
+<!--	header star	-->
+<div id="header_box">
+    <div id="header" style="margin:10px auto 0;">
+        <div class="inside-com-logo" ><a href="/" class="logo01"></a><span class="logo-title">找回密码</span></div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div class="co_01 border_1">
+
+	<dl class="rind_psword_suc clearfix">
+    	<dt><span class="icon_suc"></span></dt>
+        <dd>
+            <h1>您已成功找回密码！</h1>
+            <a href="/common/login.html" class="bule_04">重新登录>></a>
+       	</dd>
+    </dl>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>造价通参考价_($dataInfo.province)最准确的建材参考价格_($dataInfo.province)造价通</title>
+		<meta name="description"
+			content="造价通参考价，每月发布最新的建材价格信息，材料价格走势，覆盖土建、装饰、安装、市政、园林五大类别，涵盖600多个材料分类，为($dataInfo.province)各地提供客观、精准的材料价格预算参考依据。"/>
+		<meta name="keywords"	
+			content="参考价，主材价格，材料价格参考，预算价格，价格走势"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+ #parse($header_dir)
+ <!--	container	-->
+<div class="container">
+	<!--	面包屑	-->
+	<div class="breadCrumb">
+    	<a href="/">首页</a><i>&gt;</i><a href="/ration">造价通参考价</a><i>&gt;</i><span>"<i class="f-color-red"></i>"搜索结果</span>
+    </div>
+    <!--	面包屑	-->
+    <div class="layout-box m-t-5 clearfix">
+    	<!--	左侧树	-->
+    	<div class="f-l w-240">
+        	<div class="bor-shadow-box">
+            	<h2 class="tit-name-01">材料分类</h2>
+                <div class="tree-controls ztree" id="treeDemo"></div>
+            </div>
+            <!-- <div class="adBox-240 m-t-10">广告位</div> -->
+        </div>
+        <!--	左侧树	-->
+        <!--	右侧筛选与数据列表	-->
+        <div class="f-r w-850">
+        	<!--	筛选	-->
+        	<div class="bor-shadow-box">
+                <!--	时间	-->
+            	<dl class="nav-category sel_city_box_dl bor-no clearfix">
+                	<dt>时间：</dt>
+                    <dd>
+                    	<ul class="nav-category-li clearfix">
+                        </ul>
+                    </dd>
+                </dl>
+                <!--	时间	-->
+            </div>
+            <!--	筛选	-->
+            <!--	最近搜索的	-->
+            <div class="bor-shadow-box m-t-10">
+            	<ul class="recent—search">
+                	<li class="bor-no" id="zjss_div"></li>
+                	 <li class="bor-no" id="xgss_div"></li>
+                </ul>
+            </div>
+            <!--	最近搜索的	-->
+            <!--	数据列表	-->
+            <div class="bor-shadow-box m-t-10 clearfix">
+            	<!--	标题	-->
+            	<h2 class="tit-name-02"><span class="f-r search-number">为您搜索到：信息价<a id="govCount" href="/gov/gov_search.html?k=" >0</a>条 供应商报价<a id="facCount" href="/fac/fac_search.html?k=" >0</a>条 供应商<a id="shopCount" href="/fac/search.html?k=">0</a>家 询价<a id="xunjiaCount" link="http://xunjia.zjtcn.com/search.html?k=" href="">0</a>条</span><b>$dataInfo.province参考价</b></h2>
+                <!--	标题	-->
+                <!--	操作栏	-->
+                <div class="date-t-option m-t-10 clearfix"> 
+                	<a href="javascript:void(0);" name="attent"  class="btn-collection f-l" style="display:none;margin-right:10px;">关注</a>
+                	<a href="javascript:void(0);" name="collect" class="btn-collection f-l">收藏</a>
+                    <div class="moudle-page f-r" style="padding:0;">
+                    	<div class="page-mune f-r">
+                            <div id="page1" class="manu f_r"></div>
+                        </div>
+                    </div>
+                    <span class="f-r results-total">找到相关材料共 <b id="searchCount">0</b>条</span>
+                </div>
+                <!--	操作栏	-->
+                <!--	数据显示	-->
+                <div class="moudle-date-box">
+                	<table>
+                        <tr>
+                        	<th width="20px"><input id="mycaijia_id" type="checkbox" value="" class="all_selector" /></th>
+                            <th width="20%">名称</th>
+                            <th width="16%">规格/型号</th>
+                            <th width="9%" class="txt-c">单位</th>
+                            <th width="12%">参考价/元</th>
+                            <th width="10%">日期</th>
+                            <th width="10%">涨跌</th>
+                            <th width="6%" class="txt-c">走势图</th>
+                            <th width="15%">来源</th>
+                        </tr>
+					</table>
+					 <div id="listbody"></div>
+			         <div id="page" class="digg"></div>
+                </div>
+                <!--	数据显示	-->
+                <a href="javascript:void(0);" style="display:none;margin-left:10px;margin-bottom:8px;" name="attent" class="btn-collection f-l">关注</a>
+               <a href="javascript:void(0);" style="margin-left:10px;margin-bottom:8px;" name="collect" class="btn-collection f-l">收藏</a>
+            </div>
+            <!--	数据列表	-->
+        </div>
+        <!--	右侧筛选与数据列表	-->
+    </div>
+</div>
+<!--	container	-->
+ <div id="templatebody" style="display:none;">
+	<table>
+      <tr id="row_@{rownum}">
+            <td width="20px"><input name="m_id" type="checkbox" value="@{id}" class="all_selector" /></td>
+            <td width="20%">@{name}</td>
+            <td width="16%">@{spec}</td>
+            <td width="9%" class="txt-c">@{unit}</td>
+            <td width="12%">@{imgURL|isPriceUnitl}</td>
+            <td width="10%">@{issueDate|showDate}</td>
+            <td width="10%">@{gains|rangeUtil}</td>
+            <td width="6%" class="txt-c"><a href="javascript:void(0);" onclick="seeTrend(@{id});return false;" class="icon-charts"></a></td>
+            <td width="15%" class="f-color-gray">@{brands}</td>
+       </tr>
+	</table>
+</div>
+</body>
+#parse($footer_dir)
+#parse($zjt_tip)
+<link rel="stylesheet" type="text/css" href="$common_site/js/plungins/JQuery zTree v3.5.01/css/zTreeStyle/zjtZTreeStyle.css" />
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="$common_site/js/plungins/JQuery zTree v3.5.01/js/jquery.ztree.exedit-3.5.js"></script>
+<script type="text/javascript" src="http://c2.zjtcn.com/js/common/SearchStore.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/commonJS/zhcn_db_gov.js"></script>
+<script type="text/javascript" src="$common_site/js/common/zhcn_select.js"></script>
+<script type="text/javascript" src="$common_site/js/common/search_common.js"></script>
+<script type="text/javascript" src="$common_site/js/zjt/ration/ref_search.js"></script>
+</html>

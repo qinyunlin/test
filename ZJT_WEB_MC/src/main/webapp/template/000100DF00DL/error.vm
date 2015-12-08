@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
+<title>您所访问的页面无法显示 - 造价通</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<meta http-equiv="refresh" content="12;url=http://www.zjtcn.com/">
+<meta property="qc:admins" content="03475601676224366375" />
+<link type="text/css" rel="stylesheet" href="$common_site/css/error_page.css" />
+</head>
+<body>
+	<div id="header_box" style="border:none">
+    	<div id="header">
+        	<a class="logo f_l" title="造价通" href="http://www.zjtcn.com" ><img src="$common_site/images/zjt/common/zjt_logo_221x801.png" /></a>
+    	</div>	
+	</div>
+	
+	<div class="box-w-4">
+    	<dl>
+        	<dt class="i-img-01">
+            	<div class="dt-txt-box">
+                    <p class="txt-01">亲，您所访问的页面无法显示～</p>
+                    <p class="txt-02">可能所访问页面不存在或者尚未审核，<br/>您可以尝试以下操作：</p>
+                </div>
+            </dt>
+              <dd>
+            	<ul>
+                	<li>检查输入的网址是否正确</li>
+                    <li>直接访问 <a href="http://www.zjtcn.com">造价通首页</a> 或 <a href="javascript:history.back(-1);">返回上一页</a></li>
+                    <li>联系 <a href="#" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008889639&eid=218808P8z8p8y8y8z8z8y&o=www.zjtcn.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" >
+                    	在线客服</a> 寻求帮助</li>
+                </ul>
+            </dd>
+        </dl>
+        <div class="tips-js">其他操作：<a href="http://www.zjtcn.com">造价通</a>
+        						   <a href="http://xunjia.zjtcn.com">询价圈</a>
+        						   <a href="http://yunzhi.zjtcn.com">云知</a>
+        						   <a href="http://doc.zjtcn.com">文库</a>
+        						   <a href="http://info.zjtcn.com">资讯中心</a>
+        						   <a href="http://www.ccwcw.com">网材网</a>
+        						   <a href="http://member.zjtcn.com/service/index.jsp">客服中心</a>
+        						   <a href="http://www.zjtcn.com/sitemap.html">网站地图</a>
+        </div>
+    </div>
+
+	<div class="footer">
+		<p>© 2006-2015 ZJTCN.COM</p>
+	</div>
+	
+	<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa01b74f783ea1eda2c633ceefd483123' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<div style="display:none">
+		<script src="http://s5.cnzz.com/z_stat.php?id=1253320430&web_id=1253320430" language="JavaScript">
+		</script>
+	</div>
+</body>
+</html>

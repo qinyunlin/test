@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>资讯列表页面 -造价通</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="$common_site/reduce/basic.css?v=$!stringUtil.cssCreateOn()" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zx_center/common.css"/>
+<link rel="stylesheet" type="text/css" href="http://c2.zjtcn.com/css/storePage/zjtStorePage.css"/>
+<script type="text/ecmascript" src="$common_site/reduce/basic.js?v=$!stringUtil.cssCreateOn()"></script>
+<script type="text/ecmascript" src="$common_site/js/zjt/commonJS/city_site.js"></script>
+<script type="text/ecmascript" src="$common_site/js/common/site_select.js"></script>
+<script language="javascript" src="$common_site/js/zjt/include/news_search.js" ></script>
+</head>
+
+<body>
+
+<!--	header star	-->
+<div id="header_box">
+    <div id="header">
+        <a href="/" class="logo f_l"></a>
+        <div class="f_l top_nav">
+            <a href="/news/210103/cata_210103_1.html" id="hyzx">行业资讯</a>
+            <a href="/210101/cata_210101_1.html" id="dfwj">地方文件</a>
+            <a href="/210102/cata_210102_1.html" id="szwj">省站文件</a>
+            <a href="/210104/cata_210104_1.html" id="clgy">材料工艺</a>
+        </div>
+    </div>
+</div>
+<!--	header end	-->
+
+<div id="contanier">
+	<div class="left">
+    	<div class="border_1_box  clearfix">
+        	<h1 class="border_title">
+            	<div class="jg_search f_r" style="margin-left:15px;">
+                    <div class="jg_search_input" style="right:552px;*right:546px;">
+                        
+                        <input id="font_input" type="text" />
+                        <s onclick="searchInfoList()"></s>
+                    </div>
+                </div>
+            	<span id="tname">行业资讯</span>
+            </h1>
+            <ul class="list_ul clearfix">
+            	<li class="l_01">标题</li>
+                <li class="l_02">时间</li>
+            </ul>
+            <ul class="date_ul clearfix" style="border-bottom:none;" id="listbody">
+               
+            </ul>
+            <div id="template" style="display:none;">
+                <li>
+                	<span class="l_01" title="@{title}"><a href="@{url}">@{title|trim_zhcn,38}</a></span>
+                    <span class="l_02">@{addTime|updateTime}</span>
+                </li>
+            </div>
+            <div id="page" class="digg" style="margin-bottom:15px;"></div> 
+        </div>
+    </div>
+    <div class="right">
+         #parse($city_file)
+         #parse($province_file)
+      
+         #parse($material_file)
+        
+    </div>
+</div>
+#parse($footer_dir)
+</body>
+</html>

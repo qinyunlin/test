@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+#set($content = $dataInfo.info)
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>$!content.title  -网材网资讯平台</title>
+    
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta name="keywords" content="$!content.tags" />
+ 	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="$wcw_common_site/css/demand/zxnr.css">
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/common/zxcg.css">
+    <script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>
+	
+	<script language="javascript"
+			src="$wcw_common_site/js/common/msg_zhcn.js"></script>
+	<script language="javascript"
+			src="$wcw_common_site/js/common/basic.js"></script>
+	<script language="javascript"
+			src="$wcw_common_site/js/common/ConCom.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script language="javascript" src="$wcw_common_site/js/common/dataStore.js" ></script>
+	    <script type="text/javascript" src="$wcw_common_site/js/project/project_info.js"></script>
+  </head>
+
+  <body>
+    #parse($wcw_header)
+	 #parse($hypd_nav)
+	 <div class="main">
+       <div class="ccwcw_zxnr_center2">
+        		
+					$!map.clear()
+					$!map.put("isHot", "0")
+					$!map.put("isTop", "1")
+					$!map.put("tpath", "/20/2012/201202/20120206/")
+					#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+					#foreach($obj in $list)
+			
+			       <a rel="external nofollow" href="$!obj.getUrl()" target="_blank"> <img alt="$!obj.getTitle()" width="950px" height="80px" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())"></a>
+			   
+			    #end
+       </div>
+       
+       <div id="crumb">
+			<ul>
+		    	<li class="crumb_hp"><a href="http://www.ccwcw.com">网材网</a></li>
+		        <li><a href="http://www.ccwcw.com/ygcg">阳光采购</a></li>
+		        <li><a href="$templateUtil.getInfoContentList($!content.tpath)">$content.typename</a></li>
+		        <li>正文</li>
+		    </ul>
+	  </div>
+      
+       <div class="ccwcw_zxnr_center3">
+         <div class="ccwcw_zxnr_center3_left" id="info_body">
+           
+             <div class="ygcg_r_title" style="width:660px;">
+	    			<div class="ygcg_r_title_l"></div>
+	    			<div class="ygcg_r_title_c" style="padding-left:12px;width:502px;">$content.typename</div>
+	    			<div class="ygcg_r_title_r"></div>
+	    	 </div>
+	       
+            
+              <div style="border:1px solid #CCC;border-top:0px;">
+	           <h6 id="title">
+								$!content.title
+							</h6>
+							<div class="ccwcw_zxnr_xx">
+								<span><a href="http://www.ccwcw.com/">http://www.ccwcw.com/</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+								<span id="addTime">$!content.addTime</span>&nbsp; 来源：
+								<span id="source">$!content.source</span>
+							</div>
+							 <div id="content" class="ccwcw_zxnr_xx_context">
+                                                              $!content.content
+	                         </div>
+	                         
+	                         <!-- 相关链接 -->
+	                          #if($content.tags != "null" || $content.tags != "")
+					            	$!map.clear()
+					            	$!map.put("tpath", "/20/")
+									$!map.put("tags", $content.tags)
+									#set($list = $infoService.searchInfoContentWidthExCoulmn(10, 1,"id != $content.id", $!map, true))
+									#if($list.size() != 0)
+			                         <div class="xg_link_box">
+							       		<h1 class="xg_link_box_title">相关链接：</h1>
+							            <ul>
+											#foreach($obj in $list)
+												#if($velocityCount%2!=0)
+								            	<li class="m_r_20"><a href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())" target="_blank" title="$obj.title">$obj.subTitle</a></li>
+								            	#else
+								                <li><a href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())" target="_blank" title="$obj.title">$obj.subTitle</a></li>
+								                #end
+							                #end
+						            #end
+							            </ul>
+		       						 </div>
+		       				#end
+               <div>
+               
+            </div>
+         </div>
+   </div>
+     #parse($wcw_ygcgnrcl)
+  </div>
+  <div class="clearing"></div>
+ </div>
+          #parse($wcw_footer)
+  </body>
+  
+</html>

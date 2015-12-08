@@ -1,0 +1,49 @@
+### \u8bbe\u7f6e\u65e5\u5fd7\u4fe1\u606f\u8f93\u51fa\u7ea7\u522bINFO,DEBUG,WARN,ERROR\u548c\u8f93\u51fa\u5730console,file ##
+log4j.rootLogger=error,file,console
+
+log4j.logger.org.yeeda=debug,file
+log4j.logger.org.yeeda.costexpress.util.ConnectionPoola=ERROR,file
+log4j.logger.org.yeeda.costexpress.service.login.impl.PassportLoginServiceImpl=DEBUG,Loginfile
+log4j.logger.org.yeeda.costexpress.filter.AutoLoginFilter=DEBUG,accessLogFile
+log4j.logger.org.yeeda.costexpress.util.sql=${site.log_level},sqlLogFile
+
+### \u8bbe\u7f6e\u8f93\u51fa\u5730console\uff0c\u4e3aConsoleAppender(\u63a7\u5236\u53f0) ##
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+### \u8bbe\u7f6econsole\u7684\u8f93\u51fa\u5e03\u5c40\u683c\u5f0fPatternLayout,(\u53ef\u4ee5\u7075\u6d3b\u5730\u6307\u5b9a\u5e03\u5c40\u6a21\u5f0f\uff09##
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+### \u914d\u7f6e\u65e5\u5fd7\u8f93\u51fa\u7684\u683c\u5f0f##
+log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+
+### \u8bbe\u7f6e\u8f93\u51fa\u5730file\u5230\u6587\u4ef6\uff08\u6587\u4ef6\u5927\u5c0f\u5230\u8fbe\u6307\u5b9a\u5c3a\u5bf8\u7684\u65f6\u5019\u4ea7\u751f\u4e00\u4e2a\u65b0\u7684\u6587\u4ef6\uff09##
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+### \u6587\u4ef6\u4f4d\u7f6e,\u8fd9\u91cc\u8bbe\u7f6e\u4e3a${tomcat-home}/logs\u76ee\u5f55\u4e0b##
+log4j.appender.file.File=/opt/module/apache-tomcat-6.0.26/logs/mc_application.log
+### \u6587\u4ef6\u5927\u5c0f##
+log4j.appender.file.MaxFileSize=1024KB
+### \u8bbe\u7f6efile\u7684\u8f93\u51fa\u5e03\u5c40\u683c\u5f0fPatternLayout,(\u53ef\u4ee5\u7075\u6d3b\u5730\u6307\u5b9a\u5e03\u5c40\u6a21\u5f0f\uff09##
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+### \u914d\u7f6e\u65e5\u5fd7\u8f93\u51fa\u7684\u683c\u5f0f##
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+
+
+### \u8bbe\u7f6e\u8f93\u51fa\u5730file\u5230\u6587\u4ef6\uff08\u6309\u65e5\u4ea7\u751f\u6587\u4ef6\uff09##
+log4j.appender.Loginfile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.Loginfile.File=/opt/module/apache-tomcat-6.0.26/logs/mc_online.log
+log4j.appender.Loginfile.DatePattern='.'yyyy-MM-dd
+log4j.appender.Loginfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.Loginfile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+
+
+### \u8bbe\u7f6e\u8f93\u51fa\u5730file\u5230\u6587\u4ef6\uff08\u6309\u65e5\u4ea7\u751f\u6587\u4ef6\uff09##
+log4j.appender.accessLogFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.accessLogFile.File=/opt/module/apache-tomcat-6.0.26/logs/mc_accessFile.log
+log4j.appender.accessLogFile.DatePattern='.'yyyy-MM-dd
+log4j.appender.accessLogFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.accessLogFile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+
+### \u8bbe\u7f6e\u8f93\u51fa\u5730file\u5230\u6587\u4ef6\uff08\u6309\u65e5\u4ea7\u751f\u6587\u4ef6\uff09##
+log4j.appender.sqlLogFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.sqlLogFile.File=/opt/module/apache-tomcat-6.0.26/logs/mc_sqlFile.log
+log4j.appender.sqlLogFile.DatePattern='.'yyyy-MM-dd
+log4j.appender.sqlLogFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.sqlLogFile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n

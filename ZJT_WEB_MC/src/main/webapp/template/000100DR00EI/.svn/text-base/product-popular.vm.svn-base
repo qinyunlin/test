@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+## 获取商铺信息
+#set($epShop=$epShopService.getEpShopByEID($dataInfo.eid))
+## 获取建材产品信息列表 1 20
+#set($pageNo=$stringUtil.paseInt($dataInfo.pageNo, 1))
+#set($pageSize=$stringUtil.paseInt($dataInfo.pageSize))
+#set($recCount=$stringUtil.paseInt($dataInfo.recCount))
+#set($pageCount=$stringUtil.paseInt($dataInfo.pageCount))
+#set($firstPage=$dataInfo.firstPage)
+#set($facMaterialForGuestList=$epShopService.getMostlyFacMasterialByType($dataInfo.eid,"1"))
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/common/reset.css" />
+	<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/common/topbar_common.css" />
+	<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/shop/shops02_common.css" />
+	<link rel="stylesheet" type="text/css" href="$!{c1wcw_dir}/css/shop/shops02_product.css" />
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/jyeeda.js"></script> 
+    <script type="text/javascript" src="$!{c1wcw_dir}/js/common/stuff_code.js"></script>
+    <script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataStore.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/pageTool.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/basic.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/dataCheck.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/ConCom.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/jquery.cookie.js"></script>
+	<script type="text/javascript" src="$!{c1wcw_dir}/js/common/common.js"></script>
+	<title>$!{epShop.getName()}_建材产品_网材网</title>
+
+  </head>
+  
+ <body> 
+	<!-- 引入头部 |$!{pageNo}|$!pageSize|$!recCount|$!pageCount|||$dataInfo.pageNo|$dataInfo.pageSize|$dataInfo.recCount|$dataInfo.pageCount|-->
+    #parse($shop_enterprise_header_dir)
+	
+	
+	
+<!--	contanier star	-->
+<div class="contanier">
+
+	<!--	left star	-->
+	    #parse($shop_enterprise_left_dir)
+    <!--	left end	-->
+    
+    <div class="right" style="position:relative;">
+    	
+    	<!--	qyjs star	-->
+    	<div class="moudel_box_01">
+        	<h1>热门产品</h1>
+            
+            <div class="moudel_box_01_co">
+            
+                <!--	product_big_img star	-->
+            <!--<div class="product_big_img" style="top:90px;"><img src="../images/product_img_300x300.jpg" /></div>-->
+            <!--	product_big_img end	-->
+                
+                <!--	product_list star	-->
+                <div class="product_list">
+                    
+                    
+                             
+             #if($facMaterialForGuestList.size()==0)
+				<div class="nofound"></div>
+	         #else
+    			#set($ids="")
+    			#foreach ( $facMaterial in $facMaterialForGuestList )
+    				#if($velocityCount>1)
+    					#set($ids="$ids,")
+    				#end
+    			   #set($ids="$ids$!{facMaterial.mid}")
+                
+            	<dl class="product_list_item clearfix">
+                	<dt>
+                    	<div class="icon_style_hot"></div>
+                   	    <a id="jc_link" target="_blank" class="shop_product_name" href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/product/detail-$!{facMaterial.mid}.html">
+                        		<img src=#if($stringUtil.nullTrim($!{facMaterial.pimages}))"$!{ftp_pic}$!{facMaterial.pimages}"#else"$!{default_eplogo}"#end width="80" height="80"/>
+                        	</a>              </dt>
+                       <dd>
+                    	<h3 class="txt_sl"><a id="jc_link2" href="$!{ccwcw_dir}/shop/$!{dataInfo.eid}/product/detail-$!{facMaterial.mid}.html">$!{facMaterial.pname}</a></h3>
+                        <div class="txt_xh txt_sl f_l m_r_10">型号：$!{facMaterial.spec}</div>
+                        <div class="txt_date txt_sl f_l"><script language="javascript">document.write(changeTime("$!{facMaterial.issueDate}"));</script></div>
+                        <div class="txt_pp txt_sl f_l m_r_10">品牌：$!{facMaterial.brand}</div>
+                        <div class="txt_pp txt_sl f_l m_r_10">档次：$!parameterUtil.changeGrade($!{facMaterial.grade})</div>
+                        <div class="txt_cd txt_sl f_l m_r_10">产地：$!{facMaterial.city}</div>
+                    </dd>
+                </dl>
+                
+         	     #end
+			#end
+                
+                </div>
+        <!-- 分页 -->
+        <!--	product_list end	-->
+            <div class="page_list">
+            	#parse($shop_page_dir)
+            </div>
+      	</div>
+        <!--	jccp_box end	-->
+                
+                
+            </div> 
+        </div>
+        <!--	qyjs end	-->
+        
+        
+    </div>
+</div>
+	
+<!--	footer star	-->
+    <!-- 引入尾部 -->
+    #parse($shop_enterprise_footer_dir)
+</body>
+</html>

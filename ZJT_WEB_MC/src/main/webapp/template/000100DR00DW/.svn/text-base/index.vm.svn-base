@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  	
+   <title>工程项目-网材网-中国建设工程信息网</title>
+ <meta name="keywords" content="建筑工程，工程信息、在建工程，工程信息网，工程项目" />
+<meta name="description" content="工程项目频道是网材网旗下一个最优质，专业的建设工程信息平台。包含有大量的土建工程，水电工程，安装工程，消防工程，楼宇监控工程等信息。能够及时、准确的为用户提供丰富，高质量工程项目信息。" />
+
+
+	<link rel="stylesheet" type="text/css" href="$wcw_common_site/css/project/index.css">
+	<script type="text/javascript" src="$wcw_common_site/js/common/jyeeda.js"></script>	
+	<script type="text/javascript" src="$wcw_common_site/js/common/basic.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/jq.Slide.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/common.js"></script>
+	<script type="text/javascript" src="$wcw_common_site/js/common/jquery.cookie.js"></script>	
+  <script type="text/javascript" src="$wcw_common_site/js/project/index.js"></script> 
+  </head>
+  
+	
+  <body>
+  #parse($wcw_header)
+  <div class="main">
+     <div class="ccwcw_center1">
+       
+         <div class="ccwcw_center1_left">
+            <div class="title_banner" style="width:664px;">
+                <div class="title_banner_left"></div>
+                <div class="title_banner_center" style="width:657px;">
+                    <div class="title_icon"></div>
+                    <a  target="_blank" class="black_a" href="/gcxm/gcxmlist/gcxm_1.html"><div class="title_text">项目采购</div></a>
+                    <a class="blue2_a gengduo" href="/gcxm/gcxmlist/gcxm_1.html"  target="_blank" >更多＞＞</a>
+                </div>
+                	
+
+                <div class="title_banner_right"></div>
+            </div>
+            <div class="ccwcw_center1_bottom">
+                <div class="ccwcw_center1_left_bottom" align="center">
+               
+                        $!map.clear()
+                    		$!map.put("state", "1")
+                    		$!map.put("isLock","0")
+                    		#set($list = $projectService.search(4,1,"",$!map,null,"orderCode desc,CreateOn desc",true))
+                    	  #foreach($obj in $list)
+		                      <ul class="center1_ul">
+		                        <li class="center1_li" style="width:288px;height:180px;">
+		                      	<a  target="_blank" class="black_a" title="$!obj.getName()"  href="$templateUtil.getProjectUrl($!obj.getId())">
+		                      	<img  width="288px" height="180px" src="$!fileUtil.getWcwFileUrl($!obj.getFlagPic())" /></a></li>
+		                       <li class="center1_li" >
+		                      	<a  target="_blank" class="black_a" style="cursor:pointer;" href="$templateUtil.getProjectUrl($!obj.getId())" >
+		                      		$!parameterUtil.truncString($!obj.getName(),24,"")</a></li>
+		                     </ul>
+                       #end
+               </div>
+            </div>    
+         </div>
+         <div class="ccwcw_center1_right">
+	         <div id="zxcg" class="item_xx">
+				
+				<div class="title_banner" style="width:277px;">
+					<div class="title_banner_left" ></div>
+					<div class="title_banner_center" style="width:271px;">
+						<div class="title_icon"></div>
+						<a  target="_blank"  class="black_a" href="$templateUtil.getInfoContentList('/20/2005/200506/')"><div class="title_text">最新成果</div></a>
+						<a class="blue2_a gengduo" href="$templateUtil.getInfoContentList('/20/2005/200506/')"  target="_blank" >更多＞＞</a>
+					</div>
+					<div class="title_banner_right" ></div>
+				</div>
+				<div class="zxcg_container">
+					<div class="zxcg_div">		
+			              $!map.clear()
+			          		$!map.put("tpath", "/20/2005/200506/")
+			              #set($list=$infoService.searchInfoContentSummarys(8, 1, $!map, true))
+			          	  #foreach($obj in $list)
+								<ul>
+									<li class="xmsqs_orange_p2"></li>
+									<li class="zxcg_text">
+										<a  target="_blank" class="black_a"  href="$templateUtil.getWcwInfoContentUrl($!obj.getId(),$!obj.getTpath(),$!obj.getAddTime())"  tltle="$!obj.getSubTitle()" style="font-size:14px;">$!parameterUtil.truncString($!obj.getSubTitle(),38,"")</a>
+									</li>
+								</ul>
+                             #end
+					
+					</div>
+				</div>
+	     </div>
+	   #parse($wcw_zxcg)
+	         
+         </div> 
+     
+      </div>
+      <div class="photo">			
+					$!map.clear()
+					$!map.put("isHot", "0")
+					$!map.put("isTop", "1")
+					$!map.put("tpath", "/20/2012/201204/20120403/")
+					#set($list = $infoService.searchInfoContentSummarys(1, 1,$!map, true))
+					#foreach($obj in $list)
+			          <img width="950px;" height="30px;" alt="$!obj.getTitle()" src="$!fileUtil.getWcwFileUrl($!obj.getPicPath())" />
+			    #end
+    </div>
+    <div class="ccwcw_center2">
+         <div class="ccwcw_center2_left">
+            <div class="title_banner">
+                <div class="title_banner_left"></div>
+                <div class="title_banner_center" style="width:943px;">
+                    <div class="title_icon"></div>
+                  <a class="black_a"  target="_blank" href="/gcxm/recruitlist/gcxm_1.html" title="点击还有更多"><div class="title_text">供应商招募</div></a>
+                  <a class="blue2_a gengduo" href="/gcxm/recruitlist/gcxm_1.html"  target="_blank">更多＞＞</a>
+                </div>
+               
+                <div class="title_banner_right"></div>
+            </div>
+            <div class="ccwcw_center2_bottom">
+                <div class="ccwcw_center2_content">
+ 
+				
+		  
+							$!map.clear()
+							$!map.put("state","1")
+							$!map.put("isLock","1")
+							#set($list=$recruitService.listRecruits(1,6,"",$!map,null,"orderCode desc,createOn desc",false))
+							#foreach($obj in $list)
+		                      #set($list1=$enterpriceService.getEnterprise($!obj.getEid()))
+		                      #foreach($obj1 in $list1)
+		                      
+		                 
+		                 <div class="ccwcw_Suppliers_content">
+	                      <div class="ccwcw_Suppliers_top">
+	                          <div class="cccwcw_Suppliers_left">
+	                           <a class="black_a" title="$!obj.getTitle()"  target="_blank" href="$templateUtil.getRecruitUrl($!obj.getId())"><img width="190px" height="98px" src="$!fileUtil.getWcwFileUrl($!obj1.getPicPath())" /></a>
+	                          </div>
+	                          <div class="ccwcw_Suppliers_right" align="left">
+	                             <div class="ccwcw_Suppliers_title" title="$!obj.getTitle()">
+	                                     <a class="black_a"  target="_blank" href="$templateUtil.getRecruitUrl($!obj.getId())">$!obj.getTitle()</a>
+	                             </div>
+	                             <div class="ccwcw_Suppliers_jianje" title="$!obj.getRequirement()">
+	                                <span style="font-size:12px;font-weight:bold;">招募要求：</span>
+	                                $!obj.getRequirement()
+	                             </div>
+	                            
+	                          </div>
+	                          </div>
+	                           <div class="ccwcw_Suppliers_bottom" align="left" title="$!parameterUtil.purchasingRange($!obj.getProcurementrange())">
+	                               <span style="font-size:12px;font-weight:bold;margin-top:8px;">招募范围:</span>
+	                               $!parameterUtil.purchasingRange($!obj.getProcurementrange())
+	                           </div>
+	                   </div>
+	             #end
+               #end 
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="ccwcw_center3" style="margin-bottom:15px;">
+          <div class="title_banner" style="width:950px;">
+                <div class="title_banner_left"></div>
+                <div class="title_banner_center" style="width:943px;">
+                    <div class="title_icon"></div>
+                    <a class="black_a"  target="_blank" href="/gcxm/purchaseList.html?stuff="><div class="title_text">求购分类</div></a>
+                </div>
+                 <div class="title_banner_right"></div>
+          </div>
+          <div class="ccwcw_center3_bottom">
+               <p class="ccwcw_center3_bottom_p">
+
+               #set($list=$cgRationUtil.getCidRationLib())
+               #foreach($obj int $list)
+               <a class="black_a" href="/gcxm/purchaseList.html?cgcid=$!obj.getProcureCode()">$!obj.getName()</a>
+               #end
+
+
+
+             <!-- <a class="black_a" href="/gcxm/purchaseList.html?stuff=/黑色及有色金属/">黑色及有色金属</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/橡胶、塑料及非金属/">橡胶、塑料及非金属</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/五金制品/">五金制品</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/水泥、砖瓦灰砂石及混凝土制品/">水泥、砖瓦灰砂石及混凝土制品</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/木、竹材及其制品/">木、竹材及其制品</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/玻璃、陶瓷及面砖/">玻璃、陶瓷及面砖</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/装饰石材及地板/">装饰石材及地板</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/墙面、天棚装饰及屋面材料/">墙面、天棚装饰及屋面材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/门窗制品及门窗五金/">门窗制品及门窗五金</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/装饰线条、装饰件、栏杆、扶手及其它/">装饰线条、装饰件、栏杆、扶手及其它</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/涂料及防腐防水材料/">涂料及防腐防水材料</a>
+              
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/油品、化工原料及胶粘材料/">油品、化工原料及胶粘材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/绝热、耐火材料/">绝热、耐火材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/管材/">管材</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/管件/">管件</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/阀门/">阀门</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/法兰/">法兰</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/洁具/">洁具</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/水暖及通风空调器材/">水暖及通风空调器材</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/消防/">消防</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/仪表/">仪表</a>
+              
+              
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/灯具/">灯具</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/开关/">开关</a> 
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/保险、绝缘材料/">保险、绝缘材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/电线电缆及光纤光缆/">电线电缆及光纤光缆</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/电气线路敷设材料/">电气线路敷设材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/弱电及信息类器材/">弱电及信息类器材</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/仿古建筑材料/">仿古建筑材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/园林绿化/">园林绿化</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/成型构件及加工件/">成型构件及加工件</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/密封、电极及劳保用品等其它材料/">密封、电极及劳保用品等其它材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/周转材料及工器具/">周转材料及工器具</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/道路桥梁专用材料/">道路桥梁专用材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/通风空调设备/">通风空调设备</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/泵、供水设备/">泵、供水设备</a>
+              
+              
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/热水、采暖锅炉设备/">热水、采暖锅炉设备</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/水处理及环保设备/">水处理及环保设备</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/厨房设备/">厨房设备</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/电气设备及附件/">电气设备及附件</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/电梯/">电梯</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/安防及建筑智能化设备/">安防及建筑智能化设备</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/砼、砂浆及其它配合比材料/">砼、砂浆及其它配合比材料</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/工程检测仪器仪表/">工程检测仪器仪表</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/工程费用台班/">工程费用台班</a>
+              <a class="black_a" href="/gcxm/purchaseList.html?stuff=/劳动力/">劳动力</a>-->
+             </p>
+          </div>  
+      </div>  
+      #parse($wcw_footer)
+</div>
+    	
+</body>
+</html>

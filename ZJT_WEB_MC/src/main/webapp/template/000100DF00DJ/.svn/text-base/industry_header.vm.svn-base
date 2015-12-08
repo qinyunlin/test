@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>行业资讯</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="$common_site/css/zjt/include/industry_head.css"/>
+<link rel="stylesheet" type="text/css" href="$common_site/css/common/common.css" />
+        <link rel="stylesheet" type="text/css" href="$common_site/css/member/site_nav.css"/>
+<script src="$common_site/js/common/jyeeda.js" type="text/javascript"></script>
+<script src="$common_site/js/common/ConCom.js" type="text/javascript"></script>
+<script src="$common_site/js/common/basic.js" type="text/javascript"></script>
+<script src="$common_site/js/common/common.js" type="text/javascript"></script>
+<script src="$common_site/js/common/jquery.cookie.js" type="text/javascript"></script>
+        <script type="text/javascript" src="$common_site/js/member/include/top_nav.js"></script>
+<script src="$common_site/js/zjt/include/industry_header.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header_main">
+    <div class="herder">
+        <div class="top">
+             <div class="header_top_title">
+                 <div id="site_nav">
+							<div class="site_nav_bd">
+							    <p class="c_gray_8" id="userLogin"    style="float:left;">
+						
+						        	
+						        </p>
+						    	<ul  style="float:right;margin:0px;padding:0px;">
+						        	<li><a href="/">造价通首页</a></li>
+						        	<li id="member_zx" style="display:none;"><a href="/member/index.jsp">会员中心</a></li>
+						            <li id="vip_zx" class="vip_c" style="display:none;"><a href="http://vip.zjtcn.com/index.jsp">VIP会员中心</a></li>
+						            <li class="email" id="member_znx" style="display:none;"><a id="zlx_div" href="http://member.zjtcn.com/member/sta_lets/sta_lets.jsp"><s class="top_i_email"></s>站内信</a>（<a href="#" class="date" id="messageCount">0</a>）</li>
+						            <li><a target="_blank"  href="/service/index.jsp">客服中心</a></li>
+						            <li><a target="_blank"  href="/service/yjfk.jsp">建议反馈</a></li>
+						            <li class="b_r_n"><a href="javascript:void(0)" onclick="setFavorite();">加入收藏</a></li>
+						        
+						        </ul>
+						        
+						    </div>
+						 </div>  
+             </div>
+        </div>   
+    </div>
+    <div class="center">
+        <div class="center_top">
+           <div class="center_top_left">
+             <div>
+              <img src="$common_site/images/zjt/common/zjtLOGO.jpg" width="198" height="64" style="cursor:pointer" onclick="toIndex()"/>
+             </div>
+            </div>
+             <div class="industry_item">
+               <div class="industry_item_name" tpath="/news/210103/cata_210103_1.html">行业资讯</div><div class="industry_item_line">|</div>
+               <div class="industry_item_name"  tpath="/210101/cata_210101_1.html">地方文件</div><div class="industry_item_line">|</div>
+               <div class="industry_item_name" tpath="/210102/cata_210102_1.html">省站文件</div><div class="industry_item_line">|</div>
+               <div class="industry_item_name" tpath="/210104/cata_210104_1.html">材料工艺</div>
+               
+             </div>
+          </div>
+          </div>
+       
+    </div>
+</body>
+</html>
