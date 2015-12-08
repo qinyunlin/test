@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.favorite.Favorite">
+	<resultMap id="Favorites" type="com.concom.entity.dto.xunjia.app.favorite.Favorite">
+	    <id column="id" property="id" />
+		<result column="memberId" property="memberId" />
+		<result column="askId" property="askId" />
+	</resultMap>
+   
+    <select id="isFavorited" resultType="int">
+        <![CDATA[
+     		select count(id) from youcai.tFavorites where askId=#{askId} and memberId=#{memberId};
+    	]]>
+    </select>
+    <select id="add">
+        <![CDATA[
+     		insert into youcai.tFavorites(askId,memberId) values(#{askId},#{memberId});
+    	]]>
+    </select>
+    <select id="delete">
+        <![CDATA[
+     		delete from youcai.tFavorites where askId=#{askId} and memberId=#{memberId};
+    	]]>
+    </select>
+    <select id="queryPageFavoritesOfXunjia" resultType="string">
+        <![CDATA[
+     		select self.askId from youcai.tFavorites self WHERE self.memberid=#{params.memberId}
+    	]]>
+    </select>
+    
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.sms.SMSLog">
+
+    <insert id="save" parameterType="com.concom.entity.dto.xunjia.app.sms.YoucaiSMSLog">
+    
+     		insert into youcai.tSmsLog(mobile,state,createOn,content) 
+     		values(#{mobile},#{state},#{createOn},#{content});
+    	<selectKey keyProperty="id" resultType="string" statementType="PREPARED">
+			select LAST_INSERT_ID() as value
+		</selectKey>
+    </insert>
+    <select id="queryPage" resultType="com.concom.entity.dto.xunjia.app.sms.YoucaiSMSLog">
+        select * from youcai.tSmsLog
+        <where>
+             <if test="params.state != null and params.state != ''">
+                state=#{params.state}
+             </if>  
+              <if test="params.mobile != null and params.mobile != ''">
+                mobile=#{params.mobile}
+              </if>  
+              <if test="params.beginOn != null and params.beginOn != ''">
+                <![CDATA[  and  DATE_FORMAT(createOn, '%Y-%m-%d') >= #{params.beginOn}]]>
+              </if>   
+               <if test="params.endOn != null and params.endOn != ''">
+                  <![CDATA[ and  DATE_FORMAT(createOn, '%Y-%m-%d') <= #{params.endOn}]]>
+              </if>   
+        </where>
+    </select>
+</mapper>

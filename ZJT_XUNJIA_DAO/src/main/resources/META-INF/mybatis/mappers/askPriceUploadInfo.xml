@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.UploadInfo">
+
+	<insert id="save" parameterType="com.concom.entity.dto.xunjia.ask.UploadInfo">
+		INSERT INTO xunjia.tUploadPiciInfo(memberId,engineer,mobile)
+		VALUES(#{memberId},#{engineer},#{mobile})
+	</insert>
+    
+    <delete id="delete" parameterType="com.concom.entity.dto.xunjia.ask.UploadInfo">
+	    delete from xunjia.tUploadPiciInfo where memberId = #{memberId}
+	</delete>
+	
+	<select id="getById" resultType="com.concom.entity.dto.xunjia.ask.UploadInfo">
+    	select * from xunjia.tUploadPiciInfo where memberId=#{id}
+    </select>
+</mapper>

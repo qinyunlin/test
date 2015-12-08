@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.search.HotKeyword">
+	
+	
+	<select id="fetchTopN" resultType="com.concom.entity.dto.xunjia.app.search.HotKeyword">
+		<![CDATA[
+			select keyword,count(keyword) as counts from youcai.tHotKeyword
+			 where  (TO_DAYS(NOW()) - TO_DAYS(updateOn) <= 300) 
+			 GROUP BY keyword 
+			 order by counts desc
+			limit #{n}
+		]]>
+	</select>
+	<insert id="save" >
+		<![CDATA[
+			insert into youcai.tHotKeyword(keyword,updateOn) values(#{keyword},now());
+		]]>
+	</insert>
+
+</mapper>

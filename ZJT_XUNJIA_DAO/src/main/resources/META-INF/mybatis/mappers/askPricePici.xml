@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPricePici">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askPricePiciResult" type="com.concom.entity.dto.xunjia.ask.AskPricePici">
+	</resultMap>
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.ask.AskPricePici">
+		INSERT INTO xunjia.tAskPricePici(piciId,eid,proName,totalCount,completeCount,fromType,createOn,createBy,completeOn,engineer,mobile,corpName,status,summary,returnVisitMsg)
+		VALUES(#{piciId},#{eid},#{proName},#{totalCount},#{completeCount},#{fromType},#{createOn},#{createBy},#{completeOn},#{engineer},#{mobile},#{corpName},#{status},#{summary},#{returnVisitMsg,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="queryPageXunjiaInfoStatistic"  resultMap="askPricePiciResult">
+	    select * from xunjia.t_askpricepici_total
+	   <where>
+	     1=1
+	    <if test="params.beginOn != null and params.beginOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m-%d') >= #{params.beginOn}
+				]]>
+			</if>
+			<if test="params.endOn != null and params.endOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m-%d') <= #{params.endOn}
+				]]>
+			</if>
+			<if test="params.beginOnNew != null and params.beginOnNew != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m') >= #{params.beginOnNew}
+				]]>
+			</if>
+			<if test="params.endOnNew != null and params.endOnNew != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m') <= #{params.endOnNew}
+				]]>
+			</if>
+			<if test="params.status != null and params.status != ''"> AND status = ${params.status}</if>
+			<if test="params.ids != null and params.ids != ''"> AND piciId in(${params.ids})</if>
+		    <choose>
+		       <when test="params.m_flag !=null and params.m_flag!='' and params.m_flag==2">
+		          and type=1
+		          and fromType in(0)
+		       </when>
+		       <when test="params.m_flag !=null and params.m_flag!='' and params.m_flag==99">
+		          and 1=1
+		       </when>
+		       <otherwise>
+		          and type=0
+		          <choose>
+		       		<when test="params.fromType != null and params.fromType != ''"> 
+		              and fromType in(${params.fromType})
+		             </when>
+		             <otherwise>
+		                and fromType in(0,1)
+		             </otherwise>
+		          </choose>
+		       </otherwise>
+		    </choose>
+		    <if test="params.province != null and params.province !=''">
+					and province = #{params.province}
+		    </if>
+		    <if test="params.city != null and params.city !=''">
+		        	and city = #{params.city}
+		    </if>
+		    <if test="params.ename != null and params.ename !=''">
+	        	    and ename like CONCAT('%',#{params.ename},'%')
+	        </if>
+	        <if test="params.account != null and params.account !=''">
+	        	    and eid like CONCAT('%',#{params.account},'%')
+	        </if>
+     	    <if test="params.piciId != null and params.piciId != ''"> AND piciId LIKE '%${params.piciId}%'</if>
+     	    <if test="params.proName != null and params.proName != ''"> AND proName LIKE '%${params.proName}%'</if>
+     	    <if test="params.engineer != null and params.engineer != ''"> AND engineer LIKE '%${params.engineer}%'</if>
+     	    <if test="params.corpName != null and params.corpName != ''"> AND corpName LIKE '%${params.corpName}%'</if>
+     	    
+	   		<if test="params.eid != null and params.eid != ''"> AND eid = #{params.eid}</if>
+	   		<!-- <if test="params.dateType != null and params.dateType != ''">
+		   		<choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose>
+	   		</if> -->
+	   		<if test="params.dateType != null and params.dateType != ''">
+			   		<choose>
+			   		    <when test="params.dateType == 'year'"> 
+			   		       <if test="params.dateStr != null and params.dateStr != ''">
+			   		        AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}
+			   		        </if>
+			   		     </when>
+			   		    <when test="params.dateType == 'month'"> 
+			   		     <if test="params.dateStr != null and params.dateStr != ''">
+			   		       AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}
+			   		       </if>
+			   		     </when>
+			   		    <when test="params.dateType == 'day'"> 
+			   		       <if test="params.dateStr != null and params.dateStr != ''">
+			   		           AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}
+			   		       </if>
+			   		     </when>
+			   		</choose>
+	   		</if>
+	   		<if test="params.createBy != null and params.createBy != ''"> AND createBy = ${params.createBy}</if>
+	   </where>
+	     order by piciCreateOn desc
+    </select>
+    <select id="queryXunjiaInfoStatisticCount" resultType="Integer">
+        select count(1) from xunjia.t_askpricepici_total
+	   <where>
+	     1=1
+	    <if test="params.beginOn != null and params.beginOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m-%d') >= #{params.beginOn}
+				]]>
+			</if>
+			<if test="params.endOn != null and params.endOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m-%d') <= #{params.endOn}
+				]]>
+			</if>
+			<if test="params.beginOnNew != null and params.beginOnNew != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m') >= #{params.beginOnNew}
+				]]>
+			</if>
+			<if test="params.endOnNew != null and params.endOnNew != ''">
+				<![CDATA[
+					AND DATE_FORMAT(createOn,'%Y-%m') <= #{params.endOnNew}
+				]]>
+			</if>
+			<if test="params.status != null and params.status != ''"> AND status = ${params.status}</if>
+		    <choose>
+		       <when test="params.m_flag !=null and params.m_flag!='' and params.m_flag==2">
+		          and type=1
+		          and fromType in(0)
+		       </when>
+		       <when test="params.m_flag !=null and params.m_flag!='' and params.m_flag==99">
+		          and 1=1
+		       </when>
+		       <otherwise>
+		          and type=0
+		          <choose>
+		       		<when test="params.fromType != null and params.fromType != ''"> 
+		              and fromType in(${params.fromType})
+		             </when>
+		             <otherwise>
+		                and fromType in(0,1)
+		             </otherwise>
+		          </choose>
+		       </otherwise>
+		    </choose>
+		    <if test="params.province != null and params.province !=''">
+					and province = #{params.province}
+		    </if>
+		    <if test="params.city != null and params.city !=''">
+		        	and city = #{params.city}
+		    </if>
+		    <if test="params.ename != null and params.ename !=''">
+	        	    and ename like CONCAT('%',#{params.ename},'%')
+	        </if>
+	        <if test="params.account != null and params.account !=''">
+	        	    and eid like CONCAT('%',#{params.account},'%')
+	        </if>
+     	    <if test="params.piciId != null and params.piciId != ''"> AND piciId LIKE '%${params.piciId}%'</if>
+     	    <if test="params.proName != null and params.proName != ''"> AND proName LIKE '%${params.proName}%'</if>
+     	    <if test="params.engineer != null and params.engineer != ''"> AND engineer LIKE '%${params.engineer}%'</if>
+     	    <if test="params.corpName != null and params.corpName != ''"> AND corpName LIKE '%${params.corpName}%'</if>
+     	    
+	   		<if test="params.eid != null and params.eid != ''"> AND eid = #{params.eid}</if>
+	   		<if test="params.dateType != null and params.dateType != ''">
+		   		<!-- <choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose> -->
+		   		
+		   		<if test="params.dateType != null and params.dateType != ''">
+			   		<choose>
+			   		    <when test="params.dateType == 'year'"> 
+			   		       <if test="params.dateStr != null and params.dateStr != ''">
+			   		        AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}
+			   		        </if>
+			   		     </when>
+			   		    <when test="params.dateType == 'month'"> 
+			   		     <if test="params.dateStr != null and params.dateStr != ''">
+			   		       AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}
+			   		       </if>
+			   		     </when>
+			   		    <when test="params.dateType == 'day'"> 
+			   		       <if test="params.dateStr != null and params.dateStr != ''">
+			   		           AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}
+			   		       </if>
+			   		     </when>
+			   		</choose>
+	   			</if>
+		   		
+	   		</if>
+	   		<if test="params.createBy != null and params.createBy != ''"> AND createBy = ${params.createBy}</if>
+	   </where>
+    </select>
+	<select id="queryPage"  resultMap="askPricePiciResult">
+	    select * from xunjia.tAskPricePici
+	   <where>
+	   1=1
+	    <if test="params.beginOn != null and params.beginOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskPricePici.createOn,'%Y-%m-%d') >= #{params.beginOn}
+				]]>
+			</if>
+			<if test="params.endOn != null and params.endOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskPricePici.createOn,'%Y-%m-%d') <= #{params.endOn}
+				]]>
+			</if>
+			<if test="params.status != null and params.status != ''"> AND status = ${params.status}</if>
+			
+		    <if test="params.m_flag !=null and params.m_flag!=''">
+			      and (eid IS NULL or LENGTH(TRIM(eid))=0)
+		    </if>
+     	    <if test="params.piciId != null and params.piciId != ''"> AND piciId LIKE '%${params.piciId}%'</if>
+     	    <if test="params.proName != null and params.proName != ''"> AND proName LIKE '%${params.proName}%'</if>
+     	    <if test="params.engineer != null and params.engineer != ''"> AND engineer LIKE '%${params.engineer}%'</if>
+     	    <if test="params.corpName != null and params.corpName != ''"> AND corpName LIKE '%${params.corpName}%'</if>
+     	    
+	   		<if test="params.eid != null and params.eid != ''"> AND eid = #{params.eid}</if>
+	   		<if test="params.fromType != null and params.fromType != ''"> AND fromType = ${params.fromType}</if>
+	   		<if test="params.dateType != null and params.dateType != ''">
+		   		<choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose>
+	   		</if>
+	   		<if test="params.createBy != null and params.createBy != ''"> AND createBy = '${params.createBy}' </if>
+	   		<if test="params.keyword != null and params.keyword != ''">
+	   		    AND (proName LIKE '%${params.keyword}%' OR engineer LIKE '%${params.keyword}%' OR summary LIKE '%${params.keyword}%')
+	   		</if>
+	   		<if test="params.isLock != null and params.isLock != ''"> AND isLock = ${params.isLock}</if>
+	   </where>
+	   	ORDER BY tAskPricePici.id DESC
+     	<!-- SELECT tAskPricePici.id,tAskPricePici.piciId,tAskPricePici.eid,tAskPricePici.memberId,tAskPricePici.proName,tAskPricePici.totalCount,tAskPricePici.completeCount,tAskPricePici.status,tAskPricePici.createOn,tAskPricePici.createBy,tAskPricePici.completeOn,tEpShop.name AS corpName,tMember.trueName,tMember.phone,tMember.mobile
+     	 FROM xunjia.tAskPricePici
+		 LEFT JOIN costexpressdb.tEpShop ON tAskPricePici.eid = tEpShop.eid
+     	 LEFT JOIN costexpressdb.tMember ON tAskPricePici.memberId = tMember.memberId
+     	<where>
+     	    1=1
+     	    <if test="params.status != null and params.status != ''"> AND tAskPricePici.status = #{params.status}</if>
+     	    <if test="params.beginOn != null and params.beginOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskPricePici.createOn,'%Y-%m-%d') >= #{params.beginOn}
+				]]>
+			</if>
+			<if test="params.endOn != null and params.endOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskPricePici.createOn,'%Y-%m-%d') <= #{params.endOn}
+				]]>
+			</if>
+     	    <if test="params.piciId != null and params.piciId != ''"> AND tAskPricePici.piciId LIKE '%${params.piciId}%'</if>
+     	    <if test="params.proName != null and params.proName != ''"> AND tAskPricePici.proName LIKE '%${params.proName}%'</if>
+     	    <if test="params.trueName != null and params.trueName != ''"> AND tMember.trueName LIKE '%${params.trueName}%'</if>
+     	    <if test="params.corpName != null and params.corpName != ''"> AND tEpShop.name LIKE '%${params.corpName}%'</if>
+     	</where>
+     	ORDER BY tAskPricePici.id DESC -->
+    </select>
+    
+	<select id="queryCount" resultType="Integer">
+	    select count(1) from xunjia.tAskPricePici
+	    <where>
+	   		1 = 1
+	   		<if test="params.eid != null and params.eid != ''"> AND eid = #{params.eid}</if>
+	   		<if test="params.fromType != null and params.fromType != ''"> AND fromType = ${params.fromType}</if>
+	   		<if test="params.keyword != null and params.keyword != ''">
+	   		    AND (proName LIKE '%${params.keyword}%' OR engineer LIKE '%${params.keyword}%' OR summary LIKE '%${params.keyword}%')
+	   		</if>
+	   		<if test="params.dateType != null and params.dateType != ''">
+		   		<choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose>
+	   		</if>
+	   </where>
+	</select>
+    
+    <update id="update" parameterType="com.concom.entity.dto.xunjia.ask.AskPricePici">
+        update xunjia.tAskPricePici 
+        <set>
+           <if test="completeCount !=null and completeCount !=''">
+                completeCount=#{completeCount},
+           </if>
+           <if test="completeOn !=null and completeOn !=''">
+                completeOn=#{completeOn},
+           </if>
+           <if test="returnCount !=null and returnCount !=''">
+                returnCount=#{returnCount},
+           </if> 
+           <if test="status !=null and status != ''">
+                status=#{status},
+           </if>
+           <if test="eid !=null and eid != ''">
+                eid=#{eid},
+           </if>
+           <if test="corpName !=null and corpName != ''">
+                corpName=#{corpName},
+           </if>
+           <if test="proName !=null and proName != ''">
+                proName=#{proName},
+           </if>
+           <if test="engineer !=null and engineer != ''">
+                engineer=#{engineer},
+           </if>
+           <if test="mobile !=null and mobile != ''">
+                mobile=#{mobile},
+           </if>
+           <if test="totalCount !=null and totalCount !=''">
+                totalCount=#{totalCount},
+           </if>
+           <if test="summary !=null and summary !=''">
+                summary=#{summary},
+           </if>
+           <if test="isLock !=null and isLock !=''">
+                isLock=#{isLock},
+           </if>
+           <if test="returnVisitMsg !=null and returnVisitMsg !=''">
+                returnVisitMsg=#{returnVisitMsg},
+           </if>
+        </set>
+        <where>
+        1=1
+           <if test="piciId !=null and piciId !=''">
+              and piciId=#{piciId}
+           </if>
+           <if test="id !=null and id !=''">
+              and  id=#{id}
+           </if>
+        </where>
+    </update>
+    
+    <select id="getById" resultType="com.concom.entity.dto.xunjia.ask.AskPricePici">
+       select * from xunjia.tAskPricePici  where piciId=#{piciId}
+    </select>
+    
+    <insert id="addPiciLog"  parameterType="com.concom.entity.dto.xunjia.ask.PiCiServiceLog">
+       insert into xunjia.tPiciServiceLog (piciId,content,status,createOn,createBy,trueName) values(#{piciId},#{content},#{status},#{createOn},#{createBy},#{trueName})
+    </insert>
+    
+    <select id="getPiciServiceLog" resultType="com.concom.entity.dto.xunjia.ask.PiCiServiceLog">
+       select * from xunjia.tPiciServiceLog where piciId=#{piciId} order by id desc
+    </select>
+    
+    <select id="getDateTreeOfPici" resultType="com.concom.entity.dto.xunjia.ask.DateValue">
+        SELECT DATE_FORMAT(createOn,'%Y') AS year,DATE_FORMAT(createOn,'%m') AS month,DATE_FORMAT(createOn,'%d') AS day FROM xunjia.tAskPricePici WHERE eid=#{eid} GROUP BY year,month,day ORDER BY createOn DESC
+    </select>
+    
+    <delete id="deleteByPiciId">
+	    delete from xunjia.tAskPricePici where piciId = #{_parameter}
+	</delete>
+</mapper>

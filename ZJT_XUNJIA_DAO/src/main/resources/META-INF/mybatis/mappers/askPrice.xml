@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPrice">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askPriceResult" type="com.concom.entity.dto.xunjia.ask.AskPrice">
+		<result property="validDate" column="ValidDate" />
+		<result property="memberID" column="memberid" />
+		<result property="corpName" column="corpname" />
+		<result property="createOn" column="CreateOn" />
+		<result property="updateOn" column="UpdateOn" />
+		<result property="carriage" column="Carriage" />
+		<result property="tax" column="Tax" />
+		<result property="keepFee" column="KeepFee" />
+		<result property="trueName" column="truename" />
+		<result property="updateBy" column="UpdateBy" />
+		<result property="notes" column="Notes" />
+		<result property="isLock" column="IsLock" />
+		<result property="ipAddr" column="IpAddr" />
+		<result property="subCid" column="subcid" />
+		<result column="askPriceHelpId" property="askPriceHelp.id" />
+		<result column="isReply" property="askPriceHelp.isReply" />
+		<result column="isTimeout" property="askPriceHelp.isTimeout" />
+		<result column="payType" property="payType" />
+	</resultMap>
+	
+	
+	<resultMap id="askPriceTResult" type="com.concom.entity.dto.xunjia.ask.AskPrice">
+		<result property="id" column="id" />		
+		<result property="name" column="name" />
+		<result property="validDate" column="ValidDate" />
+		<result property="memberID" column="memberid" />
+		<result property="corpName" column="corpname" />
+		<result property="createOn" column="CreateOn" />
+		<result property="updateOn" column="UpdateOn" />
+		<result property="carriage" column="Carriage" />
+		<result property="tax" column="Tax" />
+		<result property="keepFee" column="KeepFee" />
+		<result property="trueName" column="truename" />
+		<result property="updateBy" column="UpdateBy" />
+		<result property="notes" column="Notes" />
+		<result property="isLock" column="IsLock" />
+		<result property="ipAddr" column="IpAddr" />
+		<result property="subCid" column="subcid" />
+		<result property="grade" column="grade" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.ask.AskPrice" >
+		insert into xunjia.tAskPrice(cid,title,name,stdName,fenci,spec,brand,unit,amount,
+		features,keyFeatures,f01,f02,f03,f04,f05,f06,f07,f08,f09,f10,f11,f12,f13,f14,f15,
+		purpose,ValidDate,code,memberid,linkman,corpname,phone,addr,hitSum,isTop,revNum,
+		CreateOn,UpdateOn,Carriage,Tax,KeepFee,truename,webProvince,UpdateBy,Notes,IsLock,
+		IPAddr,province,city,grade,status,subcid,score,issueDate,validDay,remark,
+		askTo,auditor,auditDate,eid,fromType,degree,isRecommend,engineer,mobile,piciId,cgCid,
+		cgSubcid,proName,maxRecommendNum,payType,pid,releaseScore,specialRemark)
+		values(#{cid},#{title},#{name},#{stdName},#{fenci},#{spec},#{brand},#{unit},#{amount},
+		#{features},#{keyFeatures},#{f01},#{f02},#{f03},#{f04},#{f05},#{f06},#{f07},#{f08},#{f09},#{f10},#{f11},#{f12},#{f13},#{f14},#{f15},
+		#{purpose},#{validDate},#{code},#{memberID},#{linkman},#{corpName},#{phone},#{addr},
+		#{hitSum},#{isTop},#{revNum},#{createOn},#{updateOn},#{carriage},#{tax},#{keepFee},
+		#{trueName},#{webProvince},#{updateBy},#{notes},#{isLock},#{ipAddr},#{province},#{city},
+		#{grade},#{status},#{subCid},#{score},#{issueDate},#{validDay},#{remark},#{askTo},#{auditor}
+		,#{auditDate},#{eid},#{fromType},#{degree},#{isRecommend},#{engineer},#{mobile},#{piciId}
+		,#{cgCid},#{cgSubcid},#{proName},#{maxRecommendNum},#{payType},#{pid},#{releaseScore},#{specialRemark,jdbcType=VARCHAR});
+		<selectKey keyProperty="id" resultType="String" statementType="PREPARED">
+			select LAST_INSERT_ID() as value
+		</selectKey>
+	</insert>
+	
+	<update id="update" parameterType="com.concom.entity.dto.xunjia.ask.AskPrice">
+          update xunjia.tAskPrice
+            
+          <set>
+             hitSum=hitSum+1,
+          	<if test="isLock != null and isLock != ''">
+          		isLock=#{isLock},
+          	</if>
+          	<if test="brand != null and brand != ''">
+          		brand=#{brand},
+          	</if>
+          	<if test="linkman != null and linkman != ''">
+          		linkman=#{linkman},
+          	</if>
+          	<if test="revNum != null and revNum != ''">
+          		revNum=${revNum},
+          	</if>
+          	<if test="isTop != null and isTop != ''">
+          		isTop=#{isTop},
+          	</if>
+          
+          	<if test="cid !=null and cid !=''">
+          	    cid=#{cid},
+          	</if>
+          	
+          	<if test="cgCid !=null and cgCid !=''">
+          	    cgCid=#{cgCid},
+          	</if>
+          	
+          	<if test="cgSubcid !=null and cgSubcid !=''">
+          	    cgSubcid=#{cgSubcid},
+          	</if>
+          	
+          	<if test="subCid !=null and subCid !=''">
+          	    subCid=#{subCid},
+          	</if>
+          	
+          	<if test="name !=null and name !=''">
+          	    `name`=#{name},
+          	</if>
+          	
+          	<if test="spec !=null and spec !=''">
+          	    spec=#{spec},
+          	</if>
+          	
+          	<if test="unit !=null and unit !=''">
+          	    unit=#{unit},
+          	</if>
+          	
+          	
+          	<if test="amount !=null and amount !=''">
+          	   amount=#{amount},
+          	</if>
+          	
+          	<if test="purpose !=null and purpose !=''">
+          	    purpose=#{purpose},
+          	</if>
+          	
+          	<if test="addr !=null and addr !=''">
+          	    addr=#{addr},
+          	</if>
+          	
+          	<if test="carriage !=null and carriage !=''">
+          	    carriage=#{carriage},
+          	</if>
+          	<if test="tax !=null and tax !=''">
+          	    tax=#{tax},
+          	</if>
+          	
+          	<if test="keepFee !=null and keepFee !=''">
+          	    keepFee=#{keepFee},
+          	</if>
+          	
+          	<if test="notes !=null and notes !=''">
+          	    notes=#{notes},
+          	</if>
+          	
+          	<if test="grade !=null and grade !=''">
+          	    grade=#{grade},
+          	</if>
+          	
+          	<if test="subCid !=null and subCid !=''">
+          	    subCid=#{subCid},
+          	</if>
+          	
+          	<if test="score !=null and score !=''">
+          	    score=#{score},
+          	</if>
+          	
+          	<if test="askTo !=null and askTo !=''">
+          	    askTo=#{askTo},
+          	</if>
+          	<if test="askPriceHelp !=null and askPriceHelp !=''">
+          	    askPriceHelp=#{askPriceHelp},
+          	</if>
+          	
+          	<if test="validDate !=null and validDate !=''">
+          	    validDate=#{validDate},
+          	</if>
+          	
+          	<if test="features !=null and features !=''">
+          	   features=#{features},
+          	</if>
+          	
+          	<if test="keyFeatures !=null and keyFeatures !=''">
+          	    keyFeatures=#{keyFeatures},
+          	</if>
+          	
+          	<if test="f01 !=null and f01 !=''">
+          	    f01=#{f01},
+          	</if>
+          	
+          	<if test="f02 !=null and f02 !=''">
+          	    f02=#{f02},
+          	</if>
+          	
+          	<if test="f03 !=null and f03 !=''">
+          	    f03=#{f03},
+          	</if>
+          	
+          	<if test="f04 !=null and f04 !=''">
+          	    f04=#{f04},
+          	</if>
+          	
+          	<if test="f05 !=null and f05 !=''">
+          	    f05=#{f05},
+          	</if>
+          	
+          	
+          	<if test="f06 !=null and f06 !=''">
+          	    f06=#{f06},
+          	</if>
+          	
+          	<if test="f07 !=null and f07 !=''">
+          	   f07=#{f07},
+          	</if>
+          	
+          	<if test="f08 !=null and f08 !=''">
+          	    f08=#{f08},
+          	</if>
+          	
+          	<if test="f09 !=null and f09 !=''">
+          	    f09=#{f09},
+          	</if>
+          	
+          	<if test="f10 !=null and f10 !=''">
+          	    f10=#{f10},
+          	</if>
+          	
+          	<if test="f11 !=null and f11 !=''">
+          	    f11=#{f11},
+          	</if>
+          	
+          	<if test="f12 !=null and f12 !=''">
+          	    f12=#{f12},
+          	</if>
+          	
+          	<if test="f13 !=null and f13 !=''">
+          	    f13=#{f13},
+          	</if>
+          	
+          	<if test="f14 !=null and f14 !=''">
+          	    f14=#{f14},
+          	</if>
+          	
+          	<if test="f15 !=null and f15 !=''">
+          	   f15=#{f15},
+          	</if>
+          	<if test="status != null and status !=''">
+          	status=#{status},
+          	</if>
+          	
+          	<if test="stdName !=null and stdName !=''">
+          	   stdName=#{stdName},
+          	</if>
+          	<if test="isRecommend !=null and isRecommend !=''">
+          	   isRecommend=#{isRecommend},
+          	</if>
+          	<if test="recommendOn !=null and recommendOn != ''">
+          	   recommendOn = #{recommendOn},
+          	</if>
+          	
+            <if test="remark !=null and remark !=''">
+          	   remark = #{remark},
+          	</if>
+          	
+          	  <if test="auditor !=null and auditor !=''">
+          	   auditor = #{auditor},
+          	</if>
+          	
+          	<if test="issueDate !=null and issueDate !=''">
+          	   issueDate = #{issueDate},
+          	</if>
+          	
+          	<if test="allotOn !=null and allotOn !=''">
+          	   allotOn = #{allotOn},
+          	</if>
+          	
+          	 <if test="engineer !=null and engineer !=''">
+          	   engineer=#{engineer},
+          	</if>
+          	
+          	<if test="mobile !=null and mobile !=''">
+          	   mobile=#{mobile},
+          	</if>
+          	
+          	<if test="piciId !=null and piciId !=''">
+          	   piciId=#{piciId},
+          	</if>
+          	
+          	<if test="proName != null and proName != ''">
+          		proName=#{proName},
+          	</if>
+          	<if test="recommendNum != null and recommendNum != ''">
+          		recommendNum=#{recommendNum},
+          	</if>
+          	<if test="maxRecommendNum != null and maxRecommendNum != ''">
+          		maxRecommendNum=#{maxRecommendNum},
+          	</if>
+          	
+            <if test="updateOn != null and updateOn != ''">
+          		updateOn=#{updateOn},
+          	</if>
+          	<if test="payType != null and payType != ''">
+          		payType=#{payType},
+          	</if>
+          	<if test="pid != null and pid != ''">
+          		pid=#{pid},
+          	</if>
+          </set>
+          where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="com.concom.entity.dto.xunjia.ask.AskPrice">
+	    delete from xunjia.tAskPrice where id = ${id}
+	</delete>
+	
+	<select id="queryAll" resultType="com.concom.entity.dto.xunjia.ask.AskPrice">
+	<![CDATA[
+		select * from xunjia.tAskPrice  where eid is not null and eid <>'']]>
+	</select>
+	
+	<select id="findList" resultMap="askPriceResult">
+		select a.id, a.name, a.stdName, a.fenci, a.spec, a.brand, a.unit, a.amount, a.features,
+	    a.keyFeatures, a.f01, a.f02, a.f03, a.f04, a.f05, a.f06, a.f07, a.f08, a.f09, a.f10,
+	    a.f11, a.f12, a.f13, a.f14, a.f15, a.code, a.city, a.webProvince, a.notes, a.subcid, a.createOn, '4' as typeId from xunjia.tAskPrice a 
+	    where a.isLock = 0 and a.status in (2,3) and a.eid = #{eid} and DATE_FORMAT(a.createOn,'%Y-%m-%d') = #{createOn}
+	</select>
+	<select id="queryPageAskPrice"  resultType="com.concom.entity.dto.xunjia.ask.AskPrice">
+	    
+	   
+	      <choose>
+			    <when test="params.filed != null and params.filed != ''">  select id,name,spec,grade,addr from  xunjia.tAskPrice</when>
+			    <otherwise>  select * from  xunjia.tAskPrice</otherwise>
+			</choose>
+	    
+	  
+	  	<where>
+	  	    1=1
+	  	    <choose>
+			    <when test="params.isLock != null and params.isLock != ''"> and isLock = #{params.isLock}</when>
+			    <otherwise> and isLock = 0</otherwise>
+			</choose>
+			<if test="params.status != null and params.status != ''"> AND status IN (${params.status})</if>
+			<if test="params.id != null and params.id != ''">
+	        	and id = ${params.id}
+	        </if>
+	        <if test="params.ids != null and params.ids != ''">
+	        	and id IN(${params.ids})
+	        </if>
+	        <if test="params.addr != null and params.addr != ''">
+	        	and addr = '${params.addr}'
+	        </if>
+	        <if test="params.fromType != null and params.fromType != ''">
+	        	and fromType = ${params.fromType}
+	        </if>
+	        <if test="params.cid != null and params.cid != ''">
+	        	and cid = #{params.cid}
+	        </if>
+	        <if test="params.subcid != null and params.subcid != ''">
+	        	and subcid = #{params.subcid}
+	        </if>
+	        <if test="params.isFlag!=null and params.isFlag!=''">
+	            and ValidDate > now() 
+	        </if>
+	        <if test="params.name != null and params.name != ''">
+	           and name like '%${params.name}%'
+	        </if>
+	        <if test="params.memberID != null and params.memberID != ''">
+	           and memberID = #{params.memberID}
+	        </if>
+	        <if test="params.auditor != null and params.auditor != ''">
+	           and auditor like '%${params.auditor}%'
+	        </if>
+	        <if test="params.province != null and params.province != ''">
+	           and province = '#{params.province}'
+	        </if>
+	        <if test="params.isRecommend !=null and params.isRecommend != ''">
+	           and isRecommend=#{params.isRecommend}
+	        </if>
+			<if test="params.piciId !=null and params.piciId != ''">
+			    <choose>
+			        <when test="params.piciId == 'not null'">and piciId is not null and piciId != ''</when>
+			        <otherwise>and piciId=#{params.piciId}</otherwise>
+			    </choose>
+	        </if>
+	        <if test="params.dateType != null and params.dateType != ''">
+		   		<choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose>
+	   		</if>
+	   		<if test="params.overdue != null and params.overdue != ''">
+		   		<choose>
+		   		    <when test="params.overdue == 'true'"><![CDATA[ AND validDate < NOW()]]></when>
+		   		    <when test="params.overdue == 'false'"><![CDATA[ AND validDate > NOW()]]></when>
+		   		</choose>
+	   		</if>
+	   		<if test="params.eid != null and params.eid != ''">
+	        	and eid = #{params.eid}
+	        </if>
+	   		<if test="params.isMyZjt != null and params.isMyZjt != ''">
+	        	and (eid is null or eid = '')
+	        </if>
+	        <if test="params.isType == 1">
+    	   <![CDATA[ and validDate >= CURDATE()]]>
+    	    </if>
+    	    <if test="params.idLittle != null and params.idLittle != ''">
+	        	<![CDATA[and id < #{params.idLittle}]]>
+	        </if>
+    	    <if test="params.isType == 2">
+    	   <![CDATA[ and validDate <= CURDATE()]]>
+    	   </if>
+    	   <if test="params.createOn != null and params.createOn != ''">
+     			 <![CDATA[${params.createOn}]]>
+     	   </if>
+     	   <if test="params.pid != null and params.pid != ''">
+	        	and pid IN(${params.pid})
+	       </if>
+	       <if test="params.startTime != null and params.startTime != ''">
+	       		<![CDATA[ and createOn >= #{params.startTime} ]]>
+	       </if>
+	       <if test="params.endTime != null and params.endTime != ''">
+	       		<![CDATA[ and createOn <= #{params.endTime} ]]>
+	       </if>
+	       <if test="params.engineer != null and params.engineer != ''">
+	       		<![CDATA[ and engineer = #{params.engineer} ]]>
+	       </if>
+	       <if test="params.proName != null and params.proName != ''">
+	       		<![CDATA[ and proName like CONCAT('%',#{params.proName},'%')]]>
+	       </if>
+	       <if test="params.spec != null and params.spec != ''">
+	       		<![CDATA[ and spec = #{params.spec} ]]>
+	       </if>
+	  	</where>
+        <choose>
+		    <when test="params.orderBy != null and params.orderBy != ''"> order by ${params.orderBy} </when>
+		    <otherwise>order by createOn desc</otherwise>
+		</choose>
+	</select>
+	<select id="queryAskPriceCount" resultType="Integer">
+		SELECT count(id) FROM xunjia.tAskPrice 
+		<where>
+     	    1 = 1
+			<choose>
+			    <when test="params.isLock != null and params.isLock != ''"> and isLock = #{params.isLock}</when>
+			    <otherwise> and isLock = 0</otherwise>
+			</choose>
+     		<if test="params.fromType != null and params.fromType != ''"> AND fromType = ${params.fromType}</if>
+     		<if test="params.status != null and params.status != ''"> AND status IN (${params.status})</if>
+     		
+     		<if test="params.isRecommend != null and params.isRecommend != ''"> AND isRecommend = ${params.isRecommend}</if>
+     		<if test="params.addr != null and params.addr != ''"> AND addr = #{params.addr}</if>
+     		<if test="params.id != null and params.id != ''"> AND id = #{params.id}</if>
+     		<if test="params.piciId != null and params.piciId != ''">
+     		    <choose>
+			        <when test="params.piciId == 'not null'">and piciId is not null and piciId != ''</when>
+			        <otherwise>and piciId=#{params.piciId}</otherwise>
+			    </choose>
+     		</if>
+     		<if test="params.cid != null and params.cid != ''"> AND cid in (${params.cid})</if>
+     		<if test="params.cids != null and params.cids != ''"> AND cid not in (${params.cids})</if>
+     		<if test="params.name != null and params.name != ''"> AND name LIKE '%${params.name}%'</if>
+     		<if test="params.corpName != null and params.corpName != ''"> AND corpName LIKE '%${params.corpName}%'</if>
+     		<if test="params.memberID != null and params.memberID != ''"> AND memberID = #{params.memberID}</if>
+     		<if test="params.noAllot != null and params.noAllot != ''"><![CDATA[and (allotOn is null or allotOn = '')]]></if>
+     		<if test="params.yesAllot != null and params.yesAllot != ''"><![CDATA[and allotOn is not null and allotOn <> '']]></if>
+	        <if test="params.subcid != null and params.subcid != ''">
+	        	and subcid = #{params.subcid}
+	        </if>
+	        <if test="params.eid != null and params.eid != ''">
+	        	and eid = #{params.eid}
+	        </if>
+	        <if test="params.isMyZjt != null and params.isMyZjt != ''">
+	        	and (eid is null or eid = '')
+	        </if>
+	        <if test="params.isFlag!=null and params.isFlag!=''">
+	            and ValidDate > now() 
+	        </if>
+	       
+	        <if test="params.auditor != null and params.auditor != ''">
+	           and auditor like '%${params.auditor}%'
+	        </if>
+	        <if test="params.province != null and params.province != ''">
+	           and province = #{params.province}
+	        </if>
+            <if test="params.createOn != null and params.createOn != ''">
+     			 <![CDATA[${params.createOn}]]>
+     		</if>
+     		<if test="params.isType == 1">
+    	   <![CDATA[and validDate >= CURDATE()]]>
+    	    </if>
+    	    <if test="params.isType == 2">
+    	   <![CDATA[ and validDate <= CURDATE()]]>
+    	   </if>
+     		<if test="params.dateType != null and params.dateType != ''">
+		   		<choose>
+		   		    <when test="params.dateType == 'year'"> AND DATE_FORMAT(createOn,'%Y')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'month'"> AND DATE_FORMAT(createOn,'%Y-%m')=#{params.dateStr}</when>
+		   		    <when test="params.dateType == 'day'"> AND DATE_FORMAT(createOn,'%Y-%m-%d')=#{params.dateStr}</when>
+		   		</choose>
+	   		</if>
+	   		<if test="params.overdue != null and params.overdue != ''">
+		   		<choose>
+		   		    <when test="params.overdue == 'true'"><![CDATA[ AND validDate < NOW()]]></when>
+		   		    <when test="params.overdue == 'false'"><![CDATA[ AND validDate > NOW()]]></when>
+		   		</choose>
+	   		</if>
+	   		<if test="params.pid != null and params.pid != ''">
+	        	and pid IN(#{params.pid})
+	        </if>
+	       <if test="params.startTime != null and params.startTime != ''">
+	       		<![CDATA[ and createOn >= #{params.startTime} ]]>
+	       </if>
+	       <if test="params.endTime != null and params.endTime != ''">
+	       		<![CDATA[ and createOn <= #{params.endTime} ]]>
+	       </if>
+	       <if test="params.engineer != null and params.engineer != ''">
+	       		<![CDATA[ and engineer = #{params.engineer} ]]>
+	       </if>
+	       <if test="params.proName != null and params.proName != ''">
+	       		<![CDATA[ and proName like CONCAT('%',#{params.proName},'%')]]>
+	       </if>
+	       <if test="params.spec != null and params.spec != ''">
+	       		<![CDATA[ and spec = #{params.spec} ]]>
+	       </if>
+     	</where>
+	</select>
+    
+    <!--start 有材 -->
+    <sql id="queryUnsolvedPrice">
+    	select self.`id`,
+     		self.`score`,
+			self.`name`,
+			self.spec,
+			DATE_FORMAT(self.issueDate, '%Y-%m-%d %H:%i:%s') as issueDate,
+			self.`revNum` as replyNum, 
+			DATE_FORMAT(self.validDate, '%Y-%m-%d %H:%i:%s') as validDate,
+			self.addr as area
+			
+			from xunjia.tAskPrice self
+     	<where>
+		<![CDATA[ self.status=2 and self.ValidDate>NOW() and isLock = 0 ]]>
+		and self.issueDate  is not null
+		   <if test="params.name != null and params.name != ''">
+		   		and self.name like '%${params.name}%'
+		   </if>
+		   <if test="params.cgCid != null and params.cgCid != ''">
+        		and self.cgCid = #{params.cgCid}
+	        </if>
+	        <if test="params.cgSubcid != null and params.cgSubcid != ''">
+	        	and self.cgSubcid = #{params.cgSubcid}
+	        </if>
+	        <if test="params.province != null and params.province != ''">
+	        	and self.province = #{params.province}
+	        </if>
+	        <if test="params.city != null and params.city != ''">
+	        	and self.city = #{params.city}
+	        </if>
+	         <if test="params.addr != null and params.addr != ''">
+	        	and self.addr = #{params.addr}
+	        </if>
+	        <if test="params.cgCids != null and params.cgCids != ''">
+	        and self.cgCid in (${params.cgCids})
+	        </if>
+	        
+		</where>
+     	order by self.updateOn desc
+    </sql>
+   
+    <select id="queryPageUnsolvedPrice"  resultType="java.util.HashMap">
+     	<include refid="queryUnsolvedPrice"/>
+    </select>
+     <select id="getUserFavoritesAskprices"  resultType="java.util.HashMap">
+     	select self.`id`,
+     		self.`score`,
+			self.`name`,
+			self.spec,
+			DATE_FORMAT(self.issueDate, '%Y-%m-%d %H:%i:%s') as issueDate,
+			self.`revNum` as replyNum, 
+			self.addr as area,
+			DATE_FORMAT(self.validDate, '%Y-%m-%d %H:%i:%s') as validDate
+			from xunjia.tAskPrice self
+		<where>
+		isLock = 0
+			<if test="ids != null and ids.size() >0">
+		        and id in
+		        <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+					${item} 
+				</foreach>
+	        </if>
+		</where>
+    </select>
+     <select id="getByIdForApp" resultType="java.util.HashMap">
+    	select self.`id`,
+     		self.`score`,
+			self.`name`,
+			self.spec,
+			DATE_FORMAT(self.issueDate, '%Y-%m-%d %H:%i:%s') as issueDate,
+			self.`revNum` as replyNum, 
+			self.addr as area,
+			self.hitSum,
+			DATE_FORMAT(self.validDate, '%Y-%m-%d %H:%i:%s') as validDate,
+			self.notes,
+			self.cgCid,
+			self.cgSubcid,
+			self.grade,
+			self.purpose,
+			self.amount,
+			self.carriage,
+			self.tax,
+			self.keepFee,
+			self.unit
+			from xunjia.tAskPrice self
+		where self.id=#{id}
+    </select>
+    <!-- end 有材 -->
+    <!-- start 网材 -->
+    <select id="getById" resultMap="askPriceResult">
+    	select * from xunjia.tAskPrice where id=#{id}
+    </select>
+    <select id="getAskPriceByIds" resultMap="askPriceResult">
+    	select * from xunjia.tAskPrice
+		 <where>
+		 
+		 	id in
+			<foreach collection="ids" item="id" open="(" separator="," close=")">
+	            ${id}
+	        </foreach>
+		</where>	
+    </select>
+    <sql id="pageForWcwSJB">
+		select * from xunjia.tAskPrice self
+		<where>
+			<if test="params.cgSubcid != null and params.cgSubcid != '' ">
+				cgSubcid=#{params.cgSubcid}
+			</if>
+			<if test="params.keywords != null and params.keywords.size() > 0">
+			 AND
+				<foreach collection="params.keywords" item="item" index="index" separator="or" open="(" close=")">
+					self.`name` LIKE '%${item}%' 
+				</foreach>
+			</if>
+			<if test="params.fiterKey != null and params.fiterKey != '' ">
+				AND self.`name` LIKE '%${params.fiterKey}%'
+			</if>
+			<choose>
+				<when test="params.isReply == true ">AND self.`status` = 3</when>
+				<when test="params.isReply == false ">
+				AND self.`status` = 2 AND self.ValidDate>NOW()
+				</when>
+				<otherwise></otherwise>
+			</choose>
+			<!-- <if test="params.memberId != null and params.memberId != '' ">
+			  AND id not in (select DISTINCT reply.`pid` from `xunjia`.`tAskReply` reply where reply.`memberid`=#{params.memberId})
+			</if> -->
+		</where>
+		ORDER BY self.`id` DESC
+	</sql>
+	
+	<select id="queryPageForWcwSJB" resultMap="askPriceResult">
+		select  * from (
+			select askprice.*,sakreply.pid from (
+				select * from xunjia.tAskPrice t 
+		    <where>
+			<if test="params.keywords != null and params.keywords.size() > 0">
+				<foreach collection="params.keywords" item="item" index="index" separator="or" open="(" close=")">
+					t.`name` LIKE '%${item}%' 
+				</foreach>
+			</if>
+			<if test="params.fiterKey != null and params.fiterKey != '' ">
+				AND t.`name` LIKE '%${params.fiterKey}%'
+			</if>
+				and  t.`status` = 2 AND t.ValidDate>NOW()
+		    </where>
+			) askprice LEFT JOIN (
+				select DISTINCT pid from xunjia.tAskReply tt where memberId =#{params.memberId}
+			) sakreply 
+			on askprice.id=sakreply.pid 
+	      ) taskprice   
+	      <where>
+	      <if test="params.cgSubcid != null and params.cgSubcid != '' ">
+				 taskprice.cgSubcid in(${params.cgSubcid}) 
+		  </if>
+			<if test="params.cgCid != null and params.cgCid != '' ">
+					<if test="params.cgSubcid != null and params.cgSubcid != ''">
+							or
+					</if>
+					<if test="params.cgSubcid == null and params.cgSubcid == ''">
+						and 
+					</if>
+				taskprice.cgCid in(${params.cgCid})
+			</if>
+			<if test="params.isReply == false ">
+			and  taskprice.pid IS null 
+			</if>
+	      ORDER BY  taskprice.createOn desc
+	      </where>
+	</select>
+	
+	<select id="queryForWcwSJBCount"  resultType="Integer">
+		select  count(*) from (
+			select askprice.*,sakreply.pid from (
+				select * from xunjia.tAskPrice t 
+		    <where>
+			<if test="params.keywords != null and params.keywords.size() > 0">
+				<foreach collection="params.keywords" item="item" index="index" separator="or" open="(" close=")">
+					t.`name` LIKE '%${item}%' 
+				</foreach>
+			</if>
+			<if test="params.fiterKey != null and params.fiterKey != '' ">
+				AND t.`name` LIKE '%${params.fiterKey}%'
+			</if>
+			 and  t.`status` = 2 AND t.ValidDate>NOW()
+		 </where>
+			) askprice LEFT JOIN (
+				select DISTINCT pid from xunjia.tAskReply tt where memberId =#{params.memberId}
+			) sakreply 
+			on askprice.id=sakreply.pid 
+	      ) taskprice  
+	      <where>
+	      <if test="params.cgSubcid != null and params.cgSubcid != '' ">
+				 taskprice.cgSubcid in(${params.cgSubcid}) 
+		  </if>
+			<if test="params.cgCid != null and params.cgCid != '' ">
+					<if test="params.cgSubcid != null and params.cgSubcid != ''">
+							or
+					</if>
+					<if test="params.cgSubcid == null and params.cgSubcid == ''">
+						and 
+					</if>
+				taskprice.cgCid in(${params.cgCid})
+			</if>
+			<if test="params.isReply == false ">
+			and  taskprice.pid IS null 
+			</if>
+	      </where>
+	</select>
+	
+	<select id="getCidsForWcwSJB" resultType="String">
+		SELECT cgSubcid from (<include refid="pageForWcwSJB"/>) as cisGroup
+		GROUP BY cgSubcid
+	</select>
+	<!-- end 网材 -->
+	
+	<select id="getRecommendAskPrice" resultType="com.concom.entity.dto.xunjia.ask.AskPriceToMe">
+	 <![CDATA[
+		 select a.score,a.id,a.name,m.nickname as nickname,a.truename,a.UpdateOn from xunjia.tAskPrice as a,costexpressdb.tMember as m where m.memberid=a.memberid and fromType=0 and a.isLock=0  and DATE_SUB(now(), INTERVAL 7 DAY) <= a.createOn order by a.score desc,a.UpdateOn desc limit 0,#{pageSize}
+      ]]>
+	</select>
+	
+	<insert id="addUploadFile" parameterType="com.concom.entity.dto.xunjia.ask.AskUploadFile">
+	 insert into xunjia.tUploadFile(askId,filename,filePath,createOn,size) values(#{askId},#{filename},#{filePath},#{createOn},#{size})
+	</insert>
+	
+	<select id="askUploadFiles" resultType="com.concom.entity.dto.xunjia.ask.AskUploadFile">
+	select * from xunjia.tUploadFile
+	<where>
+	   <if test="askId !=null and askId !=''">
+	        askId=#{askId}
+	   </if>
+	</where>
+	</select>
+	
+	<select id="getAskUploadFileCount" resultType="Integer">
+		select count(1) from xunjia.tUploadFile where askId=#{askId}
+	</select>
+	
+	<delete id="delUploadFile" parameterType="String">
+	  delete from xunjia.tUploadFile where askId=#{askId}
+	</delete>
+	
+	<select id="memberCidAskList" resultType="com.concom.entity.dto.xunjia.ask.CidAskCount">
+	  select * from costexpressdb.t_member_cidAskCount where memberid=#{memberid}
+	</select>
+	
+	<select id="getAddAskPriceAppContentList" resultType="com.concom.entity.dto.xunjia.ask.AskPriceAppContent">
+	 select * from  xunjia.tAskPriceAppContent where askId=#{askId}
+	</select>
+	
+	<insert id="addAskPriceAppContent" parameterType="com.concom.entity.dto.xunjia.ask.AskPriceAppContent">
+	   insert into xunjia.tAskPriceAppContent(askId,notes,createOn)values(#{askId},#{notes},#{createOn})
+	</insert>
+	
+	<update id="updateAskPriceHelp" parameterType="com.concom.entity.dto.xunjia.ask.AskPriceHelp">
+	     update xunjia.tAskPriceHelp set isReply=#{isReply} where memberId=#{memberId} and askId=#{askId}
+	</update>
+	
+	<select id="queryAskPriceHelpCount" resultType="Integer">
+	    select count(1) as num from xunjia.tAskPriceHelp
+	    <where>
+	        1 = 1
+	        <if test="memberId != null and memberId != ''"> AND memberId = #{memberId}</if>
+	        <choose>
+			    <when test="isReply != null and isReply != ''"> AND isReply = #{isReply}</when>
+			    <otherwise> AND isReply = 0</otherwise>
+			</choose>
+	    </where>
+	</select>
+	
+	<select id="newAskPriceSubicd" resultType="String">
+		select subcid  from xunjia.tAskPrice  where date_format(createOn,'%Y-%m') = date_format(NOW(),'%Y-%m')  and  <![CDATA[  status>1 and subcid  is not null and subcid <> '']]>  group by subcid  order by count(1) desc limit 0,6
+	</select>
+	
+	<select id="queryForPage" resultType="com.concom.entity.dto.xunjia.ask.AskPrice">
+		select * from  xunjia.tAskPrice where isLock=0	
+    	<if test="status != null and status != ''">
+        	and status = #{status}
+        </if>
+        <if test="cid != null and cid != ''">
+        	and cid = #{cid}
+        </if>
+        <if test="subcid != null and subcid != ''">
+        	and subcid = #{subcid}
+        </if>
+        <if test="isFlag!=null and isFlag!=''">
+            and ValidDate > now() 
+        </if>
+        <if test="name != null and name != ''">
+           and name like '%${name}%'
+        </if>
+        <if test="fromType != null and fromType != ''">
+           and fromType=#{fromType}
+        </if>
+        <if test="memberId != null and memberId != ''">
+           and memberId=#{memberId}
+        </if>
+        <choose>
+		    <when test="orderBy != null and orderBy != ''"> order by ${orderBy} </when>
+		    <otherwise>order by createOn desc</otherwise>
+		</choose>
+		limit ${pageNo},${pageSize}
+	</select>
+	
+	<select id="queryCount" resultType="Integer">
+	    select 
+	    	<choose>
+	    	    <when test="askMemberTotal != null and askMemberTotal != ''">
+	    	        count(distinct memberId)
+	    	    </when>
+	    	    <otherwise>
+	    	        count(1)
+	    	    </otherwise>
+	    	</choose> from xunjia.tAskPrice
+	    <where>
+	        1 = 1
+	        <if test="memberId != null and memberId != ''"> AND memberId = #{memberId}</if>
+	        <if test="isTop != null and isTop != ''"> AND isTop = ${isTop}</if>
+	        <if test="status != null and status != ''">AND status IN(${status}) </if>
+	        <if test="parameterValue !=null and parameterValue!=''"> <![CDATA[ and  status=#{parameterValue} and  piciId <> 'facDataForAskprice' ]]></if>
+	        <if test="fromType != null and fromType != ''"> AND fromType=#{fromType}</if>
+	        <if test="province != null and province != ''"> AND province LIKE '%${province}%'</if>
+	        <if test="isFlag !=null and isFlag !=''">AND ValidDate > now()</if>
+	         <if test="dateType !=null and dateType !=''"> <![CDATA[  and  DATE_FORMAT(CreateOn,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')]]></if>
+	        <if test="eid != null and eid != ''"> AND eid = #{eid}</if>
+	        <if test="update !=null and update !=''"> <![CDATA[  and  DATE_FORMAT(updateOn,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')]]></if>
+	        <if test="facPrice !=null and facPrice !=''">
+                   <![CDATA[ and piciId='facDataForAskprice' and CreateOn=DATE_FORMAT(DATE_SUB(NOW() , INTERVAL 3 DAY),'%Y-%m-%d')  ]]>
+            </if>
+             <if test="startTime !=null and startTime !=''">
+                   <![CDATA[and CreateOn > DATE_FORMAT(#{startTime},'%Y-%m-%d')  ]]>
+                </if>
+                     <if test="endTime !=null and endTime !=''">
+                   <![CDATA[and CreateOn < DATE_FORMAT(#{endTime},'%Y-%m-%d')  ]]>
+                </if>    
+            <if test="facDataForAskprice !=null and facDataForAskprice !=''">
+                    and piciId='facDataForAskprice' 
+             </if>
+	        <choose>
+			    <when test="isLock != null and isLock != ''"> AND isLock = #{isLock}</when>
+			    <otherwise> AND isLock = 0</otherwise>
+			</choose>
+	    </where>
+	</select>
+	<select id="queryAskMonthCompleteList" resultType="com.concom.entity.dto.xunjia.ask.AskMonthComplete">
+	    select * from xunjia.t_askprice_complete_count
+	    <where>
+	       <if test="statisticsMonth != null and statisticsMonth != ''">
+	           and  statisticsMonth like '%${statisticsMonth}%'
+	       </if>
+	       <if test="leaderName != null and leaderName != ''">
+	           and  leaderName=#{leaderName}
+	       </if>
+	    </where>
+	</select>
+	<select id="queryCompanyAskPriceStatis" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	    select * from xunjia.t_askprice_vip_total
+	    <where>
+	       <if test="statisticYear != null and statisticYear != ''">
+	           and  statisticYear =#{statisticYear}
+	       </if>
+	       <if test="ename != null and ename !=''">
+			      ename like CONCAT('%',#{ename},'%')
+	       </if>
+	       <if test="eid != null and eid !=''">
+	        	and eid =${eid}
+	       </if>
+	       <if test="province != null and province !=''">
+	        	and province = #{province}
+	       </if>
+	       <if test="city != null and city !=''">
+	        	and city = #{city}
+	       </if>
+	    </where>
+	</select>
+	<select id="queryPageCompanyAskPriceStatis" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	    <choose>
+	      <when test="params.searchFlag != null and params.searchFlag != ''">
+	         select DISTINCT eid,ename from xunjia.t_askprice_vip_total
+		    <where>
+		       <if test="params.statisticYear != null and params.statisticYear != ''">
+		           and  statisticYear =#{params.statisticYear}
+		       </if>
+		       <if test="params.ename != null and params.ename !=''">
+				    and ename like CONCAT('%',${params.ename},'%')
+		        </if>
+		        <if test="params.eid != null and params.eid !=''">
+		        	and eid =#{params.eid}
+		        </if>
+		        <if test="params.province != null and params.province !=''">
+		        	and province = ${params.province}
+		        </if>
+		        <if test="params.city != null and params.city !=''">
+		        	and city = ${params.city}
+		        </if>
+		    </where>
+	      </when>
+	      <otherwise>
+	         select DISTINCT account,corpName as ename from xunjia.t_askprice_member_total
+		    <where>
+		       <if test="params.statisticYear != null and params.statisticYear != ''">
+		           and  statisticYear =#{params.statisticYear}
+		       </if>
+		       <if test="params.corpName != null and params.corpName != ''">
+                   and corpName like CONCAT('%',${params.corpName},'%')
+            	</if>
+            	<if test="params.memberId != null and params.memberId != ''">
+                	and account like CONCAT('%',${params.memberId},'%')
+                </if>
+		        <if test="params.eid != null and params.eid !=''">
+		        	and account =#{params.eid}
+		        </if>
+		        <if test="params.province != null and params.province !=''">
+		        	and province = ${params.province}
+		        </if>
+		        <if test="params.city != null and params.city !=''">
+		        	and city = ${params.city}
+		        </if>
+		    </where>
+	      </otherwise>
+	    </choose>
+	    
+	</select>
+	<select id="queryCompanyAskPriceStatisTotal" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	   SELECT
+			t.fromType,
+			t.statisticsMonth,
+			sum(t.Total) AS total,
+			substring(t.statisticsMonth, 1, 4) AS statisticYear
+		FROM
+			xunjia.t_askprice_vip_total t
+		<where>
+	       <if test="params.statisticYear != null and params.statisticYear != ''">
+	           and  statisticYear =#{params.statisticYear}
+	       </if>
+           
+           <if test="params.ename != null and params.ename !=''">
+			    and ename like CONCAT('%',#{params.ename},'%')
+	        </if>
+	        <if test="params.eid != null and params.eid !=''">
+	        	and eid like CONCAT('%',#{params.eid},'%')
+	        </if>
+	        <if test="params.province != null and params.province !=''">
+	        	and province = #{params.province}
+	        </if>
+	        <if test="params.city != null and params.city !=''">
+	        	and city = #{params.city} 
+	        </if>
+	    </where>
+		  GROUP BY
+			statisticsMonth,
+			t.fromType
+		ORDER BY
+			statisticsMonth
+	    
+	</select>
+	<select id="queryPersonAskPriceStatis" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	    select * from xunjia.t_askprice_member_total
+	    <where>
+	       <if test="statisticYear != null and statisticYear != ''">
+	           and  statisticYear =#{statisticYear}
+	       </if>
+	       <if test="account != null and account != ''">
+	           and  account =#{account}
+	       </if>
+	    </where>
+	</select>
+	<select id="queryPersonAskPriceStatisTotal" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	    SELECT
+			ts.statisticsMonth,
+			sum(ts.Total) AS total
+		FROM
+			xunjia.t_askprice_member_total ts
+	    <where>
+	       <if test="params.statisticYear != null and params.statisticYear != ''">
+	           and  statisticYear =#{params.statisticYear}
+	       </if>
+           
+           <if test="params.corpName != null and params.corpName != ''">
+                   and corpName like CONCAT('%',#{params.corpName},'%')
+           	</if>
+           	<if test="params.memberId != null and params.memberId != ''">
+               	and account like CONCAT('%',#{params.memberId},'%')
+               </if>
+	        <if test="params.eid != null and params.eid !=''">
+	        	and account =#{params.eid}
+	        </if>
+	        <if test="params.province != null and params.province !=''">
+	        	and province = #{params.province}
+	        </if>
+	        <if test="params.city != null and params.city !=''">
+	        	and city = #{params.city}
+	        </if>
+	    </where>
+	    GROUP BY
+			statisticsMonth
+	</select>
+	<select id="queryAskMonthCompleteEfficiencyList" resultType="com.concom.entity.dto.xunjia.ask.AskMonthCompleteEfficiency">
+	    select * from xunjia.t_askprice_complete_efficiency_count
+	    <where>
+	       <if test="statisticsMonth != null and statisticsMonth != ''">
+	           and  statisticsMonth like '%${statisticsMonth}%'
+	       </if>
+	       <if test="leaderName != null and leaderName != ''">
+	           and  leaderName=#{leaderName}
+	       </if>
+	    </where>
+	</select>
+	 <select id="queryPageCommentLibrary"  resultType="java.util.HashMap">
+     	SELECT 
+			tAskComments.id,
+			tAskComments.contents,
+			tAskComments.fromUser,
+			tAskComments.toUser,
+			tAskComments.askReplyId,
+			tAskReply.`name`,
+			tAskReply.pid as askPriceId,
+			tAskReply.spec,
+			tAskReply.unit,
+			tAskReply.addr,
+			tAskReply.`priceFac`,
+			tAskReply.supplier,
+			tAskReply.linkman,
+			tAskReply.mobile,
+			tAskReply.memberId
+			FROM xunjia.tAskComments 
+			left JOIN xunjia.tAskReply on tAskComments.askReplyId=tAskReply.id
+			where tAskReply.fromType=3
+			order by tAskComments.id desc
+    </select>
+    
+    <select id="getAskPriceIds" resultType="String">
+       <![CDATA[  select id from xunjia.tAskPrice  where isRecommend=1 and validDate<=now() and status=2 ]]>
+    </select>
+    
+    
+      <select id="getAskPriceIdsAll" resultType="String">
+          
+           select id from xunjia.tAskPrice  
+           <where>
+               isLock = 0
+                <if test=" status != null and status !=''">
+					and  status=#{status}
+                </if>
+                 <if test="parameterValue !=null and parameterValue!=''"> <![CDATA[ and  status=#{parameterValue} and  piciId <> 'facDataForAskprice' ]]></if>
+                <if test="dateType != null and dateType !=''">
+                  <![CDATA[  and  DATE_FORMAT(CreateOn,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')]]>
+                </if>
+                <if test="facPrice !=null and facPrice !=''">
+                    and piciId='facDataForAskprice' and CreateOn=DATE_FORMAT(DATE_SUB(NOW() , INTERVAL 3 DAY),'%Y-%m-%d')  
+                </if>
+                
+                 <if test="facDataForAskprice !=null and facDataForAskprice !=''">
+                    and piciId='facDataForAskprice' 
+                </if>
+                  <if test="startTime !=null and startTime !=''">
+                   <![CDATA[and CreateOn > DATE_FORMAT(#{startTime},'%Y-%m-%d')  ]]>
+                </if>
+                     <if test="endTime !=null and endTime !=''">
+                   <![CDATA[and CreateOn < DATE_FORMAT(#{endTime},'%Y-%m-%d')  ]]>
+                </if>
+                <if test="update !=null and update !=''"> <![CDATA[  and  DATE_FORMAT(updateOn,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')]]></if>
+           </where>
+           order by id desc
+           
+           <if test="limit!=null and limit!=''">
+                LIMIT ${offset},${limit}
+           </if>
+
+    </select>
+    
+    <update id="updateProNameByPiciId" parameterType="com.concom.entity.dto.xunjia.ask.AskPrice">
+          update xunjia.tAskPrice 
+          <set>
+          	<if test="proName != null and proName != ''">
+          		proName=#{proName},
+          	</if>
+          </set>
+          where piciId=#{piciId}
+	</update>
+	
+    <select id="queryTasktodo" resultType="com.concom.entity.dto.xunjia.ask.TasktodoCount">
+	    select * from xunjia.t_askprice_tasktodo_count
+	</select>
+	
+    <select id="getExportPiciAskInfo" resultType="com.concom.entity.dto.xunjia.ask.AskPrice">
+       select id,name,spec,amount,unit,addr,maxRecommendNum,notes,status,purpose from xunjia.tAskPrice where recommendNum > 0 and status in (2,3) and isLock = 0 and piciId = #{piciId} order by id
+    </select>
+    
+    <select id="getExportPiciGobackAskInfo" resultType="com.concom.entity.dto.xunjia.ask.AskPrice">
+       select id,name,spec,amount,unit,addr,maxRecommendNum,remark,status,purpose from xunjia.tAskPrice where isLock = 0 and status = 1 and piciId = #{piciId} order by id
+    </select>
+    
+    <select id="queryPageAskPriceSso" resultMap="askPriceResult">
+		SELECT  tAskPrice.*,
+		   (
+				SELECT
+					count(1)
+				FROM
+					xunjia.tAskReply t
+				WHERE
+					t.pid = xunjia.tAskPrice.id
+		      and t.state=0
+		      and t.isSecondBack=1
+			) secondBackTotal
+		 FROM xunjia.tAskPrice
+		<where>
+     	    1 = 1
+			<if test="params.isLock != null and params.isLock != ''"> and tAskPrice.isLock = #{params.isLock}</if>
+     		<if test="params.fromType != null and params.fromType != ''"> AND tAskPrice.fromType = #{params.fromType}</if>
+     		<if test="params.status != null and params.status != ''"> AND tAskPrice.status IN (${params.status})</if>
+     		<if test="params.isRecommend != null and params.isRecommend != ''"> AND tAskPrice.isRecommend = #{params.isRecommend}</if>
+     		<if test="params.addr != null and params.addr != ''"> AND tAskPrice.addr = #{params.addr}</if>
+     		<if test="params.id != null and params.id != ''"> AND tAskPrice.id = #{params.id}</if>
+     		<if test="params.piciId != null and params.piciId != ''"> AND tAskPrice.piciId = #{params.piciId}</if>
+     		<if test="params.cid != null and params.cid != ''"> AND tAskPrice.cid in (${params.cid})</if>
+     		<if test="params.cids != null and params.cids != ''"> AND tAskPrice.cid not in (${params.cids})</if>
+     		<if test="params.name != null and params.name != ''"> AND tAskPrice.name LIKE '%${params.name}%'</if>
+     		<if test="params.corpName != null and params.corpName != ''"> AND tAskPrice.corpName LIKE '%${params.corpName}%'</if>
+     		<if test="params.memberID != null and params.memberID != ''"> AND tAskPrice.memberID LIKE '%${params.memberID}%'</if>
+     		<if test="params.noAllot != null and params.noAllot != ''"><![CDATA[ AND (tAskPrice.allotOn is null OR tAskPrice.allotOn = '')]]></if>
+     		<if test="params.yesAllot != null and params.yesAllot != ''"><![CDATA[ AND tAskPrice.allotOn is not null AND tAskPrice.allotOn <> '']]></if>
+     		<if test="params.subcid != null and params.subcid != ''"> AND tAskPrice.subcid = #{params.subcid}</if>
+	        <if test="params.isFlag!=null and params.isFlag!=''"> AND tAskPrice.ValidDate > now()</if>
+	        <if test="params.auditor != null and params.auditor != ''"> AND tAskPrice.auditor LIKE '%${params.auditor}%'</if>
+	        <if test="params.province != null and params.province != ''"> AND tAskPrice.province = #{params.province}</if>
+     		<if test="params.createOn != null and params.createOn != ''"><![CDATA[${params.createOn}]]></if>
+     		<if test="params.ids != null and params.ids != ''"> AND tAskPrice.id IN(${params.ids})</if>
+     		<choose>
+			    <when test="params.system == null or params.system == ''"><![CDATA[ AND tAskPrice.piciId <> 'facDataForAskprice' ]]></when>
+			    <otherwise> <![CDATA[ AND tAskPrice.piciId = 'facDataForAskprice' ]]></otherwise>
+			</choose>
+     	</where>
+     	<choose>
+		    <when test="params.orderBy != null and params.orderBy != ''"> order by ${params.orderBy} </when>
+		    <otherwise>ORDER BY tAskPrice.id DESC</otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryAskPriceSsoCount" resultType="Integer">
+		SELECT  COUNT(1) FROM xunjia.tAskPrice 
+		<where>
+     	    1 = 1
+			<if test="params.isLock != null and params.isLock != ''"> and tAskPrice.isLock = #{params.isLock}</if>
+     		<if test="params.fromType != null and params.fromType != ''"> AND tAskPrice.fromType = #{params.fromType}</if>
+     		<if test="params.status != null and params.status != ''"> AND tAskPrice.status IN (${params.status})</if>
+     		<if test="params.isRecommend != null and params.isRecommend != ''"> AND tAskPrice.isRecommend = #{params.isRecommend}</if>
+     		<if test="params.addr != null and params.addr != ''"> AND tAskPrice.addr = #{params.addr}</if>
+     		<if test="params.id != null and params.id != ''"> AND tAskPrice.id = #{params.id}</if>
+     		<if test="params.piciId != null and params.piciId != ''"> AND tAskPrice.piciId = #{params.piciId}</if>
+     		<if test="params.cid != null and params.cid != ''"> AND tAskPrice.cid in (${params.cid})</if>
+     		<if test="params.cids != null and params.cids != ''"> AND tAskPrice.cid not in (${params.cids})</if>
+     		<if test="params.name != null and params.name != ''"> AND tAskPrice.name LIKE '%${params.name}%'</if>
+     		<if test="params.corpName != null and params.corpName != ''"> AND tAskPrice.corpName LIKE '%${params.corpName}%'</if>
+     		<if test="params.memberID != null and params.memberID != ''"> AND tAskPrice.memberID LIKE '%${params.memberID}%'</if>
+     		<if test="params.noAllot != null and params.noAllot != ''"><![CDATA[ AND (tAskPrice.allotOn is null OR tAskPrice.allotOn = '')]]></if>
+     		<if test="params.yesAllot != null and params.yesAllot != ''"><![CDATA[ AND tAskPrice.allotOn is not null AND tAskPrice.allotOn <> '']]></if>
+     		<if test="params.subcid != null and params.subcid != ''"> AND tAskPrice.subcid = #{params.subcid}</if>
+	        <if test="params.isFlag!=null and params.isFlag!=''"> AND tAskPrice.ValidDate > now()</if>
+	        <if test="params.auditor != null and params.auditor != ''"> AND tAskPrice.auditor LIKE '%${params.auditor}%'</if>
+	        <if test="params.province != null and params.province != ''"> AND tAskPrice.province = #{params.province}</if>
+     		<if test="params.createOn != null and params.createOn != ''"><![CDATA[${params.createOn}]]></if>
+     		<if test="params.ids != null and params.ids != ''"> AND tAskPrice.id IN(${params.ids})</if>
+     		<choose>
+			    <when test="params.system == null or params.system == ''"><![CDATA[ AND tAskPrice.piciId <> 'facDataForAskprice' ]]></when>
+			    <otherwise> <![CDATA[ AND tAskPrice.piciId = 'facDataForAskprice' ]]></otherwise>
+			</choose>
+     	</where>
+	</select>
+	
+	<select id="queryPageAskPriceTask" resultMap="askPriceResult">
+		SELECT  tAskPrice.*,
+		   (
+			SELECT
+					count(1)
+				FROM
+					xunjia.tAskReply t
+				WHERE
+					t.pid = xunjia.tAskPrice.id
+		      and t.state=0
+		      and t.isSecondBack=1
+			) secondBackTotal
+			<if test="params.isExport != null and params.isExport != ''">
+			   ,(select GROUP_CONCAT(CONCAT('[',convert(createOn using utf8),']:',convert(notes using utf8))) from  
+			       xunjia.tAskPriceAppContent where askId=tAskPrice.id) added
+			</if>
+		 FROM xunjia.tAskPrice LEFT JOIN xunjia.tAskPriceAllot ON tAskPrice.id = tAskPriceAllot.askPriceId 
+		<where>
+     	    1 = 1
+     		<if test="params.isLock != null and params.isLock != ''"> and tAskPrice.isLock = #{params.isLock}</if>
+     		<if test="params.fromType != null and params.fromType != ''"> AND tAskPrice.fromType = #{params.fromType}</if>
+     		<if test="params.status != null and params.status != ''"> AND tAskPrice.status IN (${params.status})</if>
+     		<if test="params.isRecommend != null and params.isRecommend != ''"> AND tAskPrice.isRecommend = #{params.isRecommend}</if>
+     		<if test="params.addr != null and params.addr != ''"> AND tAskPrice.addr = #{params.addr}</if>
+     		<if test="params.id != null and params.id != ''"> AND tAskPrice.id = #{params.id}</if>
+     		<if test="params.piciId != null and params.piciId != ''"> AND tAskPrice.piciId = #{params.piciId}</if>
+     		<if test="params.cid != null and params.cid != ''"> AND tAskPrice.cid in (${params.cid})</if>
+     		<if test="params.cids != null and params.cids != ''"> AND tAskPrice.cid not in (${params.cids})</if>
+     		<if test="params.name != null and params.name != ''"> AND tAskPrice.name LIKE '%${params.name}%'</if>
+     		<if test="params.corpName != null and params.corpName != ''"> AND tAskPrice.corpName LIKE '%${params.corpName}%'</if>
+     		<if test="params.memberID != null and params.memberID != ''"> AND tAskPrice.memberID LIKE '%${params.memberID}%'</if>
+     		<if test="params.noAllot != null and params.noAllot != ''"><![CDATA[ AND (tAskPrice.allotOn is null OR tAskPrice.allotOn = '')]]></if>
+     		<if test="params.yesAllot != null and params.yesAllot != ''"><![CDATA[ AND tAskPrice.allotOn is not null AND tAskPrice.allotOn <> '']]></if>
+     		<if test="params.subcid != null and params.subcid != ''"> AND tAskPrice.subcid = #{params.subcid}</if>
+	        <if test="params.isFlag!=null and params.isFlag!=''"> AND tAskPrice.ValidDate > now()</if>
+	        <if test="params.auditor != null and params.auditor != ''"> AND tAskPrice.auditor LIKE '%${params.auditor}%'</if>
+	        <if test="params.province != null and params.province != ''"> AND tAskPrice.province = #{params.province}</if>
+     		<if test="params.createOn != null and params.createOn != ''"><![CDATA[${params.createOn}]]></if>
+     		<if test="params.ids != null and params.ids != ''"> AND tAskPrice.id IN(${params.ids})</if>
+     		<if test="params.userName != null and params.userName != ''"> AND tAskPriceAllot.userName = #{params.userName}</if>
+     	</where>
+     	<choose>
+		    <when test="params.orderBy != null and params.orderBy != ''"> order by ${params.orderBy} </when>
+		    <otherwise>ORDER BY tAskPrice.id DESC</otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryAskPriceTaskCount" resultType="Integer">
+		SELECT  COUNT(1) FROM xunjia.tAskPrice LEFT JOIN xunjia.tAskPriceAllot ON tAskPrice.id = tAskPriceAllot.askPriceId 
+		<where>
+     	    1 = 1
+			<if test="params.isLock != null and params.isLock != ''"> and tAskPrice.isLock = #{params.isLock}</if>
+     		<if test="params.fromType != null and params.fromType != ''"> AND tAskPrice.fromType = #{params.fromType}</if>
+     		<if test="params.status != null and params.status != ''"> AND tAskPrice.status IN (${params.status})</if>
+     		<if test="params.isRecommend != null and params.isRecommend != ''"> AND tAskPrice.isRecommend = #{params.isRecommend}</if>
+     		<if test="params.addr != null and params.addr != ''"> AND tAskPrice.addr = #{params.addr}</if>
+     		<if test="params.id != null and params.id != ''"> AND tAskPrice.id = #{params.id}</if>
+     		<if test="params.piciId != null and params.piciId != ''"> AND tAskPrice.piciId = #{params.piciId}</if>
+     		<if test="params.cid != null and params.cid != ''"> AND tAskPrice.cid in (${params.cid})</if>
+     		<if test="params.cids != null and params.cids != ''"> AND tAskPrice.cid not in (${params.cids})</if>
+     		<if test="params.name != null and params.name != ''"> AND tAskPrice.name LIKE '%${params.name}%'</if>
+     		<if test="params.corpName != null and params.corpName != ''"> AND tAskPrice.corpName LIKE '%${params.corpName}%'</if>
+     		<if test="params.memberID != null and params.memberID != ''"> AND tAskPrice.memberID LIKE '%${params.memberID}%'</if>
+     		<if test="params.noAllot != null and params.noAllot != ''"><![CDATA[ AND (tAskPrice.allotOn is null OR tAskPrice.allotOn = '')]]></if>
+     		<if test="params.yesAllot != null and params.yesAllot != ''"><![CDATA[ AND tAskPrice.allotOn is not null AND tAskPrice.allotOn <> '']]></if>
+     		<if test="params.subcid != null and params.subcid != ''"> AND tAskPrice.subcid = #{params.subcid}</if>
+	        <if test="params.isFlag!=null and params.isFlag!=''"> AND tAskPrice.ValidDate > now()</if>
+	        <if test="params.auditor != null and params.auditor != ''"> AND tAskPrice.auditor LIKE '%${params.auditor}%'</if>
+	        <if test="params.province != null and params.province != ''"> AND tAskPrice.province = #{params.province}</if>
+     		<if test="params.createOn != null and params.createOn != ''"><![CDATA[${params.createOn}]]></if>
+     		<if test="params.ids != null and params.ids != ''"> AND tAskPrice.id IN(${params.ids})</if>
+     		<if test="params.userName != null and params.userName != ''"> AND tAskPriceAllot.userName = #{params.userName}</if>
+     	</where>
+	</select>
+	
+	<select id="queryAskPriceByPiciId" resultMap="askPriceTResult">
+	  select * from  xunjia.tAskPrice where status in (2,3) and piciId = #{piciId}
+	</select>
+	<select id="getUseScoreByEid" resultType="Integer">
+	    SELECT SUM(score) FROM xunjia.tAskPrice WHERE eid = #{eid} AND isLock = 0
+	</select>
+	<select id="downloadAskPrice" resultType="java.util.HashMap">
+	   	select tAskPrice.id,tAskPrice.`name`,tAskPrice.spec,tAskPrice.amount,tAskPrice.unit,tAskPrice.purpose,tAskPrice.notes as askpriceNotes,tAskPrice.status,tAskPrice.remark,tAskReply.brand,tAskReply.priceFac,tAskReply.unit as askreplyUnit,tAskReply.supplier,tAskReply.linkman,tAskReply.mobile,tAskReply.createOn,tAskReply.notes as askreplyNotes from xunjia.tAskPrice left join xunjia.tAskReply on tAskPrice.id=tAskReply.pid 
+	   	where tAskPrice.piciId=#{piciId}
+	   	<choose>
+	   	    <when test="ids != null and ids != ''"> and tAskPrice.id in (${ids})</when>
+	   	    <otherwise>and tAskPrice.isLock=0 and tAskPrice.status in (2,3) <![CDATA[ and tAskReply.state <> 3]]></otherwise>
+	   	</choose>
+	</select>
+	<select id="downloadAskPriceOfGoback" resultType="java.util.HashMap">
+	    select tAskPrice.id,tAskPrice.`name`,tAskPrice.spec,tAskPrice.amount,tAskPrice.unit,tAskPrice.purpose,tAskPrice.notes as askpriceNotes,tAskPrice.status,tAskPrice.remark from xunjia.tAskPrice where tAskPrice.piciId=#{piciId} and tAskPrice.isLock=0 and tAskPrice.status = 1
+	</select>
+	<update id="proAskPriceInfo" statementType="CALLABLE" parameterType="hashmap">
+        <![CDATA[ 
+			{ call xunjia.proc_askpriceinfo_init(#{askId, mode=IN, jdbcType=INTEGER}, #{piciId, mode=IN, jdbcType=VARCHAR}) } 
+  		]]>
+    </update>
+    <select id="getTotalEarnScore" resultType="Integer">
+	    SELECT SUM(score) FROM xunjia.tAskPrice WHERE isLock = 0 AND status = 3
+	</select>
+	
+	<select id="getHotAskPrice" resultMap="askPriceTResult" >
+		select * from xunjia.tAskPrice 
+		<where>
+		   1=1 
+		   <if test="status != null and status != ''">
+				and status = #{status}  
+			</if> 
+			<if test="addr != null and addr != ''">
+				<![CDATA[ and addr like "%${addr}%" ]]>
+			</if>
+			 
+		</where>
+		order by hitSum desc  limit 0 , 5		
+	</select>
+	<select id="queryAskPriceDynamicYear" resultType="com.concom.entity.dto.xunjia.ask.AskpriceVipTotal">
+	    <choose>
+	      <when test="searchFlag != null and searchFlag != ''">
+	         SELECT DISTINCT
+				statisticYear
+			FROM
+				xunjia.t_askprice_vip_total
+	      </when>
+	      <otherwise>
+	          SELECT DISTINCT
+				statisticYear
+			FROM
+				xunjia.t_askprice_member_total
+	      </otherwise>
+	    </choose>
+	</select>
+	<insert id="batchInsert">
+		insert into xunjia.tAskPrice(cid,title,name,stdName,fenci,spec,brand,unit,amount,
+		features,keyFeatures,f01,f02,f03,f04,f05,f06,f07,f08,f09,f10,f11,f12,f13,f14,f15,
+		purpose,ValidDate,code,memberid,linkman,corpname,phone,addr,hitSum,isTop,revNum,
+		CreateOn,UpdateOn,Carriage,Tax,KeepFee,truename,webProvince,UpdateBy,Notes,IsLock,
+		IPAddr,province,city,grade,status,subcid,score,issueDate,validDay,remark,
+		askTo,auditor,auditDate,eid,fromType,degree,isRecommend,engineer,mobile,piciId,cgCid,
+		cgSubcid,proName,maxRecommendNum,payType,pid,specialRemark)
+		
+		values
+		<foreach collection="list" item="item" index="index" separator=",">
+		(#{item.cid},#{item.title},#{item.name},#{item.stdName},#{item.fenci},#{item.spec},#{item.brand},#{item.unit},#{item.amount},
+		#{item.features},#{item.keyFeatures},#{item.f01},#{item.f02},#{item.f03},#{item.f04},#{item.f05},#{item.f06},#{item.f07},#{item.f08},#{item.f09},#{item.f10},#{item.f11},#{item.f12},#{item.f13},#{item.f14},#{item.f15},
+		#{item.purpose},#{item.validDate},#{item.code},#{item.memberID},#{item.linkman},#{item.corpName},#{item.phone},#{item.addr},
+		#{item.hitSum},#{item.isTop},#{item.revNum},#{item.createOn},#{item.updateOn},#{item.carriage},#{item.tax},#{item.keepFee},
+		#{item.trueName},#{item.webProvince},#{item.updateBy},#{item.notes},#{item.isLock},#{item.ipAddr},#{item.province},#{item.city},
+		#{item.grade},#{item.status},#{item.subCid},#{item.score},#{item.issueDate},#{item.validDay},#{item.remark},#{item.askTo},#{item.auditor}
+		,#{item.auditDate},#{item.eid},#{item.fromType},#{item.degree},#{item.isRecommend},#{item.engineer},#{item.mobile},#{item.piciId}
+		,#{item.cgCid},#{item.cgSubcid},#{item.proName},#{item.maxRecommendNum},#{item.payType},#{item.pid},#{item.specialRemark,jdbcType=VARCHAR})
+		</foreach>
+		<selectKey keyProperty="id" resultType="String" statementType="PREPARED">
+			select LAST_INSERT_ID() as value
+		</selectKey>
+		
+	</insert>
+</mapper>

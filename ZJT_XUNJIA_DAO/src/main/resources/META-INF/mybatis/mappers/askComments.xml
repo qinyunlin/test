@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.reply.AskComments">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askCommentsResult" type="com.concom.entity.dto.xunjia.reply.AskComments">
+	
+	    <result property="id" column="id" />
+		<result property="askReplyId" column="askReplyId" />
+		<result property="fromUser" column="fromUser" />
+		<result property="toUser" column="toUser" />
+		<result property="contents" column="contents" />
+		<result property="createOn" column="createOn" />
+		
+		  <collection property="formUserMember" column="fromUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getMember" />
+		  <collection property="toUserMember" column="toUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getMember" />
+		  
+		  <collection property="fromAppMember" column="fromUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getAppMember" />
+		  <collection property="toAppMember" column="toUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getAppMember" />
+		  
+		  <collection property="fromSsoUser" column="fromUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getSsoUser" />
+		  <collection property="toSsoUser" column="toUser" select="com.concom.entity.dto.xunjia.reply.AskComments.getSsoUser" />
+		 <!--  <collection property="toUserMember" column="toUser" select="getMember" /> -->
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.reply.AskComments">
+		insert into xunjia.tAskComments(askReplyId,fromUser,toUser,contents,createOn)
+		values(#{askReplyId},#{fromUser},#{toUser},#{contents},#{createOn});
+	</insert>
+    <!--  -->
+    <select id="queryList"  resultMap="askCommentsResult">
+     
+     		select * from xunjia.tAskComments
+     		<where>
+     		   <if test="askReplyId !=null and askReplyId !=''">
+     		      askReplyId=#{askReplyId}
+     		   </if>
+     		</where>
+   		
+    </select>
+    
+    <select id="getMember" resultType="com.concom.entity.dto.member.Member" >
+          select * from  costexpressdb.tMember where   memberid=#{fromUser}
+    </select>
+    
+    <select id="getAppMember" resultType="com.concom.entity.dto.xunjia.app.member.AppMember" >
+          select * from  youcai.tMember where   memberid=#{fromUser}
+    </select>
+    
+    <select id="getSsoUser" resultType="com.concom.entity.dto.xunjia.sso.SsoUser" >
+          select u.* from sso.tUser u where u.userName = #{fromUser}
+    </select>
+    
+    <delete id="del">
+        delete from xunjia.tAskComments
+        <where>
+            1 = 1
+           <if test="id !=null and id!=''">
+             and id=#{id}
+           </if>
+           <if test="askReplyId !=null and askReplyId !=''">
+             and askReplyId=#{askReplyId}
+           </if>
+        </where>
+    </delete>
+
+    <select id="queryPage" resultMap="askCommentsResult">
+        select * from xunjia.tAskComments
+   		<where>
+   		   <if test="params.askReplyId !=null and params.askReplyId !=''">
+   		      askReplyId=#{params.askReplyId}
+   		   </if>
+   		</where>
+   		<choose>
+ 		       <when test="params.orderBy !=null and params.orderBy !=''">
+ 		           order by ${params.orderBy}
+ 		       </when>
+ 		       <otherwise>
+ 		           order by id
+ 		       </otherwise>
+ 		   </choose>
+    </select>
+    
+    <select id="queryCount" resultType="Integer">
+        select count(1) from xunjia.tAskComments
+   		<where>
+   		   <if test="askReplyId !=null and askReplyId !=''">
+   		      askReplyId=#{askReplyId}
+   		   </if>
+   		</where>
+    </select>
+  
+</mapper>

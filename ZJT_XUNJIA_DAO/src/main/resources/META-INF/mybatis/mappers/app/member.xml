@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.member.AppMember">
+	<resultMap id="memberResult" type="com.concom.entity.dto.xunjia.app.member.AppMember">
+	    <id column="id" property="id" />
+		<result column="memberId" property="memberId" />
+		<result column="password" property="password" />
+		<result column="icon" property="icon" />
+		<result column="nickname" property="nickname" />
+		<result column="mobile" property="mobile" />
+		<result column="TCoinTotal" property="TCoinTotal" />
+		<result column="TCoinUsed" property="TCoinUsed" />
+		<result column="TCoinRemain" property="TCoinRemain" />
+		<result column="rank" property="rank" />
+		<result column="major" property="major" />
+		<result column="alipayAccount" property="alipayAccount" />
+		<result column="companyName" property="companyName" />
+		<result column="lng" property="lng" />
+		<result column="lat" property="lat" />
+		<result column="shop_logo" property="shop_logo" />
+		<result column="shop_license" property="shop_license" />
+		<collection property="appReplyInfoCount" column="memberId" select="com.concom.entity.dto.xunjia.app.member.AppReplyInfoCount.getById" />
+	</resultMap>
+	
+	
+    <select id="getById"  resultMap="memberResult">
+     		select * from youcai.tMember WHERE memberid=#{memberId}
+    </select>
+    <select id="getByMobile"  resultMap="memberResult">
+     		select * from youcai.tMember WHERE mobile=#{mobile}
+    </select>
+    
+     <select id="isExist"  resultType="Integer">
+     		select count(id) from  youcai.tMember 
+     		<where>
+	     	   <if test="mobile !=null and mobile!=''">
+	              mobile=#{mobile}
+	           </if>
+	           <if test="memberId !=null and memberId!=''">
+	               memberId=#{memberId}
+	           </if>
+     		</where>
+     </select>
+    
+    <insert id="save">
+        <![CDATA[
+     		insert into youcai.tMember(memberId,password,mobile) 
+     		values(#{memberId},#{password},#{mobile});
+    	]]>
+    </insert>
+    <insert id="registerUser">
+        <![CDATA[
+     		insert into youcai.tMember(memberId,password,mobile,registerDate,nickname) values(#{memberId},#{password},#{mobile},now(),#{nickname});
+    	]]>
+    </insert>
+    <!-- 用户排行 -->
+    <select id="queryPageMapForRankList" resultType="java.util.HashMap">
+		select 
+        	memberId,
+        	nickname,
+        	icon,
+        	rank,
+        	tCoinTotal,
+        	replyNum,
+        	tCoinRank,
+        	replyNumRank
+         from youcai.tUserRanking
+         <if test="params.orderBy !=null and params.orderBy!=''">
+               ORDER BY ${params.orderBy}
+          </if>
+    </select>
+    <select id="rankingWithMe" resultType="java.util.HashMap">
+   	
+		select 
+        	memberId,
+        	nickname,
+        	icon,
+        	rank,
+        	tCoinTotal,
+        	replyNum,
+        	tCoinRank,
+        	replyNumRank
+         from youcai.tUserRanking
+         where memberId=#{memberId}
+    </select>
+    
+    <select id="queryPageMap" resultType="java.util.HashMap">
+        select id,memberId,loginCount,loginDate,password,icon,nickname,mobile,
+        city,province,TCoinTotal,TCoinUsed,TCoinRemain,rank,major,alipayAccount,
+        updateBy,DATE_FORMAT(updateOn, '%Y-%m-%d %H:%i:%s') as updateOn,auditState,
+        DATE_FORMAT(auditOn, '%Y-%m-%d %H:%i:%s') as auditOn,
+        DATE_FORMAT(registerDate, '%Y-%m-%d %H:%i:%s') as registerDate,replyNum,bestReplyNum,
+        userFulCount,notAllowCount,DATE_FORMAT(createOn, '%Y-%m-%d %H:%i:%s') as createOn,
+        companyName,shop_license,shop_logo,lat,lng,isLock from youcai.v_member_replyInfo 
+        <where>
+        
+        1=1
+           <if test="params.province !=null and params.province!=''">
+               province=#{params.province}
+           </if>
+           <if test="params.city !=null and params.city!=''">
+               and city=#{params.city}
+           </if>
+           
+           <if test="params.mobile !=null and params.mobile!=''">
+               and mobile=#{params.mobile}
+           </if>
+           
+           <if test="params.companyName !=null and params.companyName!=''">
+               and companyName=#{params.companyName}
+           </if>
+           
+            <if test="params.nickname !=null and params.nickname!=''">
+               and nickname=#{params.nickname}
+           </if>
+           
+           <if test="params.searchType =='logo'">
+           <![CDATA[
+              and img_logo is not null and img_logo <> ''
+               ]]>
+           </if>
+           
+           <if test="params.searchType =='coordinates'">
+           <![CDATA[
+              and lat is not null and lat<>'' and lng is not null and lng <>''
+               ]]>
+           </if>
+           <if test="params.searchType =='have'">
+           <![CDATA[
+              and img_logo is not null and img_logo <> '' and lat is not null and lat<>'' and lng is not null and lng <>''
+               ]]>
+           </if>
+           
+           <if test="params.searchType =='notHave'">
+           <![CDATA[
+              and (img_logo is  null or img_logo = '') and (lat is null or lat='') and (lng is null or lng = '')
+               ]]>
+           </if>
+           
+        </where>
+    </select>
+    
+    <update id="update" parameterType="com.concom.entity.dto.xunjia.app.member.AppMember">
+        update youcai.tMember 
+          <set>
+          	<if test="password !=null and password !=''">
+          	    password=#{password},
+          	</if>
+          	<if test="icon !=null and icon !=''">
+          	    icon=#{icon},
+          	</if>
+          	<if test="city !=null and city !=''">
+          	    city=#{city},
+          	</if>
+          	<if test="province !=null and province !=''">
+          	    province=#{province},
+          	</if>
+          	<if test="nickname !=null and nickname !=''">
+          	    nickname=#{nickname},
+          	</if>
+          	<if test="mobile !=null and mobile !=''">
+          	    mobile=#{mobile},
+          	</if>
+          	<if test="TCoinTotal !=null and TCoinTotal !=''">
+          	    TCoinTotal=#{TCoinTotal},
+          	</if>
+          	<if test="TCoinUsed !=null">
+          	    TCoinUsed=#{TCoinUsed},
+          	</if>
+          	<if test="TCoinRemain !=null">
+          	    TCoinRemain=#{TCoinRemain},
+          	</if>
+            <if test="TCoinFrozen !=null and TCoinFrozen !=''">
+          	    TCoinFrozen=#{TCoinFrozen},
+          	</if>
+          	<if test="rank !=null and rank !=''">
+          	    rank=#{rank},
+          	</if>
+          	<if test="rankName !=null and rankName !=''">
+          	    rankName=#{rankName},
+          	</if>
+          	<if test="major !=null and major !=''">
+          	    major=#{major},
+          	</if>
+          	<if test="alipayAccount !=null and alipayAccount !=''">
+          	    alipayAccount=#{alipayAccount},
+          	</if>
+          	<if test="companyName !=null and companyName !=''">
+          	    companyName=#{companyName},
+          	</if>
+          	<if test="lng !=null and lng !=''">
+          	    lng=#{lng},
+          	</if>
+          	<if test="lat !=null and lat !=''">
+          	    lat=#{lat},
+          	</if>
+          	<if test="shop_logo !=null and shop_logo !=''">
+          	    shop_logo=#{shop_logo},
+          	</if>
+          	
+            <if test="isLock !=null and isLock !=''">
+          	    isLock=#{isLock},
+          	</if>
+          	
+          	<if test="shopAddr !=null and shopAddr !=''">
+          	    shopAddr=#{shopAddr},
+          	</if>
+          	
+          	<if test="shop_license !=null and shop_license !=''">
+          	    shop_license=#{shop_license},
+          	</if>
+          	<if test="loginCount !=null and loginCount !=''">
+          	    loginCount=#{loginCount},
+          	</if>
+          	<if test="auditState !=null and auditState !=''">
+          	    auditState=#{auditState},
+          	</if>
+          	<if test="auditOn !=null and auditOn !=''">
+          	    auditOn=#{auditOn},
+          	</if>
+          	<if test="loginDate !=null and loginDate !=''">
+          	    loginDate=#{loginDate},
+          	</if>
+          	<if test="updateOn !=null and updateOn !=''">
+          	    updateOn=#{updateOn}
+          	</if>
+          </set>
+         where memberId=#{memberId}
+    </update>
+</mapper>

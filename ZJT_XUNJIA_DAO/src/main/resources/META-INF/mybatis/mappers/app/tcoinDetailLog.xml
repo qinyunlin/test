@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.tcoinDetail.TcoinDetailLog">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="tcoinDetailLogResult" type="com.concom.entity.dto.xunjia.app.tcoinDetail.TcoinDetailLog">
+	
+	    <result property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="memberId" column="memberId" />
+		<result property="tCoinIncome" column="tCoinIncome" />
+		<result property="tCoinRemain" column="tCoinRemain" />
+		<result property="tCoinUsed" column="tCoinUsed" />
+		<result property="createOn" column="createOn" />
+	    <collection property="member" column="memberId" select="getMember" />
+		 <!--  <collection property="toUserMember" column="toUser" select="getMember" /> -->
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.app.tcoinDetail.TcoinDetailLog">
+		insert into youcai.tTcoinDetailLog(type,memberId,tCoinIncome,tCoinRemain,tCoinUsed,createOn)
+		values(#{type},#{memberId},#{tCoinIncome},#{tCoinRemain},#{tCoinUsed},#{createOn});
+	</insert>
+
+    <select id="queryPageMap" resultType="java.util.HashMap">
+       select tMember.mobile,tMember.nickname,tMember.province,tMember.city,tTcoinDetailLog.notes,tTcoinDetailLog.TCoinIncome,tTcoinDetailLog.TCoinRemain,tTcoinDetailLog.TCoinUsed,tTcoinDetailLog.type,tTcoinDetailLog.createOn  from youcai.tMember as tMember,youcai.tTcoinDetailLog as tTcoinDetailLog
+        <where>
+          tMember.memberId=tTcoinDetailLog.memberId
+          <if test="params.nickname != null and params.nickname != ''">
+              and tMember.nickname=#{params.nickname}
+          </if>
+          <if test="params.mobile != null and params.mobile != ''">
+              and tMember.mobile=#{params.mobile}
+          </if>
+           <if test="params.type != null and params.type != ''">
+              and tTcoinDetailLog.type=#{params.type}
+          </if>
+           <if test="params.province != null and params.province != ''">
+              and tMember.province=#{params.province}
+          </if>
+           <if test="params.city != null and params.city != ''">
+              and tMember.city=#{params.city}
+          </if>
+          <if test="params.memberId != null and params.memberId != ''">
+              and tTcoinDetailLog.memberId=#{params.memberId}
+          </if>
+           <if test="params.beginOn != null and params.beginOn != ''">
+                <![CDATA[  and  DATE_FORMAT(tTcoinDetailLog.createOn,'%Y-%m-%d') >= #{params.beginOn}]]>
+              </if>   
+               <if test="params.endOn != null and params.endOn != ''">
+                  <![CDATA[ and  DATE_FORMAT(tTcoinDetailLog.createOn,'%Y-%m-%d') <= #{params.endOn}]]>
+              </if>   
+        </where>
+    </select>
+    
+    <select id="getMember" resultType="com.concom.entity.dto.xunjia.app.member.AppMember" >
+          select * from  youcai.tMember where   memberid=#{memberId}
+    </select>
+    
+    <select id="hasRewardRecord" resultType="com.concom.entity.dto.xunjia.app.tcoinDetail.TcoinDetailLog" >
+          select * from  youcai.tTcoinDetailLog self where DATE(self.createOn)=DATE(#{today}) and self.type=#{type} and self.memberId=#{memberId}
+    </select>
+    
+   
+  
+</mapper>

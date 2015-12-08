@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.reply.AskReply">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askReplyResult" type="com.concom.entity.dto.xunjia.reply.AskReply">
+		<result column="fromType" property="fromType"/>
+		<result column="askPriceMemberId" property="askPrice.memberID" />
+		
+		<!-- <result column="updateOn" property="tAskReply.updateOn"/> -->
+	</resultMap> 
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.reply.AskReply">
+		insert into xunjia.tAskReply(cid,pid,priceFac,code,notes,fid,supplier,linkman,issueDate,addr,priceBulk,
+		memberID,createOn,updateOn,updateBy,state,brand,score,spec,
+		name,unit,remark,subCid,fromType,mobile,stdName,fenci,cgCid,cgSubcid,features,keyFeatures,f01,
+		f02,f03,f04,f05,f06,f07,f08,f09,f10,f11,f12,f13,f14,f15,isRecommend,recommendOn,piciId,askNotes,amount,recommendUserName,recommendName,allotOn,piciOn,priceImgUrl,isSecondBack,check_by,check_time)
+		values(#{cid},#{pid},#{priceFac},#{code},#{notes},#{fid},#{supplier},#{linkman},#{issueDate},#{addr},#{priceBulk},
+		#{memberID},NOW(),#{updateOn},#{updateBy},#{state},#{brand},#{score},#{spec},
+		#{name},#{unit},#{remark},#{subCid},#{fromType},#{mobile},#{stdName},#{fenci},#{cgCid},#{cgSubcid},#{features},#{keyFeatures},#{f01},
+		#{f02},#{f03},#{f04},#{f05},#{f06},#{f07},#{f08},#{f09},#{f10},#{f11},#{f12},#{f13},#{f14},#{f15},#{isRecommend},#{recommendOn},#{piciId},#{askNotes},#{amount},#{recommendUserName},#{recommendName},#{allotOn},#{piciOn},#{priceImgUrl},#{isSecondBack},#{check_by},#{check_time})
+		<selectKey keyProperty="id" resultType="String" statementType="PREPARED">
+			select LAST_INSERT_ID() as value
+		</selectKey>
+	</insert>
+	
+	<select id="getById" parameterType="String" resultMap="askReplyResult">
+    	select * from xunjia.tAskReply where id=#{id}
+    </select>
+	<select id="isReplied" resultType="int">
+    	select count(id) from xunjia.tAskReply where pid=#{askId} and memberid=#{memberId} and state in (1,2)
+    </select>
+    
+    <!--  -->
+    <select id="getRevNumById"  resultType="int">
+        <![CDATA[
+     		select revNum from xunjia.`tAskPrice` where id=#{askId}
+   		]]>
+    </select>
+    
+    <!--  -->
+    <select id="revNumIncrement" >
+        <![CDATA[
+     		update xunjia.`tAskPrice` set revNum=#{revNum} where id=#{askId}
+   		]]>
+    </select>
+    <!-- 大家都在询价 -->
+    <select id="queryEveryoneInquiryList"  resultMap="askReplyResult">
+        <![CDATA[
+     		SELECT tAskReply.memberID, tAskReply.updateOn,tAskReply.supplier, tAskPrice.memberId askMemberID FROM xunjia.tAskReply, xunjia.tAskPrice WHERE tAskReply.pid = tAskPrice.id AND tAskReply.state = 2   ORDER BY tAskReply.updateOn DESC LIMIT #{pageSize}
+   		]]>
+    </select>
+   <!--  积分悬赏动态榜 -->
+    <select id="queryScoreRewardList"  resultMap="askReplyResult">
+        <![CDATA[
+     		SELECT tAskReply.memberId, tAskReply.updateOn, tAskPrice.score FROM xunjia.tAskReply LEFT JOIN xunjia.tAskPrice ON tAskReply.pid = tAskPrice.id  WHERE tAskReply.state = 2 ORDER BY tAskReply.updateOn DESC LIMIT #{pageSize}
+    	]]>
+    </select>
+    <select id="getAskReply" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+       select * from xunjia.tAskReply 
+       <where>
+	       1=1
+	       <if test="id != null and id !=''">
+	         and id=#{id}
+	       </if>
+           <if test="pid != null and  pid != ''">
+           	 and  pid=#{pid}
+           </if>
+           <choose>
+     		   <when test="state != null and state != ''">  and state=#{state}</when>
+     		   <when test="stateEFrom != null and stateEFrom != '' and stateETo != null and stateETo != ''"><![CDATA[ and state>=#{stateEFrom} and state<=#{stateETo} ]]></when>
+     		   <otherwise>and state in (1,2)</otherwise> 
+     	   </choose>
+           <if test="memberID !=null and memberID !=''">
+             and memberID=#{memberID}
+           </if>
+          order by createOn desc
+       </where>
+    </select>
+
+    <!-- 一条询价详情下的所有回复 -->
+    <select id="askRepliesOfAskpriceByAskId"  resultMap="askReplyResult">
+        <![CDATA[
+     		SELECT * from xunjia.tAskReply where tAskReply.pid = #{askId}
+    	]]>
+    </select>
+    <!-- 用户是否回复了一条询价，有则返回 -->
+    <select id="askRepliyOfUserReplyByAskId"  resultType="java.util.HashMap">
+        <![CDATA[
+     		SELECT id,priceFac,priceBulk,unit,supplier,mobile,linkman,brand  from xunjia.tAskReply where tAskReply.pid = #{askId} and tAskReply.memberid=#{memberid}
+    	]]>
+    </select>
+
+    <update id="update" parameterType="com.concom.entity.dto.xunjia.reply.AskReply">
+        update xunjia.tAskReply 
+        <set>
+       		 <if test="name != null and name !=''">
+                name = #{name},
+             </if>
+             <if test="spec != null and spec !=''">
+                spec = #{spec},
+             </if>
+             <if test="state != null and state !=''">
+                state = #{state},
+             </if>
+             <if test="priceFac != null and priceFac !=''">
+                priceFac = #{priceFac},
+             </if>
+             <if test="priceImgUrl != null and priceImgUrl !=''">
+                priceImgUrl = #{priceImgUrl},
+             </if>
+             <if test="unit != null and unit !=''">
+                unit = #{unit},
+             </if>
+             <if test="usefulNum != null and usefulNum !=''">
+                usefulNum =usefulNum+1,
+             </if>
+             <if test="updateOn != null and updateOn !=''">
+                updateOn =#{updateOn},
+             </if>
+             
+              <if test="notAllowNum != null and notAllowNum !=''">
+                notAllowNum = notAllowNum+1,
+             </if>
+             <if test="remark != null and remark !=''">
+                remark = #{remark},
+             </if>
+             <if test="notes != null and notes !=''">
+                notes = #{notes},
+             </if>
+             <if test="brand !=null and brand !='' ">
+          	   brand = #{brand},
+          	</if>
+              <if test="isRecommend !=null and isRecommend !=''">
+                isRecommend=#{isRecommend},
+             </if>
+          
+             <if test="linkman != null and linkman !=''">
+                linkman = #{linkman},
+             </if>
+              <if test="mobile != null and mobile !=''">
+                mobile = #{mobile},
+             </if>
+               <if test="supplier != null and supplier !=''">
+                supplier = #{supplier},
+             </if>
+             <if test="recommendOn !=null and recommendOn !=''">
+          	   recommendOn = #{recommendOn},
+          	</if>
+          	 <if test="piciId !=null and piciId !=''">
+          	   piciId = #{piciId},
+          	</if>
+          	<if test="askNotes !=null and askNotes !=''">
+          	   askNotes = #{askNotes},
+          	</if>
+          	<if test="recommendName !=null">
+          	   recommendName = #{recommendName},
+          	</if>
+          	<if test="recommendUserName !=null">
+          	   recommendUserName = #{recommendUserName},
+          	</if>
+          	<if test="is_check !=null and is_check !=''">
+          	   is_check = #{is_check},
+          	</if>
+          	<if test="check_by !=null and check_by !=''">
+          	   check_by = #{check_by},
+          	</if>
+          	<if test="check_time !=null and check_time !=''">
+          	   check_time = #{check_time},
+          	</if>
+          	<if test="updateBy !=null and updateBy !=''">
+          	   updateBy = #{updateBy}
+          	</if>
+        </set>
+         <where>
+              <if test="id !=null and id  !=''">
+                  id = #{id}
+              </if>
+         </where>
+    </update>
+    
+    <select id="queryCount" resultType="Integer">
+        select count(id) from xunjia.tAskReply 
+        <where>
+	          isLock=0
+	          <if test="diyContions != null and diyContions != ''">
+	               <![CDATA[ ${diyContions} ]]>
+	          </if>
+	           <if test="isRecommend !=null and isRecommend !=''">
+	             and isRecommend=#{isRecommend}
+	          </if>
+	          <if test="memberId !=null and memberId !=''">
+	             and memberId=#{memberId}
+	          </if>
+	          <if test="isSecondBack !=null and isSecondBack !=''">
+	             and isSecondBack=#{isSecondBack}
+	          </if>
+	     	 <if test="pid != null and pid != ''">
+               and pid = #{pid}
+	          </if>
+	          <if test="name != null and name != ''">
+	               and name LIKE '%${name}%'
+	          </if>
+	          <if test="spec != null and spec != ''">
+	               and spec LIKE '%${spec}%'
+	          </if>
+	          <if test="supplier != null and supplier != ''">
+	               and supplier LIKE '%${supplier}%'
+	          </if>
+	          <if test="stdName != null and stdName != ''">
+	               and stdName=#{stdName}
+	          </if>
+	           <if test="keyFeatures != null and keyFeatures != ''">
+	               and  keyFeatures=#{keyFeatures}
+	          </if>
+	         
+		      <if test="fromType != null and fromType != ''">
+		     	   AND fromType = #{fromType}
+		      </if>
+	          <if test="addr != null and addr != ''">
+	     	       AND tAskReply.addr like '%${addr}%'
+	     	  </if>
+	          <choose>
+	     		    <when test="state != null and state != ''">  and state=#{state}</when>
+	     		    <otherwise>and state in (1,2)</otherwise>
+	     	 </choose>
+	     	 <if test="memberID != null and memberID != ''">
+	    	       AND tAskReply.memberID LIKE '%${memberID}%'
+	    	 </if>
+	    	 <if test="beginOn != null and beginOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') >= #{beginOn}
+				]]>
+			</if>
+			<if test="endOn != null and endOn != ''">
+				<![CDATA[
+					AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') <= #{endOn}
+				]]>
+			</if>
+     	 	<if test="recommendUserName != null and recommendUserName != ''">
+	   	       AND tAskReply.recommendUserName = #{recommendUserName}
+	   	    </if>
+			<if test=" createOnEFrom != null and createOnEFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn >= #{createOnEFrom} ]]>
+			</if>
+			<if test=" createOnFrom != null and createOnFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn > #{createOnFrom} ]]>
+			</if>
+			<if test=" createOnETo != null and createOnETo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn <= #{createOnETo} ]]>
+			</if>
+			<if test=" createOnTo != null and createOnTo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn < #{createOnTo} ]]>
+			</if>
+			<if test="ids != null and ids != ''">
+	   	       AND tAskReply.id in (${ids}) 
+	   	    </if> 
+        </where>
+    </select>
+    
+    <select id="queryPageApp" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+         select price.`name` as`name`,price.revNum as amount,price.createOn as createOn,price.addr, price.spec as spec,reply.pid,price.score as score,reply.unit as unit,reply.PriceFac as priceFac,reply.Notes as notes,reply.state as state from xunjia.tAskReply as reply left join xunjia.tAskPrice as price on reply.pid=price.id
+        <where>
+            isLock=0
+          <if test="params.memberID != null and params.memberID != ''">
+              and reply.memberid=#{params.memberID}
+          </if>
+             <if test="params.state != null and params.state != ''">
+              and reply.state=#{params.state}
+          </if>
+        </where>
+        order by price.updateOn desc
+    </select>
+    
+     <select id="queryPage" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+         select * from xunjia.tAskReply
+        <where>
+         isLock=0
+          <if test="params.pid != null and params.pid != ''">
+               and pid = #{params.pid}
+          </if>
+          <if test="params.piciId != null and params.piciId != ''">
+               and piciId = #{params.piciId}
+          </if>
+          <if test="params.name != null and params.name != ''">
+               and name LIKE '%${params.name}%'
+          </if>
+          <if test="params.spec != null and params.spec != ''">
+               and spec LIKE '%${params.spec}%'
+          </if>
+          <if test="params.supplier != null and params.supplier != ''">
+               and supplier LIKE '%${params.supplier}%'
+          </if>
+          <if test="params.stdName != null and params.stdName != ''">
+               and stdName=#{params.stdName}
+          </if>
+          <if test="params.isSecondBack != null and params.isSecondBack != ''">
+               and isSecondBack=#{params.isSecondBack}
+          </if>
+          <if test="params.notSysSecondBack != null and params.notSysSecondBack != ''">
+                <![CDATA[ and (isSecondBack <> 1  or isSecondBack is null  or isSecondBack ='')]]>
+          </if>
+           <if test="params.keyFeatures != null and params.keyFeatures != ''">
+               and  keyFeatures=#{params.keyFeatures}
+          </if>
+         
+	      <if test="params.fromType != null and params.fromType != ''">
+	     	   AND fromType = #{params.fromType}
+	      </if>
+          <if test="params.addr != null and params.addr != ''">
+     	       AND tAskReply.addr like '%${params.addr}%'
+     	  </if>
+          <choose>
+     		    <when test="params.state != null and params.state != ''">  and state=#{params.state}</when>
+     		    <otherwise>and state in (1,2)</otherwise>
+     	 </choose>
+     	 <if test="params.memberID != null and params.memberID != ''">
+    	       AND tAskReply.memberID LIKE '%${params.memberID}%'
+    	 </if>
+    	 <if test="params.beginOn != null and params.beginOn != ''">
+			<![CDATA[
+				AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') >= #{params.beginOn}
+			]]>
+		</if>
+		<if test="params.endOn != null and params.endOn != ''">
+			<![CDATA[
+				AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') <= #{params.endOn}
+			]]>
+		</if>
+		<if test="params.recommendUserName != null and params.recommendUserName != ''">
+   	       AND tAskReply.recommendUserName = #{params.recommendUserName}
+   	    </if>
+		<if test=" params.createOnEFrom != null and params.createOnEFrom != '' ">
+     	    <![CDATA[ and tAskReply.createOn >= #{params.createOnEFrom} ]]>
+		</if>
+		<if test=" params.createOnFrom != null and params.createOnFrom != '' ">
+     	    <![CDATA[ and tAskReply.createOn > #{params.createOnFrom} ]]>
+		</if>
+		<if test=" params.createOnETo != null and params.createOnETo != '' ">
+     	    <![CDATA[ and tAskReply.createOn <= #{params.createOnETo} ]]>
+		</if>
+		<if test=" params.createOnTo != null and params.createOnTo != '' ">
+     	    <![CDATA[ and tAskReply.createOn < #{params.createOnTo} ]]>
+		</if>
+		<if test="params.ids != null and params.ids != ''">
+   	       AND tAskReply.id in (${params.ids}) 
+   	    </if> 
+      </where>
+      order by
+       <choose>
+           <when test="params.orderby != null and params.orderby != ''">
+     	   		${params.orderby}
+     	   </when>
+           <otherwise>
+               tAskReply.UpdateOn desc
+           </otherwise>
+       </choose>
+    </select>
+     
+     <!-- 会员五期，我的造价通，我回复的询价  Start-->
+     <select id="queryPageForMyReply" resultMap="askReplyResult">
+           select r.* from xunjia.tAskReply r LEFT JOIN xunjia.tAskPrice p ON r.pid = p.id 
+        <where>
+        1=1 
+        <if test="params.ids != null and params.ids != ''">
+    	   and r.id in (${params.ids}) 
+    	 </if>
+     	 <if test="params.memberId != null and params.memberId != ''">
+    	   and r.memberid = #{params.memberId}
+    	 </if>
+    	 <if test="params.keyword != null and params.keyword != ''">
+    	   and r.name like '%${params.keyword}%'
+    	 </if>
+    	 <if test="params.status != null and params.status != ''">
+    	   and p.status = #{params.status}
+    	 </if>
+    	 <if test="params.state != null and params.state != ''">
+    	   and r.state = #{params.state} 
+    	 </if>
+    	 <if test="params.isType == 1">
+    	   <![CDATA[and p.validDate >= CURDATE()]]>
+    	 </if>
+    	 <if test="params.isType == 3">
+    	   and r.state !=2
+    	 </if>
+    	 <if test="params.isType == 2">
+    	  <![CDATA[ and p.validDate <= CURDATE() and r.state !=3]]>
+    	 </if>
+    	 
+    	 <if test="params.addr != null and params.addr != ''">
+    	   and p.addr = #{params.addr}
+    	 </if>
+    	 <if test="params.recommendUserName != null and params.recommendUserName != ''">
+    	   and r.recommendUserName = #{params.recommendUserName}
+    	 </if>
+    	 <if test="params.fromType != null and params.fromType != ''">
+    	   and r.fromType = #{params.fromType}
+    	 </if>
+    	 <if test="params.beginOn != null and params.beginOn != '' and params.endOn != null and params.endOn != ''">
+    	   <![CDATA[
+    	   	and r.createOn >= #{params.beginOn}]] and r.createOn <= #{params.endOn}
+    	   	]]>
+    	 </if>
+    	 <if test="params.name != null and params.name != ''">
+    	   and r.name like '%${params.name}%'
+    	 </if>
+    	 <if test="params.spec != null and params.spec != ''">
+    	   and r.spec = #{params.spec}
+    	 </if>
+    	 <if test="params.supplier != null and params.supplier != ''">
+    	   and r.Supplier = #{params.supplier}
+    	 </if> 
+    	 <if test="params.pid != null and params.pid != ''">
+    	   and r.pid = #{params.pid}
+    	 </if> 
+    	 <if test="params.memberID != null and params.memberID != ''">
+    	   and r.memberid = #{params.memberID}
+    	 </if> 
+    	 
+    	   ORDER BY r.updateOn DESC
+      </where>
+    </select>
+     
+    <select id="queryMyReplyCount" resultType="Integer">
+           select count(1) from xunjia.tAskReply r LEFT JOIN xunjia.tAskPrice p ON r.pid = p.id 
+        <where>
+        1=1
+     	 <if test="params.memberId != null and params.memberId != ''">
+    	   and r.memberid = #{params.memberId}
+    	 </if>
+     	 <if test="params.keyword != null and params.keyword != ''">
+    	   and r.name like '%${params.keyword}%'
+    	 </if>
+    	 <if test="params.status != null and params.status != ''">
+    	   and p.status = #{params.status}
+    	 </if>
+    	 <if test="params.state != null and params.state != ''">
+    	   and r.state = #{params.state} 
+    	 </if>
+    	 <if test="params.isType == 1">
+    	   <![CDATA[and p.validDate >= CURDATE()]]>
+    	 </if>
+    	 <if test="params.isType == 3">
+    	   and r.state !=2
+    	 </if>
+    	 <if test="params.isType == 2">
+    	  <![CDATA[ and p.validDate <= CURDATE() and r.state !=3]]>
+    	 </if>
+    	   and p.id is not null
+      </where>
+    </select>
+    <!-- 会员五期，我的造价通，我回复的询价  end--> 
+     
+    <select id="queryAskReplyCount"  resultType="Integer">
+    	SELECT count(id) FROM xunjia.tAskReply
+     	<where>
+     	  isLock=0
+     	  <if test="params.pid != null and params.pid != ''">
+               and pid = #{params.pid}
+          </if>
+          <if test="params.name != null and params.name != ''">
+               and name LIKE '%${params.name}%'
+          </if>
+          <if test="params.spec != null and params.spec != ''">
+               and spec LIKE '%${params.spec}%'
+          </if>
+          <if test="params.supplier != null and params.supplier != ''">
+               and supplier LIKE '%${params.supplier}%'
+          </if>
+          <if test="params.stdName != null and params.stdName != ''">
+               and stdName=#{params.stdName}
+          </if>
+           <if test="params.keyFeatures != null and params.keyFeatures != ''">
+               and  keyFeatures=#{params.keyFeatures}
+          </if>
+         
+	      <if test="params.fromType != null and params.fromType != ''">
+	     	   AND fromType = #{params.fromType}
+	      </if>
+          <choose>
+     		    <when test="params.state != null and params.state != ''">  and state=#{params.state}</when>
+     		    <otherwise>and state in (1,2)</otherwise>
+     	 </choose>
+     	 <if test="params.memberId != null and params.memberId != ''">
+     	       AND tAskReply.memberid = #{params.memberId}
+   	     </if>
+   	     <if test="params.isSecondBack != null and params.isSecondBack != ''">
+               and isSecondBack=#{params.isSecondBack}
+         </if>
+         <if test="params.notSysSecondBack != null and params.notSysSecondBack != ''">
+              <![CDATA[ and (isSecondBack <> 1  or isSecondBack is null  or isSecondBack ='')]]>
+         </if>
+   	     <if test="params.beginOn != null and params.beginOn != ''">
+			<![CDATA[
+				AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') >= #{params.beginOn}
+			]]>
+		</if>
+		<if test="params.endOn != null and params.endOn != ''">
+			<![CDATA[
+				AND DATE_FORMAT(tAskReply.createOn,'%Y-%m-%d') <= #{params.endOn}
+			]]>
+		</if>
+          <if test="params.addr != null and params.addr != ''">
+     	       AND tAskReply.addr like '%${params.addr}%'
+     	  </if>
+     	 <if test="params.memberID != null and params.memberID != ''">
+    	       AND tAskReply.memberID LIKE '%${params.memberID}%'
+    	 </if>
+		<if test="params.recommendUserName != null and params.recommendUserName != ''">
+   	       AND tAskReply.recommendUserName = #{params.recommendUserName}
+   	    </if>
+		<if test=" params.createOnEFrom != null and params.createOnEFrom != '' ">
+     	    <![CDATA[ and tAskReply.createOn >= #{params.createOnEFrom} ]]>
+		</if>
+		<if test=" params.createOnFrom != null and params.createOnFrom != '' ">
+     	    <![CDATA[ and tAskReply.createOn > #{params.createOnFrom} ]]>
+		</if>
+		<if test=" params.createOnETo != null and params.createOnETo != '' ">
+     	    <![CDATA[ and tAskReply.createOn <= #{params.createOnETo} ]]>
+		</if>
+		<if test=" params.createOnTo != null and params.createOnTo != '' ">
+     	    <![CDATA[ and tAskReply.createOn < #{params.createOnTo} ]]>
+		</if>
+		<if test="params.ids != null and params.ids != ''">
+   	       AND tAskReply.id in (${params.ids}) 
+   	    </if> 
+     </where>
+    </select>
+    
+    
+    <delete id="delete" parameterType="com.concom.entity.dto.xunjia.reply.AskReply">
+        delete from xunjia.tAskReply
+        <where>
+            1 = 1 
+            <if test="id != null and id != ''">
+                and id = ${id}
+            </if>
+            <if test="pid != null and pid != ''">
+                and pid in (${pid})
+            </if>
+        </where>
+    </delete>
+    <select id="getIsRecommendReplyLimtOne" resultType="com.concom.entity.dto.xunjia.reply.AskReply" parameterType="String">
+        select *  from xunjia.tAskReply
+        <where>
+        1=1 and pid=#{_parameter} and isRecommend=1 order by createOn desc limit 1
+        </where>
+    </select>
+    <select id="getIsRecommendReplyList" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+        select * from xunjia.tAskReply
+        <where>
+        isRecommend=1
+        <if test="pid != null and pid != ''">
+                and pid = #{pid}
+        </if>
+        <if test="orderby != null and orderby != ''">
+                order by ${orderby}
+        </if>
+        <if test="limit != null and limit != ''">
+                limit ${limit}
+        </if>
+        </where>
+    </select>
+    <select id="getExportPiciReplyInfo" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+       select pid,brand,priceFac,supplier,linkman,mobile,notes,unit from xunjia.tAskReply where isRecommend=1 and isLock=0 and piciId=#{piciId}
+    </select>
+    <select id="proAskReplyRollBack" statementType="CALLABLE" parameterType="hashmap">
+        <![CDATA[ 
+			{ call xunjia.proc_askprice_import_rollback(#{askId, mode=IN, jdbcType=INTEGER}, #{replyId, mode=IN, jdbcType=INTEGER}, #{piciId, mode=IN, jdbcType=VARCHAR}) } 
+  		]]>
+    </select>
+    <select id="getExportReplyInfoByIds" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+       select pid,brand,priceFac,supplier,linkman,mobile,notes,unit from xunjia.tAskReply
+       <where>
+       		isRecommend=1 and isLock=0 and pid in
+			<foreach collection="list" item="pids" open="(" separator="," close=")">
+	            ${pids}
+	        </foreach>
+       </where>
+    </select>
+    
+    <select id="getBestReply" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+       select pid,brand,priceFac,supplier,linkman,mobile,notes,unit from xunjia.tAskReply
+       <where>
+       		state=2 and isLock=0 and pid in
+			<foreach collection="list" item="pids" open="(" separator="," close=")">
+	            ${pids}
+	        </foreach>
+	         
+       </where>
+    </select>
+    
+    <select id="queryNewestBestReply" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+        select t.*,(select p.memberid from xunjia.tAskPrice p where p.id=t.pid) askMemberID
+        from xunjia.tAskReply t
+        <where>
+        	t.state=2 and t.isLock=0 and  t.pid !=0
+        </where>
+        order by t.updateOn desc
+        limit 0,#{pageSize}
+    </select>
+    
+    <select id="findByMatchSecondBackReply" resultType="com.concom.entity.dto.xunjia.reply.AskReply" parameterType="hashmap">
+        <![CDATA[
+        SELECT
+			t.*
+		FROM
+			xunjia.tAskReply t
+		WHERE
+			DATE_FORMAT(createOn, '%Y-%m-%d') >= DATE_FORMAT(
+				date_add(NOW(), INTERVAL - 2 MONTH),
+				'%Y-%m-%d'
+			)
+		AND t.state in(1,2)
+		AND t.stdName = #{stdName}
+		AND t.keyFeatures = #{keyFeatures}
+		AND piciId!='facDataForAskprice'
+		]]>
+		<choose>
+		  <when test="flag!=null and flag==1">
+		     <if test="addr!=null and addr!=''">
+				   and t.addr like '${addr}%'
+			 </if>
+		  </when>
+		  <otherwise>
+		     <if test="addr!=null and addr!=''">
+				   and t.addr = #{addr}
+			 </if>
+		  </otherwise>
+		</choose>
+		<if test="brand!=null and brand!=''">
+		  AND t.brand = #{brand}
+		</if>
+		<if test="NotInSupplier!=null and NotInSupplier!=''">
+		  AND t.supplier not in (${NotInSupplier})
+		</if>
+		ORDER BY
+			t.updateON DESC
+		LIMIT 0,1
+		
+    </select>
+    
+    <select id="getReplyLibraryList"  resultType="com.concom.entity.dto.xunjia.reply.AskReply" parameterType="hashmap">
+		SELECT tAskReply.*, tAskPrice.corpName as corpName,tAskPrice.fromType AS xj_fromType FROM xunjia.tAskReply left join xunjia.tAskPrice on tAskReply.pid = tAskPrice.id 
+		<where>
+       		tAskReply.pid != 'facDataForAskprice'
+       		AND state in (1,2)
+			<if test="fromType != null and fromType != ''">
+     	       AND tAskReply.fromType = #{fromType}
+     	    </if>
+     	    <if test="state != null and state != ''">
+     	       AND tAskReply.state = #{state}
+     	    </if>
+     	    <if test="recommendUserName != null and recommendUserName != ''">
+     	       AND tAskReply.recommendUserName = #{recommendUserName}
+     	    </if>
+     	    <if test="pid != null and pid != ''">
+     	       AND tAskReply.pid = #{pid}
+     	    </if>
+     	    <if test="memberId != null and memberId != ''">
+     	       AND tAskReply.memberId = #{memberId}
+     	    </if>
+     	    
+     	    <if test="addr != null and addr != ''">
+     	       AND tAskReply.addr like '%${addr}%'
+     	    </if>
+     	    <if test="name != null and name != ''">
+     	       AND tAskReply.name like '%${name}%'
+     	    </if>
+     	    <if test="spec != null and spec != ''">
+     	       AND tAskReply.spec like '%${spec}%'
+     	    </if>
+     	    <if test="supplier != null and supplier != ''">
+     	       AND tAskReply.supplier like '%${supplier}%'
+     	    </if>
+     	    
+     	    <if test="beginOn != null and beginOn != '' and endOn != null and endOn != ''">
+	     	    <![CDATA[and tAskReply.createOn >= #{beginOn} and tAskReply.createOn <= #{endOn} ]]>
+			</if>
+			
+			<if test="ids != null and ids != ''">
+     	       AND tAskReply.id in (${ids}) 
+     	    </if> 
+     	    
+			<if test="orderby != null and orderby != ''">
+     	       ${orderby}
+     	    </if>
+     	    
+     	    <if test="offset != null and offset != '' and limit != null and limit != ''">
+     	       limit ${offset},${limit}
+     	    </if>
+	         
+       </where>          
+        
+	</select>
+	
+	    <select id="getReplyLibraryListCount"  resultType="Integer" parameterType="hashmap">
+		SELECT count(tAskReply.id) FROM xunjia.tAskReply left join xunjia.tAskPrice on tAskReply.pid = tAskPrice.id 
+		<where>
+       		tAskReply.pid != 'facDataForAskprice'
+       		AND state in (1,2)
+			<if test="fromType != null and fromType != ''">
+     	       AND tAskReply.fromType = #{fromType}
+     	    </if>
+     	    <if test="state != null and state != ''">
+     	       AND tAskReply.state = #{state}
+     	    </if>
+     	    <if test="recommendUserName != null and recommendUserName != ''">
+     	       AND tAskReply.recommendUserName = #{recommendUserName}
+     	    </if>
+     	    <if test="pid != null and pid != ''">
+     	       AND tAskReply.pid = #{pid}
+     	    </if>
+     	    <if test="memberId != null and memberId != ''">
+     	       AND tAskReply.memberId = #{memberId}
+     	    </if>
+     	    
+     	    <if test="addr != null and addr != ''">
+     	       AND tAskReply.addr like '%${addr}%'
+     	    </if>
+     	    <if test="name != null and name != ''">
+     	       AND tAskReply.name like '%${name}%'
+     	    </if>
+     	    <if test="spec != null and spec != ''">
+     	       AND tAskReply.spec like '%${spec}%'
+     	    </if>
+     	    <if test="supplier != null and supplier != ''">
+     	       AND tAskReply.supplier like '%${supplier}%'
+     	    </if>
+     	    
+     	    <if test="beginOn != null and beginOn != '' and endOn != null and endOn != ''">
+	     	    <![CDATA[and tAskReply.createOn >= #{beginOn} and tAskReply.createOn <= #{endOn} ]]>
+			</if>
+			  
+	        <if test="ids != null and ids != ''">
+     	       AND tAskReply.id in (${ids})
+     	    </if> 
+       </where>          
+        
+	</select>
+    
+    <select id="getBestReplyById" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+		SELECT supplier,priceFac,priceImgUrl,unit
+			FROM xunjia.tAskReply
+ 			WHERE pid = #{pid} AND state = 2 LIMIT 1
+	</select>
+	
+	<select id="getNewReplyById" resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+		SELECT supplier,priceFac,priceImgUrl,unit
+			FROM xunjia.tAskReply
+ 			WHERE pid = #{pid} AND state = 1 ORDER BY createOn DESC LIMIT 1
+	</select>
+	
+	<select id="queryPageReplys"  resultType="com.concom.entity.dto.xunjia.reply.AskReply">
+		SELECT tAskReply.*, 
+			tAskPrice.corpName as corpName,
+			tAskPrice.fromType AS xj_fromType 
+		FROM xunjia.tAskReply left join xunjia.tAskPrice 
+			on tAskReply.pid = tAskPrice.id 
+		<where>
+       		tAskReply.pid != 'facDataForAskprice'
+			<if test="params.fromType != null and params.fromType != ''">
+     	       AND tAskReply.fromType = #{params.fromType}
+     	    </if>
+     	    <if test="params.state != null and params.state != ''">
+     	       AND tAskReply.state = #{params.state}
+     	    </if>
+     	    <if test="params.recommendUserName != null and params.recommendUserName != ''">
+     	       AND tAskReply.recommendUserName = #{params.recommendUserName}
+     	    </if>
+     	    <if test="params.pid != null and params.pid != ''">
+     	       AND tAskReply.pid = #{params.pid}
+     	    </if>
+     	    <if test="params.memberId != null and params.memberId != ''">
+     	       AND tAskReply.memberId = #{params.memberId}
+     	    </if>
+     	    
+     	    <if test="params.addr != null and params.addr != ''">
+     	       AND tAskReply.addr like '%${params.addr}%'
+     	    </if>
+     	    <if test="params.name != null and params.name != ''">
+     	       AND tAskReply.name like '%${params.name}%'
+     	    </if>
+     	    <if test="params.spec != null and params.spec != ''">
+     	       AND tAskReply.spec like '%${params.spec}%'
+     	    </if>
+     	    <if test="params.supplier != null and params.supplier != ''">
+     	       AND tAskReply.supplier like '%${params.supplier}%'
+     	    </if>
+     	    <if test=" params.createOnEFrom != null and params.createOnEFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn >= #{params.createOnEFrom} ]]>
+			</if>
+			<if test=" params.createOnFrom != null and params.createOnFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn > #{params.createOnFrom} ]]>
+			</if>
+			<if test=" params.createOnETo != null and params.createOnETo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn <= #{params.createOnETo} ]]>
+			</if>
+			<if test=" params.createOnTo != null and params.createOnTo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn < #{params.createOnTo} ]]>
+			</if>
+			<if test="params.ids != null and params.ids != ''">
+     	       AND tAskReply.id in (${params.ids}) 
+     	    </if> 
+       </where>
+       order by
+       <choose>
+           <when test="params.orderby != null and params.orderby != ''">
+     	   		${params.orderby}
+     	   </when>
+           <otherwise>
+               tAskReply.UpdateOn desc
+           </otherwise>
+       </choose>     
+	</select>
+	
+	<select id="queryReplysCount"  resultType="Integer">
+		SELECT count(tAskReply.id)
+		FROM xunjia.tAskReply left join xunjia.tAskPrice 
+			on tAskReply.pid = tAskPrice.id 
+		<where>
+       		tAskReply.pid != 'facDataForAskprice'
+			<if test="params.fromType != null and params.fromType != ''">
+     	       AND tAskReply.fromType = #{params.fromType}
+     	    </if>
+     	    <if test="params.state != null and params.state != ''">
+     	       AND tAskReply.state = #{params.state}
+     	    </if>
+     	    <if test="params.recommendUserName != null and params.recommendUserName != ''">
+     	       AND tAskReply.recommendUserName = #{params.recommendUserName}
+     	    </if>
+     	    <if test="params.pid != null and params.pid != ''">
+     	       AND tAskReply.pid = #{params.pid}
+     	    </if>
+     	    <if test="params.memberId != null and params.memberId != ''">
+     	       AND tAskReply.memberId = #{params.memberId}
+     	    </if>
+     	    
+     	    <if test="params.addr != null and params.addr != ''">
+     	       AND tAskReply.addr like '%${params.addr}%'
+     	    </if>
+     	    <if test="params.name != null and params.name != ''">
+     	       AND tAskReply.name like '%${params.name}%'
+     	    </if>
+     	    <if test="params.spec != null and params.spec != ''">
+     	       AND tAskReply.spec like '%${params.spec}%'
+     	    </if>
+     	    <if test="params.supplier != null and params.supplier != ''">
+     	       AND tAskReply.supplier like '%${params.supplier}%'
+     	    </if>
+     	    <if test=" params.createOnEFrom != null and params.createOnEFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn >= #{params.createOnEFrom} ]]>
+			</if>
+			<if test=" params.createOnFrom != null and params.createOnFrom != '' ">
+	     	    <![CDATA[ and tAskReply.createOn > #{params.createOnFrom} ]]>
+			</if>
+			<if test=" params.createOnETo != null and params.createOnETo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn <= #{params.createOnETo} ]]>
+			</if>
+			<if test=" params.createOnTo != null and params.createOnTo != '' ">
+	     	    <![CDATA[ and tAskReply.createOn < #{params.createOnTo} ]]>
+			</if>
+			<if test="params.ids != null and params.ids != ''">
+     	       AND tAskReply.id in (${params.ids}) 
+     	    </if> 
+       </where>
+	</select>
+	
+</mapper>

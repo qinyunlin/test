@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.push.MessageLog">
+	
+	
+    <select id="getById"  resultType="com.concom.entity.dto.xunjia.app.push.MessageLog">
+        <![CDATA[
+     		select * from youcai.tMessageLog self WHERE self.id=#{id}
+    	]]>
+    </select>
+     <select id="queryPage"  resultType="com.concom.entity.dto.xunjia.app.push.MessageLog">
+     		select * from youcai.tMessageLog
+     		<where>
+	           <if test="params.memberId !=null and params.memberId!=''">
+	               memberId=#{params.memberId}
+	           </if>
+           </where>
+           order by sendTime desc
+    </select>
+    <insert id="save">
+     		insert into youcai.tMessageLog(memberId,mobile,title,description,askId,messages,deviceType,messageType,sendTime) 
+     		values(#{memberId},#{mobile},#{title},#{description},#{askId},#{messages},#{deviceType},#{messageType},now())
+    </insert>
+    
+    <delete id="delete">
+        <![CDATA[
+     		delete from youcai.tMessageLog where id=#{id}
+    	]]>
+    </delete>
+    
+    
+    
+</mapper>

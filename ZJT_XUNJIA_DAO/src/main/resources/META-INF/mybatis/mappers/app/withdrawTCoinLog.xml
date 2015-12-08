@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.withdrawTCoinLog.WithdrawTCoinLog">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="withdrawTCoinLogResult" type="com.concom.entity.dto.xunjia.app.withdrawTCoinLog.WithdrawTCoinLog">
+	
+	    <result property="id" column="id" />
+		<result property="serialNumber" column="serialNumber" />
+		<result property="memberid" column="memberid" />
+		<result property="money" column="money" />
+		<result property="alipayAccount" column="alipayAccount" />
+		<result property="alipaySerialNum" column="alipaySerialNum" />
+		<result property="applyDate" column="applyDate" />
+		<result property="processDate" column="processDate"/>
+		<result property="state" column="state"/>
+		<result property="remark" column="remark"/>
+	    <collection property="member" column="memberid" select="getMember" />
+		 <!--  <collection property="toUserMember" column="toUser" select="getMember" /> -->
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.app.withdrawTCoinLog.WithdrawTCoinLog">
+		insert into youcai.tWithdrawTCoinLog(serialNumber,memberid,money,alipayAccount,alipaySerialNum,applyDate,processDate,state,remark)
+		values(#{serialNumber},#{memberid},#{money},#{alipayAccount},#{alipaySerialNum},#{applyDate},#{processDate},#{state},#{remark});
+	</insert>
+    <!--  -->
+    <select id="queryPage"  resultMap="withdrawTCoinLogResult">
+     
+     		select * from youcai.tWithdrawTCoinLog
+     		<where>
+     		   <if test="params.memberid !=null and params.memberid !=''">
+     		      memberid=#{params.memberid}
+     		   </if>
+     		</where>
+   		
+    </select>
+    
+    
+    <select id="queryPageMap"  resultType="java.util.HashMap">
+     
+   		select w.id,w.memberid, m.mobile,m.nickname,m.alipayAccount,w.alipaySerialNum,DATE_FORMAT(w.applyDate, '%Y-%m-%d %H:%i:%s') as applyDate,DATE_FORMAT(w.processDate, '%Y-%m-%d %H:%i:%s') as processDate,w.state,w.serialNumber,w.money from youcai.tWithdrawTCoinLog as w , youcai.tMember as m  
+   		<where>
+   		w.memberid=m.memberid 
+   		   <if test="params.mobile !=null and params.mobile !=''">
+   		     and  m.mobile=#{params.mobile}
+   		   </if>
+   		    <if test="params.nickname !=null and params.nickname !=''">
+   		    and  m.nickname=#{params.nickname}
+   		   </if>
+   		   <if test="params.alipayAccount !=null and params.alipayAccount!=''">
+   		     and m.alipayAccount=#{params.alipayAccount}
+   		   </if>
+   		   <if test="params.alipaySerialNum !=null and params.alipaySerialNum!=''">
+   		     and w.alipaySerialNum=#{params.alipaySerialNum}
+   		   </if>
+   		</where>
+   		order by applyDate desc
+   		
+    </select>
+    
+    
+    <select id="getMember" resultType="com.concom.entity.dto.xunjia.app.member.AppMember" >
+          select * from  youcai.tMember where   memberid=#{memberid}
+    </select>
+    
+    <update id="update" parameterType="com.concom.entity.dto.xunjia.app.withdrawTCoinLog.WithdrawTCoinLog">
+     update youcai.tWithdrawTCoinLog 
+     <set>
+         <if test="state !=null and state!=''">
+         state=#{state},
+         </if>    
+         <if test="remark !=null and remark !=''">
+            remark=#{remark},
+         </if>
+         <if test="alipaySerialNum !=null and alipaySerialNum !=''">
+            alipaySerialNum=#{alipaySerialNum},
+         </if>
+         <if test="processDate !=null and processDate !=''">
+            processDate=#{processDate},
+         </if>
+     </set>
+     
+      <where>
+            <if test="id !=null and id !=''">
+                id=#{id}
+            </if>
+         </where>
+    </update>
+    
+   
+  
+</mapper>

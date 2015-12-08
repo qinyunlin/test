@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPiciReturnVisitRecord">
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.ask.AskPiciReturnVisitRecord" >
+		insert into xunjia.tAskPiciReturnVisitRecord( piciId , content , operator , createOn )
+		values(#{piciId,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{operator,jdbcType=VARCHAR},#{createOn,jdbcType=TIMESTAMP});
+		<selectKey keyProperty="id" resultType="String" statementType="PREPARED">
+			select LAST_INSERT_ID() as value
+		</selectKey>
+	</insert>
+	
+	<select id="queryList" resultType="com.concom.entity.dto.xunjia.ask.AskPiciReturnVisitRecord">
+		select * 
+		from xunjia.tAskPiciReturnVisitRecord
+		<where>
+		    <if test=" piciId!=null and piciId!='' "> and piciId=#{piciId} </if>
+		    <if test=" operator!=null and operator!='' "> and operator=#{operator} </if>
+		</where>
+		order by 
+		<choose>
+		    <when test=" orderBy!=null and orderBy!='' "> ${orderBy} </when>
+		    <otherwise> createOn desc </otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryPage"  resultType="com.concom.entity.dto.xunjia.ask.AskPiciReturnVisitRecord">
+	    select * 
+		from xunjia.tAskPiciReturnVisitRecord
+		<where>
+		    <if test=" params.piciId!=null and params.piciId!='' "> and piciId=#{params.piciId} </if>
+		    <if test=" params.operator!=null and params.operator!='' "> and operator=#{params.operator} </if>
+		</where>
+        <choose>
+		    <when test="params.orderBy != null and params.orderBy != ''"> order by ${params.orderBy} </when>
+		    <otherwise>order by createOn desc</otherwise>
+		</choose>
+	</select>
+	
+</mapper>

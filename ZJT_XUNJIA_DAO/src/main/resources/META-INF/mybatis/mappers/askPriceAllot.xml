@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPriceAllot">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askPriceAllotResult" type="com.concom.entity.dto.xunjia.ask.AskPriceAllot">
+	</resultMap>
+	
+	<select id="add"  parameterType="com.concom.entity.dto.xunjia.ask.AskPriceAllot">
+     	insert into xunjia.tAskPriceAllot(askPriceId, userName, name, createOn) values(#{askPriceId},#{userName},#{name},#{createOn})
+    </select>
+    
+	<select id="queryListByAskPriceId" resultMap="askPriceAllotResult">
+     	SELECT * FROM xunjia.tAskPriceAllot WHERE askPriceId = #{askPriceId}
+    </select>
+    
+	<select id="queryByAskPriceIdAndUserName" resultMap="askPriceAllotResult">
+     	SELECT * FROM xunjia.tAskPriceAllot WHERE askPriceId = #{askPriceId} AND userName = #{userName}
+    </select>
+    
+	<delete id="delete" parameterType="com.concom.entity.dto.xunjia.ask.AskPriceAllot">
+	    DELETE FROM xunjia.tAskPriceAllot WHERE askPriceId = ${askPriceId}
+	</delete>
+	
+		<select id="queryByAskPriceId" resultType="com.concom.entity.dto.xunjia.ask.AskPriceAllot">
+     	<![CDATA[ SELECT GROUP_CONCAT(DISTINCT userName) as userName FROM xunjia.tAskPriceAllot where askPriceId=#{askPriceId}]]>
+    </select>
+</mapper>

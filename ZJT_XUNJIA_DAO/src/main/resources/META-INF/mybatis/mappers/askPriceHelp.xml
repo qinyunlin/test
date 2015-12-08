@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPriceHelp">
+
+	<resultMap type="com.concom.entity.dto.xunjia.ask.AskPriceHelp" id="AskPriceHelpResult"></resultMap>
+    
+    
+    <select id="queryPage" resultMap="AskPriceHelpResult">
+	SELECT h.*
+	FROM xunjia.tAskPriceHelp h LEFT JOIN xunjia.tAskPrice p ON h.askId = p.id
+	<where>
+		1=1
+		<if test="params.memberId != null and params.memberId != ''">
+			and h.memberid = #{params.memberId}
+		</if>
+		<if test="params.isReply != null and params.isReply!= ''">
+			and h.isReply = #{params.isReply}
+		</if>
+		<if test="params.keyword != null and params.keyword!= ''">
+			and p.name like '%{params.keyword}%'
+		</if>
+	</where>
+	order by h.createOn DESC
+   </select> 
+
+   <select id="queryCount" resultType="Integer">
+   SELECT count(1)
+	FROM xunjia.tAskPriceHelp h LEFT JOIN xunjia.tAskPrice p ON h.askId = p.id
+	<where>
+		1=1
+		<if test="params.memberId != null and params.memberId != ''">
+			and h.memberid = #{params.memberId}
+		</if>
+		<if test="params.isReply != null and params.isReply!= ''">
+			and h.isReply = #{params.isReply}
+		</if>
+		<if test="params.keyword != null and params.keyword!= ''">
+			and p.name like '%{params.keyword}%'
+		</if>
+	</where>
+   </select>
+   
+   <delete id="delete" parameterType="Map">
+	   delete from xunjia.tAskPriceHelp
+	   <where>
+	   	   1 = 1
+		   <if test="id != null and id !=''">
+		   and id = #{id}
+		   </if>
+	   </where>
+   </delete> 
+   
+   <insert id="insert" parameterType="com.concom.entity.dto.xunjia.ask.AskPriceHelp" >
+		insert into xunjia.tAskPriceHelp(id,askid,memberid,isReply,createOn,isTimeout)
+		values(#{id},#{askId},#{memberId},#{isReply},#{createOn},#{isTimeout});
+	</insert>
+</mapper>

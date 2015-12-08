@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.EpRequestPrice">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="epRequestPriceResult" type="com.concom.entity.dto.xunjia.ask.EpRequestPrice">
+		<id column="ID" property="id" />
+		<result column="cid" property="cid"/>
+		<result column="Catalog" property="catalog"/>
+		<result column="PID" property="pid"/>
+		<result column="title" property="title"/>
+		<result column="Name" property="name"/>
+		<result column="OtherName" property="otherName"/>
+		<result column="Spec" property="spec"/>
+		<result column="Addr" property="addr"/>
+		<result column="UpdateOn" property="updateOn"/>
+		<result column="UpateBy" property="upateBy"/>
+		<result column="ResNum" property="resNum"/>
+		<result column="MemberID" property="memberId"/>
+		<result column="EID" property="eid"/>
+		<result column="Fname" property="fname"/>
+		<result column="dosage" property="dosage"/>
+		<result column="brand" property="brand"/>
+		<result column="unit" property="unit"/>
+		<result column="purpose" property="purpose"/>
+		<result column="validDate" property="validDate"/>
+		<result column="code" property="code"/>
+		<result column="Notes" property="notes"/>
+		<result column="truename" property="trueName"/>
+		<result column="phone" property="phone"/>
+		<result column="carriage" property="carriage"/>
+		<result column="tax" property="tax"/>
+		<result column="keepfee" property="keepFee"/>
+		<result column="linkMan" property="linkMan"/>
+		<result column="amount" property="amount"/>
+		<result column="CreateOn" property="createOn"/>
+		<result column="isAudit" property="isAudit"/>
+		<result column="UpdateName" property="updateName"/>
+		<result column="IPAddr" property="ipAddr"/>
+	</resultMap>
+
+	<select id="queryPage"  resultMap="epRequestPriceResult">
+     	SELECT * FROM costexpressdb.tEpRequestPrice
+     	<where>
+     	    1=1
+     	    <if test="params.fname != null and params.fname != ''"> AND fname LIKE '%${params.fname}%'</if>
+     	    <if test="params.name != null and params.name != ''"> AND name LIKE '%${params.name}%'</if>
+     	    <if test="params.spec != null and params.spec != ''"> AND spec LIKE '%${params.spec}%'</if>
+     	    <if test="params.supplyName != null and params.supplyName != ''"> AND supplyName LIKE '%${params.supplyName}%'</if>
+     	</where>
+     	ORDER BY id DESC
+    </select>
+</mapper>

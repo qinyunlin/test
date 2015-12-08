@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.app.shop.Shop">
+	<resultMap id="shopResult" type="com.concom.entity.dto.xunjia.app.shop.Shop">
+	    <id column="id" property="id" />
+		<result column="memberId" property="memberId" />
+		<result column="companyName" property="companyName" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="img_logo" property="img_logo" />
+		<result column="img_license" property="img_license" />
+	</resultMap>
+    <select id="getByMemberId"  resultMap="shopResult">
+        <![CDATA[
+     		select * from youcai.tShop self WHERE self.memberid=#{memberId}
+    	]]>
+    </select>
+    <insert id="save">
+        <![CDATA[
+     		insert into youcai.tShop(memberId,companyName,lng,lat,img_logo,img_license) 
+     		values(#{memberId},#{companyName},#{lng},#{lat},#{img_logo},#{img_license});
+    	]]>
+    </insert>
+    <update id="update" parameterType="com.concom.entity.dto.xunjia.app.shop.Shop">
+        update youcai.tShop 
+          <set>
+          	<if test="companyName !=null and companyName !=''">
+          	    companyName=#{companyName},
+          	</if>
+          	<if test="lng !=null and lng !=''">
+          	    lng=#{lng},
+          	</if>
+          	<if test="lat !=null and lat !=''">
+          	    lat=#{lat},
+          	</if>
+          	<if test="img_logo !=null and img_logo !=''">
+          	    img_logo=#{img_logo},
+          	</if>
+          	<if test="img_license !=null and img_license !=''">
+          	    img_license=#{img_license},
+          	</if>
+     	  </set>
+     	   where memberId=#{memberId}
+     </update>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.ask.AskPriceLeaderRole">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="askPriceLeaderRoleResult" type="com.concom.entity.dto.xunjia.ask.AskPriceLeaderRole">
+	</resultMap>
+	<select id="queryList"  resultMap="askPriceLeaderRoleResult">
+     	SELECT * FROM xunjia.tAskPriceLeaderRole
+    </select>
+    
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.ask.AskPriceLeaderRole" >
+     	insert into xunjia.tAskPriceLeaderRole(code,createOn) values(#{code},#{createOn})
+    </insert>
+    <select id="get" resultType="String">
+       select u.name from xunjia.tAskPriceLeaderRole as a,sso.tRole as u where a.code=u.code;
+    </select>
+    <delete id="del">
+      delete from xunjia.tAskPriceLeaderRole
+    </delete>
+</mapper>

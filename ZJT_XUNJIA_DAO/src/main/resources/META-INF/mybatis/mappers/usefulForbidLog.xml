@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.concom.entity.dto.xunjia.reply.UsefulForbidLog">
+	<!-- 实体类属性与数据库字段对应 -->
+	<resultMap id="usefulForbidLogResult" type="com.concom.entity.dto.xunjia.reply.UsefulForbidLog">
+	
+	    <result property="id" column="id" />
+		<result property="memberId" column="memberId" />
+		<result property="replyId" column="replyId" />
+		
+		 
+		 <!--  <collection property="toUserMember" column="toUser" select="getMember" /> -->
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.concom.entity.dto.xunjia.reply.AskComments">
+		insert into xunjia.tUsefulForbidLog(memberId,replyId)
+		values(#{memberId},#{replyId});
+	</insert>
+    <!--  -->
+    <select id="queryCount"  resultType="Integer">
+     
+     		select count(id) from xunjia.tUsefulForbidLog
+     		where memberId=#{memberId} and replyId=#{replyId}
+   		
+    </select>
+
+</mapper>
